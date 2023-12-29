@@ -126,25 +126,28 @@ const deleteUser = async (id: number) => {
 
         <VSpacer />
 
-        <div class="app-user-search-filter d-flex align-center">
+        <div class="app-user-search-filter d-flex flex-wrap gap-4">
           <!-- 👉 Search  -->
-          <VTextField
-            v-model="searchQuery"
-            placeholder="Search User"
-            density="compact"
-            class="me-4"
-          />
+
+          <div style="inline-size: 15.625rem;">
+            <VTextField
+              v-model="searchQuery"
+              placeholder="Search User"
+              density="compact"
+            />
+          </div>
 
           <!-- 👉 Add user button -->
-          <VSelect
-            v-model="selectedRole"
-            placeholder="Select Role"
-            :items="roles"
-            density="compact"
-            clearable
-            clear-icon="ri-close-line"
-            style="inline-size: 5rem;"
-          />
+          <div style="inline-size: 10rem;">
+            <VSelect
+              v-model="selectedRole"
+              placeholder="Select Role"
+              :items="roles"
+              density="compact"
+              clearable
+              clear-icon="ri-close-line"
+            />
+          </div>
         </div>
       </VCardText>
 
@@ -247,13 +250,19 @@ const deleteUser = async (id: number) => {
               <VList>
                 <VListItem link>
                   <template #prepend>
-                    <VIcon icon="ri-edit-box-line" />
+                    <VIcon
+                      size="22"
+                      icon="ri-edit-box-line"
+                    />
                   </template>
                   <VListItemTitle>Edit</VListItemTitle>
                 </VListItem>
                 <VListItem>
                   <template #prepend>
-                    <VIcon icon="ri-download-line" />
+                    <VIcon
+                      size="22"
+                      icon="ri-download-line"
+                    />
                   </template>
                   <VListItemTitle>Download</VListItemTitle>
                 </VListItem>
@@ -317,10 +326,6 @@ const deleteUser = async (id: number) => {
 </template>
 
 <style lang="scss">
-.app-user-search-filter {
-  inline-size: 24.0625rem;
-}
-
 .text-capitalize {
   text-transform: capitalize;
 }

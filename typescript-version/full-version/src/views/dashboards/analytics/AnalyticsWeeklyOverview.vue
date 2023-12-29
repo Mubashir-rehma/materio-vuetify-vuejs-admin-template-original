@@ -25,8 +25,6 @@ const options = controlledComputed(() => configStore.theme, () => {
         borderRadius: 6,
         distributed: true,
         columnWidth: '30%',
-        endingShape: 'rounded',
-        startingShape: 'rounded',
       },
     },
     stroke: {
@@ -118,7 +116,6 @@ const series = [{ data: [37, 57, 45, 75, 57, 40, 65] }]
         :options="options"
         :series="series"
         :height="200"
-        class="my-4"
       />
 
       <div class="d-flex align-center mb-5 gap-x-4">

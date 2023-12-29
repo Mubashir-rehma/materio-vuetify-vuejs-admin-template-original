@@ -72,7 +72,6 @@ watch(props, () => {
           <div class="d-flex align-center gap-4 mb-4">
             <VTextField
               v-model="currentPermissionName"
-              label="Permission Name"
               density="compact"
               placeholder="Enter Permission Name"
             />

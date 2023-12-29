@@ -43,6 +43,20 @@ const chartOptions = computed(() => {
     stroke: {
       lineCap: 'round',
     },
+    responsive: [
+      {
+        breakpoint: 450,
+        options: {
+          plotOptions: {
+            radialBar: {
+              hollow: {
+                size: '52%',
+              },
+            },
+          },
+        },
+      },
+    ],
   }
 })
 </script>

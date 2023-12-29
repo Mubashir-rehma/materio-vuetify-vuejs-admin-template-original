@@ -103,20 +103,20 @@ const resolveUserRoleVariant = (role: string) => {
           <!-- 👉 Done task -->
           <div class="d-flex align-center me-8">
             <VAvatar
-              :size="44"
+              :size="40"
               rounded
               color="primary"
               variant="tonal"
-              class="me-3"
+              class="me-4"
             >
               <VIcon
-                size="22"
+                size="24"
                 icon="ri-check-line"
               />
             </VAvatar>
 
             <div>
-              <h6 class="text-h6">
+              <h6 class="text-h5">
                 {{ kFormatter(props.userData.taskDone) }}
               </h6>
               <span>Task Done</span>
@@ -133,7 +133,7 @@ const resolveUserRoleVariant = (role: string) => {
               class="me-3"
             >
               <VIcon
-                size="22"
+                size="24"
                 icon="ri-briefcase-4-line"
               />
             </VAvatar>
@@ -298,7 +298,9 @@ const resolveUserRoleVariant = (role: string) => {
                   class="me-2"
                   icon="ri-circle-fill"
                 />
-                <div>{{ benefit }}</div>
+                <div class="text-medium-emphasis">
+                  {{ benefit }}
+                </div>
               </div>
             </VListItem>
           </VList>

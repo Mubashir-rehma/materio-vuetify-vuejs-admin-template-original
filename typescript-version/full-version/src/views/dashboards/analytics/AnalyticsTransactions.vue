@@ -36,7 +36,12 @@ const statistics = [
     </template>
 
     <template #append>
-      <MoreBtn class="mt-n5" />
+      <IconBtn class="mt-n5">
+        <VIcon
+          color="high-emphasis"
+          icon="ri-more-2-line"
+        />
+      </IconBtn>
     </template>
 
     <VCardText class="pt-10">

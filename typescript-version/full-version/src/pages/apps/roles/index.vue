@@ -6,7 +6,7 @@ import UserList from '@/views/apps/roles/UserList.vue'
 <template>
   <VRow>
     <VCol cols="12">
-      <h5 class="text-h5">
+      <h5 class="text-h5 mb-1">
         Roles List
       </h5>
       <p class="text-body-1 mb-0">

@@ -83,7 +83,7 @@ const chartOptions = computed(() => {
         :options="chartOptions"
         :series="series"
         :height="80"
-        class="my-3"
+        class="my-1"
       />
 
       <h6 class="text-h6 text-center">

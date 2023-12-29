@@ -8,7 +8,7 @@ const currentTheme = computed(() => vuetifyTheme.current.value.colors)
 const series = [
   {
     name: '2020',
-    data: [45, 85, 65, 50, 70],
+    data: [35, 85, 55, 50, 70],
   },
 ]
 
@@ -28,10 +28,10 @@ const chartOptions = computed(() => {
     grid: {
       show: false,
       padding: {
-        top: -10,
+        top: -20,
         left: -7,
         right: 0,
-        bottom: 5,
+        bottom: -5,
       },
     },
     colors: [currentTheme.value.error, currentTheme.value.primary, currentTheme.value.error, currentTheme.value.primary, currentTheme.value.primary],
@@ -40,8 +40,6 @@ const chartOptions = computed(() => {
         horizontal: false,
         columnWidth: '20%',
         borderRadius: 4,
-        startingShape: 'rounded',
-        endingShape: 'rounded',
         distributed: true,
         colors: {
           backgroundBarColors: [backgroundColor, backgroundColor, backgroundColor, backgroundColor, backgroundColor],
@@ -74,12 +72,34 @@ const chartOptions = computed(() => {
     },
     responsive: [
       {
+        breakpoint: 1628,
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '20%',
+              borderRadius: 2,
+            },
+          },
+        },
+      },
+      {
         breakpoint: 960,
         options: {
           plotOptions: {
             bar: {
               columnWidth: '15%',
               borderRadius: 6,
+            },
+          },
+        },
+      },
+      {
+        breakpoint: 725,
+        options: {
+          plotOptions: {
+            bar: {
+              columnWidth: '15%',
+              borderRadius: 4,
             },
           },
         },
@@ -100,7 +120,7 @@ const chartOptions = computed(() => {
         :options="chartOptions"
         :series="series"
         :height="80"
-        class="my-3"
+        class="my-1"
       />
 
       <h6 class="text-h6 text-center">

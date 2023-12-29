@@ -262,12 +262,22 @@ const resetCustomizer = async () => {
     configStore.isVerticalNavCollapsed = themeConfig.verticalNav.isVerticalNavCollapsed
     useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = staticPrimaryColor
     currentLayout.value = themeConfig.app.contentLayoutNav
+    configStore.theme = themeConfig.app.theme
+    configStore.skin = themeConfig.app.skin
+    configStore.isVerticalNavSemiDark = themeConfig.verticalNav.isVerticalNavSemiDark
+    configStore.appContentLayoutNav = themeConfig.app.contentLayoutNav
+    configStore.appContentWidth = themeConfig.app.contentWidth
+    configStore.isAppRTL = isActiveLangRTL.value
+    configStore.isVerticalNavCollapsed = themeConfig.verticalNav.isVerticalNavCollapsed
+    useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = staticPrimaryColor
+    currentLayout.value = themeConfig.app.contentLayoutNav
 
     cookieRef('lightThemePrimaryColor', null).value = null
     cookieRef('darkThemePrimaryColor', null).value = null
     cookieRef('lightThemePrimaryDarkenColor', null).value = null
     cookieRef('darkThemePrimaryDarkenColor', null).value = null
 
+    await nextTick()
     await nextTick()
 
     isCookieHasAnyValue.value = false

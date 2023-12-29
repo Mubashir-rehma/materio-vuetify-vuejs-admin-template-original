@@ -190,6 +190,7 @@ const editBillingData: BillingAddress = {
       <VCard title="Payment Methods">
         <template #append>
           <VBtn
+            size="small"
             prepend-icon="ri-add-line"
             @click="isCardAddDialogVisible = !isCardAddDialogVisible"
           >
@@ -216,7 +217,6 @@ const editBillingData: BillingAddress = {
                   {{ card.name }}
                   <VChip
                     v-if="card.isPrimary"
-                    label
                     color="primary"
                     size="small"
                   >
@@ -233,12 +233,14 @@ const editBillingData: BillingAddress = {
                   <VBtn
                     variant="outlined"
                     class="me-4"
+                    size="small"
                     @click="openEditCardDialog(card)"
                   >
                     Edit
                   </VBtn>
                   <VBtn
                     color="error"
+                    size="small"
                     variant="outlined"
                   >
                     Delete
@@ -257,6 +259,7 @@ const editBillingData: BillingAddress = {
       <VCard title="Billing Address">
         <template #append>
           <VBtn
+            size="small"
             prepend-icon="ri-add-line"
             @click="isEditAddressDialogVisible = !isEditAddressDialogVisible"
           >

@@ -30,7 +30,7 @@ const widgetData = ref([
 // 👉 headers
 const headers = [
   { title: '#', key: 'id' },
-  { title: 'Trending', key: 'trending', sortable: false },
+  { title: 'Status', key: 'trending', sortable: false },
   { title: 'Client', key: 'client' },
   { title: 'Total', key: 'total' },
   { title: 'Issued Date', key: 'date' },
@@ -118,6 +118,7 @@ const deleteInvoice = async (id: number) => {
               sm="6"
               md="3"
               class="px-6"
+              :class="id !== widgetData.length - 1 && $vuetify.display.width <= 600 ? 'border-b' : ''"
             >
               <div class="d-flex justify-space-between">
                 <div class="d-flex flex-column">
@@ -200,14 +201,6 @@ const deleteInvoice = async (id: number) => {
         class="text-no-wrap rounded-0"
         @update:options="updateOptions"
       >
-        <!-- Trending Header -->
-        <template #header.trending>
-          <VIcon
-            size="22"
-            icon="ri-pulse-line"
-          />
-        </template>
-
         <!-- id -->
         <template #item.id="{ item }">
           <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: item.id } }">

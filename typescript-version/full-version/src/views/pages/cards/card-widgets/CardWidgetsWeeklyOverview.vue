@@ -25,8 +25,6 @@ const options = controlledComputed(() => configStore.theme, () => {
         borderRadius: 6,
         distributed: true,
         columnWidth: '30%',
-        endingShape: 'rounded',
-        startingShape: 'rounded',
       },
     },
     stroke: {

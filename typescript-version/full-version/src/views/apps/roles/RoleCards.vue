@@ -215,13 +215,13 @@ const editPermission = (value: RoleDetails) => {
             >
               <VAvatar
                 v-if="item.users.length > 4 && item.users.length !== 4 && index < 3"
-                size="44"
+                size="40"
                 :image="user"
               />
 
               <VAvatar
                 v-if="item.users.length === 4"
-                size="44"
+                size="40"
                 :image="user"
               />
             </template>
@@ -237,7 +237,7 @@ const editPermission = (value: RoleDetails) => {
         </VCardText>
 
         <VCardText>
-          <h5 class="text-h5">
+          <h5 class="text-h5 mb-1">
             {{ item.role }}
           </h5>
           <div class="d-flex align-center">

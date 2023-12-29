@@ -145,7 +145,7 @@ export const handlerAppsInvoice = [
         totalDue: '$12,110.55',
         bankName: 'American Bank',
         country: 'United States',
-        iban: 'ETD95476213874685',
+        iban: 'ETD9547621',
         swiftCode: 'BR91905',
       },
     }

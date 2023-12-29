@@ -75,10 +75,11 @@ body .fc {
   .fc-next-button {
     border: 1px solid rgb(var(--v-theme-secondary));
     border-radius: 6px !important;
-    block-size: 38px;
+    block-size: 34px;
     color: rgb(var(--v-theme-secondary));
-    inline-size: 38px;
+    inline-size: 34px;
     margin-inline-end: 0.5rem;
+    min-block-size: 34px;
     padding-block: 7px !important;
     padding-inline: 7px !important;
 
@@ -89,7 +90,7 @@ body .fc {
     }
 
     .fc-icon{
-      line-height: 0.9375rem;
+      line-height: 0.5;
     }
   }
 
@@ -321,24 +322,26 @@ body .fc {
   .fc-timegrid-body table {
     inline-size: 100% !important;
   }
-}
 
-// Remove event margin in week view inside day column
-.fc-timegrid-col-events {
-  margin: 0 !important;
+  // Remove event margin in week view inside day column
+  .fc-timegrid-col-events {
+    // margin: 0 !important;
 
-  .fc-event{
-    padding-block: 8px !important;
+    .fc-event{
+      padding-block: 8px !important;
+    }
+  }
+
+
+  .fc-timeGridWeek-view .fc-timegrid-slot-minor{
+    border-block-start-style: none;
+  }
+
+  // Set button border radius
+  .fc .fc-button {
+    border-radius: vuetify.$card-border-radius;
+    min-block-size: vuetify.$button-height;
   }
 }
 
 
-.fc-timegrid .fc-timegrid-slots .fc-timegrid-slot {
-  background: rgb(var(--v-theme-surface));
-}
-
-// Set button border radius
-.fc .fc-button {
-  border-radius: vuetify.$card-border-radius;
-  min-block-size: vuetify.$button-height;
-}

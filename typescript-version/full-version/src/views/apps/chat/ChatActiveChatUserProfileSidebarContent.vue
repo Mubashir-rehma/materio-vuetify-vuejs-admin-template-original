@@ -88,6 +88,7 @@ const { resolveAvatarBadgeVariant } = useChat()
           <VIcon
             class="me-2"
             size="22"
+            color="high-emphasis"
             icon="ri-mail-line"
           />
           <h6 class="text-h6 font-weight-regular">
@@ -98,6 +99,7 @@ const { resolveAvatarBadgeVariant } = useChat()
           <VIcon
             class="me-2"
             size="22"
+            color="high-emphasis"
             icon="ri-phone-line"
           />
           <h6 class="text-h6 font-weight-regular">
@@ -109,6 +111,7 @@ const { resolveAvatarBadgeVariant } = useChat()
             class="me-2"
             size="22"
             icon="ri-time-line"
+            color="high-emphasis"
           />
           <h6 class="text-h6 font-weight-regular">
             Mon - Fri 10AM - 8PM
@@ -125,6 +128,7 @@ const { resolveAvatarBadgeVariant } = useChat()
           <VIcon
             class="me-2"
             size="22"
+            color="high-emphasis"
             icon="ri-bookmark-line"
           />
           <h6 class="text-h6 font-weight-regular">
@@ -135,6 +139,7 @@ const { resolveAvatarBadgeVariant } = useChat()
           <VIcon
             class="me-2"
             size="22"
+            color="high-emphasis"
             icon="ri-star-line"
           />
           <h6 class="text-h6 font-weight-regular">
@@ -145,6 +150,7 @@ const { resolveAvatarBadgeVariant } = useChat()
           <VIcon
             class="me-2"
             size="22"
+            color="high-emphasis"
             icon="ri-file-image-line"
           />
           <h6 class="text-h6 font-weight-regular">
@@ -155,6 +161,7 @@ const { resolveAvatarBadgeVariant } = useChat()
           <VIcon
             icon="ri-delete-bin-line"
             size="22"
+            color="high-emphasis"
             class="me-2"
           />
           <h6 class="text-h6 font-weight-regular">
@@ -164,6 +171,7 @@ const { resolveAvatarBadgeVariant } = useChat()
         <div class="d-flex align-center pa-2">
           <VIcon
             size="22"
+            color="high-emphasis"
             icon="ri-forbid-line"
             class="me-2"
           />

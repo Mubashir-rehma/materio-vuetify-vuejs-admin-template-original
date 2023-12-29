@@ -91,7 +91,9 @@ const isNotificationEnabled = ref(false)
 
       <!-- Status -->
       <div class="mb-6">
-        <span class="text-sm text-disabled">STATUS</span>
+        <p class="text-base text-disabled mb-0">
+          STATUS
+        </p>
         <VRadioGroup
           v-model="store.profileUser.status"
           class="ms-2 mt-1"
@@ -108,12 +110,15 @@ const isNotificationEnabled = ref(false)
 
       <!-- Settings -->
       <div class="text-medium-emphasis">
-        <span class="text-sm text-disabled">SETTINGS</span>
+        <p class="text-base text-disabled mb-0">
+          SETTINGS
+        </p>
         <div class="d-flex align-center pa-2">
           <VIcon
             class="me-2"
-            icon="ri-checkbox-circle-line"
+            icon="ri-lock-password-line"
             size="22"
+            color="high-emphasis"
           />
           <h6 class="text-h6 font-weight-regular">
             Two-step Verification
@@ -126,8 +131,9 @@ const isNotificationEnabled = ref(false)
         <div class="d-flex align-center pa-2">
           <VIcon
             class="me-2"
-            icon="ri-notification-3-line"
+            icon="ri-notification-line"
             size="22"
+            color="high-emphasis"
           />
           <h6 class="text-h6 font-weight-regular">
             Notification
@@ -140,8 +146,9 @@ const isNotificationEnabled = ref(false)
         <div class="d-flex align-center pa-2">
           <VIcon
             class="me-2"
-            icon="ri-user-line"
+            icon="ri-user-add-line"
             size="22"
+            color="high-emphasis"
           />
           <h6 class="text-h6 font-weight-regular">
             Invite Friends
@@ -150,8 +157,9 @@ const isNotificationEnabled = ref(false)
         <div class="d-flex align-center pa-2">
           <VIcon
             class="me-2"
-            icon="ri-delete-bin-line"
+            icon="ri-delete-bin-7-line"
             size="22"
+            color="high-emphasis"
           />
           <h6 class="text-h6 font-weight-regular">
             Delete Account

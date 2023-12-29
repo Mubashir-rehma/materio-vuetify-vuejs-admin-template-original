@@ -390,7 +390,7 @@
 }
 
 // 👉 VBadge
-.v-badge{
+.v-badge {
   &.v-badge--inline:not(.v-badge--dot) {
     .v-badge__wrapper{
       .v-badge__badge{
@@ -410,10 +410,17 @@
       }
     }
   }
+
+  &.v-badge--bordered.v-badge--dot .v-badge__badge {
+    border-radius: 10px;
+    block-size: 12px;
+    inline-size: 12px;
+
+    &::after {
+      border-width: 2px;
+    }
+  }
 }
-
-
-  
 
 // 👉 Chip
 .v-chip{

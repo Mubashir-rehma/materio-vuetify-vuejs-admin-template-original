@@ -88,7 +88,7 @@ const store = useChatStore()
       class="no-chat-items-text text-disabled"
     >No chats found</span>
     <li class="list-none">
-      <span class="chat-contact-header d-block text-primary text-xl font-weight-medium">Contacts</span>
+      <span class="chat-contact-header d-block text-primary text-lg font-weight-medium">Contacts</span>
     </li>
     <ChatContact
       v-for="contact in store.contacts"

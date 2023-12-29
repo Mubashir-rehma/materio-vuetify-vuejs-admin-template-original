@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { CustomInputContent } from '@core/types'
 import registerMultiStepIllustration from '@images/pages/register-multi-step-illustration.png'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
+import { themeConfig } from '@themeConfig'
 
 definePage({
   meta: {
@@ -73,6 +75,15 @@ const onSubmit = () => {
 </script>
 
 <template>
+  <RouterLink to="/">
+    <div class="auth-logo d-flex align-center gap-x-3">
+      <VNodeRenderer :nodes="themeConfig.app.logo" />
+      <h1 class="auth-title">
+        {{ themeConfig.app.title }}
+      </h1>
+    </div>
+  </RouterLink>
+
   <VRow
     no-gutters
     class="auth-wrapper"

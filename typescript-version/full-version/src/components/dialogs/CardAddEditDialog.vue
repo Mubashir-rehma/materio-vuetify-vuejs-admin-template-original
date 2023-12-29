@@ -74,7 +74,6 @@ const formSubmit = () => {
                 v-model="cardDetails.number"
                 label="Card Number"
                 placeholder="1234 1234 1234 1234"
-                type="number"
               />
             </VCol>
 

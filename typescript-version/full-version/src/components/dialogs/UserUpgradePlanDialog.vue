@@ -49,14 +49,13 @@ const isConfirmDialogVisible = ref(false)
         </div>
       </VCardItem>
 
-      <VCardText class="d-flex align-center justify-space-between flex-column flex-sm-row gap-4 px-15">
+      <VCardText class="d-flex justify-space-between flex-column flex-sm-row gap-4 px-15">
         <VSelect
           v-model="selectedPlan"
           :items="plansList"
           density="compact"
           label="Choose a plan"
           placeholder="Basic"
-          style="max-inline-size: 12.5rem; min-inline-size: 12.5rem;"
         />
         <VBtn>
           Upgrade

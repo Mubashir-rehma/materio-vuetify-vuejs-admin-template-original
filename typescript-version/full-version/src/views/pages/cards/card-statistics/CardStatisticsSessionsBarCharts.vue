@@ -39,8 +39,6 @@ const chartOptions = computed(() => {
         horizontal: false,
         columnWidth: '20%',
         borderRadius: 4,
-        startingShape: 'rounded',
-        endingShape: 'rounded',
         distributed: true,
         colors: {
           backgroundBarColors: [backgroundColor, backgroundColor, backgroundColor, backgroundColor, backgroundColor],

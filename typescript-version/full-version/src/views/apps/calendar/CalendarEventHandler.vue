@@ -175,11 +175,11 @@ const dialogModelValueUpdate = (val: boolean) => {
                       class="align-center"
                       :class="event.extendedProps.calendar ? 'd-flex' : ''"
                     >
-                      <VBadge
+                      <VIcon
+                        size="8"
+                        icon="ri-circle-fill"
                         :color="item.raw.color"
-                        inline
-                        dot
-                        class="pa-1 pb-2"
+                        class="me-2"
                       />
                       <span>{{ item.raw.label }}</span>
                     </div>
@@ -188,10 +188,10 @@ const dialogModelValueUpdate = (val: boolean) => {
                   <template #item="{ item, props }">
                     <VListItem v-bind="props">
                       <template #prepend>
-                        <VBadge
+                        <VIcon
+                          size="8"
+                          icon="ri-circle-fill"
                           :color="item.raw.color"
-                          inline
-                          dot
                         />
                       </template>
                     </VListItem>

@@ -116,7 +116,6 @@ const search = ref('')
         <!-- 👉 User Project List Table -->
 
         <!-- SECTION Datatable -->
-        {{ search }}
         <VDataTable
           :search="search"
           :headers="projectTableHeaders"

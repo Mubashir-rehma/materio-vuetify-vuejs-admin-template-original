@@ -35,15 +35,15 @@ const logisticData = ref([
                   size="24"
                 />
               </VAvatar>
-              <h5 class="text-h5">
+              <h4 class="text-h4">
                 {{ data.value }}
-              </h5>
+              </h4>
             </div>
             <h6 class="text-h6 font-weight-regular">
               {{ data.title }}
             </h6>
             <div class="d-flex align-center">
-              <div class="text-body-1 me-2">
+              <div class="text-body-1 font-weight-medium me-2">
                 {{ data.change }}%
               </div>
               <span class="text-sm text-disabled">than last week</span>

@@ -217,7 +217,6 @@ const editBillingData: BillingAddress = {
                   {{ card.name }}
                   <VChip
                     v-if="card.isPrimary"
-                    label
                     color="primary"
                     size="small"
                   >

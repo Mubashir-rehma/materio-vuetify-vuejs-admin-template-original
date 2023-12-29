@@ -145,7 +145,7 @@ const currentStep = ref(0)
 
 <style lang="scss">
 .checkout-card {
-  margin-block: 9.75rem 6.25rem;
+  margin-block: 9.25rem 5.25rem;
 }
 
 @media (max-width: 960px) and (min-width: 600px) {

@@ -237,16 +237,16 @@ const deleteUser = async (id: number) => {
                 <VListItem link>
                   <template #prepend>
                     <VIcon
-                      size="22"
+                      size="20"
                       icon="ri-edit-box-line"
                     />
                   </template>
                   <VListItemTitle>Edit</VListItemTitle>
                 </VListItem>
-                <VListItem>
+                <VListItem link>
                   <template #prepend>
                     <VIcon
-                      size="22"
+                      size="20"
                       icon="ri-download-line"
                     />
                   </template>

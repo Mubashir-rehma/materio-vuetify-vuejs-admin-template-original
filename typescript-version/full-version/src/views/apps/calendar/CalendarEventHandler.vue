@@ -12,7 +12,7 @@ import avatar5 from '@images/avatars/avatar-5.png'
 import avatar6 from '@images/avatars/avatar-6.png'
 import avatar7 from '@images/avatars/avatar-7.png'
 
-const _props = defineProps<Props>()
+const props = defineProps<Props>()
 
 const emit = defineEmits<{
   (e: 'update:isDrawerOpen', val: boolean): void
@@ -31,16 +31,16 @@ const store = useCalendarStore()
 const refForm = ref<VForm>()
 
 // 👉 Event
-const event = ref<Event>(JSON.parse(JSON.stringify(_props.event)))
+const event = ref<Event>(JSON.parse(JSON.stringify(props.event)))
 
 const resetEvent = () => {
-  event.value = JSON.parse(JSON.stringify(_props.event))
+  event.value = JSON.parse(JSON.stringify(props.event))
   nextTick(() => {
     refForm.value?.resetValidation()
   })
 }
 
-watch(() => _props.isDrawerOpen, resetEvent)
+watch(() => props.isDrawerOpen, resetEvent)
 
 const removeEvent = () => {
   emit('removeEvent', String((event.value as Event).id))
@@ -114,7 +114,7 @@ const dialogModelValueUpdate = (val: boolean) => {
   <VNavigationDrawer
     temporary
     location="end"
-    :model-value="_props.isDrawerOpen"
+    :model-value="props.isDrawerOpen"
     width="420"
     class="scrollable-content"
     @update:model-value="dialogModelValueUpdate"
@@ -185,8 +185,8 @@ const dialogModelValueUpdate = (val: boolean) => {
                     </div>
                   </template>
 
-                  <template #item="{ item, props }">
-                    <VListItem v-bind="props">
+                  <template #item="{ item, props: itemProps }">
+                    <VListItem v-bind="itemProps">
                       <template #prepend>
                         <VBadge
                           :color="item.raw.color"

@@ -72,7 +72,7 @@ const translateMouse = computed(() => (speed: number) => {
           </VBtn>
         </div>
 
-        <div class="position-relative">
+        <div class="position-relative hero-animation-img">
           <div class="hero-dashboard-img text-center">
             <RouterLink
               to="/"
@@ -81,10 +81,11 @@ const translateMouse = computed(() => (speed: number) => {
               <img
                 :src="heroDashboardImg"
                 class="mx-auto cursor-pointer"
-                :style="translateMouse(3)"
+                :style="translateMouse(2.5)"
               >
             </RouterLink>
           </div>
+
           <div class="hero-elements-img">
             <RouterLink
               to="/"
@@ -149,5 +150,24 @@ section {
   font-size: 2.375rem;
   font-weight: 800;
   line-height: 2.75rem
+}
+
+.hero-animation-img{
+  inset-block-start:0;
+  margin-block-end: -16rem;
+}
+
+@media (max-width: 960px ){
+  .hero-animation-img{
+    inset-block-start: 2rem;
+    margin-block-end: -8rem;
+  }
+}
+
+@media (max-width: 600px ){
+  .hero-animation-img{
+    inset-block-start: 1rem;
+    margin-block-end: -2rem;
+  }
 }
 </style>

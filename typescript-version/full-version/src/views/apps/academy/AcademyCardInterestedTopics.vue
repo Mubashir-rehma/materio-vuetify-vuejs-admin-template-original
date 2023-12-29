@@ -17,6 +17,7 @@ const topicsChartConfig = {
       barHeight: '70%',
       distributed: true,
       borderRadius: 7,
+      borderRadiusApplication: 'end',
     },
   },
 

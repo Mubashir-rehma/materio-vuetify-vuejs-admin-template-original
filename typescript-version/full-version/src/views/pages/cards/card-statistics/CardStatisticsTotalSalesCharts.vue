@@ -79,7 +79,7 @@ const chartOptions = controlledComputed(() => configStore.theme, () => {
 </script>
 
 <template>
-  <VCard>
+  <VCard class="overflow-visible">
     <VCardText class="d-flex justify-space-between align-center gap-3">
       <div>
         <h5 class="text-h5 mb-1">

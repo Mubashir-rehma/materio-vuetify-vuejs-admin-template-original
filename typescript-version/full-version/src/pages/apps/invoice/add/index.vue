@@ -17,7 +17,7 @@ const invoiceData = ref<InvoiceData>({
     dueDate: '',
     balance: 0,
     client: {
-      address: '112, Lorem Ipsum, Florida, USA',
+      address: '112, Lorem Ipsum, Florida',
       company: 'Greeva Inc',
       companyEmail: 'johndoe@greeva.com',
       contact: '+1 123 3452 12',

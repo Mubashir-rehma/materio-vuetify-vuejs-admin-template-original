@@ -51,7 +51,7 @@ const chartOptions = computed(() => {
     colors: [currentTheme.value['on-background'], currentTheme.value.error],
     plotOptions: {
       bar: {
-        borderRadius: 5,
+        borderRadius: 4,
         columnWidth: '25%',
         borderRadiusApplication: 'around',
         borderRadiusWhenStacked: 'all',
@@ -76,6 +76,32 @@ const chartOptions = computed(() => {
     tooltip: {
       enabled: false,
     },
+    responsive: [
+      {
+        breakpoint: 600,
+        options: {
+          chart: {
+            height: 200,
+          },
+          grid: {
+            padding: {
+              top: -12,
+              left: -15,
+              right: 0,
+              bottom: -10,
+            },
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              columnWidth: '20%',
+              borderRadiusApplication: 'around',
+              borderRadiusWhenStacked: 'all',
+            },
+          },
+        },
+      },
+    ],
   }
 })
 </script>

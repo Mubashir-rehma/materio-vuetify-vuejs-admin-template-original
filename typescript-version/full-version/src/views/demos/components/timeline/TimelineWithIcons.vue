@@ -196,7 +196,10 @@ const earnings = [
                 </div>
               </div>
               <div class="d-flex align-center justify-space-between flex-wrap gap-2 mb-3">
-                <VRating :model-value="5" />
+                <VRating
+                  size="28"
+                  :model-value="5"
+                />
                 <VChip
                   color="success"
                   density="comfortable"
@@ -258,7 +261,7 @@ const earnings = [
                   icon="ri-arrow-up-s-fill"
                   color="success"
                 />
-                <div class="text-body-2 text-success">
+                <div class="text-body-2 font-weight-medium text-success">
                   10%
                 </div>
               </div>

@@ -100,12 +100,12 @@ else
 
           <div>
             <!-- 👉 Article List  -->
-            <h6
-              class="text-h6 px-4 py-2 mb-4 rounded"
+            <h5
+              class="text-h5 px-4 py-2 mb-4 rounded"
               style="background: rgba(var(--v-theme-on-surface),var(--v-hover-opacity));"
             >
               Articles in this section
-            </h6>
+            </h5>
 
             <VList class="card-list">
               <VListItem

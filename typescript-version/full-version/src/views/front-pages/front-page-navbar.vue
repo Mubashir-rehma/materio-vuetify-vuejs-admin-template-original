@@ -284,7 +284,6 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                             <div class="d-flex align-center">
                               <VIcon
                                 icon="ri-circle-line"
-                                color="primary"
                                 :size="10"
                                 class="me-2"
                               />

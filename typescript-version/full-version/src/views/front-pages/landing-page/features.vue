@@ -91,6 +91,22 @@ const featuresData = [
 .feature-cards {
   margin-block-end: 4.25rem;
 }
+
+#features{
+  padding-block-start: 16rem;
+}
+
+@media (max-width: 960px ){
+  #features{
+    padding-block-start: 6rem;
+  }
+}
+
+@media (max-width: 600px ){
+  #features{
+    padding-block-start: 2rem;
+  }
+}
 </style>
 
 <style lang="scss" scoped>

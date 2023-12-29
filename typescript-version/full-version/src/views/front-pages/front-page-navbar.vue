@@ -139,7 +139,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                 v-for="listItem in item.navItems"
                 :key="listItem.name"
                 style="list-style: none;"
-                class="text-body-2 mb-4"
+                class="text-body-1 mb-4"
               >
                 <RouterLink
                   :to="listItem.to"

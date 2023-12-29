@@ -45,6 +45,7 @@ const message = ref('')
           <VCol
             cols="12"
             md="4"
+            sm="6"
           >
             <VCard
               flat
@@ -75,6 +76,7 @@ const message = ref('')
           <VCol
             cols="12"
             md="8"
+            sm="6"
           >
             <VCard
               flat

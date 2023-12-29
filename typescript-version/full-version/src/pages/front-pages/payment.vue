@@ -218,9 +218,9 @@ const isPricingPlanDialogVisible = ref(false)
                         A simple start for everyone
                       </div>
                       <div class="my-4">
-                        <h3 class="text-h3 d-inline-block">
+                        <h1 class="text-h1 d-inline-block">
                           $59.99
-                        </h3> <div class="text-body-1 font-weight-medium d-inline-block">
+                        </h1> <div class="text-body-1 font-weight-medium d-inline-block">
                           / month
                         </div>
                       </div>
@@ -297,7 +297,7 @@ const isPricingPlanDialogVisible = ref(false)
 }
 
 .payment-card {
-  margin-block: 6.25rem;
+  margin-block: 9.25rem 5.25rem;
 }
 
 .payment-page {

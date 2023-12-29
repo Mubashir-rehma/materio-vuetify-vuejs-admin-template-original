@@ -47,7 +47,7 @@ else
         <div>
           <div>
             <VBreadcrumbs
-              class="px-0 py-2"
+              class="px-0 py-2 flex-wrap"
               :items="breadCrumbItems"
             >
               <template #item="{ item, index }">
@@ -95,7 +95,7 @@ else
           <VTextField
             prepend-inner-icon="ri-search-line"
             placeholder="Search..."
-            class="pt-2 mb-8"
+            class="pt-2 mb-6"
           />
 
           <div>
@@ -112,9 +112,18 @@ else
                 v-for="(item, index) in articleData?.articleList"
                 :key="index"
                 link
-                append-icon="ri-arrow-right-s-line"
               >
-                {{ item }}
+                <template #append>
+                  <VIcon
+                    size="20"
+                    icon="ri-arrow-right-s-line"
+                    color="disabled"
+                  />
+                </template>
+
+                <VListItemTitle>
+                  {{ item }}
+                </VListItemTitle>
               </VListItem>
             </VList>
           </div>

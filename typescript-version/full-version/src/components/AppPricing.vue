@@ -213,6 +213,7 @@ const pricingPlans = [
 
           <!-- 👉 Plan actions -->
           <VBtn
+            :active="false"
             block
             :color="plan.current ? 'success' : 'primary'"
             :variant="plan.isPopular ? 'elevated' : 'outlined'"

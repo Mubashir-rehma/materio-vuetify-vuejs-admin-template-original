@@ -181,7 +181,6 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
   <!-- 👉 Navbar for desktop devices  -->
   <div class="front-page-navbar">
     <VAppBar
-      :color="$vuetify.theme.current.dark ? 'rgba(var(--v-theme-background))' : '#fff'"
       :elevation="y > 20 ? 4 : 0"
       class="rounded-b-lg"
     >

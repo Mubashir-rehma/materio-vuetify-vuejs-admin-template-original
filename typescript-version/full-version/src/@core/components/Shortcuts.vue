@@ -73,6 +73,7 @@ const router = useRouter()
               >
                 <VIcon
                   color="high-emphasis"
+                  size="26"
                   :icon="shortcut.icon"
                 />
               </VAvatar>

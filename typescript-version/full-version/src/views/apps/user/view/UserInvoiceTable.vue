@@ -144,13 +144,13 @@ const deleteInvoice = async (id: number) => {
           <VTooltip>
             <template #activator="{ props }">
               <VAvatar
-                :size="34"
+                :size="28"
                 v-bind="props"
                 :color="resolveInvoiceStatusVariantAndIcon(item.invoiceStatus).variant"
                 variant="tonal"
               >
                 <VIcon
-                  :size="20"
+                  :size="16"
                   :icon="resolveInvoiceStatusVariantAndIcon(item.invoiceStatus).icon"
                 />
               </VAvatar>

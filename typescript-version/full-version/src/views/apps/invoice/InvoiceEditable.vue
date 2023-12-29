@@ -72,13 +72,13 @@ const removeProduct = (id: number) => {
         </div>
 
         <!-- 👉 Address -->
-        <p class="mb-0">
+        <p class="text-high-emphasis mb-0">
           Office 149, 450 South Brand Brooklyn
         </p>
-        <p class="mb-0">
+        <p class="text-high-emphasis mb-0">
           San Diego County, CA 91905, USA
         </p>
-        <p class="mb-0">
+        <p class="text-high-emphasis mb-0">
           +1 (123) 456 7891, +44 (876) 543 2198
         </p>
       </div>
@@ -86,31 +86,33 @@ const removeProduct = (id: number) => {
       <!-- 👉 Right Content -->
       <div>
         <!-- 👉 Invoice Id -->
-        <h6 class="d-flex align-start font-weight-medium justify-sm-end text-lg mb-3">
+        <div class="d-flex align-start font-weight-medium justify-sm-end flex-column flex-sm-row text-lg mb-3">
           <span
-            class="me-4"
+            class="text-high-emphasis me-4"
             style="inline-size: 5.625rem ;"
           >Invoice:</span>
           <span>
             <VTextField
               v-model="invoice.id"
               disabled
+              density="compact"
               prefix="#"
               style="inline-size: 9.5rem;"
             />
           </span>
-        </h6>
+        </div>
 
         <!-- 👉 Issue Date -->
-        <div class="d-flex align-start justify-sm-end mb-3">
+        <div class="d-flex align-start justify-sm-end flex-column flex-sm-row mb-3">
           <span
-            class="me-4"
+            class="text-high-emphasis me-4"
             style="inline-size: 5.625rem;"
           >Date Issued:</span>
 
           <span style="inline-size: 9.5rem;">
             <AppDateTimePicker
               v-model="invoice.issuedDate"
+              density="compact"
               placeholder="YYYY-MM-DD"
               :config="{ position: 'auto right' }"
             />
@@ -118,14 +120,15 @@ const removeProduct = (id: number) => {
         </div>
 
         <!-- 👉 Due Date -->
-        <div class="d-flex align-start justify-sm-end mb-0">
+        <div class="d-flex align-start justify-sm-end flex-column flex-sm-row mb-0">
           <span
-            class="me-4"
+            class="text-high-emphasis me-4"
             style="inline-size: 5.625rem;"
           >Due Date:</span>
           <span style="min-inline-size: 9.5rem;">
             <AppDateTimePicker
               v-model="invoice.dueDate"
+              density="compact"
               placeholder="YYYY-MM-DD"
               :config="{ position: 'auto right' }"
             />
@@ -200,7 +203,11 @@ const removeProduct = (id: number) => {
               <td class="pe-6">
                 IBAN:
               </td>
-              <td>{{ props.data.paymentDetails.iban }}</td>
+              <td>
+                <p class="text-wrap me-4">
+                  {{ props.data.paymentDetails.iban }}
+                </p>
+              </td>
             </tr>
             <tr>
               <td class="pe-6">

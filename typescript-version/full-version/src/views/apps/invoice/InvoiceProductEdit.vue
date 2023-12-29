@@ -78,7 +78,7 @@ watch(totalPrice, () => {
 <template>
   <!-- eslint-disable vue/no-mutating-props -->
   <div class="add-products-header mb-2 d-none d-md-flex mb-4">
-    <VRow>
+    <VRow class="me-10">
       <VCol
         cols="12"
         md="6"

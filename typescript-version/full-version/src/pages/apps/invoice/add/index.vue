@@ -29,7 +29,7 @@ const invoiceData = ref<InvoiceData>({
     totalDue: '$12,110.55',
     bankName: 'American Bank',
     country: 'United States',
-    iban: 'ETD95476213874685',
+    iban: 'ETD95476213',
     swiftCode: 'BR91905',
   },
   purchasedProducts: [

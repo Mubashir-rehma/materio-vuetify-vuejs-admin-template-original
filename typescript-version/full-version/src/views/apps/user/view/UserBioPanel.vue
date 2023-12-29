@@ -110,7 +110,7 @@ const resolveUserRoleVariant = (role: string) => {
               class="me-3"
             >
               <VIcon
-                size="22"
+                size="24"
                 icon="ri-check-line"
               />
             </VAvatar>
@@ -133,7 +133,7 @@ const resolveUserRoleVariant = (role: string) => {
               class="me-3"
             >
               <VIcon
-                size="22"
+                size="24"
                 icon="ri-briefcase-4-line"
               />
             </VAvatar>
@@ -298,7 +298,9 @@ const resolveUserRoleVariant = (role: string) => {
                   class="me-2"
                   icon="ri-circle-fill"
                 />
-                <div>{{ benefit }}</div>
+                <div class="text-medium-emphasis">
+                  {{ benefit }}
+                </div>
               </div>
             </VListItem>
           </VList>

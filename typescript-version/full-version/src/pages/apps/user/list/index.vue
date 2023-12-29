@@ -152,10 +152,10 @@ const widgetData = ref([
                 <div class="d-flex justify-space-between">
                   <div class="d-flex flex-column gap-y-1">
                     <span class="text-base text-high-emphasis">{{ data.title }}</span>
-                    <h4 class="text-h4">
+                    <h4 class="text-h4 d-flex align-center gap-2">
                       {{ data.value }}
                       <span
-                        class="text-base "
+                        class="text-base font-weight-regular"
                         :class="data.change > 0 ? 'text-success' : 'text-error'"
                       >({{ prefixWithPlus(data.change) }}%)</span>
                     </h4>

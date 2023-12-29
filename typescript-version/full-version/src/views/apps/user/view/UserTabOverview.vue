@@ -18,7 +18,7 @@ import xamarin from '@images/icons/project-icons/xamarin.png'
 
 // Project Table Header
 const projectTableHeaders = [
-  { title: 'PROJECT', key: 'project' },
+  { title: 'PROJECT', key: 'name' },
   { title: 'TOTAL TASK', key: 'totalTask' },
   { title: 'PROGRESS', key: 'progress' },
   { title: 'HOURS', key: 'hours' },
@@ -110,21 +110,22 @@ const search = ref('')
             v-model="search"
             placeholder="Search Project"
             density="compact"
-            single-line
             style="inline-size: 10rem;"
           />
         </template>
         <!-- 👉 User Project List Table -->
 
         <!-- SECTION Datatable -->
+        {{ search }}
         <VDataTable
           :search="search"
           :headers="projectTableHeaders"
           :items="projects"
+          item-value="name"
           class="text-no-wrap rounded-0"
         >
           <!-- projects -->
-          <template #item.project="{ item }">
+          <template #item.name="{ item }">
             <div class="d-flex align-center">
               <VAvatar
                 :size="34"
@@ -226,7 +227,7 @@ const search = ref('')
 
               <div class="d-flex align-center mt-3">
                 <VAvatar
-                  size="34"
+                  size="32"
                   class="me-2"
                   :image="avatar2"
                 />

@@ -75,7 +75,7 @@ const printInvoice = () => {
                 />
 
                 <!-- 👉 Title -->
-                <h6 class="text-xl font-weight-medium text-uppercase">
+                <h6 class="text-xl leading-normal text-uppercase">
                   {{ themeConfig.app.title }}
                 </h6>
               </div>
@@ -387,6 +387,10 @@ const printInvoice = () => {
 <style lang="scss">
 .invoice-preview-table {
   --v-table-header-color: var(--v-theme-surface);
+
+  &.v-table .v-table__wrapper table thead tr th{
+    border-block-end: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+  }
 }
 
 @media print {

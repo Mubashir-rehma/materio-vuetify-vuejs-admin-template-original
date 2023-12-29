@@ -226,7 +226,7 @@ const topicsData = [
       >
         <div class="pe-3">
           <h5 class="text-h5 text-high-emphasis mb-1">
-            Welcome back,<span class="font-weight-medium"> Felecia 👋🏻 </span>
+            Welcome back, Felecia 👋🏻
           </h5>
 
           <div

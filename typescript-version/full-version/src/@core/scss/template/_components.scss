@@ -351,7 +351,14 @@
       }
 
       .v-icon {
+        color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
         font-size: 24px;
+      }
+
+      &--active {
+        .v-icon {
+          color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+        }
       }
     }
 

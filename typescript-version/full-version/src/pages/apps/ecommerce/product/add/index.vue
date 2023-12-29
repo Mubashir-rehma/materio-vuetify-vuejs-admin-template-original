@@ -367,15 +367,15 @@ const isTaxable = ref(true)
                   </VWindowItem>
 
                   <VWindowItem value="Shipping">
-                    <VRadioGroup
-                      v-model="shippingType"
-                      label="Shipping Type"
-                    >
+                    <VRadioGroup v-model="shippingType">
+                      <template #label>
+                        <span class="font-weight-medium mb-1">Shipping Type</span>
+                      </template>
                       <VRadio
                         v-for="item in shippingList"
                         :key="item.value"
                         :value="item.value"
-                        class="mb-4"
+                        class="mb-4 ps-1"
                         inline
                       >
                         <template #label>
@@ -394,13 +394,14 @@ const isTaxable = ref(true)
 
                   <VWindowItem value="Global Delivery">
                     <div>
-                      <VRadioGroup
-                        v-model="deliveryType"
-                        label="Global Delivery"
-                      >
+                      <VRadioGroup v-model="deliveryType">
+                        <template #label>
+                          <span class="font-weight-medium mb-1">Global Delivery</span>
+                        </template>
+
                         <VRadio
                           value="Worldwide delivery"
-                          class="mb-4"
+                          class="mb-4 ps-1"
                         >
                           <template #label>
                             <div>
@@ -419,7 +420,7 @@ const isTaxable = ref(true)
 
                         <VRadio
                           value="Selected Countries"
-                          class="mb-4"
+                          class="mb-4 ps-1"
                         >
                           <template #label>
                             <div>
@@ -454,7 +455,7 @@ const isTaxable = ref(true)
                   </VWindowItem>
 
                   <VWindowItem value="Attributes">
-                    <div class="mb-6 text-h6">
+                    <div class="mb-2 text-base font-weight-medium">
                       Attributes
                     </div>
                     <div>
@@ -462,15 +463,18 @@ const isTaxable = ref(true)
                         v-model="selectedAttrs"
                         label="Fragile Product"
                         value="Fragile Product"
+                        class="ps-3"
                       />
                       <VCheckbox
                         v-model="selectedAttrs"
                         value="Biodegradable"
                         label="Biodegradable"
+                        class="ps-3"
                       />
                       <VCheckbox
                         v-model="selectedAttrs"
                         value="Frozen Product"
+                        class="ps-3"
                       >
                         <template #label>
                           <div class="d-flex flex-column mb-1">
@@ -487,6 +491,7 @@ const isTaxable = ref(true)
                       <VCheckbox
                         v-model="selectedAttrs"
                         value="Expiry Date"
+                        class="ps-3"
                       >
                         <template #label>
                           <div class="d-flex flex-column mb-1">
@@ -502,7 +507,7 @@ const isTaxable = ref(true)
                   </VWindowItem>
 
                   <VWindowItem value="Advanced">
-                    <div class="mb-6 text-h6">
+                    <div class="mb-3 text-base font-weight-medium">
                       Advanced
                     </div>
                     <VRow>
@@ -586,7 +591,6 @@ const isTaxable = ref(true)
                 :items="['Men\'s Clothing', 'Women\'s Clothing', 'Kid\'s Clothing']"
               />
               <VSelect
-                density="compact"
                 placeholder="Select Category"
                 label="Category"
                 :items="['Household', 'Office', 'Electronics', 'Management', 'Automotive']"

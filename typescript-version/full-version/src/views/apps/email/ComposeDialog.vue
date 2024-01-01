@@ -279,8 +279,8 @@ const addImage = () => {
   }
 
   .ProseMirror {
-    block-size: auto;
-    min-block-size: 6.25rem;
+    block-size: 150px;
+    overflow-y: auto;
     padding-block: .5rem;
 
     &:focus-visible {
@@ -297,6 +297,10 @@ const addImage = () => {
       content: attr(data-placeholder);
       float: inline-start;
       pointer-events: none;
+    }
+
+    ul,ol{
+      padding-inline: 1.125rem;
     }
   }
 }

@@ -555,7 +555,7 @@ const resetCustomizer = async () => {
 
 .app-customizer-toggler {
   position: fixed !important;
-  inset-block-start: 180px;
+  inset-block-start: 20%;
   inset-inline-end: 0;
   transform: translateY(-50%);
 }

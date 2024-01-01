@@ -103,11 +103,11 @@ const resolveUserRoleVariant = (role: string) => {
           <!-- 👉 Done task -->
           <div class="d-flex align-center me-8">
             <VAvatar
-              :size="44"
+              :size="40"
               rounded
               color="primary"
               variant="tonal"
-              class="me-3"
+              class="me-4"
             >
               <VIcon
                 size="24"
@@ -116,7 +116,7 @@ const resolveUserRoleVariant = (role: string) => {
             </VAvatar>
 
             <div>
-              <h6 class="text-h6">
+              <h6 class="text-h5">
                 {{ kFormatter(props.userData.taskDone) }}
               </h6>
               <span>Task Done</span>

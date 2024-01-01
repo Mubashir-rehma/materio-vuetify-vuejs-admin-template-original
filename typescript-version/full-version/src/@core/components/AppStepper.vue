@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import stepperCheck from '@images/svg/stepper-check.svg'
+
 interface Item {
   title: string
   icon?: string | object
@@ -90,7 +92,7 @@ watchEffect(() => {
           <div class="stepper-icon-step text-high-emphasis d-flex align-center gap-2">
             <!-- 👉 icon and title -->
             <div
-              class="d-flex align-center gap-2 step-wrapper"
+              class="d-flex align-center gap-3 step-wrapper"
               :class="[props.direction === 'horizontal' && 'flex-column']"
             >
               <div class="stepper-icon">
@@ -154,11 +156,10 @@ watchEffect(() => {
 
                 <!-- 👉 step completed icon -->
 
-                <VIcon
+                <component
+                  :is="stepperCheck"
                   v-else
-                  icon="ri-checkbox-circle-fill"
                   class="stepper-step-icon"
-                  size="24"
                 />
               </div>
 
@@ -322,7 +323,7 @@ watchEffect(() => {
       }
 
       .stepper-subtitle {
-        color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
+        color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
         font-size: 0.8125rem;
         font-weight: 400;
         line-height: 1.25rem;

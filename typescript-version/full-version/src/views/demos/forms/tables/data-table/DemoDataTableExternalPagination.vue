@@ -94,7 +94,7 @@ onMounted(() => {
 
           <VPagination
             v-model="options.page"
-            :total-visible="$vuetify.display.smAndDown ? 3 : 5"
+            :total-visible="$vuetify.display.smAndDown ? 2 : 3"
             :length="Math.ceil(userList.length / options.itemsPerPage)"
           />
         </div>

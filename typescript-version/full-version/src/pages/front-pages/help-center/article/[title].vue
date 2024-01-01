@@ -47,7 +47,7 @@ else
         <div>
           <div>
             <VBreadcrumbs
-              class="px-0 py-2"
+              class="px-0 py-2 flex-wrap"
               :items="breadCrumbItems"
             >
               <template #item="{ item, index }">
@@ -95,26 +95,35 @@ else
           <VTextField
             prepend-inner-icon="ri-search-line"
             placeholder="Search..."
-            class="pt-2 mb-8"
+            class="pt-2 mb-6"
           />
 
           <div>
             <!-- 👉 Article List  -->
-            <h6
-              class="text-h6 px-4 py-2 mb-4 rounded"
+            <h5
+              class="text-h5 px-4 py-2 mb-4 rounded"
               style="background: rgba(var(--v-theme-on-surface),var(--v-hover-opacity));"
             >
               Articles in this section
-            </h6>
+            </h5>
 
             <VList class="card-list">
               <VListItem
                 v-for="(item, index) in articleData?.articleList"
                 :key="index"
                 link
-                append-icon="ri-arrow-right-s-line"
               >
-                {{ item }}
+                <template #append>
+                  <VIcon
+                    size="20"
+                    icon="ri-arrow-right-s-line"
+                    color="disabled"
+                  />
+                </template>
+
+                <VListItemTitle>
+                  {{ item }}
+                </VListItemTitle>
               </VListItem>
             </VList>
           </div>

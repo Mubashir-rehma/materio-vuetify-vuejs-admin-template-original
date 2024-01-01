@@ -124,7 +124,7 @@ const faqs = [
   <div class="pricing-page">
     <Navbar />
 
-    <VCard class="pt-6 pricing-card">
+    <VCard class="pricing-card">
       <!-- 👉 App Pricing components -->
       <VContainer>
         <div class="pricing-section">
@@ -311,9 +311,9 @@ const faqs = [
       </VContainer>
 
       <!-- 👉 FAQ -->
-      <div style="background-color: rgba(var(--v-theme-background));">
+      <div class="bg-background">
         <VContainer>
-          <div class="py-10 px-0 py-sm-16">
+          <div class="pricing-section">
             <div class="text-center">
               <h4 class="text-h4 mb-2">
                 FAQ's
@@ -322,7 +322,7 @@ const faqs = [
                 Let us help answer the most common questions.
               </p>
             </div>
-            <div class="py-sm-6">
+            <div class="pt-6">
               <VExpansionPanels>
                 <VExpansionPanel
                   v-for="faq in faqs"
@@ -352,7 +352,7 @@ const faqs = [
 }
 
 .pricing-card {
-  padding-block-start: 6.25rem !important;
+  padding-block-start: 4rem !important;
 }
 
 .pricing-table-title{

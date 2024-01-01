@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import AddNewUserDrawer from '@/views/apps/user/list/AddNewUserDrawer.vue'
 import type { UserProperties } from '@db/apps/users/types'
 
 // 👉 Store
@@ -84,19 +83,6 @@ const resolveUserStatusVariant = (stat: string) => {
     return 'secondary'
 
   return 'primary'
-}
-
-const isAddNewUserDrawerVisible = ref(false)
-
-// 👉 Add new user
-const addNewUser = async (userData: UserProperties) => {
-  await $api('/apps/users', {
-    method: 'POST',
-    body: userData,
-  })
-
-  // refetch User
-  fetchUsers()
 }
 
 // 👉 Delete user
@@ -251,16 +237,16 @@ const deleteUser = async (id: number) => {
                 <VListItem link>
                   <template #prepend>
                     <VIcon
-                      size="22"
+                      size="20"
                       icon="ri-edit-box-line"
                     />
                   </template>
                   <VListItemTitle>Edit</VListItemTitle>
                 </VListItem>
-                <VListItem>
+                <VListItem link>
                   <template #prepend>
                     <VIcon
-                      size="22"
+                      size="20"
                       icon="ri-download-line"
                     />
                   </template>
@@ -316,12 +302,6 @@ const deleteUser = async (id: number) => {
       </VDataTableServer>
       <!-- SECTION -->
     </VCard>
-
-    <!-- 👉 Add New User -->
-    <AddNewUserDrawer
-      v-model:isDrawerOpen="isAddNewUserDrawerVisible"
-      @user-data="addNewUser"
-    />
   </section>
 </template>
 

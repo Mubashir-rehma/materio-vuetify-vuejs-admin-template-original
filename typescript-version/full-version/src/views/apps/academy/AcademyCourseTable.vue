@@ -49,7 +49,7 @@ const totalCourse = computed(() => courseData.value.total)
           v-model="searchQuery"
           placeholder="Search Course"
           density="compact"
-          style="max-inline-size: 300px;min-inline-size: 300px;"
+          style="max-inline-size: 300px; min-inline-size: 200px;"
         />
       </div>
     </VCardText>
@@ -64,7 +64,7 @@ const totalCourse = computed(() => courseData.value.total)
       ]"
       :headers="headers"
       :items="courses"
-      item-value="courseName"
+      item-value="id"
       :items-length="totalCourse"
       show-select
       class="text-no-wrap"

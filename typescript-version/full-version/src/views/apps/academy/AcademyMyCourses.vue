@@ -61,7 +61,7 @@ const resolveChipColor = (tags: string) => {
           </div>
         </div>
 
-        <div class="d-flex flex-wrap align-center gap-y-4">
+        <div class="d-flex flex-wrap align-center gap-y-4 gap-x-6">
           <VSelect
             v-model="label"
             density="compact"
@@ -74,7 +74,6 @@ const resolveChipColor = (tags: string) => {
               { title: 'All Courses', value: 'All Courses' },
             ]"
             style="min-inline-size: 250px;"
-            class="me-4"
           />
           <VSwitch
             v-model="hideCompleted"

@@ -395,7 +395,7 @@ export const db: DB = {
         },
         {
           url: { name: 'pages-cards-card-advance' },
-          icon: 'ri-list-view',
+          icon: 'ri-list-check-2',
           title: 'Card Advance',
         },
         {
@@ -415,7 +415,7 @@ export const db: DB = {
         },
         {
           url: { name: 'components-button' },
-          icon: 'ri-body-scan-line',
+          icon: 'ri-square-line',
           title: 'Buttons',
         },
         {
@@ -425,7 +425,7 @@ export const db: DB = {
         },
         {
           url: { name: 'components-dialog' },
-          icon: 'ri-car-line',
+          icon: 'ri-square-line',
           title: 'Dialogs',
         },
         {

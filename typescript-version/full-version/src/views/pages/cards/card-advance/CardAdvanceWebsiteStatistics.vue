@@ -13,8 +13,6 @@ const chartOptions = {
     bar: {
       barHeight: '85%',
       columnWidth: '35px',
-      startingShape: 'rounded',
-      endingShape: 'rounded',
       borderRadius: 3,
       distributed: true,
     },

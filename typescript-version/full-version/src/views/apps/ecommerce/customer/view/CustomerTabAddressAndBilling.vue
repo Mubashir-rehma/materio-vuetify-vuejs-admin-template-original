@@ -4,10 +4,56 @@ import americanExpress from '@images/icons/payments/img/american-express.png'
 import mastercard from '@images/icons/payments/img/mastercard.png'
 import visa from '@images/icons/payments/img/visa-light.png'
 
+interface CardDetails {
+  number: string
+  name: string
+  expiry: string
+  cvv: string
+  isPrimary: boolean
+  type: string
+}
+
+interface BillingAddress {
+  firstName: string
+  lastName: string
+  selectedCountry: string | null
+  addressLine1: string
+  addressLine2: string
+  landmark: string
+  contact: string
+  country: string | null
+  state: string
+  zipCode: number | null
+}
+
 const show = ref([true, false, false])
 const paymentShow = ref([true, false, false])
 const isEditAddressDialogVisible = ref(false)
 const isCardAddDialogVisible = ref(false)
+const isNewEditAddressDialogVisible = ref(false)
+const isNewCardAddDialogVisible = ref(false)
+
+const currentCardDetails: CardDetails = {
+  number: '1234 5678 9012 3456',
+  name: 'John Doe',
+  expiry: '12/2028',
+  cvv: '123',
+  isPrimary: false,
+  type: '',
+}
+
+const editBillingData: BillingAddress = {
+  firstName: 'Gertrude',
+  lastName: 'Jennings',
+  selectedCountry: 'USA',
+  addressLine1: '100 Water Plant Avenue',
+  addressLine2: 'Building 1303 Wake Island',
+  landmark: 'Near Wake Island',
+  contact: '+1(609) 933-44-22',
+  country: 'USA',
+  state: 'Queensland',
+  zipCode: 403114,
+}
 
 const addressData = [
   {
@@ -81,7 +127,7 @@ const paymentData = [
         <VBtn
           variant="outlined"
           size="small"
-          @click="isEditAddressDialogVisible = !isEditAddressDialogVisible"
+          @click="isNewEditAddressDialogVisible = !isNewEditAddressDialogVisible"
         >
           Add new Address
         </VBtn>
@@ -143,7 +189,7 @@ const paymentData = [
         <VExpandTransition>
           <div
             v-show="show[index]"
-            class="px-12"
+            class="ps-12"
           >
             <div class="mb-1 font-weight-medium text-high-emphasis">
               {{ address.owner }}
@@ -169,7 +215,7 @@ const paymentData = [
         <VBtn
           variant="outlined"
           size="small"
-          @click="isCardAddDialogVisible = !isCardAddDialogVisible"
+          @click="isNewCardAddDialogVisible = !isNewCardAddDialogVisible"
         >
           Add Payment Methods
         </VBtn>
@@ -198,7 +244,7 @@ const paymentData = [
             />
 
             <div>
-              <div class="d-flex mb-1">
+              <div class="d-flex flex-wrap mb-1">
                 <h6 class="text-h6 me-2">
                   {{ payment.title }}
                 </h6>
@@ -238,7 +284,7 @@ const paymentData = [
         <VExpandTransition>
           <div
             v-show="paymentShow[index]"
-            class="px-12"
+            class="ps-12"
           >
             <VRow>
               <VCol
@@ -247,7 +293,10 @@ const paymentData = [
               >
                 <VTable>
                   <tr>
-                    <td class="text-sm pb-1">
+                    <td
+                      class="text-sm pb-1"
+                      style="inline-size: 100px;"
+                    >
                       Name
                     </td>
                     <td class="text-sm text-high-emphasis font-weight-medium">
@@ -302,7 +351,10 @@ const paymentData = [
               >
                 <VTable>
                   <tr>
-                    <td class="text-sm pb-1">
+                    <td
+                      class="text-sm pb-1"
+                      style="inline-size: 100px;"
+                    >
                       Billing
                     </td>
                     <td class="text-sm text-high-emphasis font-weight-medium">
@@ -342,7 +394,7 @@ const paymentData = [
                   </tr>
                   <tr>
                     <td class="text-sm pb-1">
-                      CVC Check
+                      CVC
                     </td>
                     <td class="d-flex">
                       <div class="text-body-2 font-weight-medium text-high-emphasis me-2">
@@ -374,6 +426,14 @@ const paymentData = [
       </template>
     </VCardText>
   </VCard>
-  <AddEditAddressDialog v-model:isDialogVisible="isEditAddressDialogVisible" />
-  <CardAddEditDialog v-model:isDialogVisible="isCardAddDialogVisible" />
+  <AddEditAddressDialog
+    v-model:isDialogVisible="isEditAddressDialogVisible"
+    :billing-address="editBillingData"
+  />
+  <AddEditAddressDialog v-model:isDialogVisible="isNewEditAddressDialogVisible" />
+  <CardAddEditDialog
+    v-model:isDialogVisible="isCardAddDialogVisible"
+    :card-details="currentCardDetails"
+  />
+  <CardAddEditDialog v-model:isDialogVisible="isNewCardAddDialogVisible" />
 </template>

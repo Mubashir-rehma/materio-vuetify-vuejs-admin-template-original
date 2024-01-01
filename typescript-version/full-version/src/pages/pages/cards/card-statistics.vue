@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import CardStatisticsLogistics from '@/views/pages/cards/card-statistics/CardStatisticsLogistics.vue'
 import CardStatisticsSessionsBarCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarCharts.vue'
 import CardStatisticsSessionsBarWithGapCharts from '@/views/pages/cards/card-statistics/CardStatisticsSessionsBarWithGapCharts.vue'
 import CardStatisticsTotalGrowthAreaCharts from '@/views/pages/cards/card-statistics/CardStatisticsTotalGrowthAreaCharts.vue'
@@ -148,6 +149,10 @@ const statisticsWithImages = [
       md="3"
     >
       <CardStatisticsHorizontal v-bind="statistics" />
+    </VCol>
+
+    <VCol cols="12">
+      <CardStatisticsLogistics />
     </VCol>
 
     <VCol

@@ -25,145 +25,147 @@ const menus: Menu[] = [
       theme="dark"
     >
       <VContainer>
-        <div class="d-flex flex-lg-row flex-column gap-16">
+        <VRow>
           <!-- 👉 Footer  -->
-          <div class="mb-4">
-            <div class="d-flex align-center gap-x-3 mb-6">
-              <VNodeRenderer :nodes="themeConfig.app.logo" />
-              <div class="footer-title">
-                MATERIO
+          <VCol
+            cols="12"
+            lg="5"
+          >
+            <div class="mb-4 footer-form">
+              <div class="d-flex align-center gap-x-3 mb-6">
+                <VNodeRenderer :nodes="themeConfig.app.logo" />
+                <div class="footer-title">
+                  MATERIO
+                </div>
               </div>
+              <div class="text-body-1 footer-text mb-6">
+                Most Powerful & Comprehensive 🤩 Vuejs Admin Template with Elegant Material Design & Unique Layouts.
+              </div>
+              <VForm class="subscribe-form d-flex align-center gap-4">
+                <VTextField
+                  label="Subscribe to newsletter"
+                  placeholder="john@email.com"
+                  theme="dark"
+                  density="compact"
+                  class="footer-text"
+                />
+                <VBtn>Subscribe</VBtn>
+              </VForm>
             </div>
-            <div class="text-body-1 footer-text mb-6">
-              Most Powerful & Comprehensive 🤩 Vuejs Admin Template with Elegant Material Design & Unique Layouts.
-            </div>
-            <VForm class="subscribe-form d-flex align-center gap-4">
-              <VTextField
-                label="Subscribe to newsletter"
-                placeholder="john@email.com"
-                theme="dark"
-                density="compact"
-                class="footer-text"
-              />
-              <VBtn>Subscribe</VBtn>
-            </VForm>
-          </div>
+          </VCol>
+
           <!-- 👉 Pages -->
-          <div class="d-flex justify-space-between  flex-grow-1 gap-x-16 gap-y-8 flex-md-row flex-column">
-            <div>
-              <div class="footer-heading mb-6">
-                Pages
-              </div>
-              <ul style="list-style: none;">
-                <li
-                  v-for="(item, index) in menus"
-                  :key="index"
-                  class="mb-4"
-                >
-                  <RouterLink
-                    class="footer-text text-no-wrap"
-                    :to="item.to"
-                  >
-                    <div class="d-flex align-center">
-                      <div>{{ item.name }}</div>
-                      <template v-if="item.isNew">
-                        <VChip
-                          color="primary"
-                          variant="elevated"
-                          size="small"
-                          class="ms-2"
-                        >
-                          New
-                        </VChip>
-                      </template>
-                    </div>
-                  </RouterLink>
-                </li>
-              </ul>
-            </div>
-            <!-- 👉 Products  -->
-            <div>
-              <div class="footer-heading mb-6">
-                Products
-              </div>
-              <ul>
-                <li
-                  v-for="(item, index) in ['Page Builder', 'Admin Dashboards', 'UI Kits', 'Illustrations']"
-                  :key="index"
-                  class="mb-4"
-                  style="list-style: none;"
-                >
-                  <RouterLink
-                    to=""
-                    class="footer-text text-no-wrap"
-                  >
-                    {{ item }}
-                  </RouterLink>
-                </li>
-              </ul>
-            </div>
-            <!-- 👉 Download App -->
-            <div>
-              <div class="footer-heading mb-6">
-                Download our app
-              </div>
+          <VCol>
+            <div class="d-flex justify-space-between  flex-grow-1 gap-x-16 gap-y-8 flex-md-row flex-column">
               <div>
-                <VBtn
-                  v-for="(item, index) in [
-                    { image: appleImg, store: 'App Store' },
-                    { image: googlePlayImg, store: 'Google Play' },
-                  ]"
-                  :key="index"
-                  color="#211B2C"
-                  size="x-large"
-                  class="mb-4 d-block"
-                >
-                  <template #default>
-                    <div class="d-flex gap-x-3">
-                      <div>
-                        <VImg
-                          :src="item.image"
-                          height="34"
-                          width="34"
-                        />
+                <div class="footer-heading mb-6">
+                  Pages
+                </div>
+                <ul style="list-style: none;">
+                  <li
+                    v-for="(item, index) in menus"
+                    :key="index"
+                    class="mb-4"
+                  >
+                    <RouterLink
+                      class="footer-text text-no-wrap"
+                      :to="item.to"
+                    >
+                      <div class="d-flex align-center">
+                        <div>{{ item.name }}</div>
+                        <template v-if="item.isNew">
+                          <VChip
+                            color="primary"
+                            variant="elevated"
+                            size="small"
+                            class="ms-2"
+                          >
+                            New
+                          </VChip>
+                        </template>
                       </div>
-                      <div>
-                        <div class="text-body-2 text-white">
-                          Download on the
+                    </RouterLink>
+                  </li>
+                </ul>
+              </div>
+              <!-- 👉 Products  -->
+              <div>
+                <div class="footer-heading mb-6">
+                  Products
+                </div>
+                <ul>
+                  <li
+                    v-for="(item, index) in ['Page Builder', 'Admin Dashboards', 'UI Kits', 'Illustrations']"
+                    :key="index"
+                    class="mb-4"
+                    style="list-style: none;"
+                  >
+                    <RouterLink
+                      to=""
+                      class="footer-text text-no-wrap"
+                    >
+                      {{ item }}
+                    </RouterLink>
+                  </li>
+                </ul>
+              </div>
+              <!-- 👉 Download App -->
+              <div>
+                <div class="footer-heading mb-6">
+                  Download our app
+                </div>
+                <div>
+                  <VBtn
+                    v-for="(item, index) in [
+                      { image: appleImg, store: 'App Store' },
+                      { image: googlePlayImg, store: 'Google Play' },
+                    ]"
+                    :key="index"
+                    color="#211B2C"
+                    size="x-large"
+                    class="mb-4 d-block"
+                  >
+                    <template #default>
+                      <div class="d-flex gap-x-3">
+                        <div>
+                          <VImg
+                            :src="item.image"
+                            height="34"
+                            width="34"
+                          />
                         </div>
-                        <div class="text-body-2 font-weight-medium text-white">
-                          {{ item.store }}
+                        <div>
+                          <div class="text-body-2 text-white">
+                            Download on the
+                          </div>
+                          <div class="text-body-2 font-weight-medium text-white">
+                            {{ item.store }}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </template>
-                </VBtn>
+                    </template>
+                  </VBtn>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </VCol>
+        </VRow>
       </VContainer>
     </VSheet>
 
-    <div class="text-white footer-line w-100">
+    <div class="footer-line w-100">
       <VContainer>
         <div class="d-flex justify-space-between flex-wrap gap-y-4">
           <span class="d-flex align-center">
             &copy;
 
-            {{ new Date().getFullYear() }}
-            Made With
-            <VIcon
-              icon="ri-heart-fill"
-              color="error"
-              size="1.25rem"
-              class="mx-1"
-            />
-            By <a
+            {{ new Date().getFullYear() }},
+            Made with ❤️  by <a
               href="https://themeselection.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-white ms-1 font-weight-medium"
+              class="ms-1 font-weight-medium"
+              style="color: rgba(255,255,255,var(--v-high-emphasis-opacity));"
             >ThemeSelection</a>
           </span>
           <div class="d-flex gap-x-2">
@@ -177,9 +179,10 @@ const menus: Menu[] = [
               :key="index"
             >
               <IconBtn
-                density="comfortable"
                 :href="item.href"
+                size="small"
                 target="_blank"
+                color="#fff"
                 rel="noopener noreferrer"
               >
                 <VIcon :icon="item.icon" />
@@ -216,6 +219,9 @@ const menus: Menu[] = [
 
 .footer-line {
   background: #211b2c;
+  color: rgba(255, 255, 255, var(--v-medium-emphasis-opacity));
+  font-size: 13px;
+  line-height: 20px;
 }
 
 .footer{
@@ -229,6 +235,12 @@ const menus: Menu[] = [
     .v-container {
       padding-inline: 2rem !important;
     }
+  }
+}
+
+.footer-form{
+  @media (min-width: 1280px) {
+    max-inline-size: 400px;
   }
 }
 </style>

@@ -144,7 +144,11 @@ const deleteOrder = async (id: number) => {
             style=" max-inline-size: 200px; min-inline-size: 200px;"
           />
 
-          <VBtn prepend-icon="ri-upload-2-line">
+          <VBtn
+            prepend-icon="ri-upload-2-line"
+            variant="outlined"
+            color="secondary"
+          >
             Export
           </VBtn>
         </div>

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { SalesDetails } from '@db/pages/datatable/types'
 
+const { data: productList } = await useApi<SalesDetails[]>('pages/datatable')
+
 const search = ref('')
-const productList = ref<SalesDetails[]>([])
 
 // headers
 const headers = [
@@ -17,6 +18,9 @@ const headers = [
 
 // 👉 methods
 const deleteItem = (itemId: number) => {
+  if (!productList.value)
+    return
+
   const index = productList.value.findIndex(item => item.product.id === itemId)
 
   productList.value.splice(index, 1)
@@ -65,18 +69,6 @@ const categoryIconFilter = (categoryName: string): {
 
   return [{ icon: 'ri-question-line', color: 'primary' }]
 }
-
-onMounted(async () => {
-  const { data, error } = await useApi<SalesDetails[]>('pages/datatable')
-
-  if (error.value) {
-    console.error(error.value)
-  }
-  else {
-    if (data.value)
-      productList.value = data.value
-  }
-})
 </script>
 
 <template>
@@ -105,7 +97,7 @@ onMounted(async () => {
     <!-- 👉 Data Table  -->
     <VDataTable
       :headers="headers"
-      :items="productList"
+      :items="productList || []"
       :search="search"
       :items-per-page="5"
       class="text-no-wrap"

@@ -46,8 +46,8 @@ const { data: ordersData, execute: fetchOrders } = await useApi<any>(createUrl('
   },
 ))
 
-const orders = computed((): Order[] => ordersData.value.orders)
-const totalOrder = computed(() => ordersData.value.total)
+const orders = computed((): Order[] => ordersData.value?.orders || [])
+const totalOrder = computed(() => ordersData.value?.total || 0)
 
 const deleteOrder = async (id: number) => {
   await $api(`/apps/ecommerce/orders/${id}`, {

@@ -212,10 +212,8 @@ const timeSpendingChartSeries = [23, 35, 10, 20, 35, 23]
         :class="$vuetify.display.smAndUp ? 'border-e' : 'border-b'"
       >
         <div class="pe-3">
-          <h5 class="text-h5 text-high-emphasis mb-2">
-            Welcome back, <h4 class="text-h4 d-inline-block">
-              Felecia 👋🏻
-            </h4>
+          <h5 class="text-h5 text-high-emphasis mb-1">
+            Welcome back, Felecia 👋🏻
           </h5>
 
           <div

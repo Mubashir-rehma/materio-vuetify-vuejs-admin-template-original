@@ -21,7 +21,7 @@ const isCardDetailsVisible = ref(false)
 </script>
 
 <template>
-  <VRow class="match-height">
+  <VRow>
     <!-- 👉 Influencing The Influencer -->
     <VCol
       cols="12"

@@ -211,9 +211,9 @@ const onSubmit = () => {
                   placeholder="myRider"
                 />
 
-                <h6 class="text-h6 mb-4 mt-8">
+                <h5 class="text-h5 mb-4 mt-8">
                   Category
-                </h6>
+                </h5>
                 <VRadioGroup v-model="createAppData.category">
                   <VList class="card-list">
                     <VListItem
@@ -289,9 +289,9 @@ const onSubmit = () => {
                   placeholder="userDB"
                 />
 
-                <h6 class="text-h6 mt-8 mb-4">
+                <h5 class="text-h5 mt-8 mb-4">
                   Select Database Engine
-                </h6>
+                </h5>
                 <VRadioGroup v-model="createAppData.database">
                   <VList class="card-list">
                     <VListItem
@@ -325,10 +325,6 @@ const onSubmit = () => {
 
               <!-- 👉 Billing form -->
               <VWindowItem>
-                <h6 class="text-h6 mb-4">
-                  Payment Details
-                </h6>
-
                 <VForm>
                   <VRow>
                     <VCol cols="12">

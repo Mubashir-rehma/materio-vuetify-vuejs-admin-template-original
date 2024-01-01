@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { UserProperties } from '@db/apps/users/types'
 
-// 👉 Store
 const searchQuery = ref('')
 const selectedRole = ref()
 const selectedPlan = ref()

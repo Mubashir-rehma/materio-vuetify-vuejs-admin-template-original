@@ -191,7 +191,7 @@ const invoices = [
 const headers = [
   { title: '#ID', key: 'id' },
   { title: 'Status', key: 'status', sortable: false },
-  { title: 'Client', key: 'client' },
+  { title: 'Client', key: 'client.name' },
   { title: 'Total', key: 'total' },
   { title: 'Balance', key: 'balance' },
 ]
@@ -202,6 +202,7 @@ const headers = [
     <VDataTable
       :headers="headers"
       :items="invoices"
+      class="text-no-wrap"
     >
       <!-- id -->
       <template #item.id="{ item }">
@@ -239,7 +240,7 @@ const headers = [
       </template>
 
       <!-- client -->
-      <template #item.client="{ item }">
+      <template #item.client.name="{ item }">
         <div class="d-flex align-center">
           <VAvatar
             size="34"

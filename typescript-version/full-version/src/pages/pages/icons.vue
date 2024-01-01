@@ -90,7 +90,7 @@ const iconsList = [
         color="primary"
         target="_blank"
       >
-        View All Material Design Icons
+        View All Remix Icons
       </VBtn>
     </div>
   </div>

@@ -6,7 +6,7 @@ import AcademyCardTopCourses from '@/views/apps/academy/AcademyCardTopCourses.vu
 import AcademyCourseTable from '@/views/apps/academy/AcademyCourseTable.vue'
 import AcademyUpcomingWebinar from '@/views/apps/academy/AcademyUpcomingWebinar.vue'
 
-import customCheck from '@images/svg/Check.svg'
+import customCheck from '@images/svg/check.svg'
 import customLaptop from '@images/svg/laptop.svg'
 import customLightbulb from '@images/svg/lightbulb.svg'
 

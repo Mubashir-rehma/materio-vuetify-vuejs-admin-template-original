@@ -204,6 +204,8 @@ watchEffect(() => {
 </template>
 
 <style lang="scss">
+@use "@core/scss/base/mixins.scss";
+
 /* stylelint-disable no-descending-specificity */
 .app-stepper {
   &.app-stepper-default:not(.app-stepper-icons) .app-stepper-step:not(:last-child) {
@@ -334,6 +336,8 @@ watchEffect(() => {
         .stepper-icon {
           background-color: rgb(var(--v-theme-primary));
           color: rgba(var(--v-theme-on-primary));
+
+          @include mixins.elevation(2);
         }
       }
     }

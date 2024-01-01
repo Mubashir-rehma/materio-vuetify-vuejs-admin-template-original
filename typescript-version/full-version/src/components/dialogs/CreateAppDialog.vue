@@ -234,7 +234,7 @@ const onSubmit = () => {
                       <VListItemTitle class="font-weight-medium mb-1">
                         {{ category.title }}
                       </VListItemTitle>
-                      <VListItemSubtitle class="text-body-2">
+                      <VListItemSubtitle class="text-body-2 me-2">
                         {{ category.subtitle }}
                       </VListItemSubtitle>
 
@@ -271,7 +271,7 @@ const onSubmit = () => {
                       <VListItemTitle class="mb-1 font-weight-medium">
                         {{ framework.title }}
                       </VListItemTitle>
-                      <VListItemSubtitle>
+                      <VListItemSubtitle class="me-2">
                         {{ framework.subtitle }}
                       </VListItemSubtitle>
                       <template #append>
@@ -312,7 +312,7 @@ const onSubmit = () => {
                       <VListItemTitle class="mb-1 font-weight-medium">
                         {{ database.title }}
                       </VListItemTitle>
-                      <VListItemSubtitle>
+                      <VListItemSubtitle class="me-2">
                         {{ database.subtitle }}
                       </VListItemSubtitle>
                       <template #append>

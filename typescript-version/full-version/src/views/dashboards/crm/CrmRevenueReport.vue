@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
-import { useConfigStore } from '@core/stores/config'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const configStore = useConfigStore()
 
-const options = controlledComputed(() => configStore.theme, () => {
+const options = computed(() => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
 

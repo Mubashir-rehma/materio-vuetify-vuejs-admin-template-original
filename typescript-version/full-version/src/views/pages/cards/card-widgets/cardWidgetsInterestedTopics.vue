@@ -22,7 +22,7 @@ const topicsChartConfig = {
   },
 
   colors: [
-    '#8C57FF', '#16B1FF', '#56CA00', '#8A8D93', '#FF4C51', '#FFB400',
+    'rgba(var(--v-theme-primary),1)', '#16B1FF', '#56CA00', '#8A8D93', '#FF4C51', '#FFB400',
   ],
 
   grid: {

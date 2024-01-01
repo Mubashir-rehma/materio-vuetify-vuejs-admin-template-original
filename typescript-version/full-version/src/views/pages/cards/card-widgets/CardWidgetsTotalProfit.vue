@@ -1,14 +1,11 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
 
-import { useConfigStore } from '@core/stores/config'
-
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const configStore = useConfigStore()
 
-const options = controlledComputed(() => configStore.theme, () => {
+const options = computed(() => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
 
@@ -46,7 +43,7 @@ const options = controlledComputed(() => configStore.theme, () => {
         formatter: (value: number) => (value > 999 ? `${(value / 1000).toFixed(0)}k` : `${value}`),
       },
     },
-    colors: [currentTheme.value.primary, currentTheme.value.success, currentTheme.value.secondary],
+    colors: ['rgba(var(--v-theme-primary),1)', currentTheme.value.success, currentTheme.value.secondary],
     grid: {
       xaxis: { lines: { show: false } },
       borderColor,

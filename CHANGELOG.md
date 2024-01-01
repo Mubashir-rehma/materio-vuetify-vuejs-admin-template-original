@@ -4,6 +4,68 @@
 
 All notable changes to this template will be documented in this file
 
+## v3.0.0 (2024-01-01)
+
+### Added
+
+- Migration guide in docs for major and technical changes (Highly recommended to read)
+- `unplugin-vue-router` for typed pages
+- eCommerce App
+  - Dashboard
+  - Products
+    - Product List
+    - Add Product
+    - Category List
+  - Order
+    - Order List
+    - Order Details
+  - Customer
+    - Customer List
+    - Customer Details
+  - Manage Reviews
+  - Referrals
+  - Settings
+- Academy
+  - Dashboard
+  - My Courses
+  - Courses Details
+- Logistics
+  - Dashboard
+  - Fleet (Added MapBox library)
+- Front Pages
+  - Landing Page
+  - Pricing Page
+  - Payment Page
+  - Checkout Page
+  - Help Center Page
+- Swiper Extension
+- TipTap Rich Editor
+- More Dialog Examples
+- Form Wizard
+- Vite Vue DevTool Plugin
+
+### Updated
+
+- Plugins are now registered automatically like Nuxt and moved to `src/plugins` directory
+- Styles are moved to `src/assets/styles` directory
+- Directory structure updated
+- We now use SVG based CSS icons instead of SVG tag for icons
+- Theme config now use `pinia` store instead of composable
+  - `useThemeConfig` composable is replaced with `useConfigStore`
+- Replaced `axios` with native `fetch` API
+- Replaced `axios-mock-adapter` with `msw`
+- Cookie is used for persistence instead of LocalStorage
+- Customizer UI (User-friendly design)
+- All libraries updated to latest version
+- Utility functions are auto imported similar to Nuxt
+
+### Removed
+
+- `vite-plugin-pages` plugin (Replaced by `unplugin-vue-router`)
+- `axios` (Replace by native `fetch` API)
+- `axios-mock-adapter` (Replaced by `msw`)
+- 500 error page removed
+
 ## v2.2.0 (2023-05-16)
 
 ### Added

@@ -181,7 +181,8 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
   <!-- 👉 Navbar for desktop devices  -->
   <div class="front-page-navbar">
     <VAppBar
-      :elevation="y > 20 ? 4 : 0"
+      :class="y > 20 ? 'front-page-navbar-box-shadow' : ''"
+      elevation="0"
       class="rounded-b-lg"
     >
       <!-- toggle icon for mobile device -->
@@ -350,6 +351,11 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 </template>
 
 <style lang="scss" scoped>
+.front-page-navbar-box-shadow{
+  /* stylelint-disable-next-line max-line-length */
+  box-shadow: 0 4px 8px -4px rgba(var(--v-shadow-key-umbra-color), 42%) !important;
+}
+
 .nav-menu{
   display: flex;
   gap: 3rem;

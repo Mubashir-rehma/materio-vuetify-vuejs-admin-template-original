@@ -1,0 +1,58 @@
+<script setup>
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
+
+const props = defineProps({
+  articles: {
+    type: Array,
+    required: true,
+  },
+})
+</script>
+
+<template>
+  <VRow>
+    <VCol
+      v-for="article in props.articles"
+      :key="article.title"
+      cols="12"
+      md="4"
+    >
+      <VCard
+        flat
+        border
+      >
+        <VCardText class="text-center">
+          <VNodeRenderer :nodes="h('div', { innerHTML: article.img })" />
+          <h5 class="text-h5 my-3">
+            {{ article.title }}
+          </h5>
+          <p class="clamp-text text-body-1 mb-3 mx-auto">
+            {{ article.subtitle }}
+          </p>
+
+          <VBtn
+            variant="outlined"
+            :to="{
+              name: 'front-pages-help-center-article-title',
+              params: {
+                title: 'how-to-add-product-in-cart',
+              },
+
+            }"
+          >
+            Read More
+          </VBtn>
+        </VCardText>
+      </VCard>
+    </VCol>
+  </VRow>
+</template>
+
+<style lang="scss">
+.v-card-text{
+  svg{
+    block-size: 58px;
+    inline-size: 58px;
+  }
+}
+</style>

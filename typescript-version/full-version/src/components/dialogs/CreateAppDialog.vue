@@ -185,7 +185,6 @@ const onSubmit = () => {
             cols="12"
             sm="5"
             md="4"
-            lg="3"
           >
             <AppStepper
               v-model:current-step="currentStep"
@@ -200,7 +199,6 @@ const onSubmit = () => {
             cols="12"
             sm="7"
             md="8"
-            lg="9"
           >
             <VWindow
               v-model="currentStep"

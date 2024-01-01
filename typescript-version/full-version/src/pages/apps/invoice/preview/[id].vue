@@ -143,46 +143,48 @@ const printInvoice = () => {
                 Bill To:
               </h6>
               <table>
-                <tr>
-                  <td class="pe-6">
-                    Total Due:
-                  </td>
-                  <td>
-                    {{ paymentDetails.totalDue }}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="pe-6">
-                    Bank Name:
-                  </td>
-                  <td>
-                    {{ paymentDetails.bankName }}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="pe-6">
-                    Country:
-                  </td>
-                  <td>
-                    {{ paymentDetails.country }}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="pe-6">
-                    IBAN:
-                  </td>
-                  <td>
-                    {{ paymentDetails.iban }}
-                  </td>
-                </tr>
-                <tr>
-                  <td class="pe-6">
-                    SWIFT Code:
-                  </td>
-                  <td>
-                    {{ paymentDetails.swiftCode }}
-                  </td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td class="pe-6">
+                      Total Due:
+                    </td>
+                    <td>
+                      {{ paymentDetails.totalDue }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pe-6">
+                      Bank Name:
+                    </td>
+                    <td>
+                      {{ paymentDetails.bankName }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pe-6">
+                      Country:
+                    </td>
+                    <td>
+                      {{ paymentDetails.country }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pe-6">
+                      IBAN:
+                    </td>
+                    <td>
+                      {{ paymentDetails.iban }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pe-6">
+                      SWIFT Code:
+                    </td>
+                    <td>
+                      {{ paymentDetails.swiftCode }}
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </VCol>
           </VRow>
@@ -256,51 +258,55 @@ const printInvoice = () => {
 
             <div>
               <table class="w-100">
-                <tr>
-                  <td class="pe-16">
-                    Subtotal:
-                  </td>
-                  <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                    <h6 class="text-h6">
-                      $1800
-                    </h6>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="pe-16">
-                    Discount:
-                  </td>
-                  <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                    <h6 class="text-h6">
-                      $28
-                    </h6>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="pe-16">
-                    Tax:
-                  </td>
-                  <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                    <h6 class="text-h6">
-                      21%
-                    </h6>
-                  </td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td class="pe-16">
+                      Subtotal:
+                    </td>
+                    <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
+                      <h6 class="text-sm">
+                        $1800
+                      </h6>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pe-16">
+                      Discount:
+                    </td>
+                    <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
+                      <h6 class="text-sm">
+                        $28
+                      </h6>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pe-16">
+                      Tax:
+                    </td>
+                    <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
+                      <h6 class="text-sm">
+                        21%
+                      </h6>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
 
               <VDivider class="mt-4 mb-3" />
 
               <table class="w-100">
-                <tr>
-                  <td class="pe-16">
-                    Total:
-                  </td>
-                  <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
-                    <h6 class="text-h6">
-                      $1690
-                    </h6>
-                  </td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td class="pe-16">
+                      Total:
+                    </td>
+                    <td :class="$vuetify.locale.isRtl ? 'text-start' : 'text-end'">
+                      <h6 class="text-sm">
+                        $1690
+                      </h6>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>

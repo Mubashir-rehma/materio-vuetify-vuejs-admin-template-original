@@ -258,7 +258,7 @@ const addImage = () => {
         <!-- Star/Unstar -->
         <IconBtn
           :color="props.email.isStarred ? 'warning' : 'default'"
-          @click="props.email?.isStarred ? $emit('unstar') : $emit('star'); $emit('refresh')"
+          @click="props.email?.isStarred ? $emit('unstar') : $emit('star')"
         >
           <VIcon icon="ri-star-line" />
         </IconBtn>

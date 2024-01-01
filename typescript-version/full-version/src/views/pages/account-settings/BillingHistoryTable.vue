@@ -41,8 +41,8 @@ const { data: invoiceData, execute: fetchInvoices } = await useApi<any>(createUr
   },
 }))
 
-const invoices = computed((): Invoice[] => invoiceData.value.invoices)
-const totalInvoices = computed(() => invoiceData.value.totalInvoices)
+const invoices = computed((): Invoice[] => invoiceData.value?.invoices)
+const totalInvoices = computed(() => invoiceData.value?.totalInvoices)
 
 // 👉 Invoice balance variant resolver
 const resolveInvoiceBalanceVariant = (balance: string | number, total: number) => {

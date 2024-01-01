@@ -1,12 +1,10 @@
 <script setup>
 import { useTheme } from 'vuetify'
-import { useConfigStore } from '@core/stores/config'
 
 const vuetifyTheme = useTheme()
-const configStore = useConfigStore()
-const currentTheme = controlledComputed(() => configStore.theme, () => vuetifyTheme.current.value.colors)
+const currentTheme = computed(() => vuetifyTheme.current.value.colors)
 
-const chartOptions = controlledComputed(() => configStore.theme, () => {
+const chartOptions = computed(() => {
   return {
     chart: {
       sparkline: { enabled: true },

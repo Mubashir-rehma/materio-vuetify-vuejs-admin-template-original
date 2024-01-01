@@ -50,7 +50,7 @@ const buyNowUrl = (typeof window !== 'undefined' && 'isMarketplace' in window &&
   position: fixed;
   z-index: 999;
   inset-block-end: 5%;
-  inset-inline-end: 79px;
+  inset-inline-end: 87px;
 
   &:hover {
     color: white;

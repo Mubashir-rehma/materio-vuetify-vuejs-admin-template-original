@@ -481,12 +481,15 @@ watch(() => route.params, () => {
 
     @include mixins.elevation(4);
 
-    .email-actions {
-      display: block !important;
-    }
+    // ℹ️ Don't show actions on hover on mobile & tablet devices
+    @media screen and (min-width: 1280px) {
+      .email-actions {
+        display: block !important;
+      }
 
-    .email-meta {
-      display: none;
+      .email-meta {
+        display: none;
+      }
     }
 
     + .email-item {

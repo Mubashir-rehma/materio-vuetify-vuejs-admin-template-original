@@ -1,12 +1,10 @@
 <script setup>
 import { useTheme } from 'vuetify'
-import { useConfigStore } from '@core/stores/config'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const configStore = useConfigStore()
 
-const options = controlledComputed(() => configStore.theme, () => {
+const options = computed(() => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
   const primaryTextColor = `rgba(${ hexToRgb(currentTheme.value['on-surface']) },${ variableTheme.value['high-emphasis-opacity'] })`
@@ -14,7 +12,7 @@ const options = controlledComputed(() => configStore.theme, () => {
   return {
     chart: { sparkline: { enabled: true } },
     stroke: { dashArray: 5 },
-    colors: [currentTheme.value.primary],
+    colors: ['rgba(var(--v-theme-primary),1)'],
     states: {
       hover: { filter: { type: 'none' } },
       active: { filter: { type: 'none' } },

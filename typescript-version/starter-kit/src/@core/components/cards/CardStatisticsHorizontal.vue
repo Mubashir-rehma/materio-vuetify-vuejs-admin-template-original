@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<Props>(), {
   color: 'primary',
 })
 
-const isPositive = controlledComputed(() => props.change, () => Math.sign(props.change) === 1)
+const isPositive = computed(() => Math.sign(props.change) === 1)
 </script>
 
 <template>

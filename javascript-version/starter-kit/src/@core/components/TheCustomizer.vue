@@ -289,7 +289,7 @@ const resetCustomizer = async () => {
       style="z-index: 1001;"
       @click="isNavDrawerOpen = true"
     >
-      <VIcon icon="ri-settings-3-fill" />
+      <VIcon icon="ri-settings-3-line" />
     </VBtn>
 
     <VNavigationDrawer
@@ -614,7 +614,7 @@ const resetCustomizer = async () => {
 
 .app-customizer-toggler {
   position: fixed !important;
-  inset-block-start: 50%;
+  inset-block-start: 20%;
   inset-inline-end: 0;
   transform: translateY(-50%);
 }

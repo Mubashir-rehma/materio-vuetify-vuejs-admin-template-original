@@ -227,7 +227,7 @@ const headers = [
   },
   {
     title: 'Client',
-    key: 'client',
+    key: 'client.name',
   },
   {
     title: 'Total',
@@ -245,6 +245,7 @@ const headers = [
     <VDataTable
       :headers="headers"
       :items="invoices"
+      class="text-no-wrap"
     >
       <!-- id -->
       <template #item.id="{ item }">
@@ -282,7 +283,7 @@ const headers = [
       </template>
 
       <!-- client -->
-      <template #item.client="{ item }">
+      <template #item.client.name="{ item }">
         <div class="d-flex align-center">
           <VAvatar
             size="34"

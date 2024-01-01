@@ -3,14 +3,12 @@ import {
   useDisplay,
   useTheme,
 } from 'vuetify'
-import { useConfigStore } from '@core/stores/config'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const configStore = useConfigStore()
 const { thresholds } = useDisplay()
 
-const options = controlledComputed(() => configStore.theme, () => {
+const options = computed(() => {
   const currentTheme = ref(vuetifyTheme.current.value.colors)
   const variableTheme = ref(vuetifyTheme.current.value.variables)
   const borderColor = `rgba(${ hexToRgb(String(variableTheme.value['border-color'])) },${ variableTheme.value['border-opacity'] })`

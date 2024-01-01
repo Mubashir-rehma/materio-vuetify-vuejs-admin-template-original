@@ -18,7 +18,7 @@ const topicsChartConfig = {
     },
   },
   colors: [
-    '#8C57FF',
+    'rgba(var(--v-theme-primary),1)',
     '#16B1FF',
     '#56CA00',
     '#8A8D93',

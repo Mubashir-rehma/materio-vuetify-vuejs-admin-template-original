@@ -104,7 +104,7 @@ export default [
             target: '_blank',
           },
           {
-            title: 'checkout',
+            title: 'Checkout',
             to: 'front-pages-checkout',
             target: '_blank',
           },

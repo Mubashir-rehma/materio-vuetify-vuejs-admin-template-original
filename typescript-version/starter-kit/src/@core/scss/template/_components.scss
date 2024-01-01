@@ -693,6 +693,11 @@
   }
 }
 
+.v-field.v-field--focused .v-field__outline, 
+.v-input.v-input--error .v-field__outline{
+  --v-field-border-opacity: 1 !important;
+}
+
 // hover state outline color 
 @media (hover: hover) {
   .v-field:not(.v-field--focused):hover .v-field__outline {

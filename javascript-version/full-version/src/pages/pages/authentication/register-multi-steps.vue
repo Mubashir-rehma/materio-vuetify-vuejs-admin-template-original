@@ -90,7 +90,10 @@ const onSubmit = () => {
     >
       <!-- here your illustration -->
 
-      <div class="d-flex align-center w-100 h-100 justify-end pa-10 pe-0">
+      <div
+        class="d-flex align-center w-100 h-100 justify-end pa-10"
+        :class="$vuetify.locale.isRtl ? 'pe-10 ps-0' : 'pe-0'"
+      >
         <VImg
           max-width="359"
           :src="registerMultiStepIllustration"
@@ -380,7 +383,7 @@ const onSubmit = () => {
           </VForm>
         </VWindow>
 
-        <div class="d-flex flex-wrap justify-sm-space-between justify-center gap-x-4 gap-y-2 mt-5">
+        <div class="d-flex flex-wrap justify-space-between gap-x-4 gap-y-2 mt-5">
           <VBtn
             color="secondary"
             variant="outlined"

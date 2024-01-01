@@ -22,7 +22,7 @@ const props = defineProps({
         border
       >
         <VCardText class="text-center">
-          <VNodeRenderer :nodes="h('div', { innerHTML: article.img })" />
+          <VNodeRenderer :nodes="h('div', { class: 'help-center-article-icon', innerHTML: article.img })" />
           <h5 class="text-h5 my-3">
             {{ article.title }}
           </h5>
@@ -49,10 +49,8 @@ const props = defineProps({
 </template>
 
 <style lang="scss">
-.v-card-text{
-  svg{
-    block-size: 58px;
-    inline-size: 58px;
-  }
+.help-center-article-icon svg {
+  block-size: 58px;
+  inline-size: 58px;
 }
 </style>

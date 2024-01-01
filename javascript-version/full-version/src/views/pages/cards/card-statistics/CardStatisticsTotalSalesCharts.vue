@@ -1,13 +1,11 @@
 <script setup>
 import { useTheme } from 'vuetify'
-import { useConfigStore } from '@core/stores/config'
 import { hexToRgb } from '@layouts/utils'
 
 const vuetifyTheme = useTheme()
-const configStore = useConfigStore()
-const currentTheme = controlledComputed(() => configStore.theme, () => vuetifyTheme.current.value.colors)
+const currentTheme = computed(() => vuetifyTheme.current.value.colors)
 
-const chartOptions = controlledComputed(() => configStore.theme, () => {
+const chartOptions = computed(() => {
   const variableTheme = ref(vuetifyTheme.current.value.variables)
   const secondaryTextColor = `rgba(${ hexToRgb(currentTheme.value['on-surface']) },${ variableTheme.value['medium-emphasis-opacity'] })`
   const primaryTextColor = `rgba(${ hexToRgb(currentTheme.value['on-surface']) },${ variableTheme.value['high-emphasis-opacity'] })`

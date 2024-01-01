@@ -1,10 +1,4 @@
 <script setup>
-import { useTheme } from 'vuetify'
-import { hexToRgb } from '@layouts/utils'
-
-const vuetifyTheme = useTheme()
-const currentTheme = vuetifyTheme.current.value.colors
-
 const series = [{
   data: [
     40,
@@ -41,14 +35,14 @@ const options = {
   legend: { show: false },
   dataLabels: { enabled: false },
   colors: [
-    `rgba(${ hexToRgb(currentTheme.primary) },0.1)`,
-    `rgba(${ hexToRgb(currentTheme.primary) },0.1)`,
-    `rgba(${ hexToRgb(currentTheme.primary) },0.1)`,
-    `rgba(${ hexToRgb(currentTheme.primary) },0.1)`,
-    currentTheme.primary,
-    `rgba(${ hexToRgb(currentTheme.primary) },0.1)`,
-    `rgba(${ hexToRgb(currentTheme.primary) },0.1)`,
-    `rgba(${ hexToRgb(currentTheme.primary) },0.1)`,
+    'rgba(var(--v-theme-primary),0.1)',
+    'rgba(var(--v-theme-primary),0.1)',
+    'rgba(var(--v-theme-primary),0.1)',
+    'rgba(var(--v-theme-primary),0.1)',
+    'rgba(var(--v-theme-primary))',
+    'rgba(var(--v-theme-primary),0.1)',
+    'rgba(var(--v-theme-primary),0.1)',
+    'rgba(var(--v-theme-primary),0.1)',
   ],
   states: {
     hover: { filter: { type: 'none' } },

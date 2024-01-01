@@ -80,7 +80,7 @@ body .fc {
     inline-size: 34px;
     margin-inline-end: 0.5rem;
     min-block-size: 34px;
-    padding-block: 7px !important;
+    padding-block: 0 !important;
     padding-inline: 7px !important;
 
     &:hover,
@@ -90,7 +90,15 @@ body .fc {
     }
 
     .fc-icon{
-      line-height: 0.5;
+      position: relative;
+      inset-block-start: -1px;
+    }
+  }
+
+  .fc-prev-button {
+    .fc-icon{
+      position: relative;
+      inset-inline-start: -2px;
     }
   }
 

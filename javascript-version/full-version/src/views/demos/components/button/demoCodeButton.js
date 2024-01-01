@@ -800,13 +800,13 @@ export const rounded = { ts: `<template>
 
 export const router = { ts: `<template>
   <div class="demo-space-x">
-    <VBtn to="alert">
+    <VBtn to="/components/alert">
       String Literal
     </VBtn>
 
     <VBtn
       color="warning"
-      :to="{ path: 'alert' }"
+      :to="{ path: '/components/alert' }"
     >
       Object Path
     </VBtn>
@@ -820,7 +820,7 @@ export const router = { ts: `<template>
 
     <VBtn
       color="secondary"
-      :to="{ path: 'alert', query: { plan: 'private' } }"
+      :to="{ path: '/components/alert', query: { plan: 'private' } }"
     >
       With Query
     </VBtn>
@@ -828,13 +828,13 @@ export const router = { ts: `<template>
 </template>
 `, js: `<template>
   <div class="demo-space-x">
-    <VBtn to="alert">
+    <VBtn to="/components/alert">
       String Literal
     </VBtn>
 
     <VBtn
       color="warning"
-      :to="{ path: 'alert' }"
+      :to="{ path: '/components/alert' }"
     >
       Object Path
     </VBtn>
@@ -848,7 +848,7 @@ export const router = { ts: `<template>
 
     <VBtn
       color="secondary"
-      :to="{ path: 'alert', query: { plan: 'private' } }"
+      :to="{ path: '/components/alert', query: { plan: 'private' } }"
     >
       With Query
     </VBtn>

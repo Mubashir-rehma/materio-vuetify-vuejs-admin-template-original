@@ -211,9 +211,9 @@ const onSubmit = () => {
                   placeholder="myRider"
                 />
 
-                <h6 class="text-h6 mb-4 mt-8">
+                <h5 class="text-h5 mb-4 mt-8">
                   Category
-                </h6>
+                </h5>
                 <VRadioGroup v-model="createAppData.category">
                   <VList class="card-list">
                     <VListItem
@@ -234,7 +234,7 @@ const onSubmit = () => {
                       <VListItemTitle class="font-weight-medium mb-1">
                         {{ category.title }}
                       </VListItemTitle>
-                      <VListItemSubtitle class="text-body-2">
+                      <VListItemSubtitle class="text-body-2 me-2">
                         {{ category.subtitle }}
                       </VListItemSubtitle>
 
@@ -271,7 +271,7 @@ const onSubmit = () => {
                       <VListItemTitle class="mb-1 font-weight-medium">
                         {{ framework.title }}
                       </VListItemTitle>
-                      <VListItemSubtitle>
+                      <VListItemSubtitle class="me-2">
                         {{ framework.subtitle }}
                       </VListItemSubtitle>
                       <template #append>
@@ -289,9 +289,9 @@ const onSubmit = () => {
                   placeholder="userDB"
                 />
 
-                <h6 class="text-h6 mt-8 mb-4">
+                <h5 class="text-h5 mt-8 mb-4">
                   Select Database Engine
-                </h6>
+                </h5>
                 <VRadioGroup v-model="createAppData.database">
                   <VList class="card-list">
                     <VListItem
@@ -312,7 +312,7 @@ const onSubmit = () => {
                       <VListItemTitle class="mb-1 font-weight-medium">
                         {{ database.title }}
                       </VListItemTitle>
-                      <VListItemSubtitle>
+                      <VListItemSubtitle class="me-2">
                         {{ database.subtitle }}
                       </VListItemSubtitle>
                       <template #append>
@@ -325,10 +325,6 @@ const onSubmit = () => {
 
               <!-- 👉 Billing form -->
               <VWindowItem>
-                <h6 class="text-h6 mb-4">
-                  Payment Details
-                </h6>
-
                 <VForm>
                   <VRow>
                     <VCol cols="12">

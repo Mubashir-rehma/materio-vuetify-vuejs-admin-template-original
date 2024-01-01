@@ -47,7 +47,10 @@ const email = ref('')
       md="8"
       class="d-none d-md-flex position-relative"
     >
-      <div class="d-flex align-center justify-end w-100 h-100 pa-10 pe-0">
+      <div
+        class="d-flex align-center justify-end w-100 h-100 pa-10"
+        :class="$vuetify.locale.isRtl ? 'pe-10' : 'pe-0'"
+      >
         <VImg
           width="853"
           height="684"

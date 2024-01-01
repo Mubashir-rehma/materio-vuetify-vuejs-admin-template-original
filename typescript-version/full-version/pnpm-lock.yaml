@@ -85,8 +85,8 @@ dependencies:
     specifier: ^11.2.0
     version: 11.2.0
   swiper:
-    specifier: ^11.0.5
-    version: 11.0.5
+    specifier: ^10.3.1
+    version: 10.3.1
   ufo:
     specifier: ^1.3.1
     version: 1.3.2
@@ -7408,8 +7408,8 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /swiper@11.0.5:
-    resolution: {integrity: sha512-rhCwupqSyRnWrtNzWzemnBLMoyYuoDgGgspAm/8iBD3jCvAWycPLH4Z3TB0O5520DHLzMx94yUMH/B9Efpa48w==}
+  /swiper@10.3.1:
+    resolution: {integrity: sha512-24Wk3YUdZHxjc9faID97GTu6xnLNia+adMt6qMTZG/HgdSUt4fS0REsGUXJOgpTED0Amh/j+gRGQxsLayJUlBQ==}
     engines: {node: '>= 4.7.0'}
     dev: false
 

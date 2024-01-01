@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import stepperCheck from '@images/svg/stepper-check.svg'
+
 interface Item {
   title: string
   icon?: string | object
@@ -154,11 +156,10 @@ watchEffect(() => {
 
                 <!-- 👉 step completed icon -->
 
-                <VIcon
+                <component
+                  :is="stepperCheck"
                   v-else
-                  icon="ri-checkbox-circle-fill"
                   class="stepper-step-icon"
-                  size="24"
                 />
               </div>
 

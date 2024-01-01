@@ -118,8 +118,6 @@ const faqs = [
     answer: 'Yes. You may request a refund within 30 days of your purchase without any additional explanations.',
   },
 ]
-
-const activeQuestion = ref(1)
 </script>
 
 <template>
@@ -325,7 +323,7 @@ const activeQuestion = ref(1)
               </p>
             </div>
             <div class="pt-6">
-              <VExpansionPanels v-model="activeQuestion">
+              <VExpansionPanels>
                 <VExpansionPanel
                   v-for="faq in faqs"
                   :key="faq.question"

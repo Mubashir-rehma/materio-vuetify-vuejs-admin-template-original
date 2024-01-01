@@ -2,8 +2,6 @@
 import sittingGirlWithLaptop from '@images/front-pages/landing-page/sitting-girl-with-laptop.png'
 import sectionTitleIcon from '@images/pages/section-title-icon.png'
 
-const panels = ref([1])
-
 const faqData = [
   {
     question: 'Do you charge for each upgrade?',
@@ -72,10 +70,7 @@ const faqData = [
         />
 
         <div>
-          <VExpansionPanels
-            v-model="panels"
-            class="py-4"
-          >
+          <VExpansionPanels class="py-4">
             <VExpansionPanel
               v-for="faq in faqData"
               :key="faq.question"

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { HelpCenterArticlesOverview } from '@db/pages/help-center/types'
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 
 interface Props {
   articles: HelpCenterArticlesOverview[]
@@ -22,7 +21,10 @@ const props = defineProps<Props>()
         border
       >
         <VCardText class="text-center">
-          <VNodeRenderer :nodes="h('div', { class: 'help-center-article-icon', innerHTML: article.img })" />
+          <img
+            :src="article.img"
+            alt="images"
+          >
           <h5 class="text-h5 my-3">
             {{ article.title }}
           </h5>

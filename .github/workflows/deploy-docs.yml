@@ -52,7 +52,7 @@ jobs:
       - name: 📦 Build documentation
         run: |
           cd ${{ env.BRAND_NAME }}/vue/docs
-          pnpm
+          pnpm i
           pnpm build
           mv .vitepress/dist $GITHUB_WORKSPACE/documentation
         

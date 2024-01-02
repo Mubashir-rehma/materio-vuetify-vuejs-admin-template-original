@@ -81,7 +81,10 @@ const menuItems: MenuItem[] = [
 ]
 
 const isCurrentRoute = (to: RouteLocationRaw) => {
-  return route.matched.some(_route => _route.path === router.resolve(to).path)
+  return route.matched.some(_route => _route.path.startsWith(router.resolve(to).path))
+
+  // ℹ️ Below is much accurate approach if you don't have any nested routes
+  // return route.matched.some(_route => _route.path === router.resolve(to).path)
 }
 
 const isPageActive = computed(() => menuItems.some(item => item.navItems.some(listItem => isCurrentRoute(listItem.to))))

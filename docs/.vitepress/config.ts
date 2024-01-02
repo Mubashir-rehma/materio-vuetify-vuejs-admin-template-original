@@ -12,7 +12,7 @@ export default defineConfig({
   srcDir: 'src',
   base: process.env.BASE || '/',
   head: [
-    ["link", { rel: "icon", href: "https://api.iconify.design/logos:visual-studio-code.svg" }],
+    ["link", { rel: "icon", href: "https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/logo/logo.svg" }],
     ["meta", { name: "theme-color", content: "#696cff" }],
     ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
     [
@@ -24,7 +24,7 @@ export default defineConfig({
   ],
   ignoreDeadLinks: 'localhostLinks',
   themeConfig: {
-    logo: 'https://api.iconify.design/logos:visual-studio-code.svg',
+    logo: 'https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/logo/logo.svg',
     search: {
       provider: 'local',
     },

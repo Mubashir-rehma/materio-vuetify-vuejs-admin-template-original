@@ -63,8 +63,8 @@ const {
   },
 }))
 
-const invoices = computed(() => invoiceData.value.invoices)
-const totalInvoices = computed(() => invoiceData.value.totalInvoices)
+const invoices = computed(() => invoiceData.value?.invoices)
+const totalInvoices = computed(() => invoiceData.value?.totalInvoices)
 
 // 👉 Invoice balance variant resolver
 const resolveInvoiceBalanceVariant = (balance, total) => {

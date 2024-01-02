@@ -7,13 +7,13 @@ const gtmConfig = {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Master",
+  title: "Materio",
   description: "Production Ready, Carefully Crafted, Extensive Vuetify Admin Template",
   srcDir: 'src',
   base: process.env.BASE || '/',
   head: [
     ["link", { rel: "icon", href: "https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/logo/logo.svg" }],
-    ["meta", { name: "theme-color", content: "#696cff" }],
+    ["meta", { name: "theme-color", content: "#9155FD" }],
     ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
     [
       "meta",

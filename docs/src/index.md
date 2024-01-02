@@ -8,7 +8,7 @@ hero:
   tagline: Production Ready, Carefully Crafted, Extensive Vuetify Admin Template
   image:
     src: https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/logo/logo.svg
-    alt: Master Logo
+    alt: Materio Logo
   actions:
     - theme: brand
       text: Get Started
@@ -35,6 +35,6 @@ features:
     icon:
       src: https://api.iconify.design/logos:jwt-icon.svg
     link: https://jwt.io/
-    details: Master provides extendable JWT auth which can be configured easily and provides ready to use ACL
+    details: Materio provides extendable JWT auth which can be configured easily and provides ready to use ACL
 ---
 

@@ -4,14 +4,14 @@ Understand folder structure of template and what everything contains
 
 ## Overview
 
-Once you download the template from **Themeselection**, you will find the below folder structure in **master/vue-laravel-version/**. This folder contains `typescript` and `javascript` version of template. Both Typescript and Javascript version contain `full-version` and `starter-kit` version.
+Once you download the template from **Themeselection**, you will find the below folder structure in **materio/vue-laravel-version/**. This folder contains `typescript` and `javascript` version of template. Both Typescript and Javascript version contain `full-version` and `starter-kit` version.
 
 Before checking folder structure it is better you know some stuff related to folder structure.
 
 - `resources/{js/ts}` folder contains the whole vuejs code, this is the main folder where Auth, ACL, Routing, Navigation everything is managed from Vue not from Laravel. We have just provided Laravel integration which means all the routes are redirected to Application view which is responsible to load the application. All the assets are compiled from this folder to Laravel's public folder. We have considered Laravel usage for API purposes only.
 
 ```bash
-master-vuejs-laravel-template/
+materio-vuejs-laravel-template/
 ├── app                      # Controllers and Models
 ├── bootstrap                # Contains cache and app.php
 ├── config                   # Application's configuration files

@@ -98,6 +98,13 @@ const emailViewMeta = computed(() => {
   return returnValue
 })
 
+const refreshOpenedEmail = async () => {
+  await fetchEmails()
+
+  if (openedEmail.value)
+    openedEmail.value = emails.value.find(e => e.id === openedEmail.value?.id)!
+}
+
 /*
   ℹ️ You can optimize it so it doesn't fetch emails on each action.
     Currently, if you just star the email, two API calls will get fired.
@@ -133,12 +140,15 @@ const handleActionClick = async (
     await updateEmails(emailIds, { isStarred: false })
 
   await fetchEmails()
+
+  if (openedEmail.value)
+    refreshOpenedEmail()
 }
 
 // Email actions
-const handleMoveMailsTo = (action: MoveEmailToAction) => {
+const handleMoveMailsTo = async (action: MoveEmailToAction) => {
   moveSelectedEmailTo(action, selectedEmails.value)
-  fetchEmails()
+  await fetchEmails()
 }
 
 // Email view
@@ -155,17 +165,10 @@ const changeOpenedEmail = (dir: 'previous' | 'next') => {
   openedEmail.value = emails.value[newEmailIndex]
 }
 
-const openEmail = (email: Email) => {
+const openEmail = async (email: Email) => {
   openedEmail.value = email
 
-  handleActionClick('read', [email.id])
-}
-
-const refreshOpenedEmail = async () => {
-  await fetchEmails()
-
-  if (openedEmail.value)
-    openedEmail.value = emails.value.find(e => e.id === openedEmail.value?.id)!
+  await handleActionClick('read', [email.id])
 }
 
 watch(
@@ -492,12 +495,15 @@ watch(
 
     @include mixins.elevation(3);
 
-    .email-actions {
-      display: block !important;
-    }
+    // ℹ️ Don't show actions on hover on mobile & tablet devices
+    @media screen and (min-width: 1280px) {
+      .email-actions {
+        display: block !important;
+      }
 
-    .email-meta {
-      display: none;
+      .email-meta {
+        display: none;
+      }
     }
 
     + .email-item {

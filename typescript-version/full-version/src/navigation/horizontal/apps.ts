@@ -25,11 +25,17 @@ export default [
           {
             title: 'Customer',
             children: [
-              {
-                title: 'List',
-                to: 'apps-ecommerce-customer-list',
-              },
+              { title: 'List', to: 'apps-ecommerce-customer-list' },
+              { title: 'Details', to: { name: 'apps-ecommerce-customer-details-id', params: { id: 478426 } } },
             ],
+          },
+          {
+            title: 'Manage Review',
+            to: 'apps-ecommerce-manage-review',
+          },
+          {
+            title: 'Referrals',
+            to: 'apps-ecommerce-referrals',
           },
           {
             title: 'Settings',

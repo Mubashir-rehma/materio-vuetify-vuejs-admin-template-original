@@ -45,7 +45,21 @@ export default defineConfig({
       },
       {
         text: 'Demo',
-        link: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/demo-1',
+        items: [
+
+          {
+            text: 'Vue',
+            link: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/demo-1',
+          },
+          {
+            text: 'Laravel',
+            link: 'https://demos.themeselection.com/materio-vuetify-vuejs-laravel-admin-template/demo-1',
+          },
+          {
+            text: 'Nuxt',
+            link: 'https://demos.themeselection.com/materio-vuetify-nuxtjs-admin-template/demo-1',
+          }
+        ]
       },
       { text: 'Purchase', link: 'https://themeselection.com/item/materio-vuetify-vuejs-admin-template/' },
     ],

@@ -1,32 +1,24 @@
 import checkoutImg from '@images/front-pages/misc/checkout-image.png'
 import productImg from '@images/front-pages/misc/product-image.png'
-import laptop from '@images/svg/laptop.svg?raw'
-import lightbulb from '@images/svg/lightbulb.svg?raw'
-
-// Images
-import discord from '@images/svg/discord.svg?raw'
-import gift from '@images/svg/gift.svg?raw'
-import keyboard from '@images/svg/keyboard.svg?raw'
-import rocket from '@images/svg/rocket.svg?raw'
 
 export const db = {
   popularArticles: [
     {
       slug: 'getting-started',
       title: 'Getting Started',
-      img: rocket,
+      img: '/src/assets/images/svg/rocket.svg',
       subtitle: 'Whether you\'re new or you\'re a power user, this article will help you to',
     },
     {
       slug: 'first-steps',
       title: 'First Steps',
-      img: gift,
+      img: '/src/assets/images/svg/gift.svg',
       subtitle: 'Are you a new customer wondering on how to get started?',
     },
     {
       slug: 'external-content',
       title: 'Add External Content',
-      img: keyboard,
+      img: '/src/assets/images/svg/keyboard.svg',
       subtitle: 'Article will show you how to expand the functionality of App',
     },
   ],
@@ -108,19 +100,19 @@ export const db = {
     {
       slug: 'blogging',
       title: 'Blogging',
-      img: laptop,
+      img: '/src/assets/images/svg/laptop.svg',
       subtitle: 'Expert tips & tools to improve your website or online store using blog.',
     },
     {
       slug: 'inspiration-center',
       title: 'Inspiration Center',
-      img: lightbulb,
+      img: '/src/assets/images/svg/lightbulb.svg',
       subtitle: 'inspiration from experts to help you start and grow your big ideas.',
     },
     {
       slug: 'community',
       title: 'Community',
-      img: discord,
+      img: '/src/assets/images/svg/discord.svg',
       subtitle: 'A group of people living in the same place or having a particular.',
     },
   ],

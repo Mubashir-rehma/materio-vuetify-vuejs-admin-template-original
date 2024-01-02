@@ -1,6 +1,4 @@
 <script setup>
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
-
 const props = defineProps({
   articles: {
     type: Array,
@@ -22,7 +20,10 @@ const props = defineProps({
         border
       >
         <VCardText class="text-center">
-          <VNodeRenderer :nodes="h('div', { class: 'help-center-article-icon', innerHTML: article.img })" />
+          <img
+            :src="article.img"
+            alt="images"
+          >
           <h5 class="text-h5 my-3">
             {{ article.title }}
           </h5>

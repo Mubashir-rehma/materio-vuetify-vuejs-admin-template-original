@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import customLaptop from '@images/svg/laptop.svg'
+import customLightbulb from '@images/svg/lightbulb.svg'
 import AcademyAssignmentProgress from '@/views/apps/academy/AcademyAssignmentProgress.vue'
 import AcademyCardPopularInstructors from '@/views/apps/academy/AcademyCardPopularInstructors.vue'
 import AcademyCardTopCourses from '@/views/apps/academy/AcademyCardTopCourses.vue'
@@ -6,8 +8,6 @@ import AcademyCourseTable from '@/views/apps/academy/AcademyCourseTable.vue'
 import AcademyUpcomingWebinar from '@/views/apps/academy/AcademyUpcomingWebinar.vue'
 
 import customCheck from '@images/svg/Check.svg'
-import customLaptop from '@images/svg/laptop.svg'
-import customLightbulb from '@images/svg/lightbulb.svg'
 
 const borderColor = 'rgba(var(--v-border-color), var(--v-border-opacity))'
 

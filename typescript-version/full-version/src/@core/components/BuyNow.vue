@@ -6,7 +6,7 @@ const buyNowUrl = (typeof window !== 'undefined' && 'isMarketplace' in window &&
 
 <template>
   <a
-    class="buy-now-button"
+    class="buy-now-button d-print-none"
     role="button"
     rel="noopener noreferrer"
     :href="buyNowUrl"

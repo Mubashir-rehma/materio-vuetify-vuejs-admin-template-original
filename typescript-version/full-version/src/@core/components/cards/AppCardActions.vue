@@ -99,7 +99,7 @@ const triggeredRemove = () => {
               >
                 <VIcon
                   size="20"
-                  icon="tabler-chevron-up"
+                  icon="mdi-chevron-up"
                   :style="{ transform: isContentCollapsed ? 'rotate(-180deg)' : undefined }"
                   style="transition-duration: 0.28s;"
                 />
@@ -112,7 +112,7 @@ const triggeredRemove = () => {
               >
                 <VIcon
                   size="20"
-                  icon="tabler-refresh"
+                  icon="mdi-refresh"
                 />
               </IconBtn>
 
@@ -123,7 +123,7 @@ const triggeredRemove = () => {
               >
                 <VIcon
                   size="20"
-                  icon="tabler-x"
+                  icon="mdi-close"
                 />
               </IconBtn>
             </div>

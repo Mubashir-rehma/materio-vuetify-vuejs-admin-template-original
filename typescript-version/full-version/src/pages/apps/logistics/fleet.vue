@@ -151,7 +151,7 @@ watch(activeIndex, () => {
               class="d-lg-none"
               @click="isLeftSidebarOpen = !isLeftSidebarOpen"
             >
-              <VIcon icon="tabler-x" />
+              <VIcon icon="mdi-close" />
             </IconBtn>
           </template>
         </VCardItem>
@@ -283,7 +283,7 @@ watch(activeIndex, () => {
           variant="elevated"
           @click="isLeftSidebarOpen = true"
         >
-          <VIcon icon="tabler-menu-2" />
+          <VIcon icon="mdi-menu" />
         </IconBtn>
 
         <!-- 👉 Fleet map  -->

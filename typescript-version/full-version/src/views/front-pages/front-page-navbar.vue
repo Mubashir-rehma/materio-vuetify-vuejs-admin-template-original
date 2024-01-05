@@ -280,7 +280,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                           >
                             <div class="d-flex align-center">
                               <VIcon
-                                icon="tabler-circle"
+                                icon="mdi-checkbox-blank-circle-outline"
                                 color="primary"
                                 :size="10"
                                 class="me-2"

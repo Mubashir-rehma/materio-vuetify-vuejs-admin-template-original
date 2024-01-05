@@ -168,7 +168,7 @@ const resetForm = () => {
                     class="d-flex justify-end flex-wrap gap-x-2"
                   >
                     <VIcon
-                      icon="tabler-bold"
+                      icon="mdi-format-bold"
                       :color="editor.isActive('bold') ? 'primary' : ''"
                       size="20"
                       @click="editor.chain().focus().toggleBold().run()"
@@ -176,40 +176,40 @@ const resetForm = () => {
 
                     <VIcon
                       :color="editor.isActive('underline') ? 'primary' : ''"
-                      icon="tabler-underline"
+                      icon="mdi-format-underline"
                       size="20"
                       @click="editor.commands.toggleUnderline()"
                     />
 
                     <VIcon
                       :color="editor.isActive('italic') ? 'primary' : ''"
-                      icon="tabler-italic"
+                      icon="mdi-format-italic"
                       size="20"
                       @click="editor.chain().focus().toggleItalic().run()"
                     />
 
                     <VIcon
                       :color="editor.isActive('bulletList') ? 'primary' : ''"
-                      icon="tabler-list"
+                      icon="mdi-format-list-bulleted"
                       size="20"
                       @click="editor.chain().focus().toggleBulletList().run()"
                     />
 
                     <VIcon
                       :color="editor.isActive('orderedList') ? 'primary' : ''"
-                      icon="tabler-list-numbers"
+                      icon="mdi-format-list-numbered"
                       size="20"
                       @click="editor.chain().focus().toggleOrderedList().run()"
                     />
 
                     <VIcon
-                      icon="tabler-link"
+                      icon="mdi-link-variant"
                       size="20"
                       @click="setLink"
                     />
 
                     <VIcon
-                      icon="tabler-photo"
+                      icon="mdi-image-filter-hdr-outline"
                       size="20"
                       @click="addImage"
                     />

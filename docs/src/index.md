@@ -50,7 +50,7 @@ features:
   - title: Typescript & JavaScript
     icon: 
       src: https://api.iconify.design/skill-icons:typescript.svg
-    link: https://nuxt.com/
+    link: https://typescriptlang.org/
     details: Get access to both TypeScript & JavaScript Versions.
 ---
 

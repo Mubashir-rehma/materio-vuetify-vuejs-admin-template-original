@@ -36,5 +36,21 @@ features:
       src: https://api.iconify.design/logos:jwt-icon.svg
     link: https://jwt.io/
     details: Master provides extendable JWT auth which can be configured easily and provides ready to use ACL
+
+  - title: Laravel
+    icon: 
+      src: https://api.iconify.design/logos:laravel.svg
+    link: https://laravel.com/
+    details: A PHP framework for web Artisans
+  - title: Nuxt
+    icon: 
+      src: https://api.iconify.design/skill-icons:nuxtjs-dark.svg
+    link: https://nuxt.com/
+    details: Nuxt is an open source framework that makes web development intuitive and powerful.
+  - title: Typescript & JavaScript
+    icon: 
+      src: https://api.iconify.design/skill-icons:typescript.svg
+    link: https://nuxt.com/
+    details: Get access to both TypeScript & JavaScript Versions.
 ---
 

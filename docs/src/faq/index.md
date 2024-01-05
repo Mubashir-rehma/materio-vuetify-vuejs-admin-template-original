@@ -10,12 +10,6 @@ aside: false
 If you can't find your problem. Try searching related term as well.
 :::
 
-## Migrating from Vue 2 to Vue 3 version
-
-As our template is now built on Vuetify 3 and written from scratch with new and improved folder structure, there's no easy way to migrate the existing project to the latest update.
-
-The best way to move your existing codebase to new update is gradually adopting the new update. You can start with either full verison of our template or starter-kit version of our template then few pages from your project to new project and add its requirements. Make sure to carefully update/modify your existing codebase with the new project so you don't miss anything.
-
 **Why breaking change was introduced?**
 
 As you already know, Vue 2 was using options API and vue 3 introduced composition API and people are loving the new composition API more. Moreover, Vue 3 introduced some nice features and added some breaking changes.

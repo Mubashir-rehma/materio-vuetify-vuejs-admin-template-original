@@ -29,6 +29,7 @@ Starter-kit is minimal template from where you can start your project quickly in
 - Four pages (Two sample pages + 404 + Login)
 - No Customizer
 - No Scroll to top
+- No search
 
 Use it if you don't want to clutter your project with extra libs which isn't required.
 

@@ -1,4 +1,4 @@
-name: 'Deploy - Changelog'
+name: '📋 Deploy - Changelog'
 
 on: workflow_dispatch
 

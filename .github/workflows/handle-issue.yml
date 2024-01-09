@@ -1,4 +1,4 @@
-name: 'Handle issue'
+name: '🧑🏻‍💻 Handle issue'
 on:
   issues:
     types: [opened,reopened]

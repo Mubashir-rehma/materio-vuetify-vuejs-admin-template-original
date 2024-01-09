@@ -11,10 +11,14 @@ const route = useRoute('apps-invoice-preview-id')
 const isAddPaymentSidebarVisible = ref(false)
 const isSendPaymentSidebarVisible = ref(false)
 
-const { data: invoiceData } = await useApi<any>(`/apps/invoice/${Number(route.params.id)}`)
+const { data: invoiceData, response } = await useApi<any>(`/apps/invoice/${Number(route.params.id)}`)
+const invoice = ref()
+const paymentDetails = ref()
 
-const invoice = invoiceData.value.invoice
-const paymentDetails = invoiceData.value.paymentDetails
+if (response.value?.ok) {
+  invoice.value = invoiceData.value.invoice
+  paymentDetails.value = invoiceData.value.paymentDetails
+}
 
 // 👉 Invoice Description
 // ℹ️ Your real data will contain this information
@@ -56,7 +60,7 @@ const printInvoice = () => {
 </script>
 
 <template>
-  <section v-if="invoiceData">
+  <section v-if="response?.ok">
     <VRow>
       <VCol
         cols="12"
@@ -96,7 +100,7 @@ const printInvoice = () => {
             <div class="mb-4">
               <!-- 👉 Invoice ID -->
               <h6 class="font-weight-medium text-xl mb-6">
-                Invoice #{{ invoice.id }}
+                Invoice #{{ invoice?.id }}
               </h6>
 
               <!-- 👉 Issue Date -->
@@ -384,6 +388,9 @@ const printInvoice = () => {
 
     <!-- 👉 Send Invoice Sidebar -->
     <InvoiceSendInvoiceDrawer v-model:isDrawerOpen="isSendPaymentSidebarVisible" />
+  </section>
+  <section v-else>
+    <div>Invoice with ID  {{ route.params.id }} not found </div>
   </section>
 </template>
 

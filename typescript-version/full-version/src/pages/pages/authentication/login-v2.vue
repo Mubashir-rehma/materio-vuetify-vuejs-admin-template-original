@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
 definePage({
@@ -18,6 +19,15 @@ const isPasswordVisible = ref(false)
 </script>
 
 <template>
+  <RouterLink to="/">
+    <div class="auth-logo d-flex align-center gap-x-3">
+      <VNodeRenderer :nodes="themeConfig.app.logo" />
+      <h1 class="auth-title">
+        {{ themeConfig.app.title }}
+      </h1>
+    </div>
+  </RouterLink>
+
   <VRow
     no-gutters
     class="auth-wrapper"
@@ -42,7 +52,7 @@ const isPasswordVisible = ref(false)
       >
         <VCardText>
           <h5 class="text-h5 mb-1">
-            Welcome to {{ themeConfig.app.title }}! 👋🏻
+            Welcome to <span class="text-capitalize">{{ themeConfig.app.title }}</span>! 👋🏻
           </h5>
           <p class="mb-0">
             Please sign-in to your account and start the adventure

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
+import { themeConfig } from '@themeConfig'
+
 definePage({
   meta: {
     layout: 'blank',
@@ -9,6 +12,15 @@ const email = ref('')
 </script>
 
 <template>
+  <RouterLink to="/">
+    <div class="auth-logo d-flex align-center gap-x-3">
+      <VNodeRenderer :nodes="themeConfig.app.logo" />
+      <h1 class="auth-title">
+        {{ themeConfig.app.title }}
+      </h1>
+    </div>
+  </RouterLink>
+
   <VRow
     class="auth-wrapper"
     no-gutters

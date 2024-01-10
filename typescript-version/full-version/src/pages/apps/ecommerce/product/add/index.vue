@@ -33,7 +33,7 @@ const inventoryTabsData = [
 
 <template>
   <div>
-    <div class="d-flex flex-wrap justify-center justify-md-space-between gap-4 mb-6">
+    <div class="d-flex flex-wrap justify-space-between gap-4 mb-6">
       <div class="d-flex flex-column justify-center">
         <h5 class="text-h5 font-weight-medium">
           Add a new product
@@ -375,7 +375,11 @@ const inventoryTabsData = [
                       Advanced
                     </div>
                     <VRow>
-                      <VCol>
+                      <VCol
+                        cols="12"
+                        sm="6"
+                        md="7"
+                      >
                         <VSelect
                           label="Product ID Type"
                           placeholder="Select Product Type"
@@ -383,7 +387,11 @@ const inventoryTabsData = [
                         />
                       </VCol>
 
-                      <VCol>
+                      <VCol
+                        cols="12"
+                        sm="6"
+                        md="5"
+                      >
                         <VTextField
                           label="Product Id"
                           placeholder="100023"

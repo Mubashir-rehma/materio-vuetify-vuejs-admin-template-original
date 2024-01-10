@@ -169,14 +169,26 @@ const endDateTimePickerConfig = computed(() => {
                       class="align-center"
                       :class="event.extendedProps.calendar ? 'd-flex' : ''"
                     >
-                      <VBadge
+                      <VIcon
                         :color="item.raw.color"
-                        inline
-                        dot
-                        class="pa-1 mb-1"
+                        icon="mdi-circle"
+                        size="8"
+                        class="me-2"
                       />
                       <span>{{ item.raw.label }}</span>
                     </div>
+                  </template>
+
+                  <template #item="{ item, props: itemProps }">
+                    <VListItem v-bind="itemProps">
+                      <template #prepend>
+                        <VIcon
+                          size="8"
+                          icon="mdi-circle"
+                          :color="item.raw.color"
+                        />
+                      </template>
+                    </VListItem>
                   </template>
                 </VSelect>
               </VCol>

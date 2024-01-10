@@ -48,20 +48,22 @@ const isConfirmDialogVisible = ref(false)
         </VCardSubtitle>
       </VCardItem>
 
-      <VCardText class="d-flex align-center flex-column flex-sm-nowrap px-15">
-        <CustomRadios
-          v-model:selected-radio="selectedPlan"
-          :radio-content="plansList"
-          :grid-column="{ cols: '12', sm: '6' }"
+      <VCardText class="d-flex justify-space-between flex-column flex-sm-row gap-4 px-md-15 px-10">
+        <VSelect
+          v-model="selectedPlan"
+          :items="plansList"
+          density="compact"
+          label="Choose a plan"
+          placeholder="Basic"
         />
-        <VBtn class="mt-5">
+        <VBtn>
           Upgrade
         </VBtn>
       </VCardText>
 
       <VDivider class="my-3" />
 
-      <VCardText class="px-15">
+      <VCardText class="px-md-15 px-10">
         <p class="font-weight-medium mb-2">
           User current plan is standard plan
         </p>

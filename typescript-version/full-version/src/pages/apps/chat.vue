@@ -251,13 +251,18 @@ const chatContentContainerBg = computed(() => {
           class="chat-log-message-form mb-5 mx-5"
           @submit.prevent="sendMessage"
         >
-          <VTextField
+          <VTextarea
             :key="store.activeChat?.contact.id"
             v-model="msg"
+            auto-grow
+            rows="1"
+            max-rows="2"
             variant="solo"
             class="chat-message-input"
-            placeholder="Type your message..."
+            no-resize
+            placeholder="Type your message"
             autofocus
+            @keyup.enter="sendMessage"
           >
             <template #append-inner>
               <IconBtn>
@@ -265,17 +270,24 @@ const chatContentContainerBg = computed(() => {
               </IconBtn>
 
               <IconBtn
-                class="me-4"
+                class="mx-sm-2 mx-0"
                 @click="refInputEl?.click()"
               >
                 <VIcon icon="mdi-attachment" />
               </IconBtn>
 
-              <VBtn @click="sendMessage">
+              <VBtn
+                class="d-none d-md-block"
+                @click="sendMessage"
+              >
                 Send
               </VBtn>
+
+              <IconBtn class="d-block d-md-none">
+                <VIcon icon="mdi-send" />
+              </IconBtn>
             </template>
-          </VTextField>
+          </VTextarea>
 
           <input
             ref="refInputEl"

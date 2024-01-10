@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import usFlag from '@images/icons/countries/us.png'
 import americanExpress from '@images/icons/payments/img/american-express.png'
 import mastercard from '@images/icons/payments/img/mastercard.png'
 import visa from '@images/icons/payments/img/visa-light.png'
@@ -284,11 +285,36 @@ const paymentData = [
                   </tr>
                   <tr>
                     <td>Origin</td>
-                    <td>United States</td>
+                    <td class="d-flex">
+                      <div class="me-2">
+                        United States
+                      </div>
+                      <img
+                        :src="usFlag"
+                        height="20"
+                        width="20"
+                      >
+                    </td>
                   </tr>
                   <tr>
                     <td>CVC Check</td>
-                    <td>Passed</td>
+                    <td class="d-flex">
+                      <div class="me-2">
+                        Passed
+                      </div>
+                      <VAvatar
+                        variant="tonal"
+                        color="success"
+                        size="20"
+                        inline
+                      >
+                        <VIcon
+                          icon="mdi-check"
+                          color="success"
+                          size="12"
+                        />
+                      </VAvatar>
+                    </td>
                   </tr>
                 </VTable>
               </VCol>

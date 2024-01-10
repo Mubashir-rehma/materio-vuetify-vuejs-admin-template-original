@@ -1,20 +1,27 @@
 <script setup lang="ts">
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import type { Email } from '@db/apps/email/types'
 
 defineOptions({
   inheritAttrs: false,
 })
 
+const props = defineProps<Props>()
+
 defineEmits<{
   (e: 'toggleComposeDialogVisibility'): void
 }>()
+
+interface Props {
+  emails: Email[] | null
+}
 
 interface Folder {
   title: string
   prependIcon: string
   to: any
   badge?: {
-    content: string
+    content: string | number
     color: string
   }
 }
@@ -25,12 +32,21 @@ interface Label {
   to: any
 }
 
-const folders: Folder[] = [
+const inboxEmails = ref(0)
+
+watch(() => props.emails, emails => {
+  if (!emails)
+    return
+
+  inboxEmails.value = emails.filter(email => !email.isRead).length
+}, { immediate: true, deep: true })
+
+const folders: ComputedRef<Folder[]> = computed(() => [
   {
     title: 'Inbox',
     prependIcon: 'mdi-email-outline',
     to: { name: 'apps-email' },
-    badge: { content: '21', color: 'primary' },
+    badge: { content: inboxEmails.value, color: 'primary' },
   },
   {
     title: 'Sent',
@@ -74,7 +90,7 @@ const folders: Folder[] = [
       params: { filter: 'trashed' },
     },
   },
-]
+])
 
 const labels: Label[] = [
   {

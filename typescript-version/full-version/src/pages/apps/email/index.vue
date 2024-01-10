@@ -190,7 +190,10 @@ watch(
       location="start"
       :temporary="$vuetify.display.mdAndDown"
     >
-      <EmailLeftSidebarContent @toggle-compose-dialog-visibility="isComposeDialogVisible = !isComposeDialogVisible" />
+      <EmailLeftSidebarContent
+        :emails="emails"
+        @toggle-compose-dialog-visibility="isComposeDialogVisible = !isComposeDialogVisible"
+      />
     </VNavigationDrawer>
     <EmailView
       :email="openedEmail"

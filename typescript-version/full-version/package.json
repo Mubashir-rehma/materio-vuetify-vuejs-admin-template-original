@@ -92,6 +92,7 @@
     "postcss-html": "^1.5.0",
     "postcss-scss": "^4.0.9",
     "sass": "^1.69.4",
+    "shikiji": "^0.9.18",
     "stylelint": "15.11.0",
     "stylelint-codeguide": "0.3.2",
     "stylelint-config-idiomatic-order": "9.0.0",

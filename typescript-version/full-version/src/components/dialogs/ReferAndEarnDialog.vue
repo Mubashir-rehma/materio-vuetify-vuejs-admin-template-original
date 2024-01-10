@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { themeConfig } from '@themeConfig'
+
 interface Props {
   isDialogVisible: boolean
 }
@@ -53,7 +55,7 @@ const referAndEarnSteps = [
           Refer & Earn
         </h5>
         <p class="text-sm-body-1 text-center">
-          Invite your friend to vuexy, if they sign up, you and your friend will get 30 days free trial
+          Invite your friend to <span class="text-capitalize">{{ themeConfig.app.title }}</span>, if they sign up, you and your friend will get 30 days free trial
         </p>
 
         <VRow class="text-center mt-6">

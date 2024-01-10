@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { CartItem, CheckoutData } from './types'
+import emptyCartImg from '@images/pages/empty-cart.png'
 
 interface Props {
   currentStep?: number
@@ -70,7 +71,10 @@ watch(() => props.currentStep, updateCartData)
       </h6>
 
       <!-- 👉 Cart items -->
-      <div class="border rounded">
+      <div
+        v-if="checkoutCartDataLocal.cartItems.length"
+        class="border rounded"
+      >
         <template
           v-for="(item, index) in checkoutCartDataLocal.cartItems"
           :key="item.name"
@@ -155,6 +159,11 @@ watch(() => props.currentStep, updateCartData)
             </div>
           </div>
         </template>
+      </div>
+
+      <!-- 👉 Empty Cart -->
+      <div v-else>
+        <VImg :src="emptyCartImg" />
       </div>
 
       <!-- 👉 Add more from wishlist -->

@@ -94,17 +94,19 @@ const msgGroups = computed(() => {
         class="chat-body d-inline-flex flex-column"
         :class="msgGrp.senderId !== contact.id ? 'align-end' : 'align-start'"
       >
-        <p
+        <div
           v-for="(msgData, msgIndex) in msgGrp.messages"
           :key="msgData.time"
-          class="chat-content text-sm py-3 px-4 elevation-1"
+          class="chat-content text-body-2 text-sm py-3 px-4 elevation-1"
           :class="[
             msgGrp.senderId === contact.id ? 'bg-surface chat-left' : 'bg-primary text-white chat-right',
             msgGrp.messages.length - 1 !== msgIndex ? 'mb-2' : 'mb-1',
           ]"
         >
-          {{ msgData.message }}
-        </p>
+          <p class="mb-0">
+            {{ msgData.message }}
+          </p>
+        </div>
         <div :class="{ 'text-right': msgGrp.senderId !== contact.id }">
           <span class="text-xs me-1 text-disabled">{{ formatDate(msgGrp.messages[msgGrp.messages.length - 1].time, { hour: 'numeric', minute: 'numeric' }) }}</span>
           <VIcon
@@ -125,6 +127,10 @@ const msgGroups = computed(() => {
   .chat-content {
     border-end-end-radius: 6px;
     border-end-start-radius: 6px;
+
+    p {
+      overflow-wrap: anywhere;
+    }
 
     &.chat-left {
       border-start-end-radius: 6px;

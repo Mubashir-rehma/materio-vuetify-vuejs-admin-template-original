@@ -575,6 +575,31 @@ const validateSocialLinkForm = () => {
               {{ socialForm.linkedIn }}
             </p>
           </div>
+          <VCol cols="12">
+            <div class="d-flex flex-wrap gap-4 justify-space-between mt-8">
+              <VBtn
+                color="secondary"
+                variant="tonal"
+                :disabled="currentStep === 0"
+                @click="currentStep--"
+              >
+                <VIcon
+                  icon="mdi-arrow-left"
+                  start
+                  class="flip-in-rtl"
+                />
+                Previous
+              </VBtn>
+
+              <VBtn
+                color="success"
+                append-icon="mdi-check"
+                @click="console.log('Form Submitted')"
+              >
+                submit
+              </VBtn>
+            </div>
+          </VCol>
         </VWindowItem>
       </VWindow>
     </VCardText>

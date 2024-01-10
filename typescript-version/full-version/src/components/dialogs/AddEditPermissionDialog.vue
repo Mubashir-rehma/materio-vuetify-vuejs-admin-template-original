@@ -72,7 +72,6 @@ watch(props, () => {
             <VTextField
               v-model="currentPermissionName"
               density="compact"
-              label="Permission Name"
               placeholder="Enter Permission Name"
             />
 

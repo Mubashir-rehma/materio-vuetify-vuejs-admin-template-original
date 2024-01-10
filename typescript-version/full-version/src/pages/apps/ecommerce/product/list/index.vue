@@ -272,10 +272,10 @@ const deleteProduct = async (id: number) => {
       <!-- 👉 Datatable  -->
       <VDataTableServer
         v-model:items-per-page="itemsPerPage"
+        v-model:page="page"
         :headers="headers"
         show-select
         :items="products"
-        item-value="product"
         :items-length="totalProduct"
         class="text-no-wrap"
         @update:options="updateOptions"

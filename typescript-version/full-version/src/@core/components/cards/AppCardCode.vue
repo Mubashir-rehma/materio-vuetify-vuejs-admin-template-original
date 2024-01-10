@@ -100,9 +100,15 @@ const { copy, copied } = useClipboard({ source: computed(() => props.code[prefer
 <style lang="scss">
 @use "@styles/variables/vuetify.scss";
 
+code[class*="language-"], pre[class*="language-"] {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 14px;
+}
+
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   border-radius: vuetify.$card-border-radius;
+  max-block-size: 500px;
 }
 
 .app-card-code-copy-icon {

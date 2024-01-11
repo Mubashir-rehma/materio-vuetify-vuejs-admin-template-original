@@ -124,7 +124,7 @@ const deleteInvoice = async (id: number) => {
                 :class="$vuetify.display.xs
                   ? id !== widgetData.length - 1 ? 'border-b pb-4' : ''
                   : $vuetify.display.sm
-                    ? id < 2 ? 'border-b pb-4' : ''
+                    ? widgetData.length / 2 ? 'border-b pb-4' : ''
                     : ''"
               >
                 <div class="d-flex flex-column gap-y-1">

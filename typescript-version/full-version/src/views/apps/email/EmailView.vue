@@ -25,6 +25,9 @@ const emit = defineEmits<{
   (e: 'unstar'): void
 }>()
 
+const emailReply = ref('')
+const showReplyBox = ref(false)
+const showReplyCard = ref(true)
 const { updateEmailLabels } = useEmail()
 
 const { labels, resolveLabelColor, emailMoveToFolderActions, shallShowMoveToActionFor, moveSelectedEmailTo } = useEmail()
@@ -290,16 +293,34 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
           </template>
         </VCard>
 
-        <VCard class="mx-5 mb-5">
+        <VCard
+          v-show="showReplyCard"
+          class="mx-5 mb-5"
+        >
           <VCardText class="font-weight-medium text-high-emphasis">
             <div class="text-base">
-              Click here to <span class="text-primary cursor-pointer">
+              Click here to <span
+                class="text-primary cursor-pointer"
+                @click="showReplyBox = !showReplyBox; showReplyCard = !showReplyCard"
+              >
                 Reply
               </span> or <span class="text-primary cursor-pointer">
                 Forward
               </span>
             </div>
           </VCardText>
+        </VCard>
+
+        <VCard
+          v-if="showReplyBox"
+          class="mx-5 mb-5"
+        >
+          <VCardText>
+            <h6 class="text-h6">
+              Reply to {{ email?.from.name }}
+            </h6>
+          </VCardText>
+          <TiptapEditor v-model="emailReply" />
         </VCard>
       </PerfectScrollbar>
     </template>

@@ -4,10 +4,56 @@ import americanExpress from '@images/icons/payments/img/american-express.png'
 import mastercard from '@images/icons/payments/img/mastercard.png'
 import visa from '@images/icons/payments/img/visa-light.png'
 
+interface CardDetails {
+  number: string
+  name: string
+  expiry: string
+  cvv: string
+  isPrimary: boolean
+  type: string
+}
+
+interface BillingAddress {
+  firstName: string
+  lastName: string
+  selectedCountry: string | null
+  addressLine1: string
+  addressLine2: string
+  landmark: string
+  contact: string
+  country: string | null
+  state: string
+  zipCode: number | null
+}
+
+const currentCardDetails: CardDetails = {
+  number: '1234 5678 9012 3456',
+  name: 'John Doe',
+  expiry: '12/2028',
+  cvv: '123',
+  isPrimary: false,
+  type: '',
+}
+
+const editBillingData: BillingAddress = {
+  firstName: 'Gertrude',
+  lastName: 'Jennings',
+  selectedCountry: 'USA',
+  addressLine1: '100 Water Plant Avenue',
+  addressLine2: 'Building 1303 Wake Island',
+  landmark: 'Near Wake Island',
+  contact: '+1(609) 933-44-22',
+  country: 'USA',
+  state: 'Queensland',
+  zipCode: 403114,
+}
+
 const show = ref([true, false, false])
 const paymentShow = ref([true, false, false])
 const isEditAddressDialogVisible = ref(false)
 const isCardAddDialogVisible = ref(false)
+const isNewEditAddressDialogVisible = ref(false)
+const isNewCardAddDialogVisible = ref(false)
 
 const addressData = [
   {
@@ -81,7 +127,7 @@ const paymentData = [
         </h5>
         <VBtn
           variant="outlined"
-          @click="isEditAddressDialogVisible = !isEditAddressDialogVisible"
+          @click="isNewEditAddressDialogVisible = !isNewEditAddressDialogVisible"
         >
           Add new Address
         </VBtn>
@@ -90,68 +136,66 @@ const paymentData = [
         v-for="(address, index) in addressData"
         :key="index"
       >
-        <div class="d-flex justify-space-between mb-4 gap-y-2 flex-wrap align-center">
-          <div class="d-flex align-center gap-x-1">
-            <IconBtn
-              density="comfortable"
-              @click="show[index] = !show[index]"
-            >
-              <VIcon
-                :icon="show[index] ? 'mdi-chevron-down' : 'mdi-chevron-right'"
-                class="flip-in-rtl"
-              />
-            </IconBtn>
-            <div>
+        <div>
+          <div class="d-flex justify-space-between mb-4 gap-y-2 flex-wrap align-center">
+            <div class="d-flex align-center gap-x-1">
+              <IconBtn
+                density="comfortable"
+                @click="show[index] = !show[index]"
+              >
+                <VIcon
+                  :icon="show[index] ? 'mdi-chevron-down' : 'mdi-chevron-right'"
+                  class="flip-in-rtl"
+                />
+              </IconBtn>
               <div>
-                <span class="text-subtitle-2 text-high-emphasis me-2">{{ address.title }}</span>
-                <VChip
-                  v-if="address.defaultAdderss"
-                  color="success"
-                  density="comfortable"
-                >
-                  Default Address
-                </VChip>
+                <div>
+                  <span class="text-subtitle-2 text-high-emphasis me-2">{{ address.title }}</span>
+                  <VChip
+                    v-if="address.defaultAdderss"
+                    color="success"
+                    density="comfortable"
+                  >
+                    Default Address
+                  </VChip>
+                </div>
+                <span class="text-body-2">{{ address.subtitle }}</span>
               </div>
-              <span class="text-body-2">{{ address.subtitle }}</span>
+            </div>
+            <div class="ms-5">
+              <IconBtn @click="isEditAddressDialogVisible = !isEditAddressDialogVisible">
+                <VIcon
+                  icon="mdi-pencil-outline"
+                  class="flip-in-rtl"
+                />
+              </IconBtn>
+              <IconBtn>
+                <VIcon
+                  icon="mdi-delete-outline"
+                  class="flip-in-rtl"
+                />
+              </IconBtn>
+              <IconBtn>
+                <VIcon
+                  icon="mdi-dots-vertical"
+                  class="flip-in-rtl"
+                />
+              </IconBtn>
             </div>
           </div>
-
-          <div class="ms-5">
-            <IconBtn>
-              <VIcon
-                icon="mdi-pencil-outline"
-                class="flip-in-rtl"
-              />
-            </IconBtn>
-            <IconBtn>
-              <VIcon
-                icon="mdi-delete-outline"
-                class="flip-in-rtl"
-              />
-            </IconBtn>
-            <IconBtn>
-              <VIcon
-                icon="mdi-dots-vertical"
-                class="flip-in-rtl"
-              />
-            </IconBtn>
-          </div>
+          <VExpandTransition>
+            <div
+              v-show="show[index]"
+              class="px-8"
+            >
+              <div class="mb-1 font-weight-medium text-high-emphasis">
+                {{ address.owner }}
+              </div>
+              <div v-html="address.address" />
+            </div>
+          </VExpandTransition>
+          <VDivider v-if="index !== addressData.length - 1" />
         </div>
-        <VExpandTransition>
-          <div
-            v-show="show[index]"
-            class="px-8"
-          >
-            <div class="mb-1 font-weight-medium text-high-emphasis">
-              {{ address.owner }}
-            </div>
-            <div v-html="address.address" />
-          </div>
-        </VExpandTransition>
-        <VDivider
-          v-if="index !== addressData.length - 1"
-          class="my-4"
-        />
       </template>
     </VCardText>
   </VCard>
@@ -165,7 +209,7 @@ const paymentData = [
         </h5>
         <VBtn
           variant="outlined"
-          @click="isCardAddDialogVisible = !isCardAddDialogVisible"
+          @click="isNewCardAddDialogVisible = !isNewCardAddDialogVisible"
         >
           Add Payment Methods
         </VBtn>
@@ -209,7 +253,7 @@ const paymentData = [
           </div>
 
           <div class="ms-5">
-            <IconBtn>
+            <IconBtn @click="isCardAddDialogVisible = !isCardAddDialogVisible">
               <VIcon
                 icon="mdi-pencil-outline"
                 class="flip-in-rtl"
@@ -321,13 +365,18 @@ const paymentData = [
             </VRow>
           </div>
         </VExpandTransition>
-        <VDivider
-          v-if="index !== paymentData.length - 1"
-          class="my-4"
-        />
+        <VDivider v-if="index !== paymentData.length - 1" />
       </template>
     </VCardText>
   </VCard>
-  <AddEditAddressDialog v-model:isDialogVisible="isEditAddressDialogVisible" />
-  <CardAddEditDialog v-model:isDialogVisible="isCardAddDialogVisible" />
+  <AddEditAddressDialog
+    v-model:isDialogVisible="isEditAddressDialogVisible"
+    :billing-address="editBillingData"
+  />
+  <AddEditAddressDialog v-model:isDialogVisible="isNewEditAddressDialogVisible" />
+  <CardAddEditDialog
+    v-model:isDialogVisible="isCardAddDialogVisible"
+    :card-details="currentCardDetails"
+  />
+  <CardAddEditDialog v-model:isDialogVisible="isNewCardAddDialogVisible" />
 </template>

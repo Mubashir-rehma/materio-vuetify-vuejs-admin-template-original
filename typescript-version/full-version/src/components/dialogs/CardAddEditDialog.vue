@@ -61,7 +61,7 @@ const formSubmit = () => {
           {{ props.cardDetails.name ? 'Edit Card' : 'Add New Card' }}
         </VCardTitle>
         <VCardSubtitle>
-          {{ props.cardDetails.name ? 'Edit your saved card details' : 'Add your saved card details' }}
+          {{ props.cardDetails.name ? 'Edit' : 'Add' }}  your saved card details
         </VCardSubtitle>
       </VCardItem>
 
@@ -92,7 +92,7 @@ const formSubmit = () => {
 
             <!-- 👉 Card Expiry -->
             <VCol
-              cols="6"
+              cols="12"
               md="3"
             >
               <VTextField
@@ -104,7 +104,7 @@ const formSubmit = () => {
 
             <!-- 👉 Card CVV -->
             <VCol
-              cols="6"
+              cols="12"
               md="3"
             >
               <VTextField

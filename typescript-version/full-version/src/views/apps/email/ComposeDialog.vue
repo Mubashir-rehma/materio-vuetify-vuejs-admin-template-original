@@ -10,6 +10,11 @@ const subject = ref('')
 const message = ref('')
 const isMenuOpen = ref(false)
 
+const cc = ref('')
+const bcc = ref('')
+const isEmailCc = ref(false)
+const isEmailBcc = ref(false)
+
 const resetValues = () => {
   to.value = subject.value = message.value = ''
 }
@@ -50,12 +55,48 @@ const resetValues = () => {
           </div>
         </template>
         <template #append>
-          <span class="cursor-pointer">Cc | Bcc</span>
+          <span class="cursor-pointer">
+            <span @click="isEmailCc = !isEmailCc">Cc</span>
+            <span> | </span>
+            <span @click="isEmailBcc = !isEmailBcc">Bcc</span>
+          </span>
         </template>
       </VTextField>
     </div>
 
     <VDivider />
+
+    <VExpandTransition>
+      <div v-if="isEmailCc">
+        <VTextField
+          v-model="cc"
+          density="compact"
+        >
+          <template #prepend-inner>
+            <div class="text-sm text-disabled">
+              Cc:
+            </div>
+          </template>
+        </VTextField>
+        <VDivider />
+      </div>
+    </VExpandTransition>
+
+    <VExpandTransition>
+      <div v-if="isEmailBcc">
+        <VTextField
+          v-model="bcc"
+          density="compact"
+        >
+          <template #prepend-inner>
+            <div class="text-sm text-disabled">
+              Bcc:
+            </div>
+          </template>
+        </VTextField>
+        <VDivider />
+      </div>
+    </VExpandTransition>
 
     <VTextField
       v-model="subject"
@@ -144,6 +185,13 @@ const resetValues = () => {
   }
 
   padding: 0.5rem;
+  block-size: 150px;
+  overflow-y: auto;
+  padding-block: .5rem;
+
+  &:focus-visible {
+    outline: none;
+  }
 
   p.is-editor-empty:first-child::before {
     block-size: 0;
@@ -151,6 +199,10 @@ const resetValues = () => {
     content: attr(data-placeholder);
     float: inline-start;
     pointer-events: none;
+  }
+
+  ul,ol{
+    padding-inline: 1.125rem;
   }
 
   &-focused{

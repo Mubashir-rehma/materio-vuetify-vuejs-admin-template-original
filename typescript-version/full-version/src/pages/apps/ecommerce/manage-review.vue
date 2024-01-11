@@ -420,7 +420,6 @@ const reviewStatChartConfig = {
           :items="reviews"
           show-select
           :items-length="totalReviews"
-          item-value="product"
           class="text-no-wrap"
           @update:options="updateOptions"
         >

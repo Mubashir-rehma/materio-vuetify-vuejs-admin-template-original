@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import type { Email } from '@db/apps/email/types'
 
 defineOptions({
   inheritAttrs: false,
@@ -13,7 +12,11 @@ defineEmits<{
 }>()
 
 interface Props {
-  emails: Email[] | null
+  emailsMeta: {
+    inbox: number
+    draft: number
+    spam: number
+  }
 }
 
 interface Folder {
@@ -33,12 +36,16 @@ interface Label {
 }
 
 const inboxEmails = ref(0)
+const draftEmails = ref(0)
+const spamEmails = ref(0)
 
-watch(() => props.emails, emails => {
-  if (!emails)
+watch(() => props.emailsMeta, emailsMeta => {
+  if (!emailsMeta)
     return
 
-  inboxEmails.value = emails.filter(email => !email.isRead).length
+  inboxEmails.value = emailsMeta.inbox
+  draftEmails.value = emailsMeta.draft
+  spamEmails.value = emailsMeta.spam
 }, { immediate: true, deep: true })
 
 const folders: ComputedRef<Folder[]> = computed(() => [
@@ -63,7 +70,7 @@ const folders: ComputedRef<Folder[]> = computed(() => [
       name: 'apps-email-filter',
       params: { filter: 'draft' },
     },
-    badge: { content: '1', color: 'warning' },
+    badge: { content: draftEmails.value, color: 'warning' },
   },
   {
     title: 'Starred',
@@ -80,7 +87,7 @@ const folders: ComputedRef<Folder[]> = computed(() => [
       name: 'apps-email-filter',
       params: { filter: 'spam' },
     },
-    badge: { content: '6', color: 'error' },
+    badge: { content: spamEmails.value, color: 'error' },
   },
   {
     title: 'Trash',

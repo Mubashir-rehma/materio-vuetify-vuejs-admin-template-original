@@ -49,6 +49,7 @@ const { data: emailData, execute: fetchEmails } = await useApi<any>(createUrl('/
 }))
 
 const emails = computed<Email[]>(() => emailData.value.emails)
+const emailsMeta = computed(() => emailData.value.emailsMeta)
 
 const toggleSelectedEmail = (emailId: Email['id']) => {
   const emailIndex = selectedEmails.value.indexOf(emailId)
@@ -191,7 +192,7 @@ watch(
       :temporary="$vuetify.display.mdAndDown"
     >
       <EmailLeftSidebarContent
-        :emails="emails"
+        :emails-meta="emailsMeta"
         @toggle-compose-dialog-visibility="isComposeDialogVisible = !isComposeDialogVisible"
       />
     </VNavigationDrawer>

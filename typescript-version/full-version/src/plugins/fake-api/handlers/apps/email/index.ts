@@ -1,7 +1,7 @@
 import { destr } from 'destr'
 import { rest } from 'msw'
-import { db } from '@db/apps/email/db'
 import type { Email, EmailLabel } from '@/plugins/fake-api/handlers/apps/email/types'
+import { db } from '@db/apps/email/db'
 
 export const handlerAppsEmail = [
   // 👉 Get Email List
@@ -33,7 +33,7 @@ export const handlerAppsEmail = [
     // ------------------------------------------------
     const emailsMeta = {
       inbox: db.emails.filter(email => !email.isDeleted && !email.isRead && email.folder === 'inbox').length,
-      draft: db.emails.filter(email => email.folder === 'draft').length,
+      draft: db.emails.filter(email => !email.isDeleted && email.folder === 'draft').length,
       spam: db.emails.filter(email => !email.isDeleted && !email.isRead && email.folder === 'spam').length,
     }
 

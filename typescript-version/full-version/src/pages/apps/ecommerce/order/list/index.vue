@@ -98,7 +98,14 @@ const deleteOrder = async (id: number) => {
               md="3"
               class="px-6"
             >
-              <div class="d-flex justify-space-between">
+              <div
+                class="d-flex justify-space-between"
+                :class="$vuetify.display.xs
+                  ? id !== widgetData.length - 1 ? 'border-b pb-4' : ''
+                  : $vuetify.display.sm
+                    ? id < 2 ? 'border-b pb-4' : ''
+                    : ''"
+              >
                 <div class="d-flex flex-column gap-y-1">
                   <span class="text-h5 text-high-emphasis">{{ data.value }}</span>
                   <h6 class="text-base text-capitalize font-weight-medium">
@@ -124,7 +131,6 @@ const deleteOrder = async (id: number) => {
                   : false"
               vertical
               inset
-              length="88"
             />
           </template>
         </VRow>

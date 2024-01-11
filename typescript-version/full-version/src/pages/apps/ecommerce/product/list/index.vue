@@ -127,9 +127,9 @@ const deleteProduct = async (id: number) => {
               <div
                 class="d-flex justify-space-between"
                 :class="$vuetify.display.xs
-                  ? 'product-widget'
+                  ? id !== widgetData.length - 1 ? 'border-b pb-4' : ''
                   : $vuetify.display.sm
-                    ? id < 2 ? 'product-widget' : ''
+                    ? id < 2 ? 'border-b pb-4' : ''
                     : ''"
               >
                 <div class="d-flex flex-column gap-y-1">
@@ -365,10 +365,3 @@ const deleteProduct = async (id: number) => {
     </VCard>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.product-widget{
-  border-block-end: 1px solid rgba(var(--v-theme-on-surface), var(--v-border-opacity));
-  padding-block-end: 1rem;
-}
-</style>

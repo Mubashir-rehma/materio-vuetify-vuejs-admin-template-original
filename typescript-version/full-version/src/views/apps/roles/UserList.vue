@@ -161,7 +161,6 @@ const deleteUser = async (id: number) => {
           { value: -1, title: '$vuetify.dataFooter.itemsPerPageAll' },
         ]"
         :items="users"
-        item-value="user"
         :items-length="totalUsers"
         :headers="headers"
         show-select

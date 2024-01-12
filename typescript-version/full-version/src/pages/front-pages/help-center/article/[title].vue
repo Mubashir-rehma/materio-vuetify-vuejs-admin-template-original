@@ -20,6 +20,7 @@ else
 </script>
 
 <template>
+  <!-- eslint-disable vue/no-v-html -->
   <div class="bg-surface help-center-article">
     <!-- 👉 Navbar  -->
     <Navbar />

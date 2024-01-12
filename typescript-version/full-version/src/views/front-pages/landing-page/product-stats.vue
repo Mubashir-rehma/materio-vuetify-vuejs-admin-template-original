@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import layoutRight from '@images/svg/layout-right.svg';
-import medal from '@images/svg/medal.svg';
-import peopleTag from '@images/svg/people-tag.svg';
+import layoutRight from '@images/svg/layout-right.svg'
+import medal from '@images/svg/medal.svg'
+import peopleTag from '@images/svg/people-tag.svg'
 
 const statData = [
   { title: 'Completed Sites', value: 137, icon: layoutRight, color: 'primary' },

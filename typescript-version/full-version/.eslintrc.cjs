@@ -12,6 +12,7 @@ module.exports = {
     'plugin:sonarjs/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:case-police/recommended',
+    'plugin:regexp/recommended',
 
     // 'plugin:unicorn/recommended',
   ],
@@ -25,6 +26,7 @@ module.exports = {
     'vue',
     '@typescript-eslint',
     'regex',
+    'regexp',
   ],
   ignorePatterns: ['src/plugins/iconify/*.js', 'node_modules', 'dist', '*.d.ts', 'vendor'],
   rules: {

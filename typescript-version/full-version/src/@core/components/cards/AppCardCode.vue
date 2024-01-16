@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { getHighlighter } from 'shikiji'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { getHighlighter } from 'shikiji';
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
 
 type CodeLanguages = 'ts' | 'js'
 
@@ -37,7 +37,6 @@ const codeSnippet = highlighter.codeToHtml(props.code[preferredCodeLanguage.valu
   theme: 'dracula',
 })
 
-console.log(codeSnippet)
 </script>
 
 <template>

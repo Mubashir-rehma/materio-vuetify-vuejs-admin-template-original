@@ -305,6 +305,7 @@ input[altinputclass="inlinePicker"] {
 
   &.hasTime.open {
     .flatpickr-time {
+      border: none;
       border-color: rgba(var(--v-border-color), var(--v-border-opacity));
       block-size: auto;
     }

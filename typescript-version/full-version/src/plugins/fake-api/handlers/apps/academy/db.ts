@@ -50,7 +50,7 @@ export const db: DB = {
       user: 'Maybelle Zmitrovich',
       tutorImg: tutorImg2,
       image: avatar2,
-      completedTasks: 100,
+      completedTasks: 48,
       totalTasks: 52,
       userCount: 14,
       note: 48,

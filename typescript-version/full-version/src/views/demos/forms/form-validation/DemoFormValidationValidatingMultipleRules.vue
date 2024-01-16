@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import { VForm } from 'vuetify/components/VForm'
+import { VForm } from 'vuetify/components/VForm';
 
-const name = ref('')
-const email = ref('')
+const name = ref()
+const email = ref()
 const refForm = ref<VForm>()
-const password = ref('')
-const confirmPassword = ref('')
+const password = ref()
+const confirmPassword = ref()
 const isPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
 </script>
@@ -22,8 +22,8 @@ const isConfirmPasswordVisible = ref(false)
       >
         <VTextField
           v-model="name"
+          label="Name"
           placeholder="Your Name"
-          persistent-placeholder
           :rules="[requiredValidator]"
         />
       </VCol>
@@ -34,8 +34,8 @@ const isConfirmPasswordVisible = ref(false)
       >
         <VTextField
           v-model="email"
+          label="Email"
           placeholder="Your Email"
-          persistent-placeholder
           :rules="[requiredValidator, emailValidator]"
         />
       </VCol>
@@ -46,6 +46,7 @@ const isConfirmPasswordVisible = ref(false)
       >
         <VTextField
           v-model="password"
+          label="Password"
           :type="isPasswordVisible ? 'text' : 'password'"
           :append-inner-icon="isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
           placeholder="Enter Password"
@@ -61,9 +62,9 @@ const isConfirmPasswordVisible = ref(false)
       >
         <VTextField
           v-model="confirmPassword"
+          label="Confirm Password"
           :type="isConfirmPasswordVisible ? 'text' : 'password'"
           placeholder="Confirm Password"
-          persistent-placeholder
           :append-inner-icon="confirmPassword ? 'mdi-eye-off-outline' : 'mdi-eye-outline'"
           :rules="[requiredValidator, confirmedValidator(confirmPassword, password)]"
           autocomplete="on"

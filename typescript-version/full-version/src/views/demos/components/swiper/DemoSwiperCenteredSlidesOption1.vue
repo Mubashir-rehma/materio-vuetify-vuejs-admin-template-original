@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { register } from 'swiper/element/bundle'
+import { register } from 'swiper/element/bundle';
 
 register()
 </script>
@@ -37,7 +37,7 @@ register()
         },
         460: {
           slidesPerView: 2,
-          spaceBetween: 30,
+          spaceBetween: 20,
         },
       }"
     >
@@ -51,7 +51,7 @@ register()
         ]"
         :key="text"
       >
-        <VCard max-width="260">
+        <VCard>
           <VCardText>
             <div class="d-flex flex-column align-center gap-y-3">
               <VIcon

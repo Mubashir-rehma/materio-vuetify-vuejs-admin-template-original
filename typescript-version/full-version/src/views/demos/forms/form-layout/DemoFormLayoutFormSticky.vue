@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CustomInputContent } from '@core/types'
+import type { CustomInputContent } from '@core/types';
 
 const radioContent: CustomInputContent[] = [
   {
@@ -61,8 +61,8 @@ const formData = ref({
 
 <template>
   <VCard class="overflow-visible">
-    <div class="w-100 sticky-header">
-      <div class=" d-flex align-center gap-4 flex-wrap bg-background pa-6">
+    <div class="w-100 sticky-header overflow-hidden rounded-t">
+      <div class="d-flex align-center gap-4 flex-wrap bg-background pa-6">
         <VCardTitle>Sticky Action Bar</VCardTitle>
         <VSpacer />
         <div>

@@ -2,13 +2,15 @@ import { genId } from '@api-utils/genId'
 import { db } from '@db/apps/calendar/db'
 import is from '@sindresorhus/is'
 import destr from 'destr'
-import { http } from 'msw'
+import { http, HttpResponse } from 'msw'
 
 export const handlerAppsCalendar = [
 
   // 👉 Get Calendar Events
-  http.get(('/api/apps/calendar'), (req, res, ctx) => {
-    const queries = req.url.searchParams.getAll('calendars')
+  http.get(('/api/apps/calendar'), ({request}) => {
+    const url = new URL(request.url)
+
+    const queries = url.searchParams.getAll('calendars')
 
     const parsedCalendars = destr(queries)
 
@@ -16,34 +18,29 @@ export const handlerAppsCalendar = [
 
     const events = db.events.filter(event => calendars?.includes(event.extendedProps.calendar))
 
-    return res(
-      ctx.status(200),
-      ctx.json(events),
-    )
+    return HttpResponse.json(events, { status : 200 })
+
   }),
 
   // 👉 Add Calendar Event
-  http.post(('/api/apps/calendar'), async (req, res, ctx) => {
-    const event = await req.json() as typeof db.events[0]
+  http.post(('/api/apps/calendar'), async ({ request }) => {
+    const event = await request.json() as typeof db.events[0]
 
     db.events.push({
       ...event,
       id: genId(db.events),
     })
 
-    return res(
-      ctx.status(200),
-      ctx.json(event),
-    )
+    return HttpResponse.json(event, { status: 201 })
   }),
 
   // 👉 Update Calendar Event
-  http.put(('/api/apps/calendar/:id'), async (req, res, ctx) => {
-    const updatedEvent = await req.json() as typeof db.events[0]
+  http.put(('/api/apps/calendar/:id'), async ({ request, params }) => {
+    const updatedEvent = await request.json() as typeof db.events[0]
 
     updatedEvent.id = Number(updatedEvent.id)
 
-    const eventId = Number(req.params.id)
+    const eventId = Number(params.id)
 
     // Find the index of the event in the database
     const currentEvent = db.events.find(e => e.id === eventId)
@@ -52,35 +49,34 @@ export const handlerAppsCalendar = [
     if (currentEvent) {
       Object.assign(currentEvent, updatedEvent)
 
-      return res(
-        ctx.status(200),
-        ctx.json(currentEvent),
-      )
+      return HttpResponse.json(currentEvent, {
+        status: 201,
+      })
     }
-
-    return res(
-      ctx.status(400),
-      ctx.json({ message: 'Something Went Wrong' }),
+    
+    return new HttpResponse(
+      'Something Went Wrong',
+      { status: 400 }
     )
   }),
 
   // 👉 Delete Calendar Event
-  http.delete(('/api/apps/calendar/:id'), (req, res, ctx) => {
-    const eventId = Number(req.params.id)
+  http.delete(('/api/apps/calendar/:id'), ({ params }) => {
+    const eventId = Number(params.id)
 
     const eventIndex = db.events.findIndex(e => e.id === eventId)
 
     if (eventIndex !== -1) {
       db.events.splice(eventIndex, 1)
 
-      return res(
-        ctx.status(204),
-      )
+      return new HttpResponse(null, {
+        status: 204,
+      })
     }
 
-    return res(
-      ctx.status(400),
-      ctx.json({ message: 'Something Went Wrong' }),
+    return new HttpResponse(
+      'Something Went Wrong',
+      { status: 400 }
     )
   }),
 ]

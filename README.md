@@ -2,7 +2,7 @@
 
 <p align="center">
    <a href="$product_page_url" target="_blank">
-      <img src="$product_logo_image_url" alt="$slugified_product_name-logo" width="40px" height="auto">
+      <img src="$product_logo_image_url" alt="$brand_name-logo" width="40px" height="auto">
    </a>
 </p>
 

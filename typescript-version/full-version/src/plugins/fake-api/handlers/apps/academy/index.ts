@@ -1,20 +1,24 @@
+import { paginateArray } from '@api-utils/paginateArray'
+import { db } from '@db/apps/academy/db'
 import is from '@sindresorhus/is'
 import destr from 'destr'
-import { rest } from 'msw'
-import { db } from '@db/apps/academy/db'
-import { paginateArray } from '@api-utils/paginateArray'
+import { http, HttpResponse } from 'msw'
+
 
 export const handlerAppsAcademy = [
 
   // 👉 Course
-  rest.get(('/api/apps/academy/courses'), (req, res, ctx) => {
-    const q = req.url.searchParams.get('q')
-    const label = req.url.searchParams.get('label') || 'All Courses'
-    const hideCompleted = req.url.searchParams.get('hideCompleted')
-    const page = req.url.searchParams.get('page')
-    const itemsPerPage = req.url.searchParams.get('itemsPerPage')
-    const sortBy = req.url.searchParams.get('sortBy')
-    const orderBy = req.url.searchParams.get('orderBy')
+  http.get(('/api/apps/academy/courses'), ({ request }) => {
+
+    const url = new URL(request.url)
+
+    const q = url.searchParams.get('q')
+    const label = url.searchParams.get('label') || 'All Courses'
+    const hideCompleted = url.searchParams.get('hideCompleted')
+    const page = url.searchParams.get('page')
+    const itemsPerPage = url.searchParams.get('itemsPerPage')
+    const sortBy = url.searchParams.get('sortBy')
+    const orderBy = url.searchParams.get('orderBy')
 
     const searchQuery = is.string(q) ? q : undefined
     const queryLowered = (searchQuery ?? '').toString().toLowerCase()
@@ -64,22 +68,34 @@ export const handlerAppsAcademy = [
       }
     }
 
-    return res(
-      ctx.status(200),
-      ctx.json({
+    // return res(
+    //   ctx.status(200),
+    //   ctx.json({
+    //     courses: paginateArray(filteredCourses, itemsPerPageLocal, pageLocal),
+    //     total: filteredCourses.length,
+    //   }),
+    // )
+
+    // return HttpResponse.json({
+    //   data: {
+    //     courses: filteredCourses,
+    //     total: filteredCourses.length,
+    //   },
+    // })
+
+    return HttpResponse.json({
         courses: paginateArray(filteredCourses, itemsPerPageLocal, pageLocal),
         total: filteredCourses.length,
-      }),
-    )
+    })
+    
   }),
 
   // 👉 Course Details
-  rest.get(('/api/apps/academy/course-details'), (req, res, ctx) => {
-    return res(
-      ctx.status(200),
-      ctx.json(
-        db.courseDetails,
-      ),
-    )
+  http.get(('/api/apps/academy/course-details'), () => {
+    return HttpResponse.json({
+
+        courseDetails: db.courseDetails,
+
+    })
   }),
 ]

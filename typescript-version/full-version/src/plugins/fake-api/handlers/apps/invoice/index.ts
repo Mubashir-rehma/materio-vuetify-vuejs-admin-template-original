@@ -1,14 +1,14 @@
+import { paginateArray } from '@api-utils/paginateArray'
+import { database } from '@db/apps/invoice/db'
 import is from '@sindresorhus/is'
 import destr from 'destr'
-import { rest } from 'msw'
-import { database } from '@db/apps/invoice/db'
-import { paginateArray } from '@api-utils/paginateArray'
+import { http } from 'msw'
 
 export const handlerAppsInvoice = [
 
   // 👉 Client
   // Get Clients
-  rest.get(('/api/apps/invoice/clients'), (req, res, ctx) => {
+  http.get(('/api/apps/invoice/clients'), (req, res, ctx) => {
     const clients = database.map(invoice => invoice.client)
 
     return res(
@@ -19,7 +19,7 @@ export const handlerAppsInvoice = [
 
   // 👉 Invoice
   // Get Invoice List
-  rest.get(('/api/apps/invoice'), (req, res, ctx) => {
+  http.get(('/api/apps/invoice'), (req, res, ctx) => {
     const q = req.url.searchParams.get('q')
     const status = req.url.searchParams.get('status')
     const selectedDateRange = req.url.searchParams.get('selectedDateRange')
@@ -127,7 +127,7 @@ export const handlerAppsInvoice = [
   }),
 
   // Get Single Invoice
-  rest.get(('/api/apps/invoice/:id'), (req, res, ctx) => {
+  http.get(('/api/apps/invoice/:id'), (req, res, ctx) => {
     const invoiceId = req.params.id
 
     const invoice = database.find(e => e.id === Number(invoiceId))
@@ -157,7 +157,7 @@ export const handlerAppsInvoice = [
   }),
 
   // Delete Invoice
-  rest.delete(('/api/apps/invoice/:id'), (req, res, ctx) => {
+  http.delete(('/api/apps/invoice/:id'), (req, res, ctx) => {
     const invoiceId = req.params.id
 
     const invoiceIndex = database.findIndex(e => e.id === Number(invoiceId))

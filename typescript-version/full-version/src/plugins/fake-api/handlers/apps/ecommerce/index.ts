@@ -1,22 +1,25 @@
+import { paginateArray } from '@api-utils/paginateArray'
+import { db } from '@db/apps/ecommerce/db'
 import is from '@sindresorhus/is'
 import { destr } from 'destr'
-import { rest } from 'msw'
-import { db } from '@db/apps/ecommerce/db'
-import { paginateArray } from '@api-utils/paginateArray'
+import { http, HttpResponse } from 'msw'
 
 export const handlerAppsEcommerce = [
 
   // 👉 Products
   // Get Product List
-  rest.get('/api/apps/ecommerce/products', (req, res, ctx) => {
-    const q = req.url.searchParams.get('q')
-    const stock = req.url.searchParams.get('stock')
-    const category = req.url.searchParams.get('category')
-    const status = req.url.searchParams.get('status')
-    const sortBy = req.url.searchParams.get('sortBy')
-    const orderBy = req.url.searchParams.get('orderBy')
-    const itemsPerPage = req.url.searchParams.get('itemsPerPage')
-    const page = req.url.searchParams.get('page')
+  http.get('/api/apps/ecommerce/products', ({ request }) => {
+
+    const url = new URL(request.url)
+
+    const q = url.searchParams.get('q')
+    const stock = url.searchParams.get('stock')
+    const category = url.searchParams.get('category')
+    const status = url.searchParams.get('status')
+    const sortBy = url.searchParams.get('sortBy')
+    const orderBy = url.searchParams.get('orderBy')
+    const itemsPerPage = url.searchParams.get('itemsPerPage')
+    const page = url.searchParams.get('page')
 
     const searchQuery = is.string(q) ? q : undefined
     const queryLower = (searchQuery ?? '').toString().toLowerCase()
@@ -113,35 +116,43 @@ export const handlerAppsEcommerce = [
       }
     }
 
-    return res(
-      ctx.status(200),
-      ctx.json({
-        products: paginateArray(filteredProducts, itemsPerPageLocal, pageLocal), total: filteredProducts.length,
-      }))
+    // return res(
+    //   ctx.status(200),
+    //   ctx.json({
+    //     products: paginateArray(filteredProducts, itemsPerPageLocal, pageLocal), total: filteredProducts.length,
+    //   }))
+
+    return HttpResponse.json({
+      products: paginateArray(filteredProducts, itemsPerPageLocal, pageLocal), total: filteredProducts.length,
+    })
   }),
 
   // 👉 Delete Product
-  rest.delete('/api/apps/ecommerce/products/:id', (req, res, ctx) => {
-    const id = Number(req.params.id)
+  http.delete('/api/apps/ecommerce/products/:id', ({params}) => {
+    const id = Number(params.id)
 
     const productIndex = db.products.findIndex(e => e.id === id)
 
     if (productIndex >= 0) {
-      db.products.splice(productIndex, 1)
+      db.products.splice(productIndex, 3)
 
-      return res(
-        ctx.status(204),
-      )
+      // return res(
+      //   ctx.status(204),
+      // )
+
+      return new HttpResponse(null, {
+        status: 204,
+      })
     }
 
-    return res(
-      ctx.status(404),
-    )
+    return new HttpResponse(null, {
+      status: 404,
+    })
   }),
 
   // 👉 Orders
   // Get Order List
-  rest.get('/api/apps/ecommerce/orders', (req, res, ctx) => {
+  http.get('/api/apps/ecommerce/orders', (req, res, ctx) => {
     const q = req.url.searchParams.get('q')
     const sortBy = req.url.searchParams.get('sortBy')
     const orderBy = req.url.searchParams.get('orderBy')
@@ -226,7 +237,7 @@ export const handlerAppsEcommerce = [
   }),
 
   // Delete Order
-  rest.delete('/api/apps/ecommerce/orders/:id', (req, res, ctx) => {
+  http.delete('/api/apps/ecommerce/orders/:id', (req, res, ctx) => {
     const id = Number(req.params.id)
 
     const orderIndex = db.orderData.findIndex(e => e.id === id)
@@ -241,7 +252,7 @@ export const handlerAppsEcommerce = [
 
   // 👉 Customers
   // Get single Customer
-  rest.get(('/api/apps/ecommerce/customers/:id'), (req, res, ctx) => {
+  http.get(('/api/apps/ecommerce/customers/:id'), (req, res, ctx) => {
     const customerId = Number(req.params.id)
 
     const customerIndex = db.customerData.findIndex(e => e.customerId === customerId)
@@ -269,7 +280,7 @@ export const handlerAppsEcommerce = [
   }),
 
   // Get Customer List
-  rest.get(('/api/apps/ecommerce/customers'), (req, res, ctx) => {
+  http.get(('/api/apps/ecommerce/customers'), (req, res, ctx) => {
     const q = req.url.searchParams.get('q')
     const sortBy = req.url.searchParams.get('sortBy')
     const orderBy = req.url.searchParams.get('orderBy')
@@ -356,7 +367,7 @@ export const handlerAppsEcommerce = [
 
   // 👉 Manage Reviews.
   // Get Reviews
-  rest.get(('/api/apps/ecommerce/reviews'), (req, res, ctx) => {
+  http.get(('/api/apps/ecommerce/reviews'), (req, res, ctx) => {
     const q = req.url.searchParams.get('q')
     const sortBy = req.url.searchParams.get('sortBy')
     const orderBy = req.url.searchParams.get('orderBy')
@@ -446,7 +457,7 @@ export const handlerAppsEcommerce = [
   }),
 
   // Delete Review
-  rest.delete(('/api/apps/ecommerce/reviews/:id'), (req, res, ctx) => {
+  http.delete(('/api/apps/ecommerce/reviews/:id'), (req, res, ctx) => {
     const id = Number(req.params.id)
 
     const reviewIndex = db.reviews.findIndex(e => e.id === id)
@@ -466,7 +477,7 @@ export const handlerAppsEcommerce = [
 
   // 👉 Referrals
   // Get Referrals
-  rest.get(('/api/apps/ecommerce/referrals'), (req, res, ctx) => {
+  http.get(('/api/apps/ecommerce/referrals'), (req, res, ctx) => {
     const sortBy = req.url.searchParams.get('sortBy')
     const orderBy = req.url.searchParams.get('orderBy')
     const itemsPerPage = req.url.searchParams.get('itemsPerPage')

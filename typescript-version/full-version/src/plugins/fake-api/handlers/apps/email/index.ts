@@ -1,11 +1,11 @@
-import { destr } from 'destr'
-import { rest } from 'msw'
 import type { Email, EmailLabel } from '@/plugins/fake-api/handlers/apps/email/types'
 import { db } from '@db/apps/email/db'
+import { destr } from 'destr'
+import { http } from 'msw'
 
 export const handlerAppsEmail = [
   // 👉 Get Email List
-  rest.get(('/api/apps/email'), (req, res, ctx) => {
+  http.get(('/api/apps/email'), (req, res, ctx) => {
     const q = req.url.searchParams.get('q') || ''
     const filter = req.url.searchParams.get('filter') || 'inbox'
     const label = req.url.searchParams.get('label') || ''
@@ -44,7 +44,7 @@ export const handlerAppsEmail = [
   }),
 
   // 👉 Update Email Meta
-  rest.post(('/api/apps/email'), async (req, res, ctx) => {
+  http.post(('/api/apps/email'), async (req, res, ctx) => {
     const { ids, data, label } = await req.json() as { ids: Email['id'] | Email['id'][]; data: Partial<Email>; label: EmailLabel }
 
     const labelLocal = destr(label)

@@ -1,9 +1,9 @@
-import { rest } from 'msw'
-import { db } from '@db/apps/chat/db'
 import type { Chat, ChatContact, ChatContactWithChat, ChatMessage } from '@/plugins/fake-api/handlers/apps/chat/types'
+import { db } from '@db/apps/chat/db'
+import { http } from 'msw'
 
 export const handlerAppsChat = [
-  rest.get(('/api/apps/chat/chats-and-contacts'), (req, res, ctx) => {
+  http.get(('/api/apps/chat/chats-and-contacts'), (req, res, ctx) => {
     const q = req.url.searchParams.get('q') || ''
 
     const qLowered = q.toLowerCase()
@@ -32,7 +32,7 @@ export const handlerAppsChat = [
     )
   }),
 
-  rest.get(('/api/apps/chat/chats/:userId'), (req, res, ctx) => {
+  http.get(('/api/apps/chat/chats/:userId'), (req, res, ctx) => {
     const userId = Number(req.params.userId)
 
     const chat = db.chats.find(e => e.userId === userId)
@@ -49,7 +49,7 @@ export const handlerAppsChat = [
     )
   }),
 
-  rest.post(('/api/apps/chat/chats/:userId'), async (req, res, ctx) => {
+  http.post(('/api/apps/chat/chats/:userId'), async (req, res, ctx) => {
     // Get user id from URL
     const chatId = Number(req.params.userId)
 

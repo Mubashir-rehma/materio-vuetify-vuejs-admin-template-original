@@ -1,10 +1,10 @@
-import { rest } from 'msw'
 import type { UserOut } from '@/plugins/fake-api/handlers/auth/types'
 import { db } from '@db/auth/db'
+import { http } from 'msw'
 
 export const handlerAuth = [
 
-  rest.post(('/api/auth/login'), async (req, res, ctx) => {
+  http.post(('/api/auth/login'), async (req, res, ctx) => {
     const { email, password } = await req.json() as { email: string; password: string }
 
     let errors: Record<string, string[]> = {

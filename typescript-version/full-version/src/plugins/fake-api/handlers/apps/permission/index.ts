@@ -1,12 +1,12 @@
+import { paginateArray } from '@api-utils/paginateArray'
+import { db } from '@db/apps/permission/db'
 import is from '@sindresorhus/is'
 import { destr } from 'destr'
-import { rest } from 'msw'
-import { db } from '@db/apps/permission/db'
-import { paginateArray } from '@api-utils/paginateArray'
+import { http } from 'msw'
 
 export const handlerAppsPermission = [
   // 👉 Get Permission List
-  rest.get(('/api/apps/permissions'), (req, res, ctx) => {
+  http.get(('/api/apps/permissions'), (req, res, ctx) => {
     const q = req.url.searchParams.get('q') || ''
     const sortBy = req.url.searchParams.get('sortBy')
     const page = req.url.searchParams.get('page') || 1

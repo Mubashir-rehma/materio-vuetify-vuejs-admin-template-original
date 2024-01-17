@@ -1,10 +1,13 @@
 import type { Chat, ChatContact, ChatContactWithChat, ChatMessage } from '@/plugins/fake-api/handlers/apps/chat/types'
 import { db } from '@db/apps/chat/db'
-import { http } from 'msw'
+import { C } from '@fullcalendar/core/internal-common'
+import { HttpResponse, http } from 'msw'
 
 export const handlerAppsChat = [
-  http.get(('/api/apps/chat/chats-and-contacts'), (req, res, ctx) => {
-    const q = req.url.searchParams.get('q') || ''
+  http.get(('/api/apps/chat/chats-and-contacts'), ({ request }) => {
+    const url = new URL(request.url)
+
+    const q = url.searchParams.get('q') || ''
 
     const qLowered = q.toLowerCase()
 
@@ -26,35 +29,33 @@ export const handlerAppsChat = [
       profileUser: profileUserData,
     }
 
-    return res(
-      ctx.status(200),
-      ctx.json(response),
-    )
+    return HttpResponse.json(response, {status: 200})
+
   }),
 
-  http.get(('/api/apps/chat/chats/:userId'), (req, res, ctx) => {
-    const userId = Number(req.params.userId)
+  http.get(('/api/apps/chat/chats/:userId'), ({ params }) => {
+    const userId = Number(params.userId)
 
     const chat = db.chats.find(e => e.userId === userId)
 
     if (chat)
       chat.unseenMsgs = 0
 
-    return res(
-      ctx.status(200),
-      ctx.json({
-        chat,
-        contact: db.contacts.find(c => c.id === userId),
-      }),
-    )
+    return HttpResponse.json({
+      chat,
+      contact: db.contacts.find(c => c.id === userId)
+      }, 
+      {
+      status: 200
+    })
   }),
 
-  http.post(('/api/apps/chat/chats/:userId'), async (req, res, ctx) => {
+  http.post(('/api/apps/chat/chats/:userId'), async ({ request, params }) => {
     // Get user id from URL
-    const chatId = Number(req.params.userId)
+    const chatId = Number(params.userId)
 
     // Get message from post data
-    const { message, senderId } = await req.json() as { message: string; senderId: number }
+    const { message, senderId } = await request.json() as { message: string; senderId: number }
 
     let activeChat = db.chats.find(chat => chat.userId === chatId)
 
@@ -91,9 +92,6 @@ export const handlerAppsChat = [
     if (isNewChat)
       response.chat = activeChat
 
-    return res(
-      ctx.status(201),
-      ctx.json(response),
-    )
+    return HttpResponse.json(response, { status: 201 })
   }),
 ]

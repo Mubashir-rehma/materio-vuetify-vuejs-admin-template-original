@@ -1,16 +1,17 @@
+import { HttpResponse, http } from 'msw'
 import { db } from '@db/pages/help-center/db'
-import { http } from 'msw'
 
 export const handlerPagesHelpCenter = [
-  http.get(('/api/pages/help-center'), (req, res, ctx) => {
-    return res(
-      ctx.status(200),
-      ctx.json({ allArticles: db.allArticles, popularArticles: db.popularArticles, keepLearning: db.keepLearning }),
+  http.get(('/api/pages/help-center'), () => {
+    return HttpResponse.json(
+      { allArticles: db.allArticles, popularArticles: db.popularArticles, keepLearning: db.keepLearning },
+      { status: 200 },
     )
   }),
 
-  http.get(('/api/pages/help-center/article'), (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(db.articleData))
+  http.get(('/api/pages/help-center/article'), () => {
+    return HttpResponse.json(db.articleData,
+      { status: 200 })
   },
   ),
 ]

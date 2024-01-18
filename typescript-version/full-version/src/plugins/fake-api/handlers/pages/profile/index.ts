@@ -1,22 +1,20 @@
+import { HttpResponse, http } from 'msw'
 import { db } from '@db/pages/profile/db'
-import { http } from 'msw'
 
 export const handlerPagesProfile = [
   // GET /pages/profile
-  http.get(('/api/pages/profile'), (req, res, ctx) => {
-    const tab = req.url.searchParams.get('tab') || ''
+  http.get(('/api/pages/profile'), ({ request }) => {
+    const url = new URL(request.url)
 
-    return res(
-      ctx.status(200),
-      ctx.json(db.data[tab as keyof typeof db.data]),
-    )
+    const tab = url.searchParams.get('tab') || ''
+
+    return HttpResponse.json(db.data[tab as keyof typeof db.data],
+      { status: 200 })
   }),
 
   // GET /pages/profile/header
-  http.get(('/api/pages/profile/header'), (req, res, ctx) => {
-    return res(
-      ctx.status(200),
-      ctx.json(db.data.profileHeader),
-    )
+  http.get(('/api/pages/profile/header'), () => {
+    return HttpResponse.json(db.data.profileHeader,
+      { status: 200 })
   }),
 ]

@@ -108,7 +108,7 @@ module.exports = {
     'import/newline-after-import': ['error', { count: 1 }],
     'no-restricted-imports': ['error', 'vuetify/components', {
       name: 'vue3-apexcharts',
-      message: 'apexcharts are autoimported',
+      message: 'apexcharts are auto imported',
     }],
 
     // For omitting extension for ts files

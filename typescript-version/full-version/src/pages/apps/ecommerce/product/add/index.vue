@@ -322,51 +322,52 @@ const inventoryTabsData = [
                   </VWindowItem>
 
                   <VWindowItem value="Attributes">
-                    <div class="mb-6 text-h6">
-                      Attributes
-                    </div>
-                    <div>
-                      <VCheckbox
-                        v-model="selectedAttrs"
-                        label="Fragile Product"
-                        value="Fragile Product"
-                      />
-                      <VCheckbox
-                        v-model="selectedAttrs"
-                        value="Biodegradable"
-                        label="Biodegradable"
-                      />
-                      <VCheckbox
-                        v-model="selectedAttrs"
-                        value="Frozen Product"
-                      >
-                        <template #label>
-                          <div class="d-flex flex-column mb-1">
-                            <div>Frozen Product</div>
-                            <VTextField
-                              placeholder="40 C"
-                              type="number"
-                              style="min-inline-size: 250px;"
-                            />
-                          </div>
-                        </template>
-                      </VCheckbox>
-
-                      <VCheckbox
-                        v-model="selectedAttrs"
-                        value="Expiry Date"
-                      >
-                        <template #label>
-                          <div class="d-flex flex-column mb-1">
-                            <div>Expiry Date of Product</div>
-                            <AppDateTimePicker
-                              model-value="2025-06-14"
-                              placeholder="Select a Date"
-                              density="compact"
-                            />
-                          </div>
-                        </template>
-                      </VCheckbox>
+                    <div class="ps-3">
+                      <div class="mb-6 text-h6">
+                        Attributes
+                      </div>
+                      <div>
+                        <VCheckbox
+                          v-model="selectedAttrs"
+                          label="Fragile Product"
+                          value="Fragile Product"
+                        />
+                        <VCheckbox
+                          v-model="selectedAttrs"
+                          value="Biodegradable"
+                          label="Biodegradable"
+                        />
+                        <VCheckbox
+                          v-model="selectedAttrs"
+                          value="Frozen Product"
+                        >
+                          <template #label>
+                            <div class="d-flex flex-column mb-1">
+                              <div>Frozen Product</div>
+                              <VTextField
+                                placeholder="40 C"
+                                type="number"
+                                style="min-inline-size: 250px;"
+                              />
+                            </div>
+                          </template>
+                        </VCheckbox>
+                        <VCheckbox
+                          v-model="selectedAttrs"
+                          value="Expiry Date"
+                        >
+                          <template #label>
+                            <div class="d-flex flex-column mb-1">
+                              <div>Expiry Date of Product</div>
+                              <AppDateTimePicker
+                                model-value="2025-06-14"
+                                placeholder="Select a Date"
+                                density="compact"
+                              />
+                            </div>
+                          </template>
+                        </VCheckbox>
+                      </div>
                     </div>
                   </VWindowItem>
 

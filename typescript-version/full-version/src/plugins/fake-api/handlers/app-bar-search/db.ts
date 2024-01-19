@@ -233,7 +233,7 @@ export const db: DB = {
           title: 'Page Not Found - 404',
         },
         {
-          url: { name: 'pages-misc-not-authorized' },
+          url: { path: '/pages/misc/not-authorized' },
           icon: 'mdi-account-multiple-remove-outline',
           title: 'Not Authorized - 401',
         },

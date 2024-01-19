@@ -193,11 +193,6 @@ export const db: DB = {
           title: 'User View',
         },
         {
-          url: { name: 'pages-help-center' },
-          icon: 'ri-question-line',
-          title: 'Help Center',
-        },
-        {
           url: { name: 'pages-user-profile-tab', params: { tab: 'profile' } },
           icon: 'ri-user-settings-line',
           title: 'User Profile - Profile',

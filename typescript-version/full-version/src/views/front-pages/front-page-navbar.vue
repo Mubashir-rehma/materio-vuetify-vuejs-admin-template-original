@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { useWindowScroll } from '@vueuse/core'
-import type { RouteLocationRaw } from 'vue-router/auto'
-import { useDisplay } from 'vuetify'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
 import navImgDark from '@images/front-pages/misc/nav-img-dark.png'
 import navImgLight from '@images/front-pages/misc/nav-img-light.png'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
+import { useWindowScroll } from '@vueuse/core'
+import type { RouteLocationRaw } from 'vue-router/auto'
+import { useDisplay } from 'vuetify'
 
 const props = defineProps({
   activeId: String,
@@ -350,7 +350,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 <style lang="scss" scoped>
 .nav-menu{
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .nav-link{

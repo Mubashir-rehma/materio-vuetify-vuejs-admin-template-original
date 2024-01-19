@@ -67,6 +67,7 @@ export const handlerAppsAcademy = [
     return res(
       ctx.status(200),
       ctx.json({
+        totalCourse: filteredCourses,
         courses: paginateArray(filteredCourses, itemsPerPageLocal, pageLocal),
         total: filteredCourses.length,
       }),

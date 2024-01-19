@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useChatStore } from '@/views/apps/chat/useChatStore';
-import type { ChatOut } from '@db/apps/chat/types';
+import { useChatStore } from '@/views/apps/chat/useChatStore'
+import type { ChatOut } from '@db/apps/chat/types'
 
 const store = useChatStore()
 
@@ -126,7 +126,7 @@ const msgGroups = computed(() => {
 .chat-log {
   .chat-body{
     max-inline-size: calc(100% - 6.75rem);
-  
+
     .chat-content {
       border-end-end-radius: 6px;
       border-end-start-radius: 6px;

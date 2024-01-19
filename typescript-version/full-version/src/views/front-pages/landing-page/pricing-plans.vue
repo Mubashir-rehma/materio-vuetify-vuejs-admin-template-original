@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import sectionTitleIcon from '@images/pages/section-title-icon.png'
-import customListArrowIcon from '@images/svg/list-arrow-icon.svg'
+import sectionTitleIcon from '@images/pages/section-title-icon.png';
+import customListArrowIcon from '@images/svg/list-arrow-icon.svg';
 
 const pricingPlans = [
   {
@@ -70,10 +70,10 @@ const pricingPlans = [
             PRICING PLANS
           </span>
         </h6>
-        <h5 class="text-h5 mb-2">
+        <h5 class="text-h5 mb-2 text-center">
           <span class="font-weight-bold">Tailored Pricing Plans</span> designed for you
         </h5>
-        <p>
+        <p class="text-center">
           All plans include 40+ advanced tools and features to boost your product.
           Choose the best plan to fit your needs.
         </p>

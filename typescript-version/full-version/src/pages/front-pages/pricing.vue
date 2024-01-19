@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Footer from '@/views/front-pages/front-page-footer.vue'
-import Navbar from '@/views/front-pages/front-page-navbar.vue'
-import poseFs9 from '@images/pages/pose-fs-9.png'
+import Footer from '@/views/front-pages/front-page-footer.vue';
+import Navbar from '@/views/front-pages/front-page-navbar.vue';
+import poseFs9 from '@images/pages/pose-fs-9.png';
 
 definePage({
   meta: {

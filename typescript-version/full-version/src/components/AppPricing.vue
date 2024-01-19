@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import tree1 from '@images/misc/pricing-tree-1.png'
-import tree2 from '@images/misc/pricing-tree-2.png'
-import tree3 from '@images/misc/pricing-tree-3.png'
+import tree1 from '@images/misc/pricing-tree-1.png';
+import tree2 from '@images/misc/pricing-tree-2.png';
+import tree3 from '@images/misc/pricing-tree-3.png';
 
 interface Pricing {
   title?: string

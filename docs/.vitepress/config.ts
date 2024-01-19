@@ -152,6 +152,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Perfect Scrollbar', link: '/guide/plugins/perfect-scrollbar' },
+            { text: 'Vite Svg Loader', link: '/guide/plugins/vite-svg-loader' },
           ],
         },
         {

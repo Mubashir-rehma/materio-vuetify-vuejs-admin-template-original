@@ -1,11 +1,11 @@
-import { rest } from 'msw'
+import { HttpResponse, http } from 'msw'
 import type { UserOut } from '@/plugins/fake-api/handlers/auth/types'
 import { db } from '@db/auth/db'
 
 export const handlerAuth = [
 
-  rest.post(('/api/auth/login'), async (req, res, ctx) => {
-    const { email, password } = await req.json() as { email: string; password: string }
+  http.post(('/api/auth/login'), async ({ request }) => {
+    const { email, password } = await request.json() as { email: string; password: string }
 
     let errors: Record<string, string[]> = {
       email: ['Something went wrong'],
@@ -33,10 +33,8 @@ export const handlerAuth = [
           userData: userOutData,
         }
 
-        return res(
-          ctx.status(200),
-          ctx.json(response),
-        )
+        return HttpResponse.json(response,
+          { status: 201 })
       }
       catch (e: unknown) {
         errors = { email: [e as string] }
@@ -46,9 +44,6 @@ export const handlerAuth = [
       errors = { email: ['Invalid email or password'] }
     }
 
-    return res(
-      ctx.status(400),
-      ctx.json({ errors }),
-    )
+    return HttpResponse.json({ errors }, { status: 400 })
   }),
 ]

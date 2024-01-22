@@ -34,9 +34,9 @@ const updatePopper = async () => {
         placement: props.popperInlineEnd ? (props.isRtl ? 'left-start' : 'right-start') : 'bottom-start',
         middleware: [
           ...(configStore.horizontalNavPopoverOffset ? [offset(configStore.horizontalNavPopoverOffset)] : []),
-          flip({ boundary: document.querySelector('body')! }),
+          flip({ boundary: document.querySelector('body')!, padding: { bottom: 16 } }),
 
-          shift({ boundary: document.querySelector('body')! }),
+          shift({ boundary: document.querySelector('body')!, padding: { bottom: 16 } }),
         ],
 
         /*

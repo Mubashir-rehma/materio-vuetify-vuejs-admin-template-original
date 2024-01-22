@@ -4,10 +4,10 @@
       Good Morning! Start your day with some alerts.
     </VAlert>
     <VAlert
-        title="Alert Title"
-        type="error"
-        closable
-        text="Alert Text"
+      title="Alert Title"
+      type="error"
+      closable
+      text="Alert Text"
     />
   </div>
 </template>

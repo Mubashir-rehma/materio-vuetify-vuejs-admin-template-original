@@ -31,22 +31,23 @@ const featuresData = [
             USEFUL FEATURES
           </span>
         </h6>
-        <h5 class="text-h5 mb-2">
+        <h5 class="text-h5 mb-2 text-center">
           <span class="font-weight-bold">Everything you need</span>  to start your next project
         </h5>
-        <p>Not just a set of tools, the package includes ready-to-deploy conceptual application.</p>
+        <p class="text-center">Not just a set of tools, the package includes ready-to-deploy conceptual application.</p>
       </div>
 
       <div class="d-flex flex-wrap gap-x-20 gap-y-10 align-center justify-center">
         <div
           v-for="(data, index) in featuresData"
           :key="index"
-          class="text-center"
+          class="feature text-center"
           style="max-inline-size: 310px;"
         >
           <VAvatar
+            variant="outlined"
             size="82"
-            class="border border-primary mb-4"
+            class="mb-4"
           >
             <VIcon
               :icon="data.icon"
@@ -71,5 +72,18 @@ const featuresData = [
 <style lang="scss" scoped>
 .feature-cards {
   margin-block-end: 5.25rem;
+}
+
+.feature{
+  .v-avatar{
+    &.v-avatar--variant-outlined{
+      border: 2px solid rgba(var(--v-theme-primary), 0.32);
+
+      &:hover{
+        background: rgba(var(--v-theme-primary), 0.16);
+        cursor: pointer;
+      }
+    }
+  }
 }
 </style>

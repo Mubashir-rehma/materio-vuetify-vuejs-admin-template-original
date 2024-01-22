@@ -56,11 +56,11 @@ const configStore = useConfigStore()
 const attrs = useAttrs()
 
 const [rootAttrs, compAttrs] = filterInputAttrs(attrs)
-
-const { modelValue: _, ...inputProps } = VInput.filterProps(props)
-const fieldProps = filterFieldProps(props)
+const inputProps = ref(VInput.filterProps(props))
+const fieldProps = ref(filterFieldProps(props))
 
 const refFlatPicker = ref()
+
 const { focused } = useFocus(refFlatPicker)
 const isCalendarOpen = ref(false)
 const isInlinePicker = ref(false)
@@ -107,6 +107,15 @@ onMounted(() => {
 const emitModelValue = (val: string) => {
   emit('update:modelValue', val)
 }
+
+watch(() => props, () => {
+  fieldProps.value = filterFieldProps((props))
+  inputProps.value = VInput.filterProps(props)
+},
+{
+  deep: true,
+  immediate: true,
+})
 </script>
 
 <template>

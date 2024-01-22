@@ -53,9 +53,13 @@ const purchasedProducts = [
   },
 ]
 
+const isPrinting = ref(false)
+
 // 👉 Print Invoice
 const printInvoice = () => {
+  isPrinting.value = true
   window.print()
+  isPrinting.value = false
 }
 </script>
 
@@ -65,6 +69,7 @@ const printInvoice = () => {
       <VCol
         cols="12"
         md="9"
+        class="print-col"
       >
         <VCard>
           <!-- SECTION Header -->
@@ -396,13 +401,32 @@ const printInvoice = () => {
 
 <style lang="scss">
 @media print {
+  @page{
+    margin: 0;
+    size: a4;
+  }
+
+  html, body {
+    block-size: 100%;
+    inline-size: 210mm; // A4 Paper width
+  }
+
   .v-theme--dark {
     --v-theme-surface: 255, 255, 255;
     --v-theme-on-surface: 94, 86, 105;
   }
 
+  .print-col{
+    flex: 0 0 100% !important;
+    max-inline-size: 100% !important;
+  }
+
   body {
     background: none !important;
+  }
+
+  .sidebar{
+    display: none;
   }
 
   .product-buy-now {

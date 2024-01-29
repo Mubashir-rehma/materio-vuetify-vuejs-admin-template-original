@@ -7,7 +7,7 @@ import avatar4 from '@images/avatars/avatar-4.png'
 
 <template>
   <div class="demo-space-x">
-    <VChip pill>
+    <VChip>
       <VAvatar
         start
         :image="avatar1"
@@ -15,7 +15,7 @@ import avatar4 from '@images/avatars/avatar-4.png'
       <span>John Doe</span>
     </VChip>
 
-    <VChip pill>
+    <VChip>
       <VAvatar
         start
         :image="avatar2"
@@ -23,11 +23,10 @@ import avatar4 from '@images/avatars/avatar-4.png'
       <span>Darcy Nooser</span>
     </VChip>
 
-    <VChip pill>
-      <VAvatar
-        start
-        :image="avatar3"
-      />
+    <VChip
+      pill
+      :prepend-avatar="avatar3"
+    >
       <span>Felicia Risker</span>
     </VChip>
 

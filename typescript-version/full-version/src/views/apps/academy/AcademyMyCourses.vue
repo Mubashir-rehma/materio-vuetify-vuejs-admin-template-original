@@ -64,7 +64,7 @@ const resolveChipColor = (tags: string) => {
                   { title: 'All Courses', value: 'All Courses' },
                 ]"
                 density="compact"
-                style="min-inline-size: 200px"
+                style="min-inline-size: 200px;"
               />
               <VSwitch
                 v-model="hideCompleted"
@@ -221,9 +221,9 @@ const resolveChipColor = (tags: string) => {
 </template>
 
 <style lang="scss" scoped>
-.course-title{
-  &:not(:hover){
-    color: rgba(var(--v-theme-on-surface), var(--v-text-high-emphasis))
+.course-title {
+  &:not(:hover) {
+    color: rgba(var(--v-theme-on-surface), var(--v-text-high-emphasis));
   }
 }
 </style>

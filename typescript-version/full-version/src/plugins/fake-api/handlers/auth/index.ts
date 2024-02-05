@@ -1,10 +1,11 @@
+import type { PathParams } from 'msw'
 import { HttpResponse, http } from 'msw'
 import type { UserOut } from '@/plugins/fake-api/handlers/auth/types'
 import { db } from '@db/auth/db'
 
 export const handlerAuth = [
 
-  http.post(('/api/auth/login'), async ({ request }) => {
+  http.post<PathParams>(('/api/auth/login'), async ({ request }) => {
     const { email, password } = await request.json() as { email: string; password: string }
 
     let errors: Record<string, string[]> = {

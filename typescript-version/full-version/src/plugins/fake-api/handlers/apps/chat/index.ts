@@ -1,7 +1,6 @@
+import { HttpResponse, http } from 'msw'
 import type { Chat, ChatContact, ChatContactWithChat, ChatMessage } from '@/plugins/fake-api/handlers/apps/chat/types'
 import { db } from '@db/apps/chat/db'
-import { C } from '@fullcalendar/core/internal-common'
-import { HttpResponse, http } from 'msw'
 
 export const handlerAppsChat = [
   http.get(('/api/apps/chat/chats-and-contacts'), ({ request }) => {
@@ -29,8 +28,7 @@ export const handlerAppsChat = [
       profileUser: profileUserData,
     }
 
-    return HttpResponse.json(response, {status: 200})
-
+    return HttpResponse.json(response, { status: 200 })
   }),
 
   http.get(('/api/apps/chat/chats/:userId'), ({ params }) => {
@@ -43,10 +41,10 @@ export const handlerAppsChat = [
 
     return HttpResponse.json({
       chat,
-      contact: db.contacts.find(c => c.id === userId)
-      }, 
-      {
-      status: 200
+      contact: db.contacts.find(c => c.id === userId),
+    },
+    {
+      status: 200,
     })
   }),
 

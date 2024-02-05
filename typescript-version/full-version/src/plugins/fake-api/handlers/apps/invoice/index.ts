@@ -1,5 +1,6 @@
 import is from '@sindresorhus/is'
 import destr from 'destr'
+import type { PathParams } from 'msw'
 import { HttpResponse, http } from 'msw'
 import { database } from '@db/apps/invoice/db'
 import { paginateArray } from '@api-utils/paginateArray'
@@ -125,7 +126,7 @@ export const handlerAppsInvoice = [
   }),
 
   // Get Single Invoice
-  http.get(('/api/apps/invoice/:id'), ({ params }) => {
+  http.get<PathParams>(('/api/apps/invoice/:id'), ({ params }) => {
     const invoiceId = params.id
 
     const invoice = database.find(e => e.id === Number(invoiceId))

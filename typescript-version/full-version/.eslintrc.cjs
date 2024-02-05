@@ -128,6 +128,7 @@ module.exports = {
       ignore: [
         '~pages$',
         'virtual:generated-layouts',
+        '#auth$',
 
         // Ignore vite's ?raw imports
         '.*\?raw',

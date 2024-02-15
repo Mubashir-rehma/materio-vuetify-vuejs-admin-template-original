@@ -5,6 +5,10 @@ export default [
     icon: { icon: 'mdi-cart-plus' },
     children: [
       {
+        title: 'Dashboard',
+        to: 'apps-ecommerce-dashboard',
+      },
+      {
         title: 'Product',
         children: [
           { title: 'List', to: 'apps-ecommerce-product-list' },

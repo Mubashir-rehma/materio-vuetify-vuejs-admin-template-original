@@ -32,6 +32,13 @@ const markAllReadOrUnread = () => {
   else
     emit('read', allNotificationsIds)
 }
+
+const toggleReadUnread = (isSeen: boolean, Id: number) => {
+  if (isSeen)
+    emit('unread', [Id])
+  else
+    emit('read', [Id])
+}
 </script>
 
 <template>
@@ -126,7 +133,7 @@ const markAllReadOrUnread = () => {
                       dot
                       :color="!notification.isSeen ? 'primary' : '#a8aaae'"
                       :class="`${notification.isSeen ? 'visible-in-hover' : ''} ms-1`"
-                      @click.stop="$emit(notification.isSeen ? 'unread' : 'read', [notification.id])"
+                      @click.stop="toggleReadUnread(notification.isSeen, notification.id)"
                     />
 
                     <div style="block-size: 28px; inline-size: 28px;">

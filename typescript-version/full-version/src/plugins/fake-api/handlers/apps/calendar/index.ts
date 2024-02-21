@@ -1,13 +1,13 @@
-import { genId } from '@api-utils/genId'
-import { db } from '@db/apps/calendar/db'
 import is from '@sindresorhus/is'
 import destr from 'destr'
-import { http, HttpResponse } from 'msw'
+import { HttpResponse, http } from 'msw'
+import { db } from '@db/apps/calendar/db'
+import { genId } from '@api-utils/genId'
 
 export const handlerAppsCalendar = [
 
   // 👉 Get Calendar Events
-  http.get(('/api/apps/calendar'), ({request}) => {
+  http.get(('/api/apps/calendar'), ({ request }) => {
     const url = new URL(request.url)
 
     const queries = url.searchParams.getAll('calendars')
@@ -18,8 +18,7 @@ export const handlerAppsCalendar = [
 
     const events = db.events.filter(event => calendars?.includes(event.extendedProps.calendar))
 
-    return HttpResponse.json(events, { status : 200 })
-
+    return HttpResponse.json(events, { status: 200 })
   }),
 
   // 👉 Add Calendar Event
@@ -53,10 +52,10 @@ export const handlerAppsCalendar = [
         status: 201,
       })
     }
-    
+
     return new HttpResponse(
       'Something Went Wrong',
-      { status: 400 }
+      { status: 400 },
     )
   }),
 
@@ -76,7 +75,7 @@ export const handlerAppsCalendar = [
 
     return new HttpResponse(
       'Something Went Wrong',
-      { status: 400 }
+      { status: 400 },
     )
   }),
 ]

@@ -2,9 +2,11 @@
 import { useStorage } from '@vueuse/core'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useTheme } from 'vuetify'
-import { staticPrimaryColor } from '@/plugins/vuetify/theme'
+import { staticPrimaryColor, staticPrimaryDarkenColor } from '@/plugins/vuetify/theme'
 import { Direction, Layout, Skins, Theme } from '@core/enums'
 import { useConfigStore } from '@core/stores/config'
+import horizontalDark from '@images/customizer-icons/horizontal-dark.svg'
+import horizontalLight from '@images/customizer-icons/horizontal-light.svg'
 import { AppContentLayoutNav, ContentWidth } from '@layouts/enums'
 import { cookieRef, namespaceConfig } from '@layouts/stores/config'
 import { themeConfig } from '@themeConfig'
@@ -15,18 +17,12 @@ import collapsedDark from '@images/customizer-icons/collapsed-dark.svg'
 import collapsedLight from '@images/customizer-icons/collapsed-light.svg'
 import compactDark from '@images/customizer-icons/compact-dark.svg'
 import compactLight from '@images/customizer-icons/compact-light.svg'
-import darkThemeDark from '@images/customizer-icons/dark-theme-dark.svg'
-import darkThemeLight from '@images/customizer-icons/dark-theme-light.svg'
 import defaultSkinDark from '@images/customizer-icons/default-dark.svg'
 import defaultSkinLight from '@images/customizer-icons/default-light.svg'
-import lightThemeDark from '@images/customizer-icons/light-theme-dark.svg'
-import lightThemeLight from '@images/customizer-icons/light-theme-light.svg'
 import ltrDark from '@images/customizer-icons/ltr-dark.svg'
 import ltrLight from '@images/customizer-icons/ltr-light.svg'
 import rtlDark from '@images/customizer-icons/rtl-dark.svg'
 import rtlLight from '@images/customizer-icons/rtl-light.svg'
-import systemThemeDark from '@images/customizer-icons/system-theme-dark.svg'
-import systemThemeLight from '@images/customizer-icons/system-theme-light.svg'
 import wideDark from '@images/customizer-icons/wide-dark.svg'
 import wideLight from '@images/customizer-icons/wide-light.svg'
 
@@ -37,7 +33,14 @@ const configStore = useConfigStore()
 // 👉 Primary Color
 const vuetifyTheme = useTheme()
 
-const colors = [staticPrimaryColor, '#0D9394', '#FFAB1D', '#EB3D63', '#2092EC']
+const colors: { main: string; darken: string }[] = [
+  { main: staticPrimaryColor, darken: '#7E4EE6' },
+  { main: '#0D9394', darken: '#0C8485' },
+  { main: '#FFB400', darken: '#E6A200' },
+  { main: '#FF4C51', darken: '#E64449' },
+  { main: '#16B1FF', darken: '#149FE6' },
+]
+
 const customPrimaryColor = ref('#ffffff')
 
 watch(
@@ -45,49 +48,51 @@ watch(
   () => {
     const cookiePrimaryColor = cookieRef(`${vuetifyTheme.name.value}ThemePrimaryColor`, null).value
 
-    if (cookiePrimaryColor && !colors.includes(cookiePrimaryColor))
+    if (cookiePrimaryColor && !colors.some(color => color.main === cookiePrimaryColor))
       customPrimaryColor.value = cookiePrimaryColor
   },
   { immediate: true },
 )
 
 // ℹ️ It will set primary color for current theme only
-const setPrimaryColor = useDebounceFn((color: string) => {
-  vuetifyTheme.themes.value[vuetifyTheme.name.value].colors.primary = color
+const setPrimaryColor = useDebounceFn((color: { main: string; darken: string }) => {
+  vuetifyTheme.themes.value[vuetifyTheme.name.value].colors.primary = color.main
+  vuetifyTheme.themes.value[vuetifyTheme.name.value].colors['primary-darken-1'] = color.darken
 
   // ℹ️ We need to store this color value in cookie so vuetify plugin can pick on next reload
-  cookieRef<string | null>(`${vuetifyTheme.name.value}ThemePrimaryColor`, null).value = color
+  cookieRef<string | null>(`${vuetifyTheme.name.value}ThemePrimaryColor`, null).value = color.main
+  cookieRef<string | null>(`${vuetifyTheme.name.value}ThemePrimaryDarkenColor`, null).value = color.darken
 
   // ℹ️ Update initial loader color
-  useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = color
+  useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = color.main
 }, 100)
 
-const lightTheme = useGenerateImageVariant(lightThemeLight, lightThemeDark)
-const darkTheme = useGenerateImageVariant(darkThemeLight, darkThemeDark)
-const systemTheme = useGenerateImageVariant(systemThemeLight, systemThemeDark)
 const defaultSkin = useGenerateImageVariant(defaultSkinLight, defaultSkinDark)
 const borderSkin = useGenerateImageVariant(borderSkinLight, borderSkinDark)
 const collapsed = useGenerateImageVariant(collapsedLight, collapsedDark)
-const compact = useGenerateImageVariant(compactLight, compactDark)
 const compactContent = useGenerateImageVariant(compactLight, compactDark)
 const wideContent = useGenerateImageVariant(wideLight, wideDark)
 const ltrImg = useGenerateImageVariant(ltrLight, ltrDark)
 const rtlImg = useGenerateImageVariant(rtlLight, rtlDark)
+const horizontalImg = useGenerateImageVariant(horizontalLight, horizontalDark)
 
 // 👉 Mode
 const themeMode = computed(() => {
   return [
     {
-      bgImage: lightTheme.value,
+      bgImage: 'mdi-white-balance-sunny',
       value: Theme.Light,
+      label: 'Light',
     },
     {
-      bgImage: darkTheme.value,
+      bgImage: 'mdi-weather-night',
       value: Theme.Dark,
+      label: 'Dark',
     },
     {
-      bgImage: systemTheme.value,
+      bgImage: 'mdi-laptop',
       value: Theme.System,
+      label: 'System',
     },
   ]
 })
@@ -124,7 +129,7 @@ const layouts = computed(() => {
       label: 'Collapsed',
     },
     {
-      bgImage: compact.value,
+      bgImage: horizontalImg.value,
       value: Layout.Horizontal,
       label: 'Horizontal',
     },
@@ -241,10 +246,12 @@ watch([
 
 // remove all theme related values from localStorage
 const resetCustomizer = async () => {
-  if (isCookieHasAnyValue) {
-  // reset themeConfig values
+  if (isCookieHasAnyValue.value) {
+    // reset themeConfig values
     vuetifyTheme.themes.value.light.colors.primary = staticPrimaryColor
     vuetifyTheme.themes.value.dark.colors.primary = staticPrimaryColor
+    vuetifyTheme.themes.value.light.colors['primary-darken-1'] = staticPrimaryDarkenColor
+    vuetifyTheme.themes.value.dark.colors['primary-darken-1'] = staticPrimaryDarkenColor
 
     configStore.theme = themeConfig.app.theme
     configStore.skin = themeConfig.app.skin
@@ -258,6 +265,8 @@ const resetCustomizer = async () => {
 
     cookieRef('lightThemePrimaryColor', null).value = null
     cookieRef('darkThemePrimaryColor', null).value = null
+    cookieRef('lightThemePrimaryDarkenColor', null).value = null
+    cookieRef('darkThemePrimaryDarkenColor', null).value = null
 
     await nextTick()
 
@@ -284,6 +293,7 @@ const resetCustomizer = async () => {
       v-model="isNavDrawerOpen"
       temporary
       touchless
+      border="none"
       location="end"
       width="400"
       :scrim="false"
@@ -295,7 +305,9 @@ const resetCustomizer = async () => {
           <h6 class="text-h6">
             Theme Customizer
           </h6>
-          <span class="text-body-1">Customize & Preview in Real Time</span>
+          <p class="text-body-2 mb-0">
+            Customize & Preview in Real Time
+          </p>
         </div>
 
         <div class="d-flex align-center gap-1">
@@ -310,8 +322,8 @@ const resetCustomizer = async () => {
               v-show="isCookieHasAnyValue"
               dot
               color="error"
-              offset-x="-30"
-              offset-y="-15"
+              offset-x="-29"
+              offset-y="-14"
             />
 
             <VIcon
@@ -347,40 +359,42 @@ const resetCustomizer = async () => {
           :divider="false"
         >
           <!-- 👉 Primary Color -->
-          <div class="d-flex flex-column gap-3">
-            <h6 class="text-base font-weight-medium">
+          <div class="d-flex flex-column gap-2">
+            <h6 class="text-h6">
               Primary Color
             </h6>
 
             <div
-              class="d-flex"
-              style="column-gap: 0.7rem;"
+              class="d-flex app-customizer-primary-colors"
+              style="column-gap: 0.7rem; margin-block-start: 2px;"
             >
               <div
                 v-for="color in colors"
-                :key="color"
+                :key="color.main"
                 style="
               border-radius: 0.375rem;
               outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
-              padding-block: 0.45rem;
-              padding-inline: 0.55rem;"
-                class="cursor-pointer"
-                :style="vuetifyTheme.current.value.colors.primary === color ? `outline-color: ${color}; outline-width:2px;` : ''"
+              padding-block: 0.5rem;
+              padding-inline: 0.625rem;"
+                class="primary-color-wrapper cursor-pointer"
+                :class="vuetifyTheme.current.value.colors.primary === color.main ? 'active' : ''"
+                :style="vuetifyTheme.current.value.colors.primary === color.main ? `outline-color: ${color.main}; outline-width:2px;` : `--v-color:${color.main}`"
                 @click="setPrimaryColor(color)"
               >
                 <div
-                  style="border-radius: 0.375rem;block-size: 2.25rem; inline-size: 2rem;"
-                  :style="{ backgroundColor: color }"
+                  style="border-radius: 0.375rem;block-size: 2.125rem; inline-size: 1.9375rem;"
+                  :style="{ backgroundColor: color.main }"
                 />
               </div>
 
               <div
-                class="cursor-pointer"
+                class="primary-color-wrapper cursor-pointer"
                 style="
               border-radius: 0.375rem;
               outline: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
-              padding-block: 0.45rem;
-              padding-inline: 0.55rem;"
+              padding-block: 0.5rem;
+              padding-inline: 0.625rem;"
+                :class="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? 'active' : ''"
                 :style="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? `outline-color: ${customPrimaryColor}; outline-width:2px;` : ''"
               >
                 <VBtn
@@ -407,7 +421,7 @@ const resetCustomizer = async () => {
                         v-model="customPrimaryColor"
                         mode="hex"
                         :modes="['hex']"
-                        @update:model-value="setPrimaryColor"
+                        @update:model-value="setPrimaryColor({ main: customPrimaryColor, darken: customPrimaryColor })"
                       />
                     </VListItem>
                   </VList>
@@ -418,7 +432,7 @@ const resetCustomizer = async () => {
 
           <!-- 👉 Theme -->
           <div class="d-flex flex-column gap-3">
-            <h6 class="text-base font-weight-medium">
+            <h6 class="text-h6">
               Theme
             </h6>
 
@@ -427,12 +441,30 @@ const resetCustomizer = async () => {
               v-model:selected-radio="configStore.theme"
               :radio-content="themeMode"
               :grid-column="{ cols: '4' }"
-            />
+              class="customizer-skins"
+            >
+              <template #label="item">
+                <span class="text-sm text-medium-emphasis mt-1">{{ item?.label }}</span>
+              </template>
+
+              <template #content="{ item }">
+                <div
+                  class="customizer-skins-icon-wrapper d-flex align-center justify-center py-3 w-100"
+                  style="min-inline-size: 100%;"
+                >
+                  <VIcon
+                    size="30"
+                    :icon="item.bgImage"
+                    color="high-emphasis"
+                  />
+                </div>
+              </template>
+            </CustomRadiosWithImage>
           </div>
 
           <!-- 👉 Skin -->
           <div class="d-flex flex-column gap-3">
-            <h6 class="text-base font-weight-medium">
+            <h6 class="text-h6">
               Skins
             </h6>
 
@@ -455,7 +487,7 @@ const resetCustomizer = async () => {
           >
             <VLabel
               for="customizer-semi-dark"
-              class="text-high-emphasis"
+              class="text-h6 text-high-emphasis"
             >
               Semi Dark Menu
             </VLabel>
@@ -543,13 +575,38 @@ const resetCustomizer = async () => {
   }
 
   .customizer-heading {
-    padding-block: 1.125rem;
-    padding-inline: 1.25rem;
+    padding-block: 1rem;
+    padding-inline: 1.5rem;
   }
 
   .v-navigation-drawer__content {
     display: flex;
     flex-direction: column;
+  }
+
+  .v-label.custom-input.active {
+    border-color: transparent;
+    outline: 2px solid rgb(var(--v-theme-primary));
+  }
+
+  .v-label.custom-input:not(.active):hover {
+    border-color: rgba(var(--v-border-color), 0.22);
+  }
+
+  .customizer-skins {
+    .custom-input.active {
+      .customizer-skins-icon-wrapper {
+        background-color: rgba(var(--v-global-theme-primary), var(--v-selected-opacity));
+      }
+    }
+  }
+
+  .app-customizer-primary-colors {
+    .primary-color-wrapper:not(.active) {
+      &:hover {
+        outline-color: rgba(var(--v-border-color), 0.22) !important;
+      }
+    }
   }
 }
 

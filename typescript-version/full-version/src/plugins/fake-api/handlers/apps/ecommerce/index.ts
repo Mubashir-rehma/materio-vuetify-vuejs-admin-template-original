@@ -1,15 +1,14 @@
-import { paginateArray } from '@api-utils/paginateArray'
-import { db } from '@db/apps/ecommerce/db'
 import is from '@sindresorhus/is'
 import { destr } from 'destr'
-import { http, HttpResponse } from 'msw'
+import { HttpResponse, http } from 'msw'
+import { db } from '@db/apps/ecommerce/db'
+import { paginateArray } from '@api-utils/paginateArray'
 
 export const handlerAppsEcommerce = [
 
   // 👉 Products
   // Get Product List
   http.get('/api/apps/ecommerce/products', ({ request }) => {
-
     const url = new URL(request.url)
 
     const q = url.searchParams.get('q')
@@ -118,16 +117,16 @@ export const handlerAppsEcommerce = [
 
     return HttpResponse.json(
       {
-      products: paginateArray(filteredProducts, itemsPerPageLocal, pageLocal), total: filteredProducts.length,
+        products: paginateArray(filteredProducts, itemsPerPageLocal, pageLocal), total: filteredProducts.length,
       },
       {
-      status: 200,
-      }
+        status: 200,
+      },
     )
   }),
 
   // 👉 Delete Product
-  http.delete('/api/apps/ecommerce/products/:id', ({params}) => {
+  http.delete('/api/apps/ecommerce/products/:id', ({ params }) => {
     const id = Number(params.id)
 
     const productIndex = db.products.findIndex(e => e.id === id)
@@ -267,7 +266,6 @@ export const handlerAppsEcommerce = [
     })
 
     if (customer) {
-
       return HttpResponse.json(customer, { status: 200 })
     }
     else {
@@ -457,7 +455,7 @@ export const handlerAppsEcommerce = [
       },
       {
         status: 200,
-      }
+      },
     )
   }),
 
@@ -566,7 +564,7 @@ export const handlerAppsEcommerce = [
       },
       {
         status: 200,
-      }
+      },
     )
   }),
 ]

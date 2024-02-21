@@ -1,5 +1,6 @@
 import is from '@sindresorhus/is'
 import destr from 'destr'
+import type { PathParams } from 'msw'
 import { HttpResponse, http } from 'msw'
 import { db } from '@db/apps/users/db'
 import { paginateArray } from '@api-utils/paginateArray'
@@ -97,7 +98,7 @@ export const handlerAppsUsers = [
   }),
 
   // Get Single User Detail
-  http.get(('/api/apps/users/:id'), ({ params }) => {
+  http.get<PathParams>(('/api/apps/users/:id'), ({ params }) => {
     const userId = Number(params.id)
 
     const user = db.users.find(e => e.id === userId)

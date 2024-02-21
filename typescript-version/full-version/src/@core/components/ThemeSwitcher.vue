@@ -32,7 +32,10 @@ watch(
       <span class="text-capitalize">{{ configStore.theme }}</span>
     </VTooltip>
     <VMenu activator="parent">
-      <VList v-model:selected="selectedItem">
+      <VList
+        v-model:selected="selectedItem"
+        mandatory
+      >
         <VListItem
           v-for="{ name, icon } in props.themes"
           :key="name"

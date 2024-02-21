@@ -117,16 +117,13 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
   >
     <!-- 👉 Search Trigger button -->
     <!-- close active tour while opening search bar using icon -->
-    <IconBtn
-      class="me-1"
-      @click="Shepherd.activeTour?.cancel()"
-    >
+    <IconBtn @click="Shepherd.activeTour?.cancel()">
       <VIcon icon="mdi-magnify" />
     </IconBtn>
 
     <span
       v-if="configStore.appContentLayoutNav === 'vertical'"
-      class="d-none d-md-flex align-center text-disabled"
+      class="d-none d-md-flex align-center text-disabled ms-2"
       @click="Shepherd.activeTour?.cancel()"
     >
       <span class="me-3">Search</span>
@@ -142,19 +139,15 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
   >
     <!-- suggestion -->
     <template #suggestions>
-      <VCardText class="app-bar-search-suggestions h-100 pa-10">
-        <VRow
-          v-if="suggestionGroups"
-          class="gap-y-4"
-        >
+      <VCardText class="app-bar-search-suggestions pa-12">
+        <VRow v-if="suggestionGroups">
           <VCol
             v-for="suggestion in suggestionGroups"
             :key="suggestion.title"
             cols="12"
             sm="6"
-            class="ps-6"
           >
-            <p class="text-xs text-disabled text-uppercase">
+            <p class="custom-letter-spacing text-xs text-disabled text-uppercase py-2 px-4 mb-0">
               {{ suggestion.title }}
             </p>
             <VList class="card-list">
@@ -162,15 +155,15 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
                 v-for="item in suggestion.content"
                 :key="item.title"
                 link
-                :title="item.title"
-                class="app-bar-search-suggestion"
+                class="app-bar-search-suggestion mx-4 mt-2"
                 @click="redirectToSuggestedOrSearchedPage(item)"
               >
+                <VListItemTitle>{{ item.title }}</VListItemTitle>
                 <template #prepend>
                   <VIcon
                     :icon="item.icon"
                     size="20"
-                    class="me-2"
+                    class="me-n1"
                   />
                 </template>
               </VListItem>
@@ -179,48 +172,49 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
         </VRow>
       </VCardText>
     </template>
+
     <!-- no data suggestion -->
     <template #noDataSuggestion>
-      <div class="mt-8">
+      <div class="mt-9">
         <span class="d-flex justify-center text-disabled">Try searching for</span>
         <h6
           v-for="suggestion in noDataSuggestions"
           :key="suggestion.title"
-          class="app-bar-search-suggestion text-sm font-weight-regular cursor-pointer mt-3"
+          class="app-bar-search-suggestion text-h6 font-weight-regular cursor-pointer py-2 px-4"
           @click="redirectToSuggestedOrSearchedPage(suggestion)"
         >
           <VIcon
             size="20"
             :icon="suggestion.icon"
-            class="me-3"
+            class="me-2"
           />
-          <span class="text-sm">{{ suggestion.title }}</span>
+          <span>{{ suggestion.title }}</span>
         </h6>
       </div>
     </template>
+
     <!-- search result -->
     <template #searchResult="{ item }">
-      <VListSubheader class="text-disabled">
+      <VListSubheader class="text-disabled custom-letter-spacing font-weight-regular ps-4">
         {{ item.title }}
       </VListSubheader>
       <VListItem
         v-for="list in item.children"
         :key="list.title"
-        link
         @click="redirectToSuggestedOrSearchedPage(list)"
       >
         <template #prepend>
           <VIcon
             size="20"
             :icon="list.icon"
-            class="me-3"
+            class="me-n1"
           />
         </template>
         <template #append>
           <VIcon
             size="20"
             icon="mdi-subdirectory-arrow-left"
-            class="enter-icon text-disabled"
+            class="enter-icon text-medium-emphasis"
           />
         </template>
         <VListItemTitle>
@@ -231,15 +225,24 @@ const LazyAppBarSearch = defineAsyncComponent(() => import('@core/components/App
   </LazyAppBarSearch>
 </template>
 
-<style lang="scss" scoped>
-@use "@styles/variables/_vuetify.scss";
+<style lang="scss">
+@use "@styles/variables/vuetify.scss";
 
 .meta-key {
   border: thin solid rgba(var(--v-border-color), var(--v-border-opacity));
   border-radius: 6px;
   block-size: 1.5625rem;
-  line-height: 1.3125rem;
   padding-block: 0.125rem;
   padding-inline: 0.25rem;
+}
+
+.app-bar-search-dialog {
+  .custom-letter-spacing {
+    letter-spacing: 0.8px;
+  }
+
+  .card-list {
+    --v-card-list-gap: 8px;
+  }
 }
 </style>

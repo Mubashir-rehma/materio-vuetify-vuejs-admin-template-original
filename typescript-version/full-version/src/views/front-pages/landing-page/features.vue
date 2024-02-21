@@ -34,7 +34,9 @@ const featuresData = [
         <h5 class="text-h5 mb-2 text-center">
           <span class="font-weight-bold">Everything you need</span>  to start your next project
         </h5>
-        <p class="text-center">Not just a set of tools, the package includes ready-to-deploy conceptual application.</p>
+        <p class="text-center">
+          Not just a set of tools, the package includes ready-to-deploy conceptual application.
+        </p>
       </div>
 
       <div class="d-flex flex-wrap gap-x-20 gap-y-10 align-center justify-center">

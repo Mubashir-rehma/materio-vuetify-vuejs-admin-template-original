@@ -155,7 +155,7 @@ watch(() => props, () => {
                 :model-value="modelValue"
                 :placeholder="props.placeholder"
                 :readonly="isReadonly.value"
-                class="flat-picker-custom-style"
+                class="flat-picker-custom-style h-100 w-100"
                 :disabled="isReadonly.value"
                 @on-open="isCalendarOpen = true"
                 @on-close="isCalendarOpen = false"
@@ -168,7 +168,7 @@ watch(() => props, () => {
                 :value="modelValue"
                 :placeholder="props.placeholder"
                 :readonly="isReadonly.value"
-                class="flat-picker-custom-style"
+                class="flat-picker-custom-style h-100 w-100"
                 type="text"
               >
             </div>

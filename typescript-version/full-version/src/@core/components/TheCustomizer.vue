@@ -41,7 +41,7 @@ const colors: { main: string; darken: string }[] = [
   { main: '#16B1FF', darken: '#149FE6' },
 ]
 
-const customPrimaryColor = ref('#ffffff')
+const customPrimaryColor = ref('#663131')
 
 watch(
   () => configStore.theme,

@@ -349,29 +349,29 @@ const formData = ref({
   transition: all 0.3s ease-in-out;
 }
 
-.layout-nav-type-vertical{
+.layout-nav-type-vertical {
   &.layout-navbar-sticky {
     .sticky-header {
       inset-block: 4rem 0;
     }
   }
 
-  &.layout-navbar-static{
+  &.layout-navbar-static {
     .sticky-header {
       inset-block: 0 0;
     }
   }
 }
 
-.layout-nav-type-horizontal{
-  &.horizontal-nav-static {
+.layout-nav-type-horizontal {
+  &.layout-navbar-static {
     .sticky-header {
       inset-block: 0 0;
     }
   }
 
-  &.layout-navbar-sticky:not(.horizontal-nav-static)  {
-    .sticky-header{
+  &.layout-navbar-sticky {
+    .sticky-header {
       inset-block: 8.1rem 0;
     }
   }

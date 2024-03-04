@@ -118,16 +118,12 @@
   "resolutions": {
     "postcss": "^8",
     "@tiptap/core": "^2",
-    "@types/video.js": "^7",
-    "pug": "^3",
-    "stylelint-order": "6.0.3"
+    "@types/video.js": "^7"
   },
   "overrides": {
     "postcss": "^8",
     "@tiptap/core": "^2",
-    "@types/video.js": "^7",
-    "pug": "^3",
-    "stylelint-order": "6.0.3"
+    "@types/video.js": "^7"
   },
   "packageManager": "pnpm@8.6.2",
   "msw": {

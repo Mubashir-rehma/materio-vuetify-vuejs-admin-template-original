@@ -226,7 +226,15 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
       ]
     },
 
-    eventClick({ event: clickedEvent }) {
+    eventClick({ event: clickedEvent, jsEvent }) {
+      // Prevent the default action
+      jsEvent.preventDefault()
+
+      if (clickedEvent.url) {
+        // Open the URL in a new tab
+        window.open(clickedEvent.url, '_blank')
+      }
+
       // * Only grab required field otherwise it goes in infinity loop
       // ! Always grab all fields rendered by form (even if it get `undefined`) otherwise due to Vue3/Composition API you might get: "object is not extensible"
       event.value = extractEventDataFromEventApi(clickedEvent)
@@ -274,6 +282,11 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
     calendarApi.value = refCalendar.value.getApi()
   })
 
+  // 👉 Jump to date on sidebar(inline) calendar change
+  const jumpToDate = (currentDate: string) => {
+    calendarApi.value?.gotoDate(new Date(currentDate))
+  }
+
   watch(
     () => configStore.isAppRTL,
     val => {
@@ -290,5 +303,6 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
     addEvent,
     updateEvent,
     removeEvent,
+    jumpToDate,
   }
 }

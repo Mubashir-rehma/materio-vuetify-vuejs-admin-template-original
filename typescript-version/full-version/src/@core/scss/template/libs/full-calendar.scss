@@ -105,10 +105,6 @@ body .fc {
         @media (max-width: 1264px) {
           display: block !important;
         }
-
-        .v-theme--dark & {
-          background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' stroke='rgba(232,232,241,0.68)' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'%3E%3Cpath d='M3 12h18M3 6h18M3 18h18'/%3E%3C/svg%3E");
-        }
       }
     }
 
@@ -257,4 +253,8 @@ body .fc {
   .fc-timegrid-body table {
     inline-size: 100% !important;
   }
+}
+
+.v-theme--dark .fc .fc-toolbar-chunk .fc-button-group .fc-drawerToggler-button {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' stroke='rgba(232,232,241,0.68)' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round' class='css-i6dzq1'%3E%3Cpath d='M3 12h18M3 6h18M3 18h18'/%3E%3C/svg%3E");
 }

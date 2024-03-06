@@ -16,6 +16,7 @@ interface Props {
     inbox: number
     draft: number
     spam: number
+    star: number
   }
 }
 
@@ -38,6 +39,7 @@ interface Label {
 const inboxEmails = ref(0)
 const draftEmails = ref(0)
 const spamEmails = ref(0)
+const starredEmails = ref(0)
 
 watch(() => props.emailsMeta, emailsMeta => {
   if (!emailsMeta)
@@ -46,6 +48,7 @@ watch(() => props.emailsMeta, emailsMeta => {
   inboxEmails.value = emailsMeta.inbox
   draftEmails.value = emailsMeta.draft
   spamEmails.value = emailsMeta.spam
+  starredEmails.value = emailsMeta.star
 }, { immediate: true, deep: true })
 
 const folders: ComputedRef<Folder[]> = computed(() => [
@@ -79,6 +82,7 @@ const folders: ComputedRef<Folder[]> = computed(() => [
       name: 'apps-email-filter',
       params: { filter: 'starred' },
     },
+    badge: { content: starredEmails.value, color: 'success' },
   },
   {
     title: 'Spam',

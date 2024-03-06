@@ -37,6 +37,7 @@ export const handlerAppsEmail = [
       inbox: db.emails.filter(email => !email.isDeleted && !email.isRead && email.folder === 'inbox').length,
       draft: db.emails.filter(email => !email.isDeleted && email.folder === 'draft').length,
       spam: db.emails.filter(email => !email.isDeleted && !email.isRead && email.folder === 'spam').length,
+      star: db.emails.filter(email => !email.isDeleted && email.isStarred).length,
     }
 
     return HttpResponse.json({ emails: filteredData, emailsMeta }, { status: 200 })

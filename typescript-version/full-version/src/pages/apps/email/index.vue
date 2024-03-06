@@ -148,7 +148,7 @@ const handleActionClick = async (
 
 // Email actions
 const handleMoveMailsTo = async (action: MoveEmailToAction) => {
-  moveSelectedEmailTo(action, selectedEmails.value)
+  await moveSelectedEmailTo(action, selectedEmails.value)
   await fetchEmails()
 }
 

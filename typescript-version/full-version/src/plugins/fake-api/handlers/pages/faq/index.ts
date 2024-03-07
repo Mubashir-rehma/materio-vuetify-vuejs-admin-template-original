@@ -1,7 +1,7 @@
 import is from '@sindresorhus/is'
 import { HttpResponse, http } from 'msw'
-import type { FaqCategory } from '@/plugins/fake-api/handlers/pages/faq/types'
 import { db } from '@db/pages/faq/db'
+import type { FaqCategory } from '@db/pages/faq/types'
 
 export const handlerPagesFaq = [
   http.get(('/api/pages/faq'), ({ request }) => {

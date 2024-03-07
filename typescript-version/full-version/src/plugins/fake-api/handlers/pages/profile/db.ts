@@ -2,7 +2,7 @@ import type {
   ConnectionsTab,
   ProfileHeader,
   ProfileTab, ProjectTableRow, ProjectsTab, TeamsTab,
-} from '@/plugins/fake-api/handlers/pages/profile/types'
+} from '@db/pages/profile/types'
 
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'

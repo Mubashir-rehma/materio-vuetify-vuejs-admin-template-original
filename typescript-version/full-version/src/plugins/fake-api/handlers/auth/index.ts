@@ -1,7 +1,7 @@
 import type { PathParams } from 'msw'
 import { HttpResponse, http } from 'msw'
-import type { UserOut } from '@/plugins/fake-api/handlers/auth/types'
 import { db } from '@db/auth/db'
+import type { UserOut } from '@db/auth/types'
 
 export const handlerAuth = [
 

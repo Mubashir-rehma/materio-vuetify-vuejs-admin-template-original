@@ -66,24 +66,6 @@ We always keep our packages up to date when we make major releases. However, the
 
 Even if you like to try you can install these packages in fresh VueJS project without our template and you will get the same.
 
-## Template is slow
-
-You may feel slowness in our template due to [vue dev tool](https://devtools.vuejs.org/). There are several open issues complaining about the slowness of app while using the vue dev tool:
-
-<https://github.com/vuejs/devtools/issues/1875>
-
-<https://github.com/vuejs/devtools/issues/1939>
-
-If you open your app or our template in the guest window (where vue dev tool isn't available) then you will notice it is pretty fast and working as expected.
-
-Hence, if you don't use dev tool much we suggest you to disable or remove the vue dev tool from your browser extensions.
-
-Still, if you feel there's something missing try disabling the router transition and you will experience a much faster app.
-
-Apart from this, On first load you might feel template is taking the time to load. This is because vite tries to optimize the dependencies and load the necessary modules required to run the app smoothly. Once it's loaded, vite will cache the dependencies and you will experience faster app.
-
-In summary, this is due to vue dev tool and dev mode. Try checking our the live demo and you will find it's smooth and slick 😍
-
 ## Why reproduce issue/bug in starter-kit?
 
 Reproducing the issue/bug in our starter-kit with minimal dependencies can help in resolving issue/bug as quickly as possible rather than asking to try various things which will cost you valuable time.
@@ -108,7 +90,7 @@ If you are using our ACL provided in our template then it is ability-based ACL n
 
 ## How to check what frontend expects in API response
 
-To determine what the frontend expects in API responses, you can refer to the fake API responses located in the `src/plugins/handlers/` folder.
+To determine what the frontend expects in API responses, you can refer to the fake API responses located in the `src/plugins/fake-api/` folder.
 
 For a specific list of fake API response endpoints related to a particular page, you can inspect the `index.ts` file within the corresponding page's directory. For instance, if you need the endpoints for the Invoice app, you can find them in the `index.ts` file located in the `apps/invoice` directory.
 
@@ -150,14 +132,6 @@ Convert above code to below code:
 </template>
 ```
 
-## Nuxt 3 Support & its integration
-
-As Admin templates are meant for internal purposes and it doesn't require SEO we didn't provide support for NuxtJS At the moment. However, on lots of feature requirements, we added this in our pipeline.
-
-First of all, we will check if is it possible for us to provide nuxt version of our template along with JavaScript & TypeScript versions of the template. If we will be able to manage Vue (TS + JS) along with Nuxt (TS + JS) then surely we will provide nuxt support in future updates.
-
-Till then if you need nuxt support then you can always implement nuxt yourself.
-
 ## How to integrate your theme in our existing project
 
 1. First of all, you have to copy our `@core` into your project's `src` folder.
@@ -198,15 +172,11 @@ In most cases, CORS errors occur because the server is not configured to allow c
 
 ## How to set title for each Individual page
 
-Typically, there is no need to modify the title in admin panels. However, if you still wish to make changes, you can achieve this by integrating the `unhead/vue` library into your project.
+For nuxt users, please refer to their official guide [here](https://nuxt.com/docs/getting-started/seo-meta).
 
-For detailed instructions regarding implementation, please visit the following link: [Unhead Setup](https://unhead.harlanzw.com/integrations/vue/setup)
+For vue users typically, there is no need to modify the title in admin panels. However, if you still wish to make changes, you can achieve this by integrating the `unhead/vue` library into your project.
 
-## Why we have removed store from email app?
-
-In our email app, there is not any requirement to access states across multiple components. So, the need for a store in the email app has been eliminated. All essential functions have been moved to the `useEmail.ts` file.
-
-To review the changes made for the removal of the store, please refer to this [commit](https://github.com/themeselection/master-vue--material/pull/324)
+For detailed instructions regarding implementation, please visit the following link: [Unhead Setup](https://unhead.unjs.io/setup/vue/installation)
 
 ## Nuxt Terminal Warnings
 

@@ -134,4 +134,4 @@ registerPlugins(app) // [!code focus]
 
 // Mount vue app
 app.mount('#app')
-``
+```

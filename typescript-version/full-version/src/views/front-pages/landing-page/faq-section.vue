@@ -45,7 +45,7 @@ const faqData = [
         <h5 class="text-h5 mb-2">
           Frequently Asked <span class="font-weight-bold">questions</span>
         </h5>
-        <p>
+        <p class="text-center">
           Browse through these FAQs to find answers to commonly asked questions.
         </p>
       </div>

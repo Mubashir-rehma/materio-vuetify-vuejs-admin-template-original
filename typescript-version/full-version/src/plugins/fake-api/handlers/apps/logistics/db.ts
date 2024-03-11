@@ -1,4 +1,4 @@
-import type { Vehicle } from '@/plugins/fake-api/handlers/apps/logistics/types'
+import type { Vehicle } from '@db/apps/logistics/types'
 
 interface DB {
   vehicles: Vehicle[]

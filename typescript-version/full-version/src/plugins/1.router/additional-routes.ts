@@ -68,4 +68,9 @@ export const routes: RouteRecordRaw[] = [
     name: 'dashboards-academy',
     component: () => import('@/pages/apps/academy/dashboard.vue'),
   },
+  {
+    path: '/apps/ecommerce/dashboard',
+    name: 'apps-ecommerce-dashboard',
+    component: () => import('@/pages/dashboards/ecommerce.vue'),
+  },
 ]

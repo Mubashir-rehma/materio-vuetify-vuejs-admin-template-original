@@ -1,4 +1,4 @@
-import { setupWorker } from 'msw'
+import { setupWorker } from 'msw/browser'
 
 // Handlers
 import { handlerAppBarSearch } from '@db/app-bar-search/index'

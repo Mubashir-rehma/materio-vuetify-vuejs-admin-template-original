@@ -118,7 +118,7 @@ const reviewData = [
       <h5 class="text-h5 mb-2">
         <span class="font-weight-bold">Success Stories</span> from Clients
       </h5>
-      <p>
+      <p class="text-center">
         See what our customers have to say about their experience.
       </p>
     </div>

@@ -79,35 +79,7 @@ body,
   flex: unset;
 }
 
-.v-selection-control--density-comfortable {
-  &.v-checkbox-btn,
-  &.v-radio,
-  &.v-radio-btn {
-    .v-selection-control__wrapper {
-      margin-inline-start: -0.5625rem;
-    }
-  }
-}
 
-.v-selection-control--density-compact {
-  &.v-radio,
-  &.v-radio-btn,
-  &.v-checkbox-btn {
-    .v-selection-control__wrapper {
-      margin-inline-start: -0.3125rem;
-    }
-  }
-}
-
-.v-selection-control--density-default {
-  &.v-checkbox-btn,
-  &.v-radio,
-  &.v-radio-btn {
-    .v-selection-control__wrapper {
-      margin-inline-start: -0.6875rem;
-    }
-  }
-}
 
 .v-radio-group {
   .v-selection-control-group {

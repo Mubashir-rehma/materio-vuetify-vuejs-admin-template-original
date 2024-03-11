@@ -1,15 +1,16 @@
 import is from '@sindresorhus/is'
 import { destr } from 'destr'
-import { rest } from 'msw'
+import { HttpResponse, http } from 'msw'
 import { db } from '@db/apps/logistics/db'
 import { paginateArray } from '@api-utils/paginateArray'
 
 export const handlerAppLogistics = [
-  rest.get(('/api/apps/logistics/vehicles'), (req, res, ctx) => {
-    const sortBy = req.url.searchParams.get('sortBy')
-    const page = req.url.searchParams.get('page') ?? 1
-    const itemsPerPage = req.url.searchParams.get('itemsPerPage') ?? 10
-    const orderBy = req.url.searchParams.get('orderBy')
+  http.get(('/api/apps/logistics/vehicles'), ({ request }) => {
+    const url = new URL(request.url)
+    const sortBy = url.searchParams.get('sortBy')
+    const page = url.searchParams.get('page') ?? 1
+    const itemsPerPage = url.searchParams.get('itemsPerPage') ?? 10
+    const orderBy = url.searchParams.get('orderBy')
 
     const parsedSortBy = destr(sortBy)
     const sortByLocal = is.string(parsedSortBy) ? parsedSortBy : ''
@@ -73,12 +74,12 @@ export const handlerAppLogistics = [
       }
     }
 
-    return res(
-      ctx.status(200),
-      ctx.json({
+    return HttpResponse.json(
+      {
         vehicles: paginateArray(vehicles, itemsPerPageLocal, pageLocal),
         totalVehicles: vehicles.length,
-      }),
+      },
+      { status: 200 },
     )
   }),
 ]

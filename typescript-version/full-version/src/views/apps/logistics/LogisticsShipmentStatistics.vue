@@ -84,6 +84,7 @@ const shipmentConfig = {
     bar: {
       columnWidth: '30%',
       borderRadius: 4,
+      borderRadiusApplication: 'end',
     },
   },
   dataLabels: {
@@ -108,7 +109,7 @@ const shipmentConfig = {
   },
   yaxis: {
     tickAmount: 4,
-    min: 10,
+    min: 0,
     max: 50,
     labels: {
       style: {

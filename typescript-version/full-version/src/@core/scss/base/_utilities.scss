@@ -2,7 +2,7 @@
 @use "@layouts/styles/mixins" as layoutsMixins;
 
 // 👉 Demo spacers
-// TODO: Use vuetify SCSS variable here
+// TODO: Use vuetify SCSS variable here;
 $card-spacer-content: 16px;
 
 .demo-space-x {
@@ -167,10 +167,10 @@ $card-spacer-content: 16px;
     line-height: 1.25rem;
   }
 
-  .timeline-chip{
+  .timeline-chip {
     border-radius: 6px;
-    background: rgba(var(--v-theme-on-surface), var(--v-hover-opacity)); 
+    background: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));
     padding-block: 5px;
-    padding-inline: 10px
+    padding-inline: 10px;
   }
 }

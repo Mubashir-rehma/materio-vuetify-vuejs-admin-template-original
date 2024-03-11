@@ -1,6 +1,7 @@
 import is from '@sindresorhus/is'
 import destr from 'destr'
-import { rest } from 'msw'
+import type { PathParams } from 'msw'
+import { HttpResponse, http } from 'msw'
 import { database } from '@db/apps/invoice/db'
 import { paginateArray } from '@api-utils/paginateArray'
 
@@ -8,25 +9,23 @@ export const handlerAppsInvoice = [
 
   // 👉 Client
   // Get Clients
-  rest.get(('/api/apps/invoice/clients'), (req, res, ctx) => {
+  http.get(('/api/apps/invoice/clients'), () => {
     const clients = database.map(invoice => invoice.client)
 
-    return res(
-      ctx.status(200),
-      ctx.json(clients.splice(0, 5)),
-    )
+    return HttpResponse.json(clients.splice(0, 5), { status: 200 })
   }),
 
   // 👉 Invoice
   // Get Invoice List
-  rest.get(('/api/apps/invoice'), (req, res, ctx) => {
-    const q = req.url.searchParams.get('q')
-    const status = req.url.searchParams.get('status')
-    const selectedDateRange = req.url.searchParams.get('selectedDateRange')
-    const page = req.url.searchParams.get('page')
-    const itemsPerPage = req.url.searchParams.get('itemsPerPage')
-    const sortBy = req.url.searchParams.get('sortBy')
-    const orderBy = req.url.searchParams.get('orderBy')
+  http.get(('/api/apps/invoice'), ({ request }) => {
+    const url = new URL(request.url)
+    const q = url.searchParams.get('q')
+    const status = url.searchParams.get('status')
+    const selectedDateRange = url.searchParams.get('selectedDateRange')
+    const page = url.searchParams.get('page')
+    const itemsPerPage = url.searchParams.get('itemsPerPage')
+    const sortBy = url.searchParams.get('sortBy')
+    const orderBy = url.searchParams.get('orderBy')
 
     const searchQuery = is.string(q) ? q : undefined
     const queryLowered = (searchQuery ?? '').toString().toLowerCase()
@@ -115,27 +114,26 @@ export const handlerAppsInvoice = [
 
     const totalInvoices = filteredInvoices.length
 
-    return res(
-      ctx.status(200),
-      ctx.json(
-        {
-          invoices: paginateArray(filteredInvoices, itemsPerPageLocal, pageLocal),
-          totalInvoices,
-        },
-      ),
+    return HttpResponse.json(
+      {
+        invoices: paginateArray(filteredInvoices, itemsPerPageLocal, pageLocal),
+        totalInvoices,
+      },
+      {
+        status: 200,
+      },
     )
   }),
 
   // Get Single Invoice
-  rest.get(('/api/apps/invoice/:id'), (req, res, ctx) => {
-    const invoiceId = req.params.id
+  http.get<PathParams>(('/api/apps/invoice/:id'), ({ params }) => {
+    const invoiceId = params.id
 
     const invoice = database.find(e => e.id === Number(invoiceId))
 
     if (!invoice) {
-      return res(
-        ctx.status(404),
-        ctx.json({ message: 'No invoice found with this id' }),
+      return HttpResponse.json('No invoice found with this id',
+        { status: 404 },
       )
     }
 
@@ -150,29 +148,26 @@ export const handlerAppsInvoice = [
       },
     }
 
-    return res(
-      ctx.status(200),
-      ctx.json(responseData),
-    )
+    return HttpResponse.json(responseData, { status: 200 })
   }),
 
   // Delete Invoice
-  rest.delete(('/api/apps/invoice/:id'), (req, res, ctx) => {
-    const invoiceId = req.params.id
+  http.delete(('/api/apps/invoice/:id'), ({ params }) => {
+    const invoiceId = params.id
 
     const invoiceIndex = database.findIndex(e => e.id === Number(invoiceId))
 
     if (invoiceIndex >= 0) {
       database.splice(invoiceIndex, 1)
 
-      return res(
-        ctx.status(200),
-      )
+      return new HttpResponse(null, {
+        status: 204,
+      })
     }
 
-    return res(
-      ctx.status(404),
-      ctx.json({ error: 'something went wrong' }),
+    return HttpResponse.json(
+      { error: 'Something went wrong' },
+      { status: 404 },
     )
   }),
 

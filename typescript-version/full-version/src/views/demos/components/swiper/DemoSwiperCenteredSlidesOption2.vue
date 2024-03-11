@@ -21,7 +21,7 @@ register()
       },
       460: {
         slidesPerView: 2,
-        spaceBetween: 30,
+        spaceBetween: 20,
       },
     }"
   >
@@ -35,10 +35,7 @@ register()
       ]"
       :key="text"
     >
-      <VCard
-        max-width="260"
-        class="bg-default"
-      >
+      <VCard class="bg-default">
         <VCardText>
           <div class="d-flex align-center gap-x-3">
             <VIcon

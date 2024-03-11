@@ -1,4 +1,4 @@
-import type { SearchResults } from '@/plugins/fake-api/handlers/app-bar-search/types'
+import type { SearchResults } from '@db/app-bar-search/types'
 
 interface DB {
   searchItems: SearchResults[]
@@ -233,7 +233,7 @@ export const db: DB = {
           title: 'Page Not Found - 404',
         },
         {
-          url: { name: 'pages-misc-not-authorized' },
+          url: { path: '/pages/misc/not-authorized' },
           icon: 'mdi-account-multiple-remove-outline',
           title: 'Not Authorized - 401',
         },

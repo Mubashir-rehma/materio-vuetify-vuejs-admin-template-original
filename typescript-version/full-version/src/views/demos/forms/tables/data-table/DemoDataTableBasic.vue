@@ -16,9 +16,5 @@ const headers = [
     :headers="headers"
     :items="data"
     :items-per-page="5"
-  >
-    <template #item.id="{ item }">
-      <span class="text-h6">{{ item.id }}</span>
-    </template>
-  </VDataTable>
+  />
 </template>

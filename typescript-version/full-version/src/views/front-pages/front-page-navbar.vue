@@ -350,7 +350,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 <style lang="scss" scoped>
 .nav-menu{
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .nav-link{

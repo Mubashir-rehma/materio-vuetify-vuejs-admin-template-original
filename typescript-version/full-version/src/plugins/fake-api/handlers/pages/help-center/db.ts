@@ -1,6 +1,12 @@
-import type { HelpCenterAllCategoryArticles, HelpCenterArticle, HelpCenterArticlesOverview } from '@/plugins/fake-api/handlers/pages/help-center/types'
+import type { HelpCenterAllCategoryArticles, HelpCenterArticle, HelpCenterArticlesOverview } from '@db/pages/help-center/types'
 import checkoutImg from '@images/front-pages/misc/checkout-image.png'
 import productImg from '@images/front-pages/misc/product-image.png'
+import discord from '@images/svg/discord.svg?url'
+import gift from '@images/svg/gift.svg?url'
+import keyboard from '@images/svg/keyboard.svg?url'
+import laptop from '@images/svg/laptop.svg?url'
+import lightbulb from '@images/svg/lightbulb.svg?url'
+import rocket from '@images/svg/rocket.svg?url'
 
 interface DB {
   allArticles: HelpCenterAllCategoryArticles[]
@@ -14,19 +20,19 @@ export const db: DB = {
     {
       slug: 'getting-started',
       title: 'Getting Started',
-      img: '/images/svg/rocket.svg',
+      img: rocket,
       subtitle: 'Whether you\'re new or you\'re a power user, this article will',
     },
     {
       slug: 'first-steps',
       title: 'First Steps',
-      img: '/images/svg/gift.svg',
+      img: gift,
       subtitle: 'Are you a new customer wondering how to get started?',
     },
     {
       slug: 'external-content',
       title: 'Add External Content',
-      img: '/images/svg/keyboard.svg',
+      img: keyboard,
       subtitle: 'Article will show you how to expand the functionality of App',
     },
   ],
@@ -109,19 +115,19 @@ export const db: DB = {
     {
       slug: 'blogging',
       title: 'Blogging',
-      img: '/images/svg/laptop.svg',
+      img: laptop,
       subtitle: 'Expert tips & tools to improve your website or online store using blog.',
     },
     {
       slug: 'inspiration-center',
       title: 'Inspiration Center',
-      img: '/images/svg/lightbulb.svg',
+      img: lightbulb,
       subtitle: 'inspiration from experts to help you start and grow your big ideas.',
     },
     {
       slug: 'community',
       title: 'Community',
-      img: '/images/svg/discord.svg',
+      img: discord,
       subtitle: 'A group of people living in the same place or having a particular.',
     },
   ],

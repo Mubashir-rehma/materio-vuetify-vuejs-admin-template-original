@@ -58,7 +58,10 @@ const translateMouse = computed(() => (speed: number) => {
               The live customer has everything your marketing neeeds
             </p>
           </div>
-          <VBtn :to="{ name: 'front-pages-landing-page', hash: `#pricing-plan` }">
+          <VBtn
+            :to="{ name: 'front-pages-landing-page', hash: `#pricing-plan` }"
+            :active="false"
+          >
             Get Early Access
           </VBtn>
         </div>

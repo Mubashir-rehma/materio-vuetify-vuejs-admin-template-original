@@ -186,7 +186,7 @@ const panelStatus = ref(0)
                 >
                   <template #prepend>
                     <VCheckbox
-                      class="me-3"
+                      class="me-3 ps-3"
                       :model-value="topic.isCompleted"
                     />
                   </template>

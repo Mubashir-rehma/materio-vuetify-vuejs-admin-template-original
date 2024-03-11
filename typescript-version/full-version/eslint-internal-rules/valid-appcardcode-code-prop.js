@@ -8,7 +8,7 @@
 const utils = require('eslint-plugin-vue/lib/utils')
 
 function toCamelCase(str) {
-  return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase())
+  return str.toLowerCase().replace(/[^a-z\d]+(.)/gi, (m, chr) => chr.toUpperCase())
 }
 
 // ------------------------------------------------------------------------------

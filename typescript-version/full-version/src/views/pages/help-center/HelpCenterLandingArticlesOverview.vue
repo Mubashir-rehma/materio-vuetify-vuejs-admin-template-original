@@ -9,7 +9,7 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <VRow>
+  <VRow v-if="props.articles.length">
     <VCol
       v-for="article in props.articles"
       :key="article.title"
@@ -23,9 +23,9 @@ const props = defineProps<Props>()
         <VCardText class="text-center">
           <img
             :src="article.img"
-            alt="images"
-            width="58"
+            alt="svg"
             height="58"
+            width="58"
           >
 
           <h6 class="text-h6 my-3">
@@ -53,12 +53,3 @@ const props = defineProps<Props>()
     </VCol>
   </VRow>
 </template>
-
-<style lang="scss">
-.v-card-text{
-  svg{
-    block-size: 58px;
-    inline-size: 58px;
-  }
-}
-</style>

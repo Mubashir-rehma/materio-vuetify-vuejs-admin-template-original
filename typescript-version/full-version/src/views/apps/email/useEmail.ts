@@ -1,5 +1,5 @@
 import type { PartialDeep } from 'type-fest'
-import type { Email } from '@/plugins/fake-api/handlers/apps/email/types'
+import type { Email } from '@db/apps/email/types'
 
 export type MoveEmailToAction = 'inbox' | 'spam' | 'trash'
 
@@ -75,7 +75,7 @@ export const useEmail = () => {
     return false
   }
 
-  const moveSelectedEmailTo = (action: MoveEmailToAction, selectedEmails: number[]) => {
+  const moveSelectedEmailTo = async (action: MoveEmailToAction, selectedEmails: number[]) => {
     const dataToUpdate: PartialDeep<Email> = {}
 
     if (action === 'inbox') {
@@ -94,7 +94,7 @@ export const useEmail = () => {
       dataToUpdate.isDeleted = true
     }
 
-    updateEmails(selectedEmails, dataToUpdate)
+    await updateEmails(selectedEmails, dataToUpdate)
   }
 
   return {

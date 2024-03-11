@@ -36,8 +36,6 @@ const codeSnippet = highlighter.codeToHtml(props.code[preferredCodeLanguage.valu
   lang: 'vue',
   theme: 'dracula',
 })
-
-console.log(codeSnippet)
 </script>
 
 <template>
@@ -103,6 +101,7 @@ console.log(codeSnippet)
               style="border-radius: 6px;max-block-size: 500px;"
               :options="{ wheelPropagation: false }"
             >
+              <!-- eslint-disable-next-line vue/no-v-html -->
               <div v-html="codeSnippet" />
             </PerfectScrollbar>
             <IconBtn

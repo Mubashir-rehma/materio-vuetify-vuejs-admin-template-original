@@ -201,7 +201,9 @@ export default defineComponent({
 
   // Adjust right column pl when vertical nav is collapsed
   &.layout-vertical-nav-collapsed .layout-content-wrapper {
-    padding-inline-start: variables.$layout-vertical-nav-collapsed-width;
+    @media screen and (min-width: 1280px) {
+      padding-inline-start: variables.$layout-vertical-nav-collapsed-width;
+    }
   }
 
   // 👉 Content height fixed

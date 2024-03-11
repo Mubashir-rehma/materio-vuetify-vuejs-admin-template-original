@@ -61,8 +61,8 @@ const formData = ref({
 
 <template>
   <VCard class="overflow-visible">
-    <div class="w-100 sticky-header">
-      <div class=" d-flex align-center gap-4 flex-wrap bg-background pa-6">
+    <div class="w-100 sticky-header overflow-hidden rounded-t">
+      <div class="d-flex align-center gap-4 flex-wrap bg-background pa-6">
         <VCardTitle>Sticky Action Bar</VCardTitle>
         <VSpacer />
         <div>
@@ -349,29 +349,29 @@ const formData = ref({
   transition: all 0.3s ease-in-out;
 }
 
-.layout-nav-type-vertical{
+.layout-nav-type-vertical {
   &.layout-navbar-sticky {
     .sticky-header {
       inset-block: 4rem 0;
     }
   }
 
-  &.layout-navbar-static{
+  &.layout-navbar-static {
     .sticky-header {
       inset-block: 0 0;
     }
   }
 }
 
-.layout-nav-type-horizontal{
-  &.horizontal-nav-static {
+.layout-nav-type-horizontal {
+  &.layout-navbar-static {
     .sticky-header {
       inset-block: 0 0;
     }
   }
 
-  &.layout-navbar-sticky:not(.horizontal-nav-static)  {
-    .sticky-header{
+  &.layout-navbar-sticky {
+    .sticky-header {
       inset-block: 8.1rem 0;
     }
   }

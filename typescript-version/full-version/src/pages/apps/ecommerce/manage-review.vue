@@ -420,7 +420,6 @@ const reviewStatChartConfig = {
           :items="reviews"
           show-select
           :items-length="totalReviews"
-          item-value="product"
           class="text-no-wrap"
           @update:options="updateOptions"
         >
@@ -510,3 +509,7 @@ const reviewStatChartConfig = {
     </VCol>
   </VRow>
 </template>
+
+<style lang="scss">
+@use "@core/scss/template/libs/apex-chart.scss";
+</style>

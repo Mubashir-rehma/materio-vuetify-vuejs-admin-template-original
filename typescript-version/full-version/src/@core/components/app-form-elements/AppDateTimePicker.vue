@@ -56,11 +56,11 @@ const configStore = useConfigStore()
 const attrs = useAttrs()
 
 const [rootAttrs, compAttrs] = filterInputAttrs(attrs)
-
-const { modelValue: _, ...inputProps } = VInput.filterProps(props)
-const fieldProps = filterFieldProps(props)
+const inputProps = ref(VInput.filterProps(props))
+const fieldProps = ref(filterFieldProps(props))
 
 const refFlatPicker = ref()
+
 const { focused } = useFocus(refFlatPicker)
 const isCalendarOpen = ref(false)
 const isInlinePicker = ref(false)
@@ -107,6 +107,15 @@ onMounted(() => {
 const emitModelValue = (val: string) => {
   emit('update:modelValue', val)
 }
+
+watch(() => props, () => {
+  fieldProps.value = filterFieldProps((props))
+  inputProps.value = VInput.filterProps(props)
+},
+{
+  deep: true,
+  immediate: true,
+})
 </script>
 
 <template>
@@ -146,7 +155,7 @@ const emitModelValue = (val: string) => {
                 :model-value="modelValue"
                 :placeholder="props.placeholder"
                 :readonly="isReadonly.value"
-                class="flat-picker-custom-style"
+                class="flat-picker-custom-style h-100 w-100"
                 :disabled="isReadonly.value"
                 @on-open="isCalendarOpen = true"
                 @on-close="isCalendarOpen = false"
@@ -159,7 +168,7 @@ const emitModelValue = (val: string) => {
                 :value="modelValue"
                 :placeholder="props.placeholder"
                 :readonly="isReadonly.value"
-                class="flat-picker-custom-style"
+                class="flat-picker-custom-style h-100 w-100"
                 type="text"
               >
             </div>
@@ -305,6 +314,7 @@ input[altinputclass="inlinePicker"] {
 
   &.hasTime.open {
     .flatpickr-time {
+      border: none;
       border-color: rgba(var(--v-border-color), var(--v-border-opacity));
       block-size: auto;
     }

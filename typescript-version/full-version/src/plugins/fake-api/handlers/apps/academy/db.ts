@@ -1,4 +1,4 @@
-import type { Course, CourseDetails } from '@/plugins/fake-api/handlers/apps/academy/types'
+import type { Course, CourseDetails } from '@db/apps/academy/types'
 
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar12 from '@images/avatars/avatar-12.png'
@@ -50,7 +50,7 @@ export const db: DB = {
       user: 'Maybelle Zmitrovich',
       tutorImg: tutorImg2,
       image: avatar2,
-      completedTasks: 100,
+      completedTasks: 48,
       totalTasks: 52,
       userCount: 14,
       note: 48,

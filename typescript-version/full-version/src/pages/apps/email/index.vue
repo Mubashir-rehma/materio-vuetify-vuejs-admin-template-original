@@ -148,7 +148,7 @@ const handleActionClick = async (
 
 // Email actions
 const handleMoveMailsTo = async (action: MoveEmailToAction) => {
-  moveSelectedEmailTo(action, selectedEmails.value)
+  await moveSelectedEmailTo(action, selectedEmails.value)
   await fetchEmails()
 }
 
@@ -322,7 +322,7 @@ watch(
                     v-for="label in labels"
                     :key="label.title"
                     href="#"
-                    @click="updateEmailLabels(selectedEmails, label.title)"
+                    @click="async() => { await updateEmailLabels(selectedEmails, label.title); await fetchEmails(); } "
                   >
                     <template #prepend>
                       <VBadge

@@ -1,4 +1,4 @@
-import type { Email } from '@/plugins/fake-api/handlers/apps/email/types'
+import type { Email } from '@db/apps/email/types'
 
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'

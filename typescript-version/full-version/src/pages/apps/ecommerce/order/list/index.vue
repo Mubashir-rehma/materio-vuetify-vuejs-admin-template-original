@@ -31,7 +31,6 @@ const headers = [
 
 // Update data table options
 const updateOptions = (options: any) => {
-  page.value = options.page
   sortBy.value = options.sortBy[0]?.key
   orderBy.value = options.sortBy[0]?.order
 }
@@ -276,9 +275,9 @@ const deleteOrder = async (id: number) => {
 </template>
 
 <style lang="scss" scoped>
-#customer-link{
-  &:hover{
-    color: '#000' !important
+#customer-link {
+  &:hover {
+    color: "#000" !important;
   }
 }
 </style>

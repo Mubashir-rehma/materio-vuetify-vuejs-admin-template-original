@@ -1,6 +1,6 @@
 import { HttpResponse, http } from 'msw'
-import type { Chat, ChatContact, ChatContactWithChat, ChatMessage } from '@/plugins/fake-api/handlers/apps/chat/types'
 import { db } from '@db/apps/chat/db'
+import type { Chat, ChatContact, ChatContactWithChat, ChatMessage } from '@db/apps/chat/types'
 
 export const handlerAppsChat = [
   http.get(('/api/apps/chat/chats-and-contacts'), ({ request }) => {

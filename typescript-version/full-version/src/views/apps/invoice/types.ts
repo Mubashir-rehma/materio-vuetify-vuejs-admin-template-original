@@ -1,4 +1,4 @@
-import type { Invoice, PaymentDetails } from '@/plugins/fake-api/handlers/apps/invoice/types'
+import type { Invoice, PaymentDetails } from '@db/apps/invoice/types'
 
 export interface PurchasedProduct {
   title: string

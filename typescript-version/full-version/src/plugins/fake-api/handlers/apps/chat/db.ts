@@ -1,4 +1,4 @@
-import type { Chat, ChatContact } from '@/plugins/fake-api/handlers/apps/chat/types'
+import type { Chat, ChatContact } from '@db/apps/chat/types'
 
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'

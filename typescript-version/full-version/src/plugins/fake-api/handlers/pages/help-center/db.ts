@@ -1,12 +1,12 @@
-import type { HelpCenterAllCategoryArticles, HelpCenterArticle, HelpCenterArticlesOverview } from '@/plugins/fake-api/handlers/pages/help-center/types'
+import type { HelpCenterAllCategoryArticles, HelpCenterArticle, HelpCenterArticlesOverview } from '@db/pages/help-center/types'
 import checkoutImg from '@images/front-pages/misc/checkout-image.png'
 import productImg from '@images/front-pages/misc/product-image.png'
-import discord from '@images/svg/discord.svg?raw'
-import gift from '@images/svg/gift.svg?raw'
-import keyboard from '@images/svg/keyboard.svg?raw'
-import laptop from '@images/svg/laptop.svg?raw'
-import lightbulb from '@images/svg/lightbulb.svg?raw'
-import rocket from '@images/svg/rocket.svg?raw'
+import discord from '@images/svg/discord.svg?url'
+import gift from '@images/svg/gift.svg?url'
+import keyboard from '@images/svg/keyboard.svg?url'
+import laptop from '@images/svg/laptop.svg?url'
+import lightbulb from '@images/svg/lightbulb.svg?url'
+import rocket from '@images/svg/rocket.svg?url'
 
 interface DB {
   allArticles: HelpCenterAllCategoryArticles[]

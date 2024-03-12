@@ -1,4 +1,4 @@
-import type { SearchResults } from '@/plugins/fake-api/handlers/app-bar-search/types'
+import type { SearchResults } from '@db/app-bar-search/types'
 
 interface DB {
   searchItems: SearchResults[]

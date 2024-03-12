@@ -1,6 +1,12 @@
 
 # Docker   <Badge text='Vue Only' style="vertical-align: middle" />
 
+:::warning
+
+Please note that we do not provide Docker support for the Windows operating system.
+
+:::
+
 ## Overview
 
 Docker is a tool that allows you to package your application and its dependencies into a virtual container that can run on any Linux server. This provides a lightweight, isolated environment that can be easily replicated and shared. Docker containers are run from Docker images, which are built from a series of instructions contained within a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build, users can create an automated build that executes several command-line instructions in succession. This page describes how to build a Docker image for your application, and run it locally or in a cloud environment.

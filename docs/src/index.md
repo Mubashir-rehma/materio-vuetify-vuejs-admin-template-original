@@ -30,18 +30,18 @@ features:
     icon:
       src: https://api.iconify.design/logos:vue.svg
     link: https://vuejs.org/api/composition-api-setup.html
-    details: Composition API is a set of additive, function-based APIs that allow flexible composition of component logic.
+    details: Composition API is a set of function-based APIs for flexible component logic.
   - title: JWT Auth, ACL, etc.
     icon:
       src: https://api.iconify.design/logos:jwt-icon.svg
     link: https://jwt.io/
-    details: Master provides extendable JWT auth which can be configured easily and provides ready to use ACL
+    details: Vuexy provides extendable JWT auth with ready to use ACL.
 
   - title: Laravel
     icon: 
       src: https://api.iconify.design/logos:laravel.svg
     link: https://laravel.com/
-    details: A PHP framework for web Artisans
+    details: A powerful PHP framework for web Artisans with extensive features.
   - title: Nuxt
     icon: 
       src: https://api.iconify.design/skill-icons:nuxtjs-dark.svg

@@ -10,7 +10,8 @@ const scrollToTop = () => {
 </script>
 
 <template>
-  <VScaleTransition
+  <Transition
+    name="app-transition-zoom-fade"
     style="transform-origin: center;"
     class="scroll-to-top d-print-none"
   >
@@ -25,7 +26,7 @@ const scrollToTop = () => {
         icon="mdi-arrow-up"
       />
     </VBtn>
-  </VScaleTransition>
+  </Transition>
 </template>
 
 <style lang="scss">

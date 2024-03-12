@@ -80,7 +80,7 @@ pnpm run dev
 
 **Related FAQ:**
 
-- [Template is slow](/faq/#template-is-slow)
+- [npm install or yarn install warnings or installation warnings](/faq/#npm-install-or-yarn-install-warnings-or-installation-warnings)
 - [Nuxt Terminal Warning](/faq/#nuxt-terminal-warnings)
 
 ## Generating build for production

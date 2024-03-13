@@ -11,6 +11,7 @@ const scrollToTop = () => {
 
 <template>
   <VScaleTransition
+    name="app-transition-fade"
     style="transform-origin: center;"
     class="scroll-to-top d-print-none"
   >

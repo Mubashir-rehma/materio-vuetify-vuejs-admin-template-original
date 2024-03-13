@@ -44,7 +44,7 @@ features:
     details: A powerful PHP framework for web Artisans with extensive features.
   - title: Nuxt
     icon: 
-      src: https://api.iconify.design/skill-icons:nuxtjs-dark.svg
+      src: https://api.iconify.design/logos:nuxt-icon.svg
     link: https://nuxt.com/
     details: Nuxt is an open source framework that makes web development intuitive and powerful.
   - title: Typescript & JavaScript

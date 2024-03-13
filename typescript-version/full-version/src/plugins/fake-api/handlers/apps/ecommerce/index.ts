@@ -256,19 +256,20 @@ export const handlerAppsEcommerce = [
   http.get(('/api/apps/ecommerce/customers/:id'), ({ params }) => {
     const customerId = Number(params.id)
 
-    const customerIndex = db.customerData.findIndex(e => e.customerId === customerId)
+    try {
+      const customerIndex = db.customerData.findIndex(e => e.customerId === customerId)
 
-    const customer = db.customerData[customerIndex]
+      const customer = db.customerData[customerIndex]
 
-    Object.assign(customer, {
-      status: 'Active',
-      contact: '+1 (234) 567 890',
-    })
+      Object.assign(customer, {
+        status: 'Active',
+        contact: '+1 (234) 567 890',
+      })
 
-    if (customer) {
-      return HttpResponse.json(customer, { status: 200 })
+      if (customer)
+        return HttpResponse.json(customer, { status: 200 })
     }
-    else {
+    catch (error) {
       return new HttpResponse(null, {
         status: 404,
       })

@@ -18,11 +18,11 @@ const tabs = [
   { icon: 'mdi-link-variant', title: 'Connections' },
 ]
 
-const { data: userData } = await useApi<any>(`/apps/users/${route.params.id}`)
+const { data: userData, response } = await useApi<any>(`/apps/users/${route.params.id}`)
 </script>
 
 <template>
-  <VRow v-if="userData">
+  <VRow v-if="response?.ok">
     <VCol
       cols="12"
       md="5"
@@ -78,9 +78,12 @@ const { data: userData } = await useApi<any>(`/apps/users/${route.params.id}`)
       </VWindow>
     </VCol>
   </VRow>
-  <VCard v-else>
-    <VCardTitle class="text-center">
-      No User Found
-    </VCardTitle>
-  </VCard>
+  <div v-else>
+    <VAlert
+      type="error"
+      variant="tonal"
+    >
+      Invoice with ID  {{ route.params.id }} not found!
+    </VAlert>
+  </div>
 </template>

@@ -18,11 +18,9 @@ const tabs = [
   { icon: 'mdi-bell-outline', title: 'Notifications' },
 ]
 
-const { data, error } = await useApi<Customer>(`/apps/ecommerce/customers/${route.params.id}`)
+const { data, response } = await useApi<Customer>(`/apps/ecommerce/customers/${route.params.id}`)
 
-if (error.value)
-  console.log(error.value)
-else if (data.value)
+if (response.value?.ok && data.value)
   customerData.value = data.value
 
 const isAddCustomerDrawerOpen = ref(false)
@@ -60,8 +58,9 @@ const isAddCustomerDrawerOpen = ref(false)
       </div>
     </div>
     <!-- 👉 Customer Profile  -->
-    <VRow v-if="customerData">
+    <VRow v-if="response?.ok">
       <VCol
+        v-if="customerData"
         cols="12"
         md="5"
         lg="4"
@@ -109,6 +108,14 @@ const isAddCustomerDrawerOpen = ref(false)
         </VWindow>
       </VCol>
     </VRow>
+    <div v-else>
+      <VAlert
+        type="error"
+        variant="tonal"
+      >
+        Invoice with ID  {{ route.params.id }} not found!
+      </VAlert>
+    </div>
     <ECommerceAddCustomerDrawer v-model:is-drawer-open="isAddCustomerDrawerOpen" />
   </div>
 </template>

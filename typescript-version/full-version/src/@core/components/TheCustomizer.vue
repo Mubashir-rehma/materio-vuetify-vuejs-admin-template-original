@@ -278,7 +278,6 @@ const resetCustomizer = async () => {
     cookieRef('darkThemePrimaryDarkenColor', null).value = null
 
     await nextTick()
-    await nextTick()
 
     isCookieHasAnyValue.value = false
 

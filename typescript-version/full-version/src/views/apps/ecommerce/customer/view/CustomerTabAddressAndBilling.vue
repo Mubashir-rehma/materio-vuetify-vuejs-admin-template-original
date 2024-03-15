@@ -137,7 +137,7 @@ const paymentData = [
         :key="index"
       >
         <div>
-          <div class="d-flex justify-space-between mb-4 gap-y-2 flex-wrap align-center">
+          <div class="d-flex justify-space-between my-4 gap-y-2 flex-wrap align-center">
             <div class="d-flex align-center gap-x-1">
               <IconBtn
                 density="comfortable"
@@ -184,14 +184,13 @@ const paymentData = [
             </div>
           </div>
           <VExpandTransition>
-            <div
-              v-show="show[index]"
-              class="px-8"
-            >
-              <div class="mb-1 font-weight-medium text-high-emphasis">
-                {{ address.owner }}
+            <div v-show="show[index]">
+              <div class="px-8 pb-4">
+                <div class="mb-1 font-weight-medium text-high-emphasis">
+                  {{ address.owner }}
+                </div>
+                <div v-html="address.address" />
               </div>
-              <div v-html="address.address" />
             </div>
           </VExpandTransition>
           <VDivider v-if="index !== addressData.length - 1" />
@@ -218,7 +217,7 @@ const paymentData = [
         v-for="(payment, index) in paymentData"
         :key="index"
       >
-        <div class="d-flex justify-space-between mb-4 gap-y-2 flex-wrap align-center">
+        <div class="d-flex justify-space-between my-4 gap-y-2 flex-wrap align-center">
           <div class="d-flex align-center">
             <IconBtn
               density="comfortable"
@@ -274,11 +273,8 @@ const paymentData = [
           </div>
         </div>
         <VExpandTransition>
-          <div
-            v-show="paymentShow[index]"
-            class="px-8"
-          >
-            <VRow>
+          <div v-show="paymentShow[index]">
+            <VRow class="px-8 pb-4">
               <VCol
                 cols="12"
                 md="6"

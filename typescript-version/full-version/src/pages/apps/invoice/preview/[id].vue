@@ -395,18 +395,24 @@ const printInvoice = () => {
     <InvoiceSendInvoiceDrawer v-model:isDrawerOpen="isSendPaymentSidebarVisible" />
   </section>
   <section v-else>
-    <div>Invoice with ID  {{ route.params.id }} not found </div>
+    <VAlert
+      type="error"
+      variant="tonal"
+    >
+      Invoice with ID  {{ route.params.id }} not found!
+    </VAlert>
   </section>
 </template>
 
 <style lang="scss">
 @media print {
-  @page{
+  @page {
     margin: 0;
     size: a4;
   }
 
-  html, body {
+  html,
+  body {
     block-size: 100%;
     inline-size: 210mm; // A4 Paper width
   }
@@ -416,7 +422,7 @@ const printInvoice = () => {
     --v-theme-on-surface: 94, 86, 105;
   }
 
-  .print-col{
+  .print-col {
     flex: 0 0 100% !important;
     max-inline-size: 100% !important;
   }
@@ -425,7 +431,7 @@ const printInvoice = () => {
     background: none !important;
   }
 
-  .sidebar{
+  .sidebar {
     display: none;
   }
 
@@ -456,6 +462,10 @@ const printInvoice = () => {
 
   .v-table__wrapper {
     overflow: hidden !important;
+  }
+
+  .vue-devtools__anchor {
+    display: none;
   }
 }
 </style>

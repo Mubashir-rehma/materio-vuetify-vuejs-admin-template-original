@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { Referrals } from '@db/apps/ecommerce/types'
-import paperImg from '@images/svg/paper.svg?raw'
+import paperImg from '@images/svg/paper-send.svg?raw'
 import rocketImg from '@images/svg/rocket.svg?raw'
-import userInfoImg from '@images/svg/userInfo.svg?raw'
+import userInfoImg from '@images/svg/user-info.svg?raw'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 
 const rocketIcon = h('div', { innerHTML: rocketImg, style: 'font-size: 2.625rem;color: rgb(var(--v-theme-primary))' })

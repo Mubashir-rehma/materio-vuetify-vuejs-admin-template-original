@@ -219,7 +219,7 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered)
 }
 
 // Small screen vertical nav transition
-@media (max-width:1279px) {
+@media (max-width: 1279px) {
   .layout-vertical-nav {
     &:not(.visible) {
       transform: translateX(-#{variables.$layout-vertical-nav-width});

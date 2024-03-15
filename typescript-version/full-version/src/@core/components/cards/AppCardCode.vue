@@ -124,7 +124,8 @@ const codeSnippet = highlighter.codeToHtml(props.code[preferredCodeLanguage.valu
 <style lang="scss">
 @use "@styles/variables/vuetify.scss";
 
-code[class*="language-"], pre[class*="language-"] {
+code[class*="language-"],
+pre[class*="language-"] {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 14px;
 }

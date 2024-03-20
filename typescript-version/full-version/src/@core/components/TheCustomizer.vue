@@ -26,7 +26,7 @@ const configStore = useConfigStore()
 const vuetifyTheme = useTheme()
 
 const colors: { main: string; darken: string }[] = [
-  { main: staticPrimaryColor, darken: '#7E4EE6' },
+  { main: staticPrimaryColor, darken: staticPrimaryDarkenColor },
   { main: '#0D9394', darken: '#0C8485' },
   { main: '#FFB400', darken: '#E6A200' },
   { main: '#FF4C51', darken: '#E64449' },

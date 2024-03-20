@@ -3,6 +3,7 @@ import { HttpResponse, http } from 'msw'
 import { db } from '@db/auth/db'
 import type { UserOut } from '@db/auth/types'
 
+// Handlers for auth
 export const handlerAuth = [
 
   http.post<PathParams>(('/api/auth/login'), async ({ request }) => {

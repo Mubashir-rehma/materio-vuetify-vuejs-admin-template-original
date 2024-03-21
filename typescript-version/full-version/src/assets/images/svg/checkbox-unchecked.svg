@@ -1,3 +1,8 @@
-<svg width="24" height="24" class="custom-checkbox-unchecked" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M8 4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4Z" stroke="currentColor" stroke-opacity=".6" stroke-width="2"/>
+<svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' class="custom-checkbox-unchecked" viewBox='0 0 24 24' fill='none'>
+      <path
+        d='M9 4H15C17.7614 4 20 6.23858 20 9V15C20 17.7614 17.7614 20 15 20H9C6.23858 20 4 17.7614 4 15V9C4 6.23858 6.23858 4 9 4Z'
+        stroke='var(--mui-palette-text-secondary)'
+        strokeOpacity='0.7'
+        strokeWidth='2'
+      />
 </svg>

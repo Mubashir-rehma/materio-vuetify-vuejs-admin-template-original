@@ -3,6 +3,7 @@ import { HttpResponse, http } from 'msw'
 import { db } from '@db/pages/faq/db'
 import type { FaqCategory } from '@db/pages/faq/types'
 
+// Handler for pages/faq
 export const handlerPagesFaq = [
   http.get(('/api/pages/faq'), ({ request }) => {
     const url = new URL(request.url)

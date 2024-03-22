@@ -1,6 +1,7 @@
 import { HttpResponse, http } from 'msw'
 import { db } from '@db/pages/profile/db'
 
+// Handler for pages/profile
 export const handlerPagesProfile = [
   // GET /pages/profile
   http.get(('/api/pages/profile'), ({ request }) => {

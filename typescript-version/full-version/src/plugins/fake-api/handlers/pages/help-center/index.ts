@@ -1,6 +1,7 @@
 import { HttpResponse, http } from 'msw'
 import { db } from '@db/pages/help-center/db'
 
+// Handler for pages/help-center
 export const handlerPagesHelpCenter = [
   http.get(('/api/pages/help-center'), () => {
     return HttpResponse.json(

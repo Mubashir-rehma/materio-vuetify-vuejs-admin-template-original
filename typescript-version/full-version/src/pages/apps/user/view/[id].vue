@@ -18,11 +18,11 @@ const tabs = [
   { icon: 'mdi-link-variant', title: 'Connections' },
 ]
 
-const { data: userData, response } = await useApi<any>(`/apps/users/${route.params.id}`)
+const { data: userData } = await useApi<any>(`/apps/users/${route.params.id}`)
 </script>
 
 <template>
-  <VRow v-if="response?.ok">
+  <VRow v-if="userData">
     <VCol
       cols="12"
       md="5"

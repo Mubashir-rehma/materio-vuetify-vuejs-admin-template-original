@@ -11,11 +11,11 @@ const route = useRoute('apps-invoice-preview-id')
 const isAddPaymentSidebarVisible = ref(false)
 const isSendPaymentSidebarVisible = ref(false)
 
-const { data: invoiceData, response } = await useApi<any>(`/apps/invoice/${Number(route.params.id)}`)
+const { data: invoiceData } = await useApi<any>(`/apps/invoice/${Number(route.params.id)}`)
 const invoice = ref()
 const paymentDetails = ref()
 
-if (response.value?.ok) {
+if (invoiceData.value) {
   invoice.value = invoiceData.value.invoice
   paymentDetails.value = invoiceData.value.paymentDetails
 }
@@ -64,7 +64,7 @@ const printInvoice = () => {
 </script>
 
 <template>
-  <section v-if="response?.ok">
+  <section v-if="invoice && paymentDetails">
     <VRow>
       <VCol
         cols="12"

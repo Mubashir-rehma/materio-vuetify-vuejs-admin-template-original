@@ -11,9 +11,9 @@ const route = useRoute('apps-invoice-edit-id')
 
 // 👉 fetchInvoice
 
-const { data: invoiceDetails, response } = await useApi<any>(`/apps/invoice/${route.params.id}`)
+const { data: invoiceDetails } = await useApi<any>(`/apps/invoice/${route.params.id}`)
 
-if (response.value?.ok) {
+if (invoiceDetails.value) {
   invoiceData.value = {
     invoice: invoiceDetails.value.invoice,
     paymentDetails: invoiceDetails.value.paymentDetails,
@@ -57,7 +57,7 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
 </script>
 
 <template>
-  <VRow v-if="response?.ok">
+  <VRow v-if="invoiceData && invoiceData?.invoice">
     <!-- 👉 InvoiceEditable -->
     <VCol
       cols="12"

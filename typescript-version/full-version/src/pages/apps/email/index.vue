@@ -5,7 +5,7 @@ import EmailLeftSidebarContent from '@/views/apps/email/EmailLeftSidebarContent.
 import EmailView from '@/views/apps/email/EmailView.vue'
 import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
 import { useEmail } from '@/views/apps/email/useEmail'
-import type { Email } from '@db/apps/email/types'
+import type { Email, EmailLabel } from '@db/apps/email/types'
 
 definePage({
   meta: {
@@ -149,6 +149,12 @@ const handleActionClick = async (
 // Email actions
 const handleMoveMailsTo = async (action: MoveEmailToAction) => {
   await moveSelectedEmailTo(action, selectedEmails.value)
+  await fetchEmails()
+}
+
+// Handle Email Labels
+const handleEmailLabels = async (labelTitle: EmailLabel) => {
+  await updateEmailLabels(selectedEmails.value, labelTitle)
   await fetchEmails()
 }
 
@@ -322,7 +328,7 @@ watch(
                     v-for="label in labels"
                     :key="label.title"
                     href="#"
-                    @click="async() => { await updateEmailLabels(selectedEmails, label.title); await fetchEmails(); } "
+                    @click="handleEmailLabels(label.title)"
                   >
                     <template #prepend>
                       <VBadge

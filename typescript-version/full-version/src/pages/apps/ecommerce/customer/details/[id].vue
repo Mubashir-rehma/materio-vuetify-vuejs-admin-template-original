@@ -18,9 +18,9 @@ const tabs = [
   { icon: 'mdi-bell-outline', title: 'Notifications' },
 ]
 
-const { data, response } = await useApi<Customer>(`/apps/ecommerce/customers/${route.params.id}`)
+const { data } = await useApi<Customer>(`/apps/ecommerce/customers/${route.params.id}`)
 
-if (response.value?.ok && data.value)
+if (data.value)
   customerData.value = data.value
 
 const isAddCustomerDrawerOpen = ref(false)
@@ -58,7 +58,7 @@ const isAddCustomerDrawerOpen = ref(false)
       </div>
     </div>
     <!-- 👉 Customer Profile  -->
-    <VRow v-if="response?.ok">
+    <VRow v-if="customerData">
       <VCol
         v-if="customerData"
         cols="12"

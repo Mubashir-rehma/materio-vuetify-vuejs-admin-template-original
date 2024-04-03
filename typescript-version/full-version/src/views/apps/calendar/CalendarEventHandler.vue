@@ -96,14 +96,11 @@ const startDateTimePickerConfig = computed(() => {
   return config
 })
 
-const endDateTimePickerConfig = computed(() => {
-  const config: Options = { enableTime: !event.value.allDay, dateFormat: `Y-m-d${event.value.allDay ? '' : ' H:i'}` }
-
-  if (event.value.start)
-    config.minDate = event.value.start
-
-  return config
-})
+const endDateTimePickerConfig = computed<Options>(() => ({
+  enableTime: !event.value.allDay,
+  dateFormat: `Y-m-d${event.value.allDay ? '' : ' H:i'}`,
+  minDate: event.value.start || undefined,
+}))
 </script>
 
 <template>

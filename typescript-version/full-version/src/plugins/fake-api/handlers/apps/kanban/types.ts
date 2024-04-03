@@ -1,0 +1,40 @@
+// Kanban Data
+export interface KanbanItem {
+  id: number
+  title: string
+  comments?: string
+  dueDate?: string
+  labels?: string[]
+  members?: string[]
+  attachments?: number
+  commentsCount?: number
+  image?: string
+}
+export interface KanbanBoard {
+  id: number
+  title: string
+  itemsIds: number[]
+}
+
+export interface RenameKanbanBoard {
+  oldName: string
+  boardId: number
+  newName: string
+}
+
+export interface AddNewKanbanItem {
+  itemTitle: string
+  boardName: string
+  boardId: number
+}
+
+export interface EditKanbanItem {
+  item: KanbanItem
+  boardName: string
+  boardId: number
+}
+
+export interface KanbanData {
+  boards: KanbanBoard[]
+  items: KanbanItem[]
+}

@@ -1,0 +1,118 @@
+import { HttpResponse, http } from 'msw'
+import { database } from '@db/apps/kanban/db'
+import type { AddNewKanbanItem, EditKanbanItem, RenameKanbanBoard } from '@db/apps/kanban/types'
+
+export const handlerAppsKanban = [
+  http.get('/api/apps/kanban', () => {
+    return HttpResponse.json(database, { status: 200 })
+  }),
+
+  http.put('/api/apps/kanban/rename-board', async ({ request }) => {
+    const boardData = await request.json() as RenameKanbanBoard
+
+    database.boards = database.boards.map(board => {
+      if (board.id === boardData.boardId)
+        board.title = boardData.newName
+
+      return board
+    })
+
+    return new HttpResponse(null, { status: 201 })
+  }),
+
+  http.delete('/api/apps/kanban/:id', async ({ params }) => {
+    const boardId = Number(params.id)
+
+    database.boards = database.boards.filter(board => board.id !== boardId)
+
+    return new HttpResponse(null, { status: 204 })
+  }),
+
+  http.post('/api/apps/kanban/add-board', async ({ request }) => {
+    const boardName = await request.json() as { title: string }
+
+    const getNewBoardId = () => {
+      const newBoardId = database.boards.length + 1
+      if (!(database.boards.some(board => board.id === newBoardId)))
+        return newBoardId
+
+      else
+        return newBoardId + 1
+    }
+
+    if (database.boards.some(board => board.title === boardName.title)) {
+      return HttpResponse.error()
+    }
+    else {
+      database.boards.push({
+        id: getNewBoardId(),
+        title: boardName.title,
+        itemsIds: [],
+      })
+
+      return new HttpResponse(null, { status: 201 })
+    }
+  }),
+
+  http.post('/api/apps/kanban/add-item', async ({ request }) => {
+    const newItem = await request.json() as AddNewKanbanItem
+
+    const itemId = database.items[database.items.length - 1].id + 1
+
+    if (newItem.itemTitle && newItem.boardName) {
+      // Add the new item to the items list
+      database.items.push({
+        id: itemId,
+        title: newItem.itemTitle,
+        attachments: 0,
+        comments: '',
+        commentsCount: 0,
+        dueDate: '',
+        labels: [],
+        members: [],
+      })
+
+      // Add the new item to the board
+      database.boards[newItem.boardId - 1].itemsIds.push(itemId)
+    }
+    else {
+      return HttpResponse.error()
+    }
+
+    return new HttpResponse(null, { status: 201 })
+  }),
+
+  http.put('/api/apps/kanban/update-item', async ({ request }) => {
+    const itemData = await request.json() as EditKanbanItem
+
+    console.log('itemData :>> ', itemData)
+    if (itemData.item.id) {
+      database.items.forEach(item => {
+        if (item.id === itemData.item.id) {
+          item.title = itemData.item.title
+          item.attachments = itemData.item.attachments
+          item.comments = itemData.item.comments
+          item.commentsCount = itemData.item.commentsCount
+          item.dueDate = itemData.item.dueDate
+          item.labels = itemData.item.labels
+          item.members = itemData.item.members
+        }
+      },
+      )
+    }
+
+    return new HttpResponse(null, { status: 201 })
+  }),
+
+  http.delete('/api/apps/kanban/delete-item/:id', async ({ params }) => {
+    const itemId = Number(params.id)
+
+    database.items = database.items.filter(item => item.id !== itemId)
+
+    database.boards.forEach(board => {
+      board.itemsIds = board.itemsIds.filter(id => id !== itemId)
+    })
+
+    return new HttpResponse(null, { status: 204 })
+  }),
+]

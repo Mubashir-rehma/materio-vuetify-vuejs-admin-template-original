@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import KanbanBoard from '@/views/apps/kanban/KanbanBoard.vue'
+import KanbanBoardComp from '@/views/apps/kanban/KanbanBoard.vue'
+import type { AddNewKanbanItem, EditKanbanItem, KanbanState, RenameKanbanBoard } from '@db/apps/kanban/types'
 
-import type { AddNewKanbanItem, EditKanbanItem, RenameKanbanBoard } from '@db/apps/kanban/types'
-
+// 👉 initial kanban data fetch
 const { data: kanban, execute: refetchKanban } = await useApi<any>('/apps/kanban')
 
+// 👉 adding new board and refetch the data
 const addNewBoard = async (newBoardName: string) => {
   await $api('/api/apps/kanban/add-board', {
     method: 'POST',
@@ -14,11 +15,13 @@ const addNewBoard = async (newBoardName: string) => {
   refetchKanban()
 }
 
+// 👉 delete board and refetch data
 const deleteBoard = async (boardId: number) => {
   await $api(`/apps/kanban/${boardId}`, { method: 'DELETE' })
   refetchKanban()
 }
 
+// 👉 rename board and refetch data
 const renameTheBoard = async (kanbanBoard: RenameKanbanBoard) => {
   await $api('/apps/kanban/rename-board', {
     method: 'PUT',
@@ -28,6 +31,7 @@ const renameTheBoard = async (kanbanBoard: RenameKanbanBoard) => {
   refetchKanban()
 }
 
+// 👉 add new item and refetch data
 const addNewItem = async (newItem: AddNewKanbanItem) => {
   await $api('/apps/kanban/add-item', {
     method: 'POST',
@@ -46,30 +50,46 @@ const editItemFn = async (editItem: EditKanbanItem) => {
   refetchKanban()
 }
 
+// 👉 delete item and refetch data
 const deleteItemFn = async (deleteItem: EditKanbanItem) => {
-  await $api(`/apps/kanban/delete-item/${deleteItem.item.id}`, {
-    method: 'DELETE',
-    body: deleteItem,
-  })
+  if (deleteItem.item && deleteItem.item.id) {
+    await $api(`/apps/kanban/delete-item/${deleteItem.item.id}`, {
+      method: 'DELETE',
+      body: deleteItem,
+    })
 
-  refetchKanban()
+    refetchKanban()
+  }
+}
+
+// 👉 update item state
+const updateItemState = async (kanbanState: KanbanState) => {
+  await $api('/apps/kanban/items/state-update', {
+    method: 'PUT',
+    body: kanbanState,
+  })
+}
+
+// 👉 update board state
+const updateBoardState = async (kanbanBoardIds: number[]) => {
+  await $api('/apps/kanban/boards/state-update', {
+    method: 'PUT',
+    body: kanbanBoardIds,
+  })
 }
 </script>
 
 <template>
-  <div
+  <KanbanBoardComp
     v-if="kanban"
-    class="overflow-hidden"
-    style="padding: 1rem; margin: -1rem;"
-  >
-    <KanbanBoard
-      :kanban-data="kanban"
-      @add-new-board="addNewBoard"
-      @delete-board="deleteBoard"
-      @rename-board="renameTheBoard"
-      @add-new-item="addNewItem"
-      @edit-item="editItemFn"
-      @delete-item="deleteItemFn"
-    />
-  </div>
+    :kanban-data="kanban"
+    @add-new-board="addNewBoard"
+    @delete-board="deleteBoard"
+    @rename-board="renameTheBoard"
+    @add-new-item="addNewItem"
+    @edit-item="editItemFn"
+    @delete-item="deleteItemFn"
+    @update-items-state="updateItemState"
+    @update-board-state="updateBoardState"
+  />
 </template>

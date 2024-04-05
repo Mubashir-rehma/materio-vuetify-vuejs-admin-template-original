@@ -18,22 +18,39 @@ interface Emit {
   (e: 'deleteKanbanItem', value: EditKanbanItem): void
 }
 
-const props = defineProps<{
-  kanbanItem: EditKanbanItem
+const props = withDefaults(defineProps<{
+  kanbanItem?: EditKanbanItem | undefined
   isDrawerOpen: boolean
-}>()
+}>(), {
+  kanbanItem: () => ({
+    item: {
+      title: '',
+      dueDate: '',
+      labels: [],
+      members: [],
+      id: 0,
+      attachments: 0,
+      commentsCount: 0,
+      image: '',
+      comments: '',
+    },
+    boardId: 0,
+    boardName: '',
+  }),
+})
 
 const emit = defineEmits<Emit>()
-
-const handleDrawerModelValueUpdate = (val: boolean) => {
-  emit('update:isDrawerOpen', val)
-}
 
 const currentTab = ref('edit')
 const refEditTaskForm = ref<VForm>()
 const labelOptions = ['UX', 'Image', 'Code Review', 'Dashboard', 'Bug']
 
 const localKanbanItem = ref(JSON.parse(JSON.stringify(props.kanbanItem)))
+
+const handleDrawerModelValueUpdate = (val: boolean) => {
+  emit('update:isDrawerOpen', val)
+  currentTab.value = 'edit'
+}
 
 // kanban item watcher
 watch(() => props.kanbanItem, () => {
@@ -103,6 +120,15 @@ const activityTask = [
     userProfile: avatar9,
   },
 ]
+
+// 👉 label/chip color
+const resolveLabelColor: any = {
+  'UX': 'success',
+  'Image': 'warning',
+  'Code Review': 'info',
+  'Dashboard': 'primary',
+  'Bug': 'error',
+}
 </script>
 
 <template>
@@ -119,34 +145,28 @@ const activityTask = [
       @cancel="$emit('update:isDrawerOpen', false)"
     />
 
-    <PerfectScrollbar
-      :options="{ wheelPropagation: false }"
-      style="block-size: calc(100vh - 60px);"
-    >
-      <VCard
-        flat
-        height="100%"
-      >
-        <VCardText class="pt-2">
-          <VTabs v-model="currentTab">
-            <VTab value="edit">
-              Edit
-            </VTab>
-            <VTab value="activity">
-              Activity
-            </VTab>
-          </VTabs>
-          <VDivider />
+    <div v-if="localKanbanItem">
+      <VTabs v-model="currentTab">
+        <VTab value="edit">
+          Edit
+        </VTab>
+        <VTab value="activity">
+          Activity
+        </VTab>
+      </VTabs>
+      <VDivider />
 
-          <VWindow
-            v-model="currentTab"
-            class="pt-5"
+      <VWindow v-model="currentTab">
+        <VWindowItem value="edit">
+          <PerfectScrollbar
+            :options="{ wheelPropagation: false }"
+            style="block-size: calc(100vh - 8rem);"
           >
-            <VWindowItem value="edit">
-              <VForm
-                ref="refEditTaskForm"
-                @submit.prevent="updateKanbanItem"
-              >
+            <VForm
+              ref="refEditTaskForm"
+              @submit.prevent="updateKanbanItem"
+            >
+              <VCardText>
                 <VRow>
                   <VCol cols="12">
                     <VTextField
@@ -171,7 +191,7 @@ const activityTask = [
                       eager
                     >
                       <template #chip="{ item }">
-                        <VChip>
+                        <VChip :color="resolveLabelColor[item.raw]">
                           {{ item.raw }}
                         </VChip>
                       </template>
@@ -232,10 +252,17 @@ const activityTask = [
                     </VBtn>
                   </VCol>
                 </VRow>
-              </VForm>
-            </VWindowItem>
+              </VCardText>
+            </VForm>
+          </PerfectScrollbar>
+        </VWindowItem>
 
-            <VWindowItem value="activity">
+        <VWindowItem value="activity">
+          <PerfectScrollbar
+            :options="{ wheelPropagation: false }"
+            style="block-size: calc(100vh - 6rem);"
+          >
+            <VCardText>
               <VList lines="two">
                 <VListItem
                   v-for="activity in activityTask"
@@ -246,10 +273,10 @@ const activityTask = [
                   class="px-0"
                 />
               </VList>
-            </VWindowItem>
-          </VWindow>
-        </VCardText>
-      </VCard>
-    </PerfectScrollbar>
+            </VCardText>
+          </PerfectScrollbar>
+        </VWindowItem>
+      </VWindow>
+    </div>
   </VNavigationDrawer>
 </template>

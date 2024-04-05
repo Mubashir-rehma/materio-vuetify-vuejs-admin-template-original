@@ -41,8 +41,8 @@ export const database: KanbanData = {
       labels: ['Code Review'],
       members: [avatar3, avatar1, avatar2],
       comments: 'No Comment',
-      attachments: 0,
-      commentsCount: 0,
+      attachments: 2,
+      commentsCount: 4,
       image: '',
     },
     {
@@ -53,8 +53,8 @@ export const database: KanbanData = {
       members: [avatar1, avatar2],
       comments: 'No Comment',
       image: '',
-      attachments: 0,
-      commentsCount: 0,
+      attachments: 5,
+      commentsCount: 10,
     },
     {
       id: 4,

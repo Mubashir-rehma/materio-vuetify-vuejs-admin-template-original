@@ -29,7 +29,7 @@ export interface AddNewKanbanItem {
 }
 
 export interface EditKanbanItem {
-  item: KanbanItem
+  item: KanbanItem | undefined
   boardName: string
   boardId: number
 }
@@ -37,4 +37,9 @@ export interface EditKanbanItem {
 export interface KanbanData {
   boards: KanbanBoard[]
   items: KanbanItem[]
+}
+
+export interface KanbanState {
+  ids: number[]
+  boardId: number
 }

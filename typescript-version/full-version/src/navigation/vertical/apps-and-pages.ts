@@ -78,7 +78,7 @@ export default [
   },
   {
     title: 'Kanban',
-    icon: { icon: 'mdi-drag' },
+    icon: { icon: 'mdi-arrow-all' },
     to: 'apps-kanban',
   },
   {

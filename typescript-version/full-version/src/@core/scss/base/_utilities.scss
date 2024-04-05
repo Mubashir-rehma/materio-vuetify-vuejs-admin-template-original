@@ -2,7 +2,7 @@
 @use "@layouts/styles/mixins" as layoutsMixins;
 
 // 👉 Demo spacers
-// TODO: Use vuetify SCSS variable here;
+// TODO: Use vuetify SCSS variable here;DemospacersTODO
 $card-spacer-content: 16px;
 
 .demo-space-x {
@@ -55,6 +55,12 @@ $card-spacer-content: 16px;
 
 .text-white-variant {
   color: rgba(255, 255, 255, var(--v-high-emphasis-opacity));
+}
+
+.text-link {
+  &:not(:hover) {
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+  }
 }
 
 .bg-var-theme-background {

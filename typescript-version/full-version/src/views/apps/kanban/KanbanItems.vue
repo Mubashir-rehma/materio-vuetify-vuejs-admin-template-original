@@ -229,6 +229,10 @@ const deleteItem = (item: EditKanbanItem) => {
   .drag-handler {
     cursor: grab;
     visibility: hidden;
+
+    &:active {
+      cursor: grabbing;
+    }
   }
 
   &:hover {

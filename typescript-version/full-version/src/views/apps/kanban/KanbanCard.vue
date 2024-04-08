@@ -62,12 +62,13 @@ const moreOptions = [
         <VSpacer />
 
         <VMenu>
-          <template #activator="{ props: p }">
+          <template #activator="{ props: p, isActive }">
             <VIcon
               v-bind="p"
               icon="mdi-dots-vertical"
               class="position-absolute more-options"
-              style="inset-block-start: 5px; inset-inline-end: 0;"
+              style="inset-block-start: 16px; inset-inline-end: 10px;"
+              :style="isActive ? 'visibility:visible' : ''"
               size="20"
               @click.stop
             />
@@ -100,6 +101,7 @@ const moreOptions = [
             <VIcon
               size="18"
               icon="mdi-link-variant"
+              class="me-1"
             />
             <span class="me-3">{{ item.attachments }}</span>
           </div>
@@ -108,6 +110,7 @@ const moreOptions = [
             <VIcon
               size="18"
               icon="mdi-chat-outline"
+              class="me-1"
             />
             <span>{{ item.commentsCount }}</span>
           </div>
@@ -131,6 +134,16 @@ const moreOptions = [
 
 <style lang="scss" scoped>
 .kanban-card {
+  cursor: grab;
+
+  :active {
+    cursor: grabbing;
+  }
+
+  &[style^="z-index"] {
+    cursor: grabbing !important;
+  }
+
   .more-options {
     visibility: hidden;
   }

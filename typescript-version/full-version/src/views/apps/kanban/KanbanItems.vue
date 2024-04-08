@@ -32,6 +32,7 @@ const isAddNewFormVisible = ref(false)
 const isBoardNameEditing = ref(false)
 const refForm = ref<VForm>()
 const newTaskTitle = ref<string>('')
+const refKanbanBoardTitle = ref<VForm>()
 
 // 👉 required validator
 const boardActions = [
@@ -49,12 +50,16 @@ const boardActions = [
 
 // 👉 emit rename board event
 const renameBoard = () => {
-  emit('renameBoard', {
-    oldName: props.boardName,
-    newName: localBoardName.value,
-    boardId: props.boardId,
+  refKanbanBoardTitle.value?.validate().then(valid => {
+    if (valid.valid) {
+      emit('renameBoard', {
+        oldName: props.boardName,
+        newName: localBoardName.value,
+        boardId: props.boardId,
+      })
+      isBoardNameEditing.value = false
+    }
   })
-  isBoardNameEditing.value = false
 }
 
 // 👉 emit add new item event
@@ -105,12 +110,16 @@ const deleteItem = (item: EditKanbanItem) => {
       <div class="flex-grow-1">
         <VForm
           v-if="isBoardNameEditing"
+          ref="refKanbanBoardTitle"
+          validate-on="lazy submit"
           @submit.prevent="renameBoard"
         >
           <VTextField
             v-model="localBoardName"
             density="compact"
             autofocus
+            :rules="[requiredValidator]"
+            hide-details
           >
             <template #append-inner>
               <VBtn

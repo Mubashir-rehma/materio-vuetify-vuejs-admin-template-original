@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { animations, remapNodes } from '@formkit/drag-and-drop'
+import { remapNodes } from '@formkit/drag-and-drop'
 import { dragAndDrop } from '@formkit/drag-and-drop/vue'
 import { VForm } from 'vuetify/components/VForm'
 import type { AddNewKanbanItem, EditKanbanItem, KanbanData, KanbanState, RenameKanbanBoard } from '@db/apps/kanban/types'
@@ -78,7 +78,6 @@ dragAndDrop({
   parent: refKanbanBoard,
   values: localIds,
   group: props.groupName,
-  plugins: [animations()],
   draggable: child => child.classList.contains('kanban-card'),
 })
 

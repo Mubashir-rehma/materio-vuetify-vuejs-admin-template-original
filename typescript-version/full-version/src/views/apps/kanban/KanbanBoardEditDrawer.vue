@@ -134,10 +134,15 @@ const resolveLabelColor: any = {
               <div class="d-flex align-center flex-wrap gap-1">
                 <VAvatar
                   v-for="avatar in localKanbanItem.item.members"
-                  :key="avatar"
+                  :key="avatar.name"
                   size="26"
-                  :image="avatar"
-                />
+                >
+                  <VImg :src="avatar.img" />
+
+                  <VTooltip activator="parent">
+                    {{ avatar.name }}
+                  </VTooltip>
+                </VAvatar>
                 <VAvatar
                   size="26"
                   variant="tonal"

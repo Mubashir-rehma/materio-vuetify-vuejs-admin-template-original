@@ -107,8 +107,16 @@ watch(localKanbanData, () => {
 
 // 👉 validators for add new board
 const validateBoardTitle = () => {
-  return props.kanbanData.boards.some(board => board.title.toLowerCase() === boardTitle.value.toLowerCase()) ? 'Board title already exists' : true
+  return props.kanbanData.boards.some(board => boardTitle.value && board.title.toLowerCase() === boardTitle.value.toLowerCase()) ? 'Board title already exists' : true
 }
+
+const hideAddNewForm = () => {
+  isAddNewFormVisible.value = false
+  refAddNewBoard.value?.reset()
+}
+
+// close add new item form when you loose focus from the form
+onClickOutside(refAddNewBoard, hideAddNewForm)
 </script>
 
 <template>
@@ -171,6 +179,7 @@ const validateBoardTitle = () => {
               :rules="[requiredValidator, validateBoardTitle]"
               autofocus
               placeholder="Add Board Title"
+              @keydown.esc="hideAddNewForm"
             />
           </div>
           <div class="d-flex gap-3">
@@ -184,7 +193,8 @@ const validateBoardTitle = () => {
               size="small"
               variant="tonal"
               color="secondary"
-              @click="isAddNewFormVisible = false"
+              type="reset"
+              @click="hideAddNewForm"
             >
               Cancel
             </VBtn>

@@ -1,11 +1,13 @@
 // Kanban Data
+interface Member { name: string; img: string }
+
 export interface KanbanItem {
   id: number
   title: string
   comments?: string
   dueDate?: string
   labels?: string[]
-  members?: string[]
+  members?: Member[]
   attachments?: number
   commentsCount?: number
   image?: string

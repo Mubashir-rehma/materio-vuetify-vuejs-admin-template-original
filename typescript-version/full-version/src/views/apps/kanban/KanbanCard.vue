@@ -122,10 +122,14 @@ const moreOptions = [
         >
           <VAvatar
             v-for="avatar in item.members"
-            :key="avatar"
-            :image="avatar"
+            :key="avatar.name"
             size="28"
-          />
+          >
+            <VImg :src="avatar.img" />
+            <VTooltip activator="parent">
+              {{ avatar.name }}
+            </VTooltip>
+          </VAvatar>
         </div>
       </div>
     </VCardText>

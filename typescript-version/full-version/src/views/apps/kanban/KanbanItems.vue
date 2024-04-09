@@ -101,6 +101,20 @@ const resolveItemUsingId = (id: number) => props.kanbanData.items.find(item => i
 const deleteItem = (item: EditKanbanItem) => {
   emit('deleteItem', item)
 }
+
+const hideAddNewForm = () => {
+  isAddNewFormVisible.value = false
+  refForm.value?.reset()
+}
+
+// close add new item form when you loose focus from the form
+onClickOutside(refForm, hideAddNewForm)
+
+// 👉 submit form on enter and new line on shift-enter
+const handleEnterKeydown = (event: { key: string; shiftKey: any }) => {
+  if (event.key === 'Enter' && !event.shiftKey)
+    addNewItem()
+}
 </script>
 
 <template>
@@ -203,12 +217,15 @@ const deleteItem = (item: EditKanbanItem) => {
           @submit.prevent="addNewItem"
         >
           <div class="mb-4">
-            <VTextField
+            <VTextarea
               v-model="newTaskTitle"
               density="compact"
               :rules="[requiredValidator]"
-              placeholder="Add Task Title"
+              placeholder="Add Content"
               autofocus
+              rows="2"
+              @keydown.enter="handleEnterKeydown"
+              @keydown.esc="hideAddNewForm"
             />
           </div>
           <div class="d-flex gap-3 flex-wrap">
@@ -222,7 +239,7 @@ const deleteItem = (item: EditKanbanItem) => {
               size="small"
               variant="tonal"
               color="secondary"
-              @click="isAddNewFormVisible = false"
+              @click="hideAddNewForm"
             >
               Cancel
             </VBtn>

@@ -207,7 +207,7 @@ const deleteItem = (item: EditKanbanItem) => {
               v-model="newTaskTitle"
               density="compact"
               :rules="[requiredValidator]"
-              placeholder="Add Board Title"
+              placeholder="Add Task Title"
               autofocus
             />
           </div>

@@ -87,7 +87,7 @@ const resolveLabelColor: any = {
 
     <PerfectScrollbar
       :options="{ wheelPropagation: false }"
-      style="block-size: calc(100vh - 8rem);"
+      style="block-size: calc(100vh - 4rem);"
     >
       <VForm
         v-if="localKanbanItem"

@@ -3,11 +3,14 @@ import { database } from '@db/apps/kanban/db'
 import type { AddNewKanbanItem, EditKanbanItem, KanbanBoard, KanbanState, RenameKanbanBoard } from '@db/apps/kanban/types'
 
 export const handlerAppsKanban = [
+
+  // 👉 get all kanban data
   http.get('/api/apps/kanban', () => {
     return HttpResponse.json(database, { status: 200 })
   }),
 
-  http.put('/api/apps/kanban/rename-board', async ({ request }) => {
+  // 👉 rename board
+  http.put('/api/apps/kanban/board/rename', async ({ request }) => {
     const boardData = await request.json() as RenameKanbanBoard
 
     database.boards = database.boards.map(board => {
@@ -20,7 +23,8 @@ export const handlerAppsKanban = [
     return new HttpResponse(null, { status: 201 })
   }),
 
-  http.delete('/api/apps/kanban/:id', async ({ params }) => {
+  // 👉 delete board
+  http.delete('/api/apps/kanban/board/:id', async ({ params }) => {
     const boardId = Number(params.id)
 
     database.boards = database.boards.filter(board => board.id !== boardId)
@@ -28,7 +32,8 @@ export const handlerAppsKanban = [
     return new HttpResponse(null, { status: 204 })
   }),
 
-  http.post('/api/apps/kanban/add-board', async ({ request }) => {
+  // 👉 add new board
+  http.post('/api/apps/kanban/board/add', async ({ request }) => {
     const boardName = await request.json() as { title: string }
 
     const getNewBoardId = () => {
@@ -54,7 +59,8 @@ export const handlerAppsKanban = [
     }
   }),
 
-  http.post('/api/apps/kanban/add-item', async ({ request }) => {
+  // 👉 add new item
+  http.post('/api/apps/kanban/item/add', async ({ request }) => {
     const newItem = await request.json() as AddNewKanbanItem
 
     const itemId = database.items[database.items.length - 1].id + 1
@@ -85,7 +91,8 @@ export const handlerAppsKanban = [
     return new HttpResponse(null, { status: 201 })
   }),
 
-  http.put('/api/apps/kanban/update-item', async ({ request }) => {
+  // 👉 update item
+  http.put('/api/apps/kanban/item/update', async ({ request }) => {
     const itemData = await request.json() as EditKanbanItem
 
     database.items.forEach(item => {
@@ -103,7 +110,8 @@ export const handlerAppsKanban = [
     return new HttpResponse(null, { status: 201 })
   }),
 
-  http.delete('/api/apps/kanban/delete-item/:id', async ({ params }) => {
+  // 👉 delete item
+  http.delete('/api/apps/kanban/item/:id', async ({ params }) => {
     const itemId = Number(params.id)
 
     database.items = database.items.filter(item => item.id !== itemId)
@@ -115,7 +123,8 @@ export const handlerAppsKanban = [
     return new HttpResponse(null, { status: 204 })
   }),
 
-  http.put('/api/apps/kanban/items/state-update', async ({ request }) => {
+  // 👉 update item state
+  http.put('/api/apps/kanban/item/state-update', async ({ request }) => {
     const stateData = await request.json() as KanbanState
 
     database.boards.forEach(board => {
@@ -126,11 +135,11 @@ export const handlerAppsKanban = [
     return new HttpResponse(null, { status: 201 })
   }),
 
-  http.put('/api/apps/kanban/boards/state-update', async ({ request }) => {
+  // 👉 update board state
+  http.put('/api/apps/kanban/board/state-update', async ({ request }) => {
     const boardState = await request.json() as number[]
 
     // sort board as per boardState
-
     const sortedBoards: KanbanBoard[] = boardState.map(boardId => {
       return database.boards.find(board => board.id === boardId) as KanbanBoard
     })

@@ -120,97 +120,95 @@ onClickOutside(refAddNewBoard, hideAddNewForm)
 </script>
 
 <template>
-  <div style="margin: -1rem; padding-inline: 1rem 2rem;">
-    <div class="kanban-main-wrapper d-flex gap-4 h-100">
-      <!-- 👉 kanban render  -->
-      <div
-        ref="kanbanWrapper"
-        class="d-flex ga-4"
+  <div class="kanban-main-wrapper d-flex gap-4 h-100">
+    <!-- 👉 kanban render  -->
+    <div
+      ref="kanbanWrapper"
+      class="d-flex ga-4"
+    >
+      <template
+        v-for="kb in localKanbanData"
+        :key="kb.id"
       >
-        <template
-          v-for="kb in localKanbanData"
-          :key="kb.id"
-        >
-          <!-- 👉 kanban task render -->
-          <KanbanItems
-            :group-name="groupName"
-            :kanban-ids="kb.itemsIds"
-            :board-name="kb.title"
-            :board-id="kb.id"
-            :kanban-items="kanbanData.items"
-            :kanban-data="kanbanData"
-            @delete-board="deleteBoard"
-            @rename-board="renameBoard"
-            @add-new-item="addNewItem"
-            @edit-item="editKanbanItemFn"
-            @update-items-state="updateStateFn"
-            @delete-item="deleteKanbanItemFn"
-          />
-        </template>
-      </div>
-
-      <!-- 👉 add new form  -->
-      <div
-        class="add-new-form text-no-wrap"
-        style="inline-size: 10rem;"
-      >
-        <h6
-          class="text-lg font-weight-medium cursor-pointer"
-          @click="isAddNewFormVisible = !isAddNewFormVisible"
-        >
-          <VIcon
-            size="18"
-            icon="mdi-plus"
-          /> Add New
-        </h6>
-
-        <!-- 👉 Form -->
-        <VForm
-          v-if="isAddNewFormVisible"
-          ref="refAddNewBoard"
-          class="mt-4"
-          validate-on="submit"
-          @submit.prevent="addNewBoard"
-        >
-          <div class="mb-4">
-            <VTextField
-              v-model="boardTitle"
-              density="compact"
-              :rules="[requiredValidator, validateBoardTitle]"
-              autofocus
-              placeholder="Add Board Title"
-              @keydown.esc="hideAddNewForm"
-            />
-          </div>
-          <div class="d-flex gap-3">
-            <VBtn
-              size="small"
-              type="submit"
-            >
-              Add
-            </VBtn>
-            <VBtn
-              size="small"
-              variant="tonal"
-              color="secondary"
-              type="reset"
-              @click="hideAddNewForm"
-            >
-              Cancel
-            </VBtn>
-          </div>
-        </VForm>
-      </div>
+        <!-- 👉 kanban task render -->
+        <KanbanItems
+          :group-name="groupName"
+          :kanban-ids="kb.itemsIds"
+          :board-name="kb.title"
+          :board-id="kb.id"
+          :kanban-items="kanbanData.items"
+          :kanban-data="kanbanData"
+          @delete-board="deleteBoard"
+          @rename-board="renameBoard"
+          @add-new-item="addNewItem"
+          @edit-item="editKanbanItemFn"
+          @update-items-state="updateStateFn"
+          @delete-item="deleteKanbanItemFn"
+        />
+      </template>
     </div>
 
-    <!-- kanban edit drawer -->
-    <KanbanBoardEditDrawer
-      v-model:is-drawer-open="isKanbanBoardEditVisible"
-      :kanban-item="editKanbanItem"
-      @update:kanban-item="emitUpdatedTaskFn"
-      @delete-kanban-item="deleteKanbanItemFn"
-    />
+    <!-- 👉 add new form  -->
+    <div
+      class="add-new-form text-no-wrap"
+      style="inline-size: 10rem;"
+    >
+      <h6
+        class="text-lg font-weight-medium cursor-pointer"
+        @click="isAddNewFormVisible = !isAddNewFormVisible"
+      >
+        <VIcon
+          size="18"
+          icon="mdi-plus"
+        /> Add New
+      </h6>
+
+      <!-- 👉 Form -->
+      <VForm
+        v-if="isAddNewFormVisible"
+        ref="refAddNewBoard"
+        class="mt-4"
+        validate-on="submit"
+        @submit.prevent="addNewBoard"
+      >
+        <div class="mb-4">
+          <VTextField
+            v-model="boardTitle"
+            density="compact"
+            :rules="[requiredValidator, validateBoardTitle]"
+            autofocus
+            placeholder="Add Board Title"
+            @keydown.esc="hideAddNewForm"
+          />
+        </div>
+        <div class="d-flex gap-3">
+          <VBtn
+            size="small"
+            type="submit"
+          >
+            Add
+          </VBtn>
+          <VBtn
+            size="small"
+            variant="tonal"
+            color="secondary"
+            type="reset"
+            @click="hideAddNewForm"
+          >
+            Cancel
+          </VBtn>
+        </div>
+      </VForm>
+    </div>
   </div>
+
+  <!-- kanban edit drawer -->
+  <KanbanBoardEditDrawer
+    v-model:is-drawer-open="isKanbanBoardEditVisible"
+    :kanban-item="editKanbanItem"
+    @update:kanban-item="emitUpdatedTaskFn"
+    @delete-kanban-item="deleteKanbanItemFn"
+  />
 </template>
 
 <style lang="scss">
@@ -218,9 +216,9 @@ onClickOutside(refAddNewBoard, hideAddNewForm)
 
 .kanban-main-wrapper {
   overflow: auto hidden;
-  padding: 1rem;
-  margin: -1rem;
+  margin-inline-start: -0.6rem;
   min-block-size: calc(100vh - 8.5rem);
+  padding-inline-start: 0.6rem;
 
   .kanban-board {
     z-index: 1 !important;

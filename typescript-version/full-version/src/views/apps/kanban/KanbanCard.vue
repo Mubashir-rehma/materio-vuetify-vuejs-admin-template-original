@@ -47,7 +47,7 @@ const moreOptions = [
       <div class="d-flex align-start gap-2">
         <div
           v-if="item.labels && item.labels.length"
-          class="d-flex flex-wrap gap-2 mb-3"
+          class="d-flex flex-wrap gap-2"
         >
           <VChip
             v-for="text in item.labels"
@@ -84,10 +84,10 @@ const moreOptions = [
       <VImg
         v-if="item.image && item.image.length"
         :src="item.image"
-        class="mb-2 rounded"
+        class=" mt-4 rounded"
       />
       <!-- Task title -->
-      <p class="mb-0 text-base text-high-emphasis">
+      <p class="mt-2 mb-0 text-base text-high-emphasis">
         {{ item.title }}
       </p>
 

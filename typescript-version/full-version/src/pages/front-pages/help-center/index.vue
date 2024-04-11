@@ -23,24 +23,13 @@ interface ApiDataType {
 // fetching data from fake-api
 const apiData = ref<ApiDataType | null>()
 
-const isMSWReady = ref(false)
+// // ℹ️ Check if MSW service worker is registered and ready to intercept requests
 
-// ℹ️ Check if MSW service worker is registered and ready to intercept requests
-const intervalId = setInterval(() => {
-  navigator.serviceWorker.getRegistrations().then(registrations => {
-    isMSWReady.value = !!registrations.length
-  })
-})
+setTimeout(async () => {
+  const faqData = await $api<ApiDataType>('/pages/help-center')
 
-await until(isMSWReady).toBe(true).then(async () => {
-  clearInterval(intervalId)
-
-  setTimeout(async () => {
-    const faqData = await $api<ApiDataType>('/pages/help-center')
-
-    apiData.value = faqData
-  }, 1000)
-})
+  apiData.value = faqData
+}, 1000)
 </script>
 
 <template>

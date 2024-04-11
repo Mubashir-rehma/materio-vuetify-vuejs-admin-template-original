@@ -73,6 +73,11 @@ export const db: DB = {
           title: 'Calendar',
         },
         {
+          title: 'Kanban',
+          icon: 'mdi-arrow-all',
+          url: { name: 'apps-kanban' },
+        },
+        {
           url: { name: 'apps-ecommerce-product-list' },
           icon: 'mdi-list-box',
           title: 'Ecommerce - Product List',

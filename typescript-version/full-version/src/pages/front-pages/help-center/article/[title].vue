@@ -11,12 +11,14 @@ definePage({
 
 const articleData = ref<HelpCenterArticle>()
 
-const { data, error } = await useApi<any>('/pages/help-center/article')
+setTimeout(async () => {
+  const { data, error } = await useApi<any>('/pages/help-center/article')
 
-if (error.value)
-  console.log(error.value)
-else
-  articleData.value = data.value
+  if (error.value)
+    console.log(error.value)
+  else
+    articleData.value = data.value
+}, 1000)
 </script>
 
 <template>
@@ -26,7 +28,7 @@ else
     <Navbar />
 
     <!-- 👉 Content -->
-    <VContainer>
+    <VContainer v-if="articleData">
       <VRow class="mt-4">
         <VCol
           cols="12"
@@ -115,7 +117,7 @@ else
   --v-card-list-gap: 1rem;
 }
 
-.help-center-article{
+.help-center-article {
   @media (min-width: 600px) and (max-width: 960px) {
     .v-container {
       padding-inline: 2rem !important;

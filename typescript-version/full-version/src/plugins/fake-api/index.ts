@@ -8,6 +8,7 @@ import { handlerAppsChat } from '@db/apps/chat/index'
 import { handlerAppsEcommerce } from '@db/apps/ecommerce/index'
 import { handlerAppsEmail } from '@db/apps/email/index'
 import { handlerAppsInvoice } from '@db/apps/invoice/index'
+import { handlerAppsKanban } from '@db/apps/kanban/index'
 import { handlerAppLogistics } from '@db/apps/logistics/index'
 import { handlerAppsPermission } from '@db/apps/permission/index'
 import { handlerAppsUsers } from '@db/apps/users/index'
@@ -33,6 +34,7 @@ const worker = setupWorker(
   ...handlerAppBarSearch,
   ...handlerAppLogistics,
   ...handlerAuth,
+  ...handlerAppsKanban,
 )
 
 export default function () {

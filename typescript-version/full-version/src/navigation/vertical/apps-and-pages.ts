@@ -77,6 +77,11 @@ export default [
     to: 'apps-calendar',
   },
   {
+    title: 'Kanban',
+    icon: { icon: 'mdi-arrow-all' },
+    to: 'apps-kanban',
+  },
+  {
     title: 'Invoice',
     icon: { icon: 'mdi-file-document-outline' },
 

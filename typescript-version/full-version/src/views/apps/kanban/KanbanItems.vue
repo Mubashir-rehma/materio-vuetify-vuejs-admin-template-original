@@ -101,6 +101,7 @@ const deleteItem = (item: EditKanbanItem) => {
   emit('deleteItem', item)
 }
 
+// 👉 reset add new item form when esc or close
 const hideAddNewForm = () => {
   isAddNewFormVisible.value = false
   refForm.value?.reset()
@@ -108,6 +109,17 @@ const hideAddNewForm = () => {
 
 // close add new item form when you loose focus from the form
 onClickOutside(refForm, hideAddNewForm)
+
+// close board name form when you loose focus from the form
+onClickOutside(refKanbanBoardTitle, () => {
+  isBoardNameEditing.value = false
+})
+
+// 👉 reset board rename form when esc or close
+const hideResetBoardNameForm = () => {
+  isBoardNameEditing.value = false
+  localBoardName.value = props.boardName
+}
 
 // 👉 submit form on enter and new line on shift-enter
 const handleEnterKeydown = (event: { key: string; shiftKey: any }) => {
@@ -119,61 +131,66 @@ const handleEnterKeydown = (event: { key: string; shiftKey: any }) => {
 <template>
   <div class="kanban-board">
     <!-- 👉 board heading and title -->
-    <div class="kanban-board-header d-flex align-center justify-space-between mb-4">
-      <div class="flex-grow-1">
-        <VForm
-          v-if="isBoardNameEditing"
-          ref="refKanbanBoardTitle"
-          validate-on="lazy submit"
-          @submit.prevent="renameBoard"
+    <div class="kanban-board-header pb-4">
+      <VForm
+        v-if="isBoardNameEditing"
+        ref="refKanbanBoardTitle"
+        @submit.prevent="renameBoard"
+      >
+        <VTextField
+          v-model="localBoardName"
+          density="compact"
+          autofocus
+          variant="underlined"
+          :rules="[requiredValidator]"
+          hide-details
+          class="border-0"
+          @keydown.esc="hideResetBoardNameForm"
         >
-          <VTextField
-            v-model="localBoardName"
-            density="compact"
-            autofocus
-            :rules="[requiredValidator]"
-            hide-details
-          >
-            <template #append-inner>
-              <VBtn
-                size="x-small"
-                variant="tonal"
-                color="success"
-                icon="mdi-arrow-right"
-                class="flip-in-rtl me-1"
-                @click="renameBoard"
-              />
+          <template #append-inner>
+            <VBtn
+              size="x-small"
+              variant="text"
+              color="success"
+              icon="mdi-check"
+              class="flip-in-rtl me-1"
+              @click="renameBoard"
+            />
 
-              <VBtn
-                size="x-small"
-                variant="tonal"
-                color="error"
-                icon="mdi-close"
-                @click="isBoardNameEditing = false"
-              />
-            </template>
-          </VTextField>
-        </VForm>
-        <h4
-          v-else
-          class="text-lg font-weight-medium"
-        >
+            <VBtn
+              size="x-small"
+              variant="text"
+              color="error"
+              icon="mdi-close"
+              @click="hideResetBoardNameForm"
+            />
+          </template>
+        </VTextField>
+      </VForm>
+
+      <div
+        v-else
+        class="d-flex align-center justify-space-between "
+      >
+        <h4 class="text-lg font-weight-medium">
           {{ boardName }}
         </h4>
+
+        <div>
+          <VIcon
+            class="drag-handler"
+            size="20"
+            icon="mdi-arrow-all"
+          />
+
+          <MoreBtn
+            size="small"
+            icon-size="20"
+            :menu-list="boardActions"
+            item-props
+          />
+        </div>
       </div>
-
-      <VIcon
-        class="drag-handler"
-        size="20"
-        icon="mdi-arrow-all"
-      />
-
-      <MoreBtn
-        size="small"
-        icon-size="20"
-        :menu-list="boardActions"
-        item-props
-      />
     </div>
 
     <!-- 👉 draggable task start here -->

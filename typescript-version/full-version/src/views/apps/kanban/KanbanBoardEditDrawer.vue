@@ -2,6 +2,12 @@
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { VForm } from 'vuetify/components/VForm'
 import type { EditKanbanItem } from '@db/apps/kanban/types'
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar2 from '@images/avatars/avatar-2.png'
+import avatar3 from '@images/avatars/avatar-3.png'
+import avatar4 from '@images/avatars/avatar-4.png'
+import avatar5 from '@images/avatars/avatar-5.png'
+import avatar6 from '@images/avatars/avatar-6.png'
 
 interface Emit {
   (e: 'update:isDrawerOpen', value: boolean): void
@@ -39,6 +45,9 @@ const localKanbanItem = ref(JSON.parse(JSON.stringify(props.kanbanItem)))
 
 const handleDrawerModelValueUpdate = (val: boolean) => {
   emit('update:isDrawerOpen', val)
+
+  if (!val)
+    refEditTaskForm.value?.reset()
 }
 
 // kanban item watcher
@@ -69,6 +78,17 @@ const resolveLabelColor: any = {
   'Dashboard': 'primary',
   'Bug': 'error',
 }
+
+const users = [
+  { img: avatar1, name: 'John Doe' },
+  { img: avatar2, name: 'Jane Smith' },
+  { img: avatar3, name: 'Robert Johnson' },
+  { img: avatar4, name: 'Lucy Brown' },
+  { img: avatar5, name: 'Mike White' },
+  { img: avatar6, name: 'Anna Black' },
+]
+
+const fileAttached = ref()
 </script>
 
 <template>
@@ -131,37 +151,55 @@ const resolveLabelColor: any = {
                 Assigned
               </p>
 
-              <div class="d-flex align-center flex-wrap gap-1">
-                <VAvatar
-                  v-for="avatar in localKanbanItem.item.members"
-                  :key="avatar.name"
-                  size="26"
+              <div>
+                <VSelect
+                  v-model="localKanbanItem.item.members"
+                  :items="users"
+                  item-title="name"
+                  item-value="name"
+                  multiple
+                  return-object
+                  variant="plain"
+                  :menu-props="{
+                    offset: 10,
+                  }"
                 >
-                  <VImg :src="avatar.img" />
+                  <template #selection="{ item }">
+                    <VAvatar size="26">
+                      <VImg :src="item.raw.img" />
 
-                  <VTooltip activator="parent">
-                    {{ avatar.name }}
-                  </VTooltip>
-                </VAvatar>
-                <VAvatar
-                  size="26"
-                  variant="tonal"
-                >
-                  <VIcon
-                    class="text-medium-emphasis"
-                    size="20"
-                    icon="mdi-plus"
-                  />
-                </VAvatar>
+                      <VTooltip activator="parent">
+                        {{ item.raw.name }}
+                      </VTooltip>
+                    </VAvatar>
+                  </template>
+
+                  <template #prepend-inner>
+                    <IconBtn
+                      size="26"
+                      variant="tonal"
+                    >
+                      <VIcon
+                        size="20"
+                        icon="mdi-plus"
+                      />
+                    </IconBtn>
+                  </template>
+                </VSelect>
               </div>
             </VCol>
 
             <VCol cols="12">
-              <VFileInput label="Choose file" />
+              <VFileInput
+                v-model="fileAttached"
+                label="Choose file"
+                multiple
+              />
             </VCol>
 
             <VCol cols="12">
               <VTextarea
+                v-model="localKanbanItem.item.comments"
                 label="Comment"
                 placeholder="Write a comment..."
                 rows="5"

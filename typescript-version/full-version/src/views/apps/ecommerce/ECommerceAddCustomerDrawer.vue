@@ -55,7 +55,7 @@ const resetForm = () => {
         :options="{ wheelPropagation: false }"
         class="h-100"
       >
-        <VCardText style="block-size: calc(100vh - 5rem);">
+        <VCardText style="block-size: calc(100dvh - 5rem);">
           <VForm
             ref="refVForm"
             @submit.prevent=""

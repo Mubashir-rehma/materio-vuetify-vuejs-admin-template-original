@@ -348,14 +348,14 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 </template>
 
 <style lang="scss" scoped>
-.nav-menu{
+.nav-menu {
   display: flex;
   gap: 2rem;
 }
 
-.nav-link{
-  &:not(:hover){
-    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity))
+.nav-link {
+  &:not(:hover) {
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
   }
 }
 
@@ -418,11 +418,15 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 <style lang="scss">
 @use "@layouts/styles/mixins" as layoutMixins;
 
-.mega-menu{
+.mega-menu {
   position: fixed !important;
   inset-block-start: 4.1rem;
   inset-inline-start: 50%;
   transform: translateX(-50%);
+
+  @include layoutMixins.rtl {
+    transform: translateX(50%);
+  }
 }
 
 .front-page-navbar {
@@ -434,7 +438,6 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
     inset-inline: 0 !important;
     margin-inline: auto !important;
   }
-
 }
 
 #navigation-drawer-close-btn {

@@ -80,6 +80,11 @@ export default [
         icon: { icon: 'mdi-calendar-blank' },
       },
       {
+        title: 'Kanban',
+        icon: { icon: 'mdi-arrow-all' },
+        to: 'apps-kanban',
+      },
+      {
         title: 'Invoice',
         icon: { icon: 'mdi-file-document-outline' },
         children: [

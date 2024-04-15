@@ -2,6 +2,7 @@
 interface Props {
   menuList?: unknown[]
   itemProps?: boolean
+  iconSize?: string
 }
 
 const props = defineProps<Props>()
@@ -9,7 +10,10 @@ const props = defineProps<Props>()
 
 <template>
   <IconBtn>
-    <VIcon icon="mdi-dots-vertical" />
+    <VIcon
+      :size="iconSize"
+      icon="mdi-dots-vertical"
+    />
 
     <VMenu
       v-if="props.menuList"

@@ -41,9 +41,10 @@ const moreOptions = [
   <VCard
     v-if="item"
     :ripple="false"
+    :link="false"
     class="kanban-card position-relative"
   >
-    <VCardText>
+    <VCardText class="d-flex flex-column gap-2">
       <div class="d-flex align-start gap-2">
         <div
           v-if="item.labels && item.labels.length"
@@ -68,7 +69,7 @@ const moreOptions = [
               icon="mdi-dots-vertical"
               class="position-absolute more-options"
               style="inset-block-start: 16px; inset-inline-end: 10px;"
-              :style="isActive ? 'visibility:visible' : ''"
+              :style="isActive ? 'opacity: 1' : ''"
               size="20"
               @click.stop
             />
@@ -84,10 +85,11 @@ const moreOptions = [
       <VImg
         v-if="item.image && item.image.length"
         :src="item.image"
-        class=" mt-4 rounded"
+        class="rounded"
       />
+
       <!-- Task title -->
-      <p class="mt-2 mb-0 text-base text-high-emphasis">
+      <p class="text-base text-high-emphasis mb-0">
         {{ item.title }}
       </p>
 
@@ -149,11 +151,11 @@ const moreOptions = [
   }
 
   .more-options {
-    visibility: hidden;
+    opacity: 0;
   }
 
   &:hover .more-options {
-    visibility: visible;
+    opacity: 1;
   }
 }
 </style>

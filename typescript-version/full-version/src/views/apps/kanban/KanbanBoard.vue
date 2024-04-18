@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { remapNodes } from '@formkit/drag-and-drop'
+import { animations, remapNodes } from '@formkit/drag-and-drop'
 import { dragAndDrop } from '@formkit/drag-and-drop/vue'
 import { VForm } from 'vuetify/components/VForm'
 import KanbanBoardEditDrawer from '@/views/apps/kanban/KanbanBoardEditDrawer.vue'
@@ -78,6 +78,7 @@ dragAndDrop({
   parent: kanbanWrapper,
   values: localKanbanData,
   dragHandle: '.drag-handler',
+  plugins: [animations()],
 })
 
 // assign the new kanban data to the local kanban data
@@ -217,7 +218,7 @@ onClickOutside(refAddNewBoard, hideAddNewForm)
 .kanban-main-wrapper {
   overflow: auto hidden;
   margin-inline-start: -0.6rem;
-  min-block-size: calc(100vh - 8.5rem);
+  min-block-size: calc(100vh - 10.5rem);
   padding-inline-start: 0.6rem;
 
   .kanban-board {

@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { remapNodes } from '@formkit/drag-and-drop'
+import { animations, remapNodes } from '@formkit/drag-and-drop'
 import { dragAndDrop } from '@formkit/drag-and-drop/vue'
 import { VForm } from 'vuetify/components/VForm'
 import type { AddNewKanbanItem, EditKanbanItem, KanbanData, KanbanState, RenameKanbanBoard } from '@db/apps/kanban/types'
-
 import KanbanCard from '@/views/apps/kanban/KanbanCard.vue'
 
 const props = defineProps<{
@@ -79,6 +78,7 @@ dragAndDrop({
   values: localIds,
   group: props.groupName,
   draggable: child => child.classList.contains('kanban-card'),
+  plugins: [animations()],
 })
 
 // 👉 watch kanbanIds its is useful when you add new task
@@ -172,15 +172,15 @@ const handleEnterKeydown = (event: { key: string; shiftKey: any }) => {
         v-else
         class="d-flex align-center justify-space-between "
       >
-        <h4 class="text-lg font-weight-medium">
+        <h4 class="text-lg font-weight-medium text-truncate">
           {{ boardName }}
         </h4>
 
-        <div>
+        <div class="d-flex align-center">
           <VIcon
             class="drag-handler"
             size="20"
-            icon="mdi-arrow-all"
+            icon="mdi-drag-variant"
           />
 
           <MoreBtn
@@ -270,7 +270,7 @@ const handleEnterKeydown = (event: { key: string; shiftKey: any }) => {
 .kanban-board-header {
   .drag-handler {
     cursor: grab;
-    visibility: hidden;
+    opacity: 0;
 
     &:active {
       cursor: grabbing;
@@ -279,7 +279,7 @@ const handleEnterKeydown = (event: { key: string; shiftKey: any }) => {
 
   &:hover {
     .drag-handler {
-      visibility: visible;
+      opacity: 1;
     }
   }
 }

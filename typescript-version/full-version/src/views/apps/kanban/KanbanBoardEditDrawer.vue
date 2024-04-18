@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { VForm } from 'vuetify/components/VForm'
-import type { EditKanbanItem } from '@db/apps/kanban/types'
+import type { EditKanbanItem, KanbanItem } from '@db/apps/kanban/types'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<{
   kanbanItem: () => ({
     item: {
       title: '',
-      dueDate: '',
+      dueDate: '2022-01-01T00:00:00Z',
       labels: [],
       members: [],
       id: 0,
@@ -41,7 +41,7 @@ const emit = defineEmits<Emit>()
 const refEditTaskForm = ref<VForm>()
 const labelOptions = ['UX', 'Image', 'Code Review', 'Dashboard', 'Bug']
 
-const localKanbanItem = ref(JSON.parse(JSON.stringify(props.kanbanItem)))
+const localKanbanItem = ref<KanbanItem>(JSON.parse(JSON.stringify(props.kanbanItem.item)))
 
 const handleDrawerModelValueUpdate = (val: boolean) => {
   emit('update:isDrawerOpen', val)
@@ -52,21 +52,23 @@ const handleDrawerModelValueUpdate = (val: boolean) => {
 
 // kanban item watcher
 watch(() => props.kanbanItem, () => {
-  localKanbanItem.value = JSON.parse(JSON.stringify(props.kanbanItem))
+  localKanbanItem.value = JSON.parse(JSON.stringify(props.kanbanItem.item))
 }, { deep: true })
 
 const updateKanbanItem = () => {
-  refEditTaskForm.value?.validate().then(valid => {
+  refEditTaskForm.value?.validate().then(async valid => {
     if (valid.valid) {
-      emit('update:kanbanItem', localKanbanItem.value)
+      emit('update:kanbanItem', { item: localKanbanItem.value, boardId: props.kanbanItem.boardId, boardName: props.kanbanItem.boardName })
       emit('update:isDrawerOpen', false)
+      await nextTick()
+      refEditTaskForm.value?.reset()
     }
   })
 }
 
 // delete kanban item
 const deleteKanbanItem = () => {
-  emit('deleteKanbanItem', localKanbanItem.value)
+  emit('deleteKanbanItem', { item: localKanbanItem.value, boardId: props.kanbanItem.boardId, boardName: props.kanbanItem.boardName })
   emit('update:isDrawerOpen', false)
 }
 
@@ -94,8 +96,9 @@ const fileAttached = ref()
 <template>
   <VNavigationDrawer
     location="end"
-    :width="400"
+    :width="370"
     temporary
+    border="0"
     :model-value="props.isDrawerOpen"
     @update:model-value="handleDrawerModelValueUpdate"
   >
@@ -118,21 +121,22 @@ const fileAttached = ref()
           <VRow>
             <VCol cols="12">
               <VTextField
-                v-model="localKanbanItem.item.title"
+                v-model="localKanbanItem.title"
                 label="Title"
                 :rules="[requiredValidator]"
               />
             </VCol>
+
             <VCol cols="12">
               <AppDateTimePicker
-                v-model="localKanbanItem.item.dueDate"
+                v-model="localKanbanItem.dueDate"
                 label="Due date"
               />
             </VCol>
 
             <VCol cols="12">
               <VSelect
-                v-model="localKanbanItem.item.labels"
+                v-model="localKanbanItem.labels"
                 :items="labelOptions"
                 label="Label"
                 multiple
@@ -153,7 +157,7 @@ const fileAttached = ref()
 
               <div>
                 <VSelect
-                  v-model="localKanbanItem.item.members"
+                  v-model="localKanbanItem.members"
                   :items="users"
                   item-title="name"
                   item-value="name"
@@ -199,7 +203,7 @@ const fileAttached = ref()
 
             <VCol cols="12">
               <VTextarea
-                v-model="localKanbanItem.item.comments"
+                v-model="localKanbanItem.comments"
                 label="Comment"
                 placeholder="Write a comment..."
                 rows="5"

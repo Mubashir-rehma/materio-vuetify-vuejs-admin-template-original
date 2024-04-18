@@ -26,7 +26,7 @@ export const database: KanbanData = {
     {
       id: 1,
       title: 'Research FAQ page UX',
-      dueDate: '2021-09-30',
+      dueDate: '',
       labels: ['UX'],
       members: [{ img: avatar1, name: 'John Doe' }, { img: avatar2, name: 'Jane Smith' }],
       comments: 'FAQ page design is ready and needs to be implemented.',
@@ -37,7 +37,7 @@ export const database: KanbanData = {
     {
       id: 2,
       title: 'Review JavaScript code',
-      dueDate: '10 April, 2024',
+      dueDate: '',
       labels: ['Code Review'],
       members: [{ img: avatar3, name: 'Robert Johnson' }, { img: avatar1, name: 'John Doe' }, { img: avatar2, name: 'Jane Smith' }],
       comments: 'JavaScript code needs to be reviewed and refactored.',
@@ -48,7 +48,7 @@ export const database: KanbanData = {
     {
       id: 3,
       title: 'Review completed Apps',
-      dueDate: '2021-09-30',
+      dueDate: '',
       labels: ['Dashboard'],
       members: [{ img: avatar1, name: 'John Doe' }, { img: avatar2, name: 'Jane Smith' }],
       comments: 'Apps design is ready and needs to be implemented.',
@@ -59,7 +59,7 @@ export const database: KanbanData = {
     {
       id: 4,
       title: 'Find new images for pages',
-      dueDate: '2021-09-30',
+      dueDate: '',
       labels: ['Image'],
       members: [{ img: avatar1, name: 'John Doe' }, { img: avatar2, name: 'Jane Smith' }],
       comments: 'New images need to be found for the new pages.',
@@ -70,7 +70,7 @@ export const database: KanbanData = {
     {
       id: 5,
       title: 'Forms & tables section',
-      dueDate: '2021-09-30',
+      dueDate: '',
       labels: ['Bug'],
       members: [{ img: avatar1, name: 'John Doe' }, { img: avatar2, name: 'Jane Smith' }],
       comments: 'Forms and tables need to be updated.',
@@ -81,7 +81,7 @@ export const database: KanbanData = {
     {
       id: 6,
       title: 'Completed charts & maps',
-      dueDate: '2021-09-30',
+      dueDate: '',
       labels: ['Bug'],
       members: [{ img: avatar1, name: 'John Doe' }, { img: avatar2, name: 'Jane Smith' }],
       comments: 'Charts and maps need to be updated.',

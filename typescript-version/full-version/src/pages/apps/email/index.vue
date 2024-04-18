@@ -140,10 +140,10 @@ const handleActionClick = async (
   else if (action === 'unstar')
     await updateEmails(emailIds, { isStarred: false })
 
-  await fetchEmails()
-
   if (openedEmail.value)
     refreshOpenedEmail()
+  else
+    await fetchEmails()
 }
 
 // Email actions

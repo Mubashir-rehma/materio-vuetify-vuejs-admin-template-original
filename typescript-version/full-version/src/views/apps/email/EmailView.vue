@@ -32,8 +32,8 @@ const { updateEmailLabels } = useEmail()
 
 const { labels, resolveLabelColor, emailMoveToFolderActions, shallShowMoveToActionFor, moveSelectedEmailTo } = useEmail()
 
-const handleMoveMailsTo = (action: MoveEmailToAction) => {
-  moveSelectedEmailTo(action, [(props.email as Email).id])
+const handleMoveMailsTo = async (action: MoveEmailToAction) => {
+  await moveSelectedEmailTo(action, [(props.email as Email).id])
   emit('refresh')
   emit('close')
 }

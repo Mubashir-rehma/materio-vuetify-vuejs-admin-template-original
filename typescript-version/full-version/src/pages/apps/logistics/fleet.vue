@@ -356,6 +356,6 @@ watch(activeIndex, () => {
 
 /* stylelint-disable-next-line selector-id-pattern */
 #mapContainer {
-  block-size: 100vh !important;
+  block-size: 100dvh !important;
 }
 </style>

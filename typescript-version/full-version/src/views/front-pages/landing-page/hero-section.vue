@@ -127,9 +127,9 @@ section {
 .hero-elements-img {
   position: absolute;
   inline-size: 100%;
-  inset-block-start: 50%;
-  inset-inline-start: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  margin-block: 15%;
+  margin-inline: auto;
 
   img {
     inline-size: 100%;

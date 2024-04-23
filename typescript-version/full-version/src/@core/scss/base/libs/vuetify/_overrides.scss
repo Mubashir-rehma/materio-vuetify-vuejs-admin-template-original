@@ -166,6 +166,10 @@ body,
   color: rgb(var(--v-border-color));
 }
 
+.v-divider.v-divider--vertical {
+  block-size: inherit;
+}
+
 // 👉 DataTable
 .v-data-table {
   /* stylelint-disable-next-line no-descending-specificity */

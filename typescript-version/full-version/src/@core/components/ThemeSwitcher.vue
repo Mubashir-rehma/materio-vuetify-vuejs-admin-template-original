@@ -31,7 +31,10 @@ watch(
     >
       <span class="text-capitalize">{{ configStore.theme }}</span>
     </VTooltip>
-    <VMenu activator="parent">
+    <VMenu
+      activator="parent"
+      offset="14px"
+    >
       <VList
         v-model:selected="selectedItem"
         mandatory

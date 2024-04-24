@@ -28,9 +28,11 @@ const router = useRouter()
       activator="parent"
       offset="14px"
       location="bottom end"
+      attach=".layout-navbar"
+      width="340"
     >
       <VCard
-        width="340"
+
         max-height="560"
         class="d-flex flex-column"
       >

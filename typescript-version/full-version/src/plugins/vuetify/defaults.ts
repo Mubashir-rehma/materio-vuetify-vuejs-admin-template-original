@@ -94,9 +94,6 @@ export default {
     color: 'primary',
     hideDetails: 'auto',
   },
-  VMenu: {
-    scrollStrategy: 'block',
-  },
   VTextField: {
     variant: 'outlined',
     density: 'comfortable',

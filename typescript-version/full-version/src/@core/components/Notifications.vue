@@ -62,6 +62,7 @@ const toggleReadUnread = (isSeen: boolean, Id: number) => {
       :location="props.location"
       offset="14px"
       :close-on-content-click="false"
+      attach=".layout-navbar"
     >
       <VCard class="d-flex flex-column">
         <!-- 👉 Header -->

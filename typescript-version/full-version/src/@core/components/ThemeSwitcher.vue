@@ -34,6 +34,7 @@ watch(
     <VMenu
       activator="parent"
       offset="14px"
+      attach=".layout-navbar"
     >
       <VList
         v-model:selected="selectedItem"
@@ -46,9 +47,12 @@ watch(
           :prepend-icon="icon"
           color="primary"
           class="text-capitalize"
+
           @click="() => { configStore.theme = name }"
         >
-          {{ name }}
+          <VListItemTitle>
+            {{ name }}
+          </VListItemTitle>
         </VListItem>
       </VList>
     </VMenu>

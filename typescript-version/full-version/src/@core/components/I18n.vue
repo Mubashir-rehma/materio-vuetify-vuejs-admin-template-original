@@ -22,12 +22,13 @@ const { locale } = useI18n({ useScope: 'global' })
       activator="parent"
       :location="props.location"
       offset="14px"
+      width="175"
+      attach=".layout-navbar"
     >
       <!-- List -->
       <VList
         :selected="[locale]"
         color="primary"
-        min-width="175px"
       >
         <!-- List item -->
         <VListItem
@@ -37,7 +38,9 @@ const { locale } = useI18n({ useScope: 'global' })
           @click="locale = lang.i18nLang"
         >
           <!-- Language label -->
-          <VListItemTitle>{{ lang.label }}</VListItemTitle>
+          <VListItemTitle>
+            {{ lang.label }}
+          </VListItemTitle>
         </VListItem>
       </VList>
     </VMenu>

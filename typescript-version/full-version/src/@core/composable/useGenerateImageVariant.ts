@@ -23,6 +23,6 @@ export const useGenerateImageVariant = (imgLight: string, imgDark: string, imgLi
     }
 
     // Add a default return statement
-    return null
+    return imgLight
   })
 }

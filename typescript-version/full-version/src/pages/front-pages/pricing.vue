@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import Footer from '@/views/front-pages/front-page-footer.vue'
 import Navbar from '@/views/front-pages/front-page-navbar.vue'
+import { useConfigStore } from '@core/stores/config'
 import poseFs9 from '@images/pages/pose-fs-9.png'
+
+const store = useConfigStore()
+
+store.skin = 'default'
 
 definePage({
   meta: {

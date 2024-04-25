@@ -31,7 +31,11 @@ watch(
     >
       <span class="text-capitalize">{{ configStore.theme }}</span>
     </VTooltip>
-    <VMenu activator="parent">
+    <VMenu
+      activator="parent"
+      offset="14px"
+      attach=".layout-navbar"
+    >
       <VList
         v-model:selected="selectedItem"
         mandatory
@@ -43,9 +47,12 @@ watch(
           :prepend-icon="icon"
           color="primary"
           class="text-capitalize"
+
           @click="() => { configStore.theme = name }"
         >
-          {{ name }}
+          <VListItemTitle>
+            {{ name }}
+          </VListItemTitle>
         </VListItem>
       </VList>
     </VMenu>

@@ -126,7 +126,7 @@
     "@tiptap/core": "^2",
     "@types/video.js": "^7"
   },
-  "packageManager": "pnpm@8.6.2",
+  "packageManager": "pnpm@9.0.6",
   "msw": {
     "workerDirectory": "public"
   }

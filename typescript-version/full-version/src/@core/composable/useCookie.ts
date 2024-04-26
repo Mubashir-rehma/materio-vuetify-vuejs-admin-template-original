@@ -32,8 +32,6 @@ export const useCookie = <T = string | null | undefined>(name: string, _opts?: C
     document.cookie = serializeCookie(name, cookie.value, opts)
   })
 
-  console.log('cookie :>> ', cookie.value)
-
   return cookie as CookieRef<T>
 }
 

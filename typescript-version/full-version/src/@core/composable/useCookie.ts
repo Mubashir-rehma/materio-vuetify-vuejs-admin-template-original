@@ -39,5 +39,5 @@ function serializeCookie(name: string, value: any, opts: CookieSerializeOptions 
   if (value === null || value === undefined)
     return serialize(name, value, { ...opts, maxAge: -1 })
 
-  return serialize(name, value, opts)
+  return serialize(name, value, { ...opts, maxAge: 60 * 60 * 24 * 30 })
 }

@@ -114,12 +114,20 @@ const toggleReadUnread = (isSeen: boolean, Id: number) => {
                   <VListItemAction start>
                     <VAvatar
                       size="40"
-                      :color="notification.color && notification.icon ? notification.color : undefined"
-                      :image="notification.img || undefined"
-                      :icon="notification.icon || undefined"
+                      :color="notification.color && !notification.img ? notification.color : undefined"
                       :variant="notification.img ? undefined : 'tonal' "
                     >
                       <span v-if="notification.text">{{ avatarText(notification.text) }}</span>
+
+                      <VImg
+                        v-if="notification.img"
+                        :src="notification.img"
+                      />
+
+                      <VIcon
+                        v-if="notification.icon"
+                        :icon="notification.icon"
+                      />
                     </VAvatar>
                   </VListItemAction>
                 </template>

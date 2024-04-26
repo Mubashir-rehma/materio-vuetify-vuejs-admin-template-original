@@ -32,6 +32,8 @@ export const useCookie = <T = string | null | undefined>(name: string, _opts?: C
     document.cookie = serializeCookie(name, cookie.value, opts)
   })
 
+  console.log('cookie :>> ', cookie.value)
+
   return cookie as CookieRef<T>
 }
 
@@ -39,5 +41,5 @@ function serializeCookie(name: string, value: any, opts: CookieSerializeOptions 
   if (value === null || value === undefined)
     return serialize(name, value, { ...opts, maxAge: -1 })
 
-  return serialize(name, value, opts)
+  return serialize(name, value, { ...opts, maxAge: 60 * 60 * 24 * 30 })
 }

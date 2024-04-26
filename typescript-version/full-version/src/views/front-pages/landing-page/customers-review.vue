@@ -221,7 +221,7 @@ const reviewData = [
         }"
       >
         <swiper-slide
-          v-for="(img, index) in [brandLogo1, brandLogo2, brandLogo3, brandLogo4, brandLogo5]"
+          v-for="(img, index) in [brandLogo1, brandLogo2, brandLogo3, brandLogo4, brandLogo5, brandLogo1, brandLogo2, brandLogo3, brandLogo4, brandLogo5]"
           :key="index"
         >
           <VImg

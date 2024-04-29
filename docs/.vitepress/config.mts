@@ -62,7 +62,7 @@ export default defineConfig({
           }
         ]
       },
-      { text: 'Purchase', link: 'https://themeselection.com/item/materio-vuetify-vuejs-admin-template/' },
+      { text: 'Purchase', link: 'https://1.envato.market/materialize_admin' },
     ],
     sidebar: {
       '/guide/': [
@@ -187,7 +187,10 @@ export default defineConfig({
     }
   },
   markdown: {
-    theme: 'dracula',
+    theme: {
+      dark: 'dracula',
+      light: 'github-light' 
+    }
   },
   transformHtml: async (code, id, ctx) => {
     if (gtmConfig.bodyNoScript && gtmConfig.bodyNoScript)

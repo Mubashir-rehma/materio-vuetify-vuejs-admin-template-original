@@ -33,11 +33,11 @@
     isolation: isolate;
 }
 
-.VPNavBarMenu.menu>a:last-child svg {
-    fill: var(--vp-button-brand-text);
+.VPNavBarMenu.menu>a:last-child::after {
+    color: var(--vp-button-brand-text);
 }
 
-.VPNavBarMenu.menu>a:last-child::after {
+.VPNavBarMenu.menu>a:last-child span::after {
     position: absolute;
     content: '';
     inset: 0;

@@ -50,14 +50,22 @@ Please refer to the danger note at [installation](/guide/installation.html#getti
 You might get some warnings while running `npm install` or `yarn install` like below:
 
 ```bash
-info fsevents@2.3.1: The platform "linux" is incompatible with this module.
-info "fsevents@2.3.1" is an optional dependency and failed compatibility check. Excluding it from installation.
-info fsevents@1.2.13: The platform "linux" is incompatible with this module.
-info "fsevents@1.2.13" is an optional dependency and failed compatibility check. Excluding it from installation.
-[3/4] Linking dependencies...
-warning " > vue2-leaflet@2.6.0" has unmet peer dependency "@types/leaflet@^1.5.7".
-warning "@vue/eslint-config-airbnb > eslint-import-resolver-webpack@0.13.0" has unmet peer dependency "webpack@>=1.11.0".
-warning " > sass-loader@10.1.0" has unmet peer dependency "webpack@^4.36.0 || ^5.0.0".
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR! 
+npm ERR! While resolving: materialize-vuejs-admin-template@2.0.0
+npm ERR! Found: video.js@8.10.0
+npm ERR! node_modules/video.js
+npm ERR!   dev video.js@"8.10.0" from the root project
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer video.js@"7.x" from @videojs-player/vue@1.0.0
+npm ERR! node_modules/@videojs-player/vue
+npm ERR!   dev @videojs-player/vue@"1.0.0" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
 ```
 
 The warnings you are receiving while installing are from library/packages we used.
@@ -65,6 +73,12 @@ The warnings you are receiving while installing are from library/packages we use
 We always keep our packages up to date when we make major releases. However, the writer of that package may use an older dependency that is no longer maintained for backward compatibility or any other code-related issue. But, that's not an issue. Those packages will work fine with our template.
 
 Even if you like to try you can install these packages in fresh VueJS project without our template and you will get the same.
+
+To resolve this using `npm`, while installing, please use the following command:
+
+```bash
+npm install --legacy-peer-deps
+```
 
 ## Why reproduce issue/bug in starter-kit?
 

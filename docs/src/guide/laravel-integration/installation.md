@@ -17,7 +17,13 @@ Given below are the steps you need to follow to install the **full-version** / *
   composer install
   ```
 
-- In the root directory, you will find a file named .env.example rename the given file name to .env and run the following command to generate the key (You can also edit your data base credentials here)
+- Run the following command to copy `.env.example` file content into `.env` file.
+
+  ```sh
+  cp .env.example .env
+  ```
+
+- Run the following command to generate the key (You can also edit your data base credentials here)
 
   ```sh
   php artisan key:generate

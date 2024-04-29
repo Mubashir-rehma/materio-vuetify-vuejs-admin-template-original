@@ -37,6 +37,7 @@ export default defineConfig({
         text: 'Other',
         items: [
           { text: 'Contribution', link: '/contribution/' },
+          { text: 'Changelog', link: 'https://demos.pixinvent.com/materialize/changelog.html' },
         ],
       },
       {
@@ -165,7 +166,7 @@ export default defineConfig({
         },
       ],
       '/contribution/': [
-        { text: 'Welcome', link: '' },
+        { text: 'Contribution', link: '/contribution/' },
         { text: 'ThemeConfig', link: '/contribution/themeconfig' },
         { text: 'Styles', link: '/contribution/styles' },
       ],

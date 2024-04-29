@@ -5,7 +5,7 @@ type invoiceStatus = 'Downloaded' | 'Draft' | 'Paid' | 'Sent' | 'Partial Payment
 
 const searchQuery = ref('')
 const selectedStatus = ref<invoiceStatus>(null)
-const selectedRows = ref<string[]>([])
+const selectedRows = ref([])
 
 // Data table options
 const itemsPerPage = ref(10)
@@ -98,6 +98,12 @@ const computedMoreList = computed(() => {
 const deleteInvoice = async (id: number) => {
   await $api(`/apps/invoice/${id}`, { method: 'DELETE' })
 
+  // Delete from selectedRows
+  const index = selectedRows.value.findIndex(row => row === id)
+  if (index !== -1)
+    selectedRows.value.splice(index, 1)
+
+  // Refetch Invoices
   fetchInvoices()
 }
 </script>
@@ -196,7 +202,7 @@ const deleteInvoice = async (id: number) => {
 
       <!-- SECTION Datatable -->
       <VDataTableServer
-        v-model="selectedRows"
+        v-model:model-value="selectedRows"
         v-model:items-per-page="itemsPerPage"
         v-model:page="page"
         show-select

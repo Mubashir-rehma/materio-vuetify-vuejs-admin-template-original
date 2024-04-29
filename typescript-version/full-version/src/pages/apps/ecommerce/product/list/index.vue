@@ -23,6 +23,7 @@ const selectedStatus = ref()
 const selectedCategory = ref()
 const selectedStock = ref<boolean | undefined>()
 const searchQuery = ref('')
+const selectedRows = ref([])
 
 const status = ref([
   { title: 'Scheduled', value: 'Scheduled' },
@@ -103,6 +104,12 @@ const deleteProduct = async (id: number) => {
     method: 'DELETE',
   })
 
+  // Delete from selectedRows
+  const index = selectedRows.value.findIndex(row => row === id)
+  if (index !== -1)
+    selectedRows.value.splice(index, 1)
+
+  // Refetch products
   fetchProducts()
 }
 </script>
@@ -271,6 +278,7 @@ const deleteProduct = async (id: number) => {
       <!-- 👉 Datatable  -->
       <VDataTableServer
         v-model:items-per-page="itemsPerPage"
+        v-model:model-value="selectedRows"
         v-model:page="page"
         :headers="headers"
         show-select

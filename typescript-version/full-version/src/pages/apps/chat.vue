@@ -314,12 +314,20 @@ const chatContentContainerBg = computed(() => {
             icon="mdi-message-outline"
           />
         </VAvatar>
-        <p
-          class="mb-0 px-6 py-1 font-weight-medium text-lg elevation-3 rounded-xl text-high-emphasis bg-surface"
-          :class="[{ 'cursor-pointer': $vuetify.display.smAndDown }]"
+        <VBtn
+          v-if="$vuetify.display.smAndDown"
+          rounded="pill"
           @click="startConversation"
         >
           Start Conversation
+        </VBtn>
+
+        <p
+          v-else
+          style="max-inline-size: 40ch; text-wrap: balance;"
+          class="text-center text-disabled"
+        >
+          Start connecting with the people by selecting one of the contact on left
         </p>
       </div>
     </VMain>

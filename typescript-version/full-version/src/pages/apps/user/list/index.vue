@@ -13,6 +13,7 @@ const itemsPerPage = ref(10)
 const page = ref(1)
 const sortBy = ref()
 const orderBy = ref()
+const selectedRows = ref([])
 
 // Update data table options
 const updateOptions = (options: any) => {
@@ -108,7 +109,7 @@ const addNewUser = async (userData: UserProperties) => {
     body: userData,
   })
 
-  // refetch User
+  // Refetch User
   fetchUsers()
 }
 
@@ -117,6 +118,11 @@ const deleteUser = async (id: number) => {
   await $api(`/apps/users/${id}`, {
     method: 'DELETE',
   })
+
+  // Delete from selectedRows
+  const index = selectedRows.value.findIndex(row => row === id)
+  if (index !== -1)
+    selectedRows.value.splice(index, 1)
 
   // refetch User
   // TODO: Make this async
@@ -262,9 +268,10 @@ const widgetData = ref([
       <!-- SECTION datatable -->
       <VDataTableServer
         v-model:items-per-page="itemsPerPage"
+        v-model:model-value="selectedRows"
         v-model:page="page"
         :items="users"
-        item-value="user"
+        item-value="id"
         :items-length="totalUsers"
         :headers="headers"
         show-select

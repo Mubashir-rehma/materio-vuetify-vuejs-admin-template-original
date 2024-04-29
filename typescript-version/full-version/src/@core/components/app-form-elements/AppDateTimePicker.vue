@@ -132,7 +132,7 @@ watch(() => props, () => {
       class="position-relative v-text-field"
       :style="props.style"
     >
-      <template #default="{ id, isDirty, isValid, isDisabled, isReadonly }">
+      <template #default="{ id, isDirty, isValid, isDisabled, isReadonly, validate }">
         <!-- v-field -->
         <VField
           v-bind="{ ...fieldProps }"
@@ -158,7 +158,7 @@ watch(() => props, () => {
                 class="flat-picker-custom-style h-100 w-100"
                 :disabled="isReadonly.value"
                 @on-open="isCalendarOpen = true"
-                @on-close="isCalendarOpen = false"
+                @on-close="isCalendarOpen = false; validate()"
                 @update:model-value="emitModelValue"
               />
 

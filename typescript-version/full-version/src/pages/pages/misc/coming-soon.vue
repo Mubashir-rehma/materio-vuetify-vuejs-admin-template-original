@@ -4,6 +4,7 @@ import miscComingSoon from '@images/pages/misc-coming-soon.png'
 definePage({
   meta: {
     layout: 'blank',
+    public: true,
   },
 })
 

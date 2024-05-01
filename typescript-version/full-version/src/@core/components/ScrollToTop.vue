@@ -13,12 +13,12 @@ const scrollToTop = () => {
   <Transition
     name="app-transition-zoom-fade"
     style="transform-origin: center;"
-    class="scroll-to-top d-print-none"
   >
     <VBtn
       v-show="y > 200"
       icon
       density="comfortable"
+      class="scroll-to-top d-print-none"
       @click="scrollToTop"
     >
       <VIcon

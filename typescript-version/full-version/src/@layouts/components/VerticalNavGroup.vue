@@ -139,8 +139,6 @@ watch(
     isGroupOpen.value = val ? false : isGroupActive.value
   },
 )
-
-const isMounted = useMounted()
 </script>
 
 <template>
@@ -164,14 +162,10 @@ const isMounted = useMounted()
         v-bind="item.icon || layoutConfig.verticalNav.defaultNavItemIconProps"
         class="nav-item-icon"
       />
-      <!--
-        ℹ️ isMounted is workaround of nuxt's hydration issue:
-        https://github.com/vuejs/core/issues/6715
-      -->
+
       <Component
-        :is="isMounted ? TransitionGroup : 'div'"
+        :is="TransitionGroup"
         name="transition-slide-x"
-        v-bind="!isMounted ? { class: 'd-flex align-center flex-grow-1' } : undefined"
       >
         <!-- 👉 Title -->
         <Component

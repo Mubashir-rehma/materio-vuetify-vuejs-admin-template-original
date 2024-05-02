@@ -15,6 +15,7 @@ store.skin = 'default'
 definePage({
   meta: {
     layout: 'blank',
+    public: true,
   },
 })
 

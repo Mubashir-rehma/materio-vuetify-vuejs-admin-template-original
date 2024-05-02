@@ -18,6 +18,7 @@ import { useConfigStore } from '@core/stores/config'
 definePage({
   meta: {
     layout: 'blank',
+    public: true,
   },
 })
 

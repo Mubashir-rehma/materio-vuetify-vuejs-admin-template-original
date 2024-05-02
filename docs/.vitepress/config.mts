@@ -37,6 +37,7 @@ export default defineConfig({
         text: 'Other',
         items: [
           { text: 'Contribution', link: '/contribution/' },
+          { text: 'Changelog', link: 'https://demos.pixinvent.com/materialize/changelog.html' },
         ],
       },
       {
@@ -61,7 +62,7 @@ export default defineConfig({
           }
         ]
       },
-      { text: 'Purchase', link: 'https://themeselection.com/item/materio-vuetify-vuejs-admin-template/' },
+      { text: 'Purchase', link: 'https://1.envato.market/materialize_admin' },
     ],
     sidebar: {
       '/guide/': [
@@ -165,7 +166,7 @@ export default defineConfig({
         },
       ],
       '/contribution/': [
-        { text: 'Welcome', link: '' },
+        { text: 'Contribution', link: '/contribution/' },
         { text: 'ThemeConfig', link: '/contribution/themeconfig' },
         { text: 'Styles', link: '/contribution/styles' },
       ],
@@ -186,7 +187,10 @@ export default defineConfig({
     }
   },
   markdown: {
-    theme: 'dracula',
+    theme: {
+      dark: 'dracula',
+      light: 'github-light' 
+    }
   },
   transformHtml: async (code, id, ctx) => {
     if (gtmConfig.bodyNoScript && gtmConfig.bodyNoScript)

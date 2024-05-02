@@ -286,7 +286,7 @@ devDependencies:
     specifier: ^0.8.5
     version: 0.8.6(vue-router@4.3.0)(vue@3.4.21)
   video.js:
-    specifier: 8.6.0
+    specifier: ^8.6.0
     version: 8.6.0
   vite:
     specifier: ^5.2.8

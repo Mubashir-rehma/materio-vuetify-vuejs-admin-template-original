@@ -6,10 +6,10 @@ interface UserData {
   role: string
   username: string
   country: string
-  contact: string
+  contact: string | undefined
   email: string
   currentPlan: string
-  status: string
+  status: string | undefined
   avatar: string
   taskDone: number | null
   projectDone: number | null

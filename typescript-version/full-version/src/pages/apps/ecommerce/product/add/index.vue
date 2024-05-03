@@ -133,7 +133,7 @@ const inventoryTabsData = [
                   md="4"
                 >
                   <VSelect
-                    :items="['Size', 'Color', 'Weight', 'Smell']"
+                    :items="['Size', 'Color', 'Weight']"
                     placeholder="Select Variant"
                   />
                 </VCol>
@@ -483,7 +483,7 @@ const inventoryTabsData = [
 </style>
 
 <style lang="scss">
-.inventory-card{
+.inventory-card {
   .v-radio-group,
   .v-checkbox {
     .v-selection-control {
@@ -496,8 +496,8 @@ const inventoryTabsData = [
   }
 }
 
-.ProseMirror{
-  p{
+.ProseMirror {
+  p {
     margin-block-end: 0;
   }
 

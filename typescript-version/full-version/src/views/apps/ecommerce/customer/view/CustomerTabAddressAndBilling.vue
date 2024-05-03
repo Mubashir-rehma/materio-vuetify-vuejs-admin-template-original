@@ -27,7 +27,7 @@ interface BillingAddress {
 }
 
 const currentCardDetails: CardDetails = {
-  number: '1234 5678 9012 3456',
+  number: '1234567890123456',
   name: 'John Doe',
   expiry: '12/2028',
   cvv: '123',

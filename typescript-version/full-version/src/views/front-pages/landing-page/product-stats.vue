@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import layoutRight from '@images/svg/layout-right.svg'
-import medal from '@images/svg/medal.svg'
 import peopleTag from '@images/svg/people-tag.svg'
 
 const statData = [
-  { title: 'Completed Sites', value: 137, icon: layoutRight, color: 'primary' },
+  { title: 'Completed Sites', value: 137, icon: 'mdi-web', color: 'primary' },
   { title: 'Working Hours', value: 1100, icon: 'mdi-clock-time-three-outline', color: 'success' },
   { title: 'Happy Customers', value: 137, icon: peopleTag, color: 'warning' },
-  { title: 'Awards Winning', value: 23, icon: medal, color: 'info' },
+  { title: 'Awards Winning', value: 23, icon: 'mdi-medal', color: 'info' },
 ]
 </script>
 

@@ -5,7 +5,7 @@ Given below are the steps you need to follow to install the **full-version** / *
 ::: warning System Requirements
 
 - Node: LTS
-- PHP: 8.1.11
+- PHP: 8.2.0 or greater
 - Composer: 2.4.2
 :::
 

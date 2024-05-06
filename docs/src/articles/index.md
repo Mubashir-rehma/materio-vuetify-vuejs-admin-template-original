@@ -14,6 +14,5 @@
 - [How to update/modify configs in our template .](/articles/how-to-update-configs.md)
 - [How to change background and surface colors.](/articles/how-to-change-background-and-surface-colors.md)
 - [How to remove fake-api from our template and use real API](/articles/how-to-remove-fake-api-and-use-real-api.md)
-- [How to use content-loading slot](/articles/how-to-use-content-loading-slot.md)
 - [How to display server-side errors](./how-to-display-server-side-error.md)
 - [How to change/set base url](./how-to-change-base-url.md)

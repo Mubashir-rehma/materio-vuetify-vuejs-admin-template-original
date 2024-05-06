@@ -33,22 +33,31 @@ Please refer to full version if you have any query.
 :::
 
 ```ts
-import { isUserLoggedIn } from './utils'
 import { canNavigate } from '@layouts/plugins/casl'
 
 router.beforeEach(to => {
-  const isLoggedIn = isUserLoggedIn()
+  const isLoggedIn = !!(useCookie('userData').value && useCookie('accessToken').value)
 
-  if (canNavigate(to)) {
-    if (to.meta.redirectIfLoggedIn && isLoggedIn)
-      return '/'
+  if (to.meta.unauthenticatedOnly) {
+      if (isLoggedIn)
+        return '/'
+      else
+        return undefined
   }
-  else {
-    if (isLoggedIn)
-      return { name: 'not-authorized' }
-    else
-      return { name: 'login', query: { to: to.name !== 'index' ? to.fullPath : undefined } }
-  }
+
+  if (!canNavigate(to) && to.matched.length) {
+      /* eslint-disable indent */
+      return isLoggedIn
+        ? { name: 'not-authorized' }
+        : {
+            name: 'login',
+            query: {
+              ...to.query,
+              to: to.fullPath !== '/' ? to.path : undefined,
+            },
+          }
+      /* eslint-enable indent */
+    }
 })
 ```
 

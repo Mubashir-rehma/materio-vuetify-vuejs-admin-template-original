@@ -61,7 +61,7 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
       <div class="email-view-header d-flex align-center px-5 py-3">
         <IconBtn
           class="me-4 flip-in-rtl"
-          @click="$emit('close')"
+          @click="$emit('close'); showReplyBox = false; showReplyCard = true"
         >
           <VIcon
             size="32"
@@ -316,11 +316,40 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
           class="mx-5 mb-5"
         >
           <VCardText>
-            <h6 class="text-h6">
+            <h6 class="text-h6 mb-6">
               Reply to {{ email?.from.name }}
             </h6>
+            <TiptapEditor
+              v-model="emailReply"
+              placeholder="Write your message..."
+            />
+            <div class="d-flex justify-end gap-4 pt-2 flex-wrap">
+              <VBtn
+                icon
+                variant="text"
+                density="comfortable"
+                @click="showReplyBox = !showReplyBox; showReplyCard = !showReplyCard"
+              >
+                <VIcon icon="mdi-delete" />
+              </VBtn>
+              <VBtn
+                variant="text"
+                color="secondary"
+              >
+                <template #prepend>
+                  <VIcon
+                    icon="mdi-paperclip"
+                    class="text-high-emphasis"
+                    size="16"
+                  />
+                </template>
+                Attachments
+              </VBtn>
+              <VBtn append-icon="mdi-send">
+                Send
+              </VBtn>
+            </div>
           </VCardText>
-          <TiptapEditor v-model="emailReply" />
         </VCard>
       </PerfectScrollbar>
     </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { animations, remapNodes } from '@formkit/drag-and-drop'
+import { animations, handleEnd, performTransfer } from '@formkit/drag-and-drop'
 import { dragAndDrop } from '@formkit/drag-and-drop/vue'
 import { VForm } from 'vuetify/components/VForm'
 import type { AddNewKanbanItem, EditKanbanItem, KanbanData, KanbanState, RenameKanbanBoard } from '@db/apps/kanban/types'
@@ -79,20 +79,24 @@ dragAndDrop({
   group: props.groupName,
   draggable: child => child.classList.contains('kanban-card'),
   plugins: [animations()],
+  performTransfer: (state, data) => {
+    performTransfer(state, data)
+
+    // 👉 update items state after transfer perform
+    emit('updateItemsState', { boardId: props.boardId, ids: localIds.value })
+  },
+  handleEnd: data => {
+    handleEnd(data)
+
+    // 👉 update items state after sorting perform
+    emit('updateItemsState', { boardId: props.boardId, ids: localIds.value })
+  },
 })
 
 // 👉 watch kanbanIds its is useful when you add new task
 watch(props, () => {
   localIds.value = props.kanbanIds
 }, { immediate: true, deep: true })
-
-// watching `localIds` to update the `kanbanIds` in database
-watch(localIds, () => {
-  emit('updateItemsState', { boardId: props.boardId, ids: localIds.value })
-
-  // 👉 remap the nodes when we rename the board: https://github.com/formkit/drag-and-drop/discussions/52#discussioncomment-8995203
-  remapNodes(refKanbanBoard.value as any)
-}, { deep: true })
 
 // 👉 resolve item using id
 const resolveItemUsingId = (id: number) => props.kanbanData.items.find(item => item.id === id)

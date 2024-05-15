@@ -129,6 +129,7 @@ module.exports = {
         '~pages$',
         'virtual:generated-layouts',
         '#auth$',
+        '#components$',
 
         // Ignore vite's ?raw imports
         '.*\?raw',

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CheckoutData } from './types'
+import type { CheckoutData } from './types';
 
 interface Props {
   currentStep?: number
@@ -47,9 +47,9 @@ const resolveAddressBadgeColor: any = {
 }
 
 const resolveDeliveryBadgeData: any = {
-  free: { color: 'success', price: 'Free' },
-  express: { color: 'secondary', price: 10 },
-  overnight: { color: 'secondary', price: 15 },
+  free: { color: 'success', price: 0, text: 'Free' },
+  express: { color: 'secondary', price: 10, text: '$10'},
+  overnight: { color: 'secondary', price: 15, text: '$15'},
 }
 
 const totalPriceWithDeliveryCharges = computed(() => {
@@ -151,10 +151,7 @@ watch(() => props.currentStep, updateAddressData)
                 :color="resolveDeliveryBadgeData[item.value].color"
                 size="small"
               >
-                {{
-                  resolveDeliveryBadgeData[item.value].price === 'Free'
-                    ? resolveDeliveryBadgeData[item.value].price : `$${resolveDeliveryBadgeData[item.value].price}`
-                }}
+                {{ resolveDeliveryBadgeData[item.value].text }}
               </VChip>
             </div>
 

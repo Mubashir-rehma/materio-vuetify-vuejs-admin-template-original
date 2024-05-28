@@ -180,7 +180,7 @@ const verticalNavAttrs = computed(() => {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.25s ease-in-out;
-    will-change: transform;
+    will-change: opacity;
 
     &.visible {
       opacity: 1;

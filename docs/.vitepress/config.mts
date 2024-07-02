@@ -164,6 +164,14 @@ export default defineConfig({
             { text: 'Github Access', link: '/guide/github-access' },
           ],
         },
+        {
+          text: 'Tutorials',
+          collapsed: false,
+          items: [
+            { text: 'Video Tutorials', link: '/guide/tutorials/video-tutorials' },
+          ],
+
+        }
       ],
       '/contribution/': [
         { text: 'Contribution', link: '/contribution/' },
@@ -189,7 +197,7 @@ export default defineConfig({
   markdown: {
     theme: {
       dark: 'dracula',
-      light: 'github-light' 
+      light: 'github-light'
     }
   },
   transformHtml: async (code, id, ctx) => {

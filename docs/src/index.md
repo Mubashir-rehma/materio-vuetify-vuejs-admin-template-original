@@ -14,11 +14,11 @@ hero:
       text: Get Started
       link: /guide/
     - theme: alt
-      text: View Demo
-      link: https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/demo-1
-    - theme: alt
       text: Buy Now
       link: https://themeselection.com/item/materio-vuetify-vuejs-admin-template/
+    - theme: alt
+      text: Video Tutorial
+      link: /guide/tutorials/video-tutorials.html
 
 features:
   - title: Based on Vuetify

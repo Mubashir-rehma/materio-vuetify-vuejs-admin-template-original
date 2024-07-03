@@ -2,11 +2,9 @@
 
 In addition, to below explanation if you are using nuxt, you can follow their official documentation [here](https://nuxt.com/docs/guide/directory-structure/nuxt).
 
-To gain a comprehensive visual understanding of the **Vuejs folder structure**, please check out this YouTube video.
-<iframe width="100%" height="360" src="https://www.youtube.com/embed/_mODYgaUFeo?si=v2sfbyRHewa3lKkA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+To gain a comprehensive visual understanding of the **Vuejs folder structure**, please check out this [YouTube video](/guide/video-tutorials.html#vuejs-folder-structure).
 
-If you're using **Nuxtjs**, feel free to check out this detailed video on **Nuxtjs folder structure**.
-<iframe width="100%" height="360" src="https://www.youtube.com/embed/YLQjRudDNic?si=14fwLZgGS2ZBHt4R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+If you're using **Nuxtjs**, feel free to check out this detailed video on **Nuxtjs folder structure** [here](/guide/video-tutorials.html#nuxtjs-folder-structure).
 
 ```bash
 materialize-vuejs-template/

@@ -67,6 +67,7 @@ export default defineConfig({
     sidebar: {
       '/guide/': [
         { text: 'Welcome', link: '/guide/' },
+        { text: 'Video Tutorials', link: '/guide/video-tutorials' },
         {
           text: 'Getting Started',
           collapsed: false,
@@ -164,14 +165,6 @@ export default defineConfig({
             { text: 'Github Access', link: '/guide/github-access' },
           ],
         },
-        {
-          text: 'Tutorials',
-          collapsed: false,
-          items: [
-            { text: 'Video Tutorials', link: '/guide/tutorials/video-tutorials' },
-          ],
-
-        }
       ],
       '/contribution/': [
         { text: 'Contribution', link: '/contribution/' },

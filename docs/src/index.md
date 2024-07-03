@@ -18,7 +18,7 @@ hero:
       link: https://themeselection.com/item/materio-vuetify-vuejs-admin-template/
     - theme: alt
       text: Video Tutorial
-      link: /guide/tutorials/video-tutorials.html
+      link: /guide/video-tutorials.html
 
 features:
   - title: Based on Vuetify

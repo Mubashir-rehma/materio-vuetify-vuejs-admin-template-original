@@ -2,7 +2,7 @@
 
 <p align="center">
    <a href="https://themeselection.com/item/materio-vuetify-vuejs-admin-template/" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/logo/logo.png" alt="materio-vuetify-vuejs-admin-template-logo" width="40px" height="auto">
+      <img src="https://cdn.themeselection.com/ts-assets/materio/logo/logo.png" alt="materio-vuetify-vuejs-admin-template-logo" width="40px" height="auto">
    </a>
 </p>
 
@@ -14,7 +14,7 @@
 
 <p align="center">Production Ready, Carefully Crafted, Extensive Vuetifty Admin Template</p>
 
-[![Materio – Vuetify Vuejs Admin Template Demo Screenshot](https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/materio-vuetify-vuejs-admin-template--vuetify/banner/banner.png)](https://themeselection.com/item/materio-vuetify-vuejs-admin-template/)
+[![Materio – Vuetify Vuejs Admin Template Demo Screenshot](https://cdn.themeselection.com/ts-assets/materio/materio-vuetify-vuejs-admin-template/banner/banner.png)](https://themeselection.com/item/materio-vuetify-vuejs-admin-template/)
 
 ## Introduction
 

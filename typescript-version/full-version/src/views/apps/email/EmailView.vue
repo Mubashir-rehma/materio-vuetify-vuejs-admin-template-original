@@ -60,12 +60,13 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
 
       <div class="email-view-header d-flex align-center px-5 py-3">
         <IconBtn
-          class="me-4 flip-in-rtl"
-          @click="$emit('close'); showReplyBox = false; showReplyCard = true"
+          class="me-2"
+          @click="$emit('close'); showReplyBox = false; showReplyCard = true; emailReply = ''"
         >
           <VIcon
-            size="32"
+            size="22"
             icon="mdi-chevron-left"
+            class="flip-in-rtl text-medium-emphasis"
           />
         </IconBtn>
 
@@ -79,38 +80,43 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
               v-for="label in props.email.labels"
               :key="label"
               :color="resolveLabelColor(label)"
-              density="comfortable"
-              class="px-2 text-capitalize me-2 flex-shrink-0"
+              class="text-capitalize flex-shrink-0"
+              size="small"
             >
               {{ label }}
             </VChip>
           </div>
         </div>
 
-        <div class="d-flex align-center">
-          <IconBtn
-            variant="plain"
-            :disabled="!props.emailMeta.hasPreviousEmail"
-            class="flip-in-rtl"
-            @click="$emit('navigated', 'previous')"
-          >
-            <VIcon icon="mdi-chevron-left" />
-          </IconBtn>
-          <IconBtn
-            variant="plain"
-            class="flip-in-rtl"
-            :disabled="!props.emailMeta.hasNextEmail"
-            @click="$emit('navigated', 'next')"
-          >
-            <VIcon icon="mdi-chevron-right" />
-          </IconBtn>
+        <div>
+          <div class="d-flex align-center gap-1">
+            <IconBtn
+              :disabled="!props.emailMeta.hasPreviousEmail"
+              @click="$emit('navigated', 'previous')"
+            >
+              <VIcon
+                icon="mdi-chevron-left"
+                class="flip-in-rtl text-medium-emphasis"
+              />
+            </IconBtn>
+
+            <IconBtn
+              :disabled="!props.emailMeta.hasNextEmail"
+              @click="$emit('navigated', 'next')"
+            >
+              <VIcon
+                icon="mdi-chevron-right"
+                class="flip-in-rtl text-medium-emphasis"
+              />
+            </IconBtn>
+          </div>
         </div>
       </div>
 
       <VDivider />
 
       <!-- 👉 Action bar -->
-      <div class="email-view-action-bar d-flex align-center text-medium-emphasis px-5">
+      <div class="email-view-action-bar d-flex align-center text-medium-emphasis ps-6 pe-4 gap-x-1">
         <!-- Trash -->
         <IconBtn
           v-show="!props.email.isDeleted"
@@ -209,16 +215,18 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
 
         <VSpacer />
 
-        <!-- Star/Unstar -->
-        <IconBtn
-          :color="props.email.isStarred ? 'warning' : 'default'"
-          @click="props.email?.isStarred ? $emit('unstar') : $emit('star')"
-        >
-          <VIcon icon="mdi-star-outline" />
-        </IconBtn>
-
-        <!-- Dots vertical -->
-        <MoreBtn />
+        <div class="d-flex align-center gap-x-1">
+          <!-- Star/Unstar -->
+          <IconBtn
+            :color="props.email.isStarred ? 'warning' : 'default'"
+            @click="props.email?.isStarred ? $emit('unstar') : $emit('star'); $emit('refresh')"
+          >
+            <VIcon :icon="props.email.isStarred ? 'mdi-star' : 'mdi-star-outline' " />
+          </IconBtn>
+          <IconBtn>
+            <VIcon icon="mdi-dots-vertical" />
+          </IconBtn>
+        </div>
       </div>
 
       <VDivider />
@@ -226,42 +234,53 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
       <!-- 👉 Mail Content -->
       <PerfectScrollbar
         tag="div"
-        class="mail-content-container flex-grow-1"
+        class="mail-content-container flex-grow-1 pa-sm-12 pa-6"
         :options="{ wheelPropagation: false }"
       >
-        <VCard class="ma-5">
-          <VCardText class="mail-header">
-            <div class="d-flex align-start">
-              <VAvatar class="me-3">
-                <VImg
-                  :src="props.email.from.avatar"
-                  :alt="props.email.from.name"
-                />
-              </VAvatar>
+        <VCard class="mb-4">
+          <div class="d-flex align-start align-sm-center pa-6 gap-x-4">
+            <VAvatar>
+              <VImg
+                :src="props.email.from.avatar"
+                :alt="props.email.from.name"
+              />
+            </VAvatar>
 
-              <div class="d-flex flex-wrap flex-grow-1 overflow-hidden">
-                <div class="text-truncate">
-                  <span class="d-block text-high-emphasis font-weight-medium text-truncate">{{ props.email.from.name }}</span>
-                  <span class="text-sm text-disabled">{{ props.email.from.email }}</span>
+            <div class="d-flex flex-wrap flex-grow-1 overflow-hidden">
+              <div class="text-truncate">
+                <div class="text-body-1 font-weight-medium text-high-emphasis text-truncate">
+                  {{ props.email.from.name }}
                 </div>
+                <div class="text-sm">
+                  {{ props.email.from.email }}
+                </div>
+              </div>
 
-                <VSpacer />
+              <VSpacer />
 
-                <div class="d-flex align-center">
-                  <span class="me-2">{{ formatDate(props.email.time) }}</span>
+              <div class="d-flex align-center gap-x-4">
+                <div class="text-disabled text-base">
+                  {{ formatDate(props.email.time) }}
+                </div>
+                <div>
                   <IconBtn v-show="props.email.attachments.length">
                     <VIcon icon="mdi-attachment" />
                   </IconBtn>
+                  <IconBtn>
+                    <VIcon icon="mdi-dots-vertical" />
+                  </IconBtn>
                 </div>
               </div>
-              <MoreBtn class="align-self-sm-center" />
             </div>
-          </VCardText>
+          </div>
 
           <VDivider />
 
           <VCardText>
             <!-- eslint-disable vue/no-v-html -->
+            <div class="text-body-1 font-weight-medium text-truncate mb-4">
+              {{ props.email.from.name }},
+            </div>
             <div
               class="text-base"
               v-html="props.email.message"
@@ -272,8 +291,8 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
           <template v-if="props.email.attachments.length">
             <VDivider />
 
-            <VCardText class="d-flex flex-column gap-y-4">
-              <span>Attachments</span>
+            <VCardText class="d-flex flex-column gap-y-4 pt-4">
+              <span>2 Attachments</span>
               <div
                 v-for="attachment in props.email.attachments"
                 :key="attachment.fileName"
@@ -293,10 +312,8 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
           </template>
         </VCard>
 
-        <VCard
-          v-show="showReplyCard"
-          class="mx-5 mb-5"
-        >
+        <!-- Reply or Forward -->
+        <VCard v-show="showReplyCard">
           <VCardText class="font-weight-medium text-high-emphasis">
             <div class="text-base">
               Click here to <span
@@ -311,10 +328,7 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
           </VCardText>
         </VCard>
 
-        <VCard
-          v-if="showReplyBox"
-          class="mx-5 mb-5"
-        >
+        <VCard v-if="showReplyBox">
           <VCardText>
             <h6 class="text-h6 mb-6">
               Reply to {{ email?.from.name }}
@@ -324,14 +338,10 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
               placeholder="Write your message..."
             />
             <div class="d-flex justify-end gap-4 pt-2 flex-wrap">
-              <VBtn
-                icon
-                variant="text"
-                density="comfortable"
-                @click="showReplyBox = !showReplyBox; showReplyCard = !showReplyCard"
-              >
-                <VIcon icon="mdi-delete" />
-              </VBtn>
+              <IconBtn
+                icon="mdi-delete"
+                @click="showReplyBox = !showReplyBox; showReplyCard = !showReplyCard; emailReply = ''"
+              />
               <VBtn
                 variant="text"
                 color="secondary"
@@ -358,6 +368,10 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
 
 <style lang="scss">
 .email-view {
+  &:not(.v-navigation-drawer--active) {
+    transform: translateX(110%) !important;
+  }
+
   inline-size: 100% !important;
 
   @media only screen and (min-width: 1280px) {
@@ -368,6 +382,18 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
     display: flex;
     flex-direction: column;
   }
+
+  .editor {
+    padding-block-start: 0 !important;
+    padding-inline: 0 !important;
+  }
+
+  .ProseMirror {
+    padding: 0.5rem;
+    block-size: 100px;
+    overflow-y: auto;
+    padding-block: 0.5rem;
+  }
 }
 
 .email-view-action-bar {
@@ -375,14 +401,6 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
 }
 
 .mail-content-container {
-  background-color: rgb(var(--v-theme-grey-100));
-
-  .mail-header {
-    min-block-size: 84px;
-  }
-
-  .v-card {
-    border: 1px solid rgba(var(--v-theme-on-surface), var(--v-border-opacity));
-  }
+  background-color: rgb(var(--v-theme-on-surface), var(--v-hover-opacity));
 }
 </style>

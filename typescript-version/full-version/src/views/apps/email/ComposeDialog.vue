@@ -1,71 +1,21 @@
 <script lang="ts" setup>
-import { Image } from '@tiptap/extension-image'
-import { Link } from '@tiptap/extension-link'
-import { Placeholder } from '@tiptap/extension-placeholder'
-import { Underline } from '@tiptap/extension-underline'
-import { StarterKit } from '@tiptap/starter-kit'
-import { EditorContent, useEditor } from '@tiptap/vue-3'
-
 defineEmits<{
   (e: 'close'): void
 }>()
 
+const content = ref('')
+
 const to = ref('')
-const cc = ref('')
-const bcc = ref('')
 const subject = ref('')
 const message = ref('')
-const emailCc = ref(false)
-const emailBcc = ref(false)
+
+const cc = ref('')
+const bcc = ref('')
+const isEmailCc = ref(false)
+const isEmailBcc = ref(false)
 
 const resetValues = () => {
   to.value = subject.value = message.value = ''
-}
-
-const editor = useEditor({
-  content: '',
-
-  extensions: [
-    StarterKit,
-    Image,
-    Placeholder.configure({
-      placeholder: 'Message',
-    }),
-    Underline,
-    Link.configure(
-      {
-        openOnClick: false,
-      },
-    ),
-  ],
-})
-
-const setLink = () => {
-  const previousUrl = editor.value?.getAttributes('link').href
-  // eslint-disable-next-line no-alert
-  const url = window.prompt('URL', previousUrl)
-
-  // cancelled
-  if (url === null)
-    return
-
-  // empty
-  if (url === '') {
-    editor.value?.chain().focus().extendMarkRange('link').unsetLink().run()
-
-    return
-  }
-
-  // update link
-  editor.value?.chain().focus().extendMarkRange('link').setLink({ href: url }).run()
-}
-
-const addImage = () => {
-  // eslint-disable-next-line no-alert
-  const url = window.prompt('URL')
-
-  if (url)
-    editor.value?.chain().focus().setImage({ src: url }).run()
 }
 </script>
 
@@ -85,160 +35,101 @@ const addImage = () => {
           <VIcon icon="mdi-minus" />
         </IconBtn>
 
-        <IconBtn @click="$emit('close'); resetValues()">
+        <IconBtn @click="$emit('close'); resetValues(); isEmailCc = false; isEmailBcc = false;">
           <VIcon icon="mdi-close" />
         </IconBtn>
       </template>
     </VCardItem>
 
-    <div class="pe-5">
+    <div class="px-1 pe-6 py-1">
       <VTextField
         v-model="to"
         density="compact"
       >
         <template #prepend-inner>
-          <div class="text-disabled font-weight-medium">
+          <div class="text-base font-weight-medium text-disabled">
             To:
           </div>
         </template>
         <template #append>
-          <span class="cursor-pointer text-medium-emphasis">
-            <span @click="emailCc = !emailCc">Cc</span>
-            <span class="mx-1">|</span>
-            <span @click="emailBcc = !emailBcc">Bcc</span>
+          <span class="cursor-pointer text-body-1">
+            <span @click="isEmailCc = !isEmailCc">Cc</span>
+            <span> | </span>
+            <span @click="isEmailBcc = !isEmailBcc">Bcc</span>
           </span>
         </template>
       </VTextField>
     </div>
 
     <VExpandTransition>
-      <div v-if="emailCc">
+      <div v-if="isEmailCc">
         <VDivider />
 
-        <VTextField
-          v-model="cc"
-          density="compact"
-        >
-          <template #prepend-inner>
-            <div class="text-disabled font-weight-medium">
-              Cc:
-            </div>
-          </template>
-        </VTextField>
+        <div class="px-1 pe-6 py-1">
+          <VTextField
+            v-model="cc"
+            density="compact"
+          >
+            <template #prepend-inner>
+              <div class="text-disabled font-weight-medium">
+                Cc:
+              </div>
+            </template>
+          </VTextField>
+        </div>
       </div>
     </VExpandTransition>
 
     <VExpandTransition>
-      <div v-if="emailBcc">
+      <div v-if="isEmailBcc">
         <VDivider />
 
-        <VTextField
-          v-model="bcc"
-          density="compact"
-        >
-          <template #prepend-inner>
-            <div class="text-disabled font-weight-medium">
-              Bcc:
-            </div>
-          </template>
-        </VTextField>
+        <div class="px-1 pe-6 py-1">
+          <VTextField
+            v-model="bcc"
+            density="compact"
+          >
+            <template #prepend-inner>
+              <div class="text-disabled font-weight-medium">
+                Bcc:
+              </div>
+            </template>
+          </VTextField>
+        </div>
       </div>
     </VExpandTransition>
 
     <VDivider />
-
-    <VTextField
-      v-model="subject"
-      density="compact"
-    >
-      <template #prepend-inner>
-        <div class="text-disabled font-weight-medium">
-          Subject:
-        </div>
-      </template>
-    </VTextField>
+    <div class="px-1 pe-6 py-1">
+      <VTextField
+        v-model="subject"
+        density="compact"
+      >
+        <template #prepend-inner>
+          <div class="text-base font-weight-medium text-disabled">
+            Subject:
+          </div>
+        </template>
+      </VTextField>
+    </div>
 
     <VDivider />
 
-    <!-- 👉 Tiptap editor -->
-    <div class="tiptap-editor-wrapper">
-      <div
-        v-if="editor"
-        class="d-flex flex-wrap gap-x-1 px-4 py-2"
+    <!-- 👉 Tiptap Editor  -->
+    <TiptapEditor
+      v-model="content"
+      placeholder="Message"
+    />
+
+    <div class="d-flex align-center px-6 py-4">
+      <VBtn
+        color="primary"
+        class="me-4"
+        append-icon="mdi-send"
+        :disabled="to === '' ? true : false"
+        @click="$emit('close'); content = ''; resetValues(); isEmailCc = false; isEmailBcc = false;"
       >
-        <IconBtn
-          rounded
-          :color="editor.isActive('bold') ? 'primary' : ''"
-          :variant="editor.isActive('bold') ? 'tonal' : 'text'"
-          @click="editor.chain().focus().toggleBold().run()"
-        >
-          <VIcon icon="mdi-format-bold" />
-        </IconBtn>
-
-        <IconBtn
-          rounded
-          :color="editor.isActive('underline') ? 'primary' : ''"
-          :variant="editor.isActive('underline') ? 'tonal' : 'text'"
-          @click="editor.commands.toggleUnderline()"
-        >
-          <VIcon icon="mdi-format-underline" />
-        </IconBtn>
-
-        <IconBtn
-          rounded
-          :color="editor.isActive('italic') ? 'primary' : ''"
-          :variant="editor.isActive('italic') ? 'tonal' : 'text'"
-          @click="editor.chain().focus().toggleItalic().run()"
-        >
-          <VIcon icon="mdi-format-italic" />
-        </IconBtn>
-
-        <IconBtn
-          rounded
-          :color="editor.isActive('bulletList') ? 'primary' : ''"
-          :variant="editor.isActive('bulletList') ? 'tonal' : 'text'"
-          @click="editor.chain().focus().toggleBulletList().run()"
-        >
-          <VIcon icon="mdi-format-list-bulleted" />
-        </IconBtn>
-
-        <IconBtn
-          rounded
-          :color="editor.isActive('orderedList') ? 'primary' : ''"
-          :variant="editor.isActive('orderedList') ? 'tonal' : 'text'"
-          @click="editor.chain().focus().toggleOrderedList().run()"
-        >
-          <VIcon icon="mdi-format-list-numbered" />
-        </IconBtn>
-
-        <IconBtn
-          rounded
-          @click="setLink"
-        >
-          <VIcon icon="mdi-link" />
-        </IconBtn>
-
-        <IconBtn
-          rounded
-          @click="addImage"
-        >
-          <VIcon icon="mdi-image" />
-        </IconBtn>
-      </div>
-
-      <VDivider />
-
-      <div class="mx-5">
-        <EditorContent :editor="editor" />
-      </div>
-    </div>
-
-    <div class="d-flex align-center px-5 py-4 gap-4">
-      <VBtn append-icon="mdi-send">
-        Send
-        <VMenu activator="parent">
-          <VList :items="['Schedule Mail', 'Save Draft']" />
-        </VMenu>
+        send
       </VBtn>
 
       <IconBtn>
@@ -251,19 +142,27 @@ const addImage = () => {
         <VIcon icon="mdi-dots-vertical" />
       </IconBtn>
 
-      <IconBtn @click="$emit('close'); resetValues()">
-        <VIcon icon="mdi-delete-outline" />
+      <IconBtn
+        size="small"
+        @click="$emit('close'); resetValues(); content = ''; isEmailCc = false; isEmailBcc = false;"
+      >
+        <VIcon icon="mdi-delete" />
       </IconBtn>
     </div>
   </VCard>
 </template>
 
 <style lang="scss">
-.email-compose-dialog {
+.v-card.email-compose-dialog {
   z-index: 910 !important;
 
   .v-field--prepended {
     padding-inline-start: 20px;
+  }
+
+  .v-field__prepend-inner {
+    align-items: center;
+    padding: 0;
   }
 
   .v-card-item {

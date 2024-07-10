@@ -68,7 +68,6 @@ const userProfileList = [
         width="230"
         location="bottom end"
         offset="14px"
-        attach=".layout-navbar"
       >
         <VList>
           <VListItem>

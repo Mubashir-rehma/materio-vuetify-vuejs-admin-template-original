@@ -23,7 +23,6 @@ const { locale } = useI18n({ useScope: 'global' })
       :location="props.location"
       offset="14px"
       width="175"
-      attach=".layout-navbar"
     >
       <!-- List -->
       <VList

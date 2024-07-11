@@ -132,7 +132,7 @@ export const handlerAppsEcommerce = [
     const productIndex = db.products.findIndex(e => e.id === id)
 
     if (productIndex >= 0) {
-      db.products.splice(productIndex, 3)
+      db.products.splice(productIndex, 1)
 
       // return res(
       //   ctx.status(204),

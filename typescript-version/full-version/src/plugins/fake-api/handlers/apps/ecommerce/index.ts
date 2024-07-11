@@ -149,6 +149,23 @@ export const handlerAppsEcommerce = [
   }),
 
   // 👉 Orders
+  // Get single Customer
+  http.get(('/api/apps/ecommerce/order/:id'), ({ params }) => {
+    const orderId = Number(params.id)
+
+    try {
+      const order = db.orderData.find(e => e.order === orderId)
+
+      if (order)
+        return HttpResponse.json(order, { status: 200 })
+    }
+    catch (error) {
+      return new HttpResponse(null, {
+        status: 404,
+      })
+    }
+  }),
+
   // Get Order List
   http.get('/api/apps/ecommerce/orders', ({ request }) => {
     const url = new URL(request.url)

@@ -1,13 +1,13 @@
 <script setup lang="ts">
 interface UserData {
-  id: number | null
-  fullName: string
+  id: number | undefined
+  fullName: string | undefined
   company: string
   role: string
   username: string
   country: string
   contact: string | undefined
-  email: string
+  email: string | undefined
   currentPlan: string
   status: string | undefined
   avatar: string

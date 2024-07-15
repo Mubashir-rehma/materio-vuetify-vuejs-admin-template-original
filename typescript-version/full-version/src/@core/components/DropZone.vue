@@ -83,10 +83,7 @@ useDropZone(dropZoneRef, onDrop)
                 cols="12"
                 sm="4"
               >
-                <VCard
-                  :ripple="false"
-                  border
-                >
+                <VCard :ripple="false">
                   <VCardText
                     class="d-flex flex-column"
                     @click.stop

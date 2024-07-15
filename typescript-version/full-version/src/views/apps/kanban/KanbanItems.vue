@@ -152,18 +152,16 @@ const handleEnterKeydown = (event: { key: string; shiftKey: any }) => {
           @keydown.esc="hideResetBoardNameForm"
         >
           <template #append-inner>
-            <VBtn
-              size="x-small"
-              variant="text"
+            <VIcon
+              size="20"
               color="success"
               icon="mdi-check"
-              class="flip-in-rtl me-1"
+              class="me-1"
               @click="renameBoard"
             />
 
-            <VBtn
-              size="x-small"
-              variant="text"
+            <VIcon
+              size="20"
               color="error"
               icon="mdi-close"
               @click="hideResetBoardNameForm"
@@ -220,13 +218,13 @@ const handleEnterKeydown = (event: { key: string; shiftKey: any }) => {
       <!-- 👉 Add new Form -->
       <div class="add-new-form">
         <h6
-          class="text-base font-weight-medium cursor-pointer"
+          class="text-base font-weight-medium cursor-pointer ms-4"
           @click="isAddNewFormVisible = !isAddNewFormVisible"
         >
           <VIcon
             size="15"
             icon="mdi-plus"
-          /> Add New
+          /> Add New Item
         </h6>
 
         <VForm

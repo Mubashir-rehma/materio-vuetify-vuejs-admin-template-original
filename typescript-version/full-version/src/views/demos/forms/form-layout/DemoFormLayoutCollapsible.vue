@@ -235,28 +235,32 @@ const paymentMethods = [
           >
             <VForm class="pt-4 pb-2">
               <!-- 👉 Payment Method -->
-              <div>
-                <VRadioGroup
-                  v-model="paymentMethod"
-                  inline
-                >
+              <VRow>
+                <VCol cols="12">
                   <div>
-                    <VRadio
-                      v-for="payment in paymentMethods"
-                      :key="payment.radioValue"
-                      :value="payment.radioValue"
+                    <VRadioGroup
+                      v-model="paymentMethod"
+                      inline
                     >
-                      <template #label>
-                        <span class="me-1">{{ payment.radioLabel }}</span>
-                        <VIcon
-                          size="18"
-                          :icon="payment.icon"
-                        />
-                      </template>
-                    </VRadio>
+                      <div>
+                        <VRadio
+                          v-for="payment in paymentMethods"
+                          :key="payment.radioValue"
+                          :value="payment.radioValue"
+                        >
+                          <template #label>
+                            <span class="me-1">{{ payment.radioLabel }}</span>
+                            <VIcon
+                              size="18"
+                              :icon="payment.icon"
+                            />
+                          </template>
+                        </VRadio>
+                      </div>
+                    </VRadioGroup>
                   </div>
-                </VRadioGroup>
-              </div>
+                </VCol>
+              </VRow>
 
               <VRow v-show="paymentMethod === 'credit-debit-card'">
                 <!-- 👉 Card Number -->
@@ -302,23 +306,33 @@ const paymentMethods = [
                     placeholder="123"
                   />
                 </VCol>
+                <VCol>
+                  <div class="d-flex gap-4">
+                    <VBtn>Place Order</VBtn>
+                    <VBtn
+                      color="secondary"
+                      variant="tonal"
+                    >
+                      Cancel
+                    </VBtn>
+                  </div>
+                </VCol>
+              </VRow>
+
+              <VRow v-show="paymentMethod === 'cash-on-delivery'">
+                <VCol cols="12">
+                  <p class="text-base text-high-emphasis">
+                    Cash on Delivery is a type of payment method where the recipient make payment for the order at the time of delivery rather than in advance.
+                  </p>
+
+                  <VBtn>
+                    Pay on delivery
+                  </VBtn>
+                </VCol>
               </VRow>
             </VForm>
           </VCol>
         </VRow>
-
-        <VDivider class="my-5" />
-
-        <!-- 👉 Place Order -->
-        <div class="d-flex gap-4">
-          <VBtn>Place Order</VBtn>
-          <VBtn
-            color="secondary"
-            variant="tonal"
-          >
-            Cancel
-          </VBtn>
-        </div>
       </VExpansionPanelText>
     </VExpansionPanel>
     <!-- !SECTION Payment Method -->

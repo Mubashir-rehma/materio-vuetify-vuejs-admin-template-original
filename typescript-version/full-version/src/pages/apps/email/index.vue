@@ -208,7 +208,7 @@ watch(
       @refresh="refreshOpenedEmail"
       @navigated="changeOpenedEmail"
       @close="openedEmail = null"
-      @remove="handleActionClick('trash', openedEmail ? [openedEmail.id] : [])"
+      @trash="handleActionClick('trash', openedEmail ? [openedEmail.id] : [])"
       @unread="handleActionClick('unread', openedEmail ? [openedEmail.id] : [])"
       @star="handleActionClick('star', openedEmail ? [openedEmail.id] : [])"
       @unstar="handleActionClick('unstar', openedEmail ? [openedEmail.id] : [])"
@@ -241,6 +241,7 @@ watch(
           <VCheckbox
             :model-value="selectAllEmailCheckbox"
             :indeterminate="isSelectAllEmailCheckboxIndeterminate"
+            class="d-flex"
             @update:model-value="selectAllCheckboxUpdate"
           />
           <div
@@ -455,8 +456,8 @@ watch(
 </template>
 
 <style lang="scss">
-@use "@styles/variables/vuetify.scss";
-@use "@core/scss/base/mixins.scss";
+@use "@styles/variables/vuetify";
+@use "@core/scss/base/mixins";
 
 // ℹ️ Remove border. Using variant plain cause UI issue, caret isn't align in center
 .email-search {

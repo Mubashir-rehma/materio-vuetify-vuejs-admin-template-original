@@ -347,7 +347,6 @@ const inventoryTabsData = [
                               <VTextField
                                 placeholder="40 C"
                                 type="number"
-                                style="min-inline-size: 250px;"
                               />
                             </div>
                           </template>

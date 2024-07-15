@@ -251,43 +251,45 @@ const chatContentContainerBg = computed(() => {
           class="chat-log-message-form mb-5 mx-5"
           @submit.prevent="sendMessage"
         >
-          <VTextarea
+          <VTextField
             :key="store.activeChat?.contact.id"
             v-model="msg"
-            auto-grow
-            rows="1"
-            max-rows="2"
             variant="solo"
+            density="default"
             class="chat-message-input"
-            no-resize
             placeholder="Type your message"
             autofocus
-            @keyup.enter="sendMessage"
           >
             <template #append-inner>
-              <IconBtn>
-                <VIcon icon="mdi-microphone-outline" />
-              </IconBtn>
-
-              <IconBtn
-                class="mx-sm-2 mx-0"
-                @click="refInputEl?.click()"
-              >
-                <VIcon icon="mdi-attachment" />
-              </IconBtn>
-
-              <VBtn
-                class="d-none d-md-block"
-                @click="sendMessage"
-              >
-                Send
-              </VBtn>
-
-              <IconBtn class="d-block d-md-none">
-                <VIcon icon="mdi-send" />
-              </IconBtn>
+              <div class="d-flex gap-1">
+                <IconBtn>
+                  <VIcon
+                    icon="mdi-microphone-outline"
+                    class="text-high-emphasis"
+                  />
+                </IconBtn>
+                <IconBtn @click="refInputEl?.click()">
+                  <VIcon
+                    icon="mdi-attachment"
+                    class="text-high-emphasis"
+                  />
+                </IconBtn>
+                <VBtn
+                  class="d-none d-md-block"
+                  append-icon="mdi-send"
+                  @click="sendMessage"
+                >
+                  Send
+                </VBtn>
+                <IconBtn
+                  class="d-block d-md-none"
+                  @click="sendMessage"
+                >
+                  <VIcon icon="mdi-send" />
+                </IconBtn>
+              </div>
             </template>
-          </VTextarea>
+          </VTextField>
 
           <input
             ref="refInputEl"
@@ -335,8 +337,8 @@ const chatContentContainerBg = computed(() => {
 </template>
 
 <style lang="scss">
-@use "@styles/variables/vuetify.scss";
-@use "@core/scss/base/mixins.scss";
+@use "@styles/variables/vuetify";
+@use "@core/scss/base/mixins";
 @use "@layouts/styles/mixins" as layoutsMixins;
 
 // Variables

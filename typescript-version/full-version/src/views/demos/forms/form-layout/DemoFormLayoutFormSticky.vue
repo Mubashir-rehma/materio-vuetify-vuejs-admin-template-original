@@ -218,7 +218,7 @@ const formData = ref({
               </VCol>
             </VRow>
 
-            <VDivider class="my-4" />
+            <VDivider class="my-6" />
 
             <h2 class="text-lg font-weight-medium mb-6">
               2. Delivery Type
@@ -230,7 +230,7 @@ const formData = ref({
               :grid-column="{ sm: '4', cols: '12' }"
             />
 
-            <VDivider class="my-4" />
+            <VDivider class="my-6" />
 
             <h2 class="text-lg font-weight-medium mb-6">
               3. Apply Promo code
@@ -270,7 +270,7 @@ const formData = ref({
               </VListItem>
             </VList>
 
-            <VDivider class="my-4" />
+            <VDivider class="my-6" />
 
             <h2 class="text-lg font-weight-medium mb-6">
               4. Payment Method

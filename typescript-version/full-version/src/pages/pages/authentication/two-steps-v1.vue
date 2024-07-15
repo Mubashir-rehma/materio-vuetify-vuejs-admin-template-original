@@ -30,15 +30,14 @@ const onFinish = () => {
       max-width="448"
     >
       <VCardItem class="justify-center">
-        <template #prepend>
-          <div class="d-flex">
+        <RouterLink to="/">
+          <div class="d-flex align-center gap-x-2">
             <VNodeRenderer :nodes="themeConfig.app.logo" />
+            <h1 class="text-h6 text-uppercase">
+              {{ themeConfig.app.title }}
+            </h1>
           </div>
-        </template>
-
-        <VCardTitle class="text-2xl text-uppercase">
-          {{ themeConfig.app.title }}
-        </VCardTitle>
+        </RouterLink>
       </VCardItem>
 
       <VCardText class="pt-2">
@@ -98,5 +97,5 @@ const onFinish = () => {
 </template>
 
 <style lang="scss">
-@use "@core/scss/template/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth";
 </style>

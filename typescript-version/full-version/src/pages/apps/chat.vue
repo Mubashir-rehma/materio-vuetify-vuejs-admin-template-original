@@ -274,13 +274,14 @@ const chatContentContainerBg = computed(() => {
                     class="text-high-emphasis"
                   />
                 </IconBtn>
-                <VBtn
-                  class="d-none d-md-block"
-                  append-icon="mdi-send"
-                  @click="sendMessage"
-                >
-                  Send
-                </VBtn>
+                <div class="d-none d-md-block">
+                  <VBtn
+                    append-icon="mdi-send"
+                    @click="sendMessage"
+                  >
+                    Send
+                  </VBtn>
+                </div>
                 <IconBtn
                   class="d-block d-md-none"
                   @click="sendMessage"

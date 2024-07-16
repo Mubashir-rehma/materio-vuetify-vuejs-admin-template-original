@@ -46,7 +46,7 @@ const searchQuery = ref('')
         </div>
         <img
           :src="academyCourseIllustration1"
-          class="illustration1 d-none d-md-block"
+          class="illustration1 d-none d-md-block flip-in-rtl"
           height="180"
         >
         <img

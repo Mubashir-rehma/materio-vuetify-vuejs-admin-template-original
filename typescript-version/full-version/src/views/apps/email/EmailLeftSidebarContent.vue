@@ -1,20 +1,31 @@
 <script setup lang="ts">
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
 
 defineOptions({
   inheritAttrs: false,
 })
 
+const props = defineProps<Props>()
+
 defineEmits<{
   (e: 'toggleComposeDialogVisibility'): void
 }>()
+
+interface Props {
+  emailsMeta: {
+    inbox: number
+    draft: number
+    spam: number
+    star: number
+  }
+}
 
 interface Folder {
   title: string
   prependIcon: string
   to: any
   badge?: {
-    content: string
+    content: string | number
     color: string
   }
 }
@@ -25,12 +36,27 @@ interface Label {
   to: any
 }
 
-const folders: Folder[] = [
+const inboxEmails = ref(0)
+const draftEmails = ref(0)
+const spamEmails = ref(0)
+const starredEmails = ref(0)
+
+watch(() => props.emailsMeta, emailsMeta => {
+  if (!emailsMeta)
+    return
+
+  inboxEmails.value = emailsMeta.inbox
+  draftEmails.value = emailsMeta.draft
+  spamEmails.value = emailsMeta.spam
+  starredEmails.value = emailsMeta.star
+}, { immediate: true, deep: true })
+
+const folders: ComputedRef<Folder[]> = computed(() => [
   {
     title: 'Inbox',
     prependIcon: 'ri-mail-line',
     to: { name: 'apps-email' },
-    badge: { content: '21', color: 'primary' },
+    badge: { content: inboxEmails.value, color: 'primary' },
   },
   {
     title: 'Sent',
@@ -47,7 +73,7 @@ const folders: Folder[] = [
       name: 'apps-email-filter',
       params: { filter: 'draft' },
     },
-    badge: { content: '2', color: 'warning' },
+    badge: { content: draftEmails.value, color: 'warning' },
   },
   {
     title: 'Starred',
@@ -56,6 +82,7 @@ const folders: Folder[] = [
       name: 'apps-email-filter',
       params: { filter: 'starred' },
     },
+    badge: { content: starredEmails.value, color: 'success' },
   },
   {
     title: 'Spam',
@@ -64,7 +91,7 @@ const folders: Folder[] = [
       name: 'apps-email-filter',
       params: { filter: 'spam' },
     },
-    badge: { content: '4', color: 'error' },
+    badge: { content: spamEmails.value, color: 'error' },
   },
   {
     title: 'Trash',
@@ -74,7 +101,7 @@ const folders: Folder[] = [
       params: { filter: 'trashed' },
     },
   },
-]
+])
 
 const labels: Label[] = [
   {

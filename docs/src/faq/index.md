@@ -10,12 +10,6 @@ aside: false
 If you can't find your problem. Try searching related term as well.
 :::
 
-## Migrating from Vue 2 to Vue 3 version
-
-As our template is now built on Vuetify 3 and written from scratch with new and improved folder structure, there's no easy way to migrate the existing project to the latest update.
-
-The best way to move your existing codebase to new update is gradually adopting the new update. You can start with either full verison of our template or starter-kit version of our template then few pages from your project to new project and add its requirements. Make sure to carefully update/modify your existing codebase with the new project so you don't miss anything.
-
 **Why breaking change was introduced?**
 
 As you already know, Vue 2 was using options API and vue 3 introduced composition API and people are loving the new composition API more. Moreover, Vue 3 introduced some nice features and added some breaking changes.
@@ -56,14 +50,22 @@ Please refer to the danger note at [installation](/guide/installation.html#getti
 You might get some warnings while running `npm install` or `yarn install` like below:
 
 ```bash
-info fsevents@2.3.1: The platform "linux" is incompatible with this module.
-info "fsevents@2.3.1" is an optional dependency and failed compatibility check. Excluding it from installation.
-info fsevents@1.2.13: The platform "linux" is incompatible with this module.
-info "fsevents@1.2.13" is an optional dependency and failed compatibility check. Excluding it from installation.
-[3/4] Linking dependencies...
-warning " > vue2-leaflet@2.6.0" has unmet peer dependency "@types/leaflet@^1.5.7".
-warning "@vue/eslint-config-airbnb > eslint-import-resolver-webpack@0.13.0" has unmet peer dependency "webpack@>=1.11.0".
-warning " > sass-loader@10.1.0" has unmet peer dependency "webpack@^4.36.0 || ^5.0.0".
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR! 
+npm ERR! While resolving: materialize-vuejs-admin-template@2.0.0
+npm ERR! Found: video.js@8.10.0
+npm ERR! node_modules/video.js
+npm ERR!   dev video.js@"8.10.0" from the root project
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer video.js@"7.x" from @videojs-player/vue@1.0.0
+npm ERR! node_modules/@videojs-player/vue
+npm ERR!   dev @videojs-player/vue@"1.0.0" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
 ```
 
 The warnings you are receiving while installing are from library/packages we used.
@@ -72,23 +74,11 @@ We always keep our packages up to date when we make major releases. However, the
 
 Even if you like to try you can install these packages in fresh VueJS project without our template and you will get the same.
 
-## Template is slow
+To resolve this using `npm`, while installing, please use the following command:
 
-You may feel slowness in our template due to [vue dev tool](https://devtools.vuejs.org/). There are several open issues complaining about the slowness of app while using the vue dev tool:
-
-<https://github.com/vuejs/devtools/issues/1875>
-
-<https://github.com/vuejs/devtools/issues/1939>
-
-If you open your app or our template in the guest window (where vue dev tool isn't available) then you will notice it is pretty fast and working as expected.
-
-Hence, if you don't use dev tool much we suggest you to disable or remove the vue dev tool from your browser extensions.
-
-Still, if you feel there's something missing try disabling the router transition and you will experience a much faster app.
-
-Apart from this, On first load you might feel template is taking the time to load. This is because vite tries to optimize the dependencies and load the necessary modules required to run the app smoothly. Once it's loaded, vite will cache the dependencies and you will experience faster app.
-
-In summary, this is due to vue dev tool and dev mode. Try checking our the live demo and you will find it's smooth and slick 😍
+```bash
+npm install --legacy-peer-deps
+```
 
 ## Why reproduce issue/bug in starter-kit?
 
@@ -114,7 +104,7 @@ If you are using our ACL provided in our template then it is ability-based ACL n
 
 ## How to check what frontend expects in API response
 
-To determine what the frontend expects in API responses, you can refer to the fake API responses located in the `src/plugins/handlers/` folder.
+To determine what the frontend expects in API responses, you can refer to the fake API responses located in the `src/plugins/fake-api/` folder.
 
 For a specific list of fake API response endpoints related to a particular page, you can inspect the `index.ts` file within the corresponding page's directory. For instance, if you need the endpoints for the Invoice app, you can find them in the `index.ts` file located in the `apps/invoice` directory.
 
@@ -124,7 +114,7 @@ You can find authentication related fake responses in `src/plugins/fake-api/hand
 
 ## How to update logo and text
 
-You can update the logo and text from `themeConfig.ts` file. Please update `$themeConfig` variable's `app.name` and `app.logo` to update the text and logo.
+You can update the logo and text from `themeConfig.ts` file. Please update `themeConfig` variable's `app.name` and `app.logo` to update the text and logo.
 
 Article: [How to change logo](/articles/how-to-change-logo)
 
@@ -155,14 +145,6 @@ Convert above code to below code:
   </div>
 </template>
 ```
-
-## Nuxt 3 Support & its integration
-
-As Admin templates are meant for internal purposes and it doesn't require SEO we didn't provide support for NuxtJS At the moment. However, on lots of feature requirements, we added this in our pipeline.
-
-First of all, we will check if is it possible for us to provide nuxt version of our template along with JavaScript & TypeScript versions of the template. If we will be able to manage Vue (TS + JS) along with Nuxt (TS + JS) then surely we will provide nuxt support in future updates.
-
-Till then if you need nuxt support then you can always implement nuxt yourself.
 
 ## How to integrate your theme in our existing project
 
@@ -204,15 +186,11 @@ In most cases, CORS errors occur because the server is not configured to allow c
 
 ## How to set title for each Individual page
 
-Typically, there is no need to modify the title in admin panels. However, if you still wish to make changes, you can achieve this by integrating the `unhead/vue` library into your project.
+For nuxt users, please refer to their official guide [here](https://nuxt.com/docs/getting-started/seo-meta).
 
-For detailed instructions regarding implementation, please visit the following link: [Unhead Setup](https://unhead.harlanzw.com/integrations/vue/setup)
+For vue users typically, there is no need to modify the title in admin panels. However, if you still wish to make changes, you can achieve this by integrating the `unhead/vue` library into your project.
 
-## Why we have removed store from email app?
-
-In our email app, there is not any requirement to access states across multiple components. So, the need for a store in the email app has been eliminated. All essential functions have been moved to the `useEmail.ts` file.
-
-To review the changes made for the removal of the store, please refer to this [commit](https://github.com/themeselection/master-vue--material/pull/324)
+For detailed instructions regarding implementation, please visit the following link: [Unhead Setup](https://unhead.unjs.io/setup/vue/installation)
 
 ## Nuxt Terminal Warnings
 

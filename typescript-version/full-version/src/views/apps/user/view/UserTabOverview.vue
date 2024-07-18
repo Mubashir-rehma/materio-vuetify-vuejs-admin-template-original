@@ -3,7 +3,6 @@ import { useTheme } from 'vuetify'
 import UserInvoiceTable from './UserInvoiceTable.vue'
 import pdf from '@images/icons/project-icons/pdf.png'
 
-// Images
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
 import avatar4 from '@images/avatars/avatar-4.png'

@@ -15,8 +15,11 @@ const cc = ref('')
 const bcc = ref('')
 const subject = ref('')
 const message = ref('')
-const emailCc = ref(false)
-const emailBcc = ref(false)
+
+const cc = ref('')
+const bcc = ref('')
+const isEmailCc = ref(false)
+const isEmailBcc = ref(false)
 
 const resetValues = () => {
   to.value = subject.value = message.value = ''
@@ -85,13 +88,13 @@ const addImage = () => {
           <VIcon icon="ri-subtract-line" />
         </IconBtn>
 
-        <IconBtn @click="$emit('close'); resetValues()">
+        <IconBtn @click="$emit('close'); resetValues(); isEmailCc = false; isEmailBcc = false;">
           <VIcon icon="ri-close-line" />
         </IconBtn>
       </template>
     </VCardItem>
 
-    <div class="pe-5">
+    <div class="px-1 pe-6 py-1">
       <VTextField
         v-model="to"
         density="compact"
@@ -234,11 +237,10 @@ const addImage = () => {
     </div>
 
     <div class="d-flex align-center px-5 py-4 gap-4">
-      <VBtn append-icon="ri-send-plane-line">
+      <VBtn append-icon="ri-send-plane-line" :disabled="to === '' ? true : false"
+      @click="$emit('close'); content = ''; resetValues(); isEmailCc = false; isEmailBcc = false;">
         Send
-        <VMenu activator="parent">
-          <VList :items="['Schedule Mail', 'Save Draft']" />
-        </VMenu>
+    
       </VBtn>
 
       <IconBtn>
@@ -251,7 +253,7 @@ const addImage = () => {
         <VIcon icon="ri-more-2-line" />
       </IconBtn>
 
-      <IconBtn @click="$emit('close'); resetValues()">
+      <IconBtn @click="$emit('close'); resetValues(); content = ''; isEmailCc = false; isEmailBcc = false;"
         <VIcon icon="ri-delete-bin-7-line" />
       </IconBtn>
     </div>
@@ -259,11 +261,16 @@ const addImage = () => {
 </template>
 
 <style lang="scss">
-.email-compose-dialog {
+.v-card.email-compose-dialog {
   z-index: 910 !important;
 
   .v-field--prepended {
     padding-inline-start: 20px;
+  }
+
+  .v-field__prepend-inner {
+    align-items: center;
+    padding: 0;
   }
 
   .v-card-item {

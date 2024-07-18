@@ -1,17 +1,19 @@
 import is from '@sindresorhus/is'
 import { destr } from 'destr'
-import { rest } from 'msw'
+import { HttpResponse, http } from 'msw'
 import { db } from '@db/apps/permission/db'
 import { paginateArray } from '@api-utils/paginateArray'
 
 export const handlerAppsPermission = [
   // 👉 Get Permission List
-  rest.get(('/api/apps/permissions'), (req, res, ctx) => {
-    const q = req.url.searchParams.get('q') || ''
-    const sortBy = req.url.searchParams.get('sortBy')
-    const page = req.url.searchParams.get('page') || 1
-    const itemsPerPage = req.url.searchParams.get('itemsPerPage') || 10
-    const orderBy = req.url.searchParams.get('orderBy')
+  http.get(('/api/apps/permissions'), ({ request }) => {
+    const url = new URL(request.url)
+
+    const q = url.searchParams.get('q') || ''
+    const sortBy = url.searchParams.get('sortBy')
+    const page = url.searchParams.get('page') || 1
+    const itemsPerPage = url.searchParams.get('itemsPerPage') || 10
+    const orderBy = url.searchParams.get('orderBy')
 
     const parsedSortBy = destr(sortBy)
     const sortByLocal = is.string(parsedSortBy) ? parsedSortBy : ''
@@ -46,9 +48,14 @@ export const handlerAppsPermission = [
     }
 
     // return response with paginated data
-    return res(ctx.status(200), ctx.json({
-      permissions: paginateArray(filteredPermissions, itemsPerPageLocal, pageLocal),
-      totalPermissions: filteredPermissions.length,
-    }))
+    return HttpResponse.json(
+      {
+        permissions: paginateArray(filteredPermissions, itemsPerPageLocal, pageLocal),
+        totalPermissions: filteredPermissions.length,
+      },
+      {
+        status: 200,
+      },
+    )
   }),
 ]

@@ -37,6 +37,7 @@ export default defineConfig({
         text: 'Other',
         items: [
           { text: 'Contribution', link: '/contribution/' },
+          { text: 'Changelog', link: 'https://demos.pixinvent.com/materialize/changelog.html' },
         ],
       },
       {
@@ -66,6 +67,7 @@ export default defineConfig({
     sidebar: {
       '/guide/': [
         { text: 'Welcome', link: '/guide/' },
+        { text: 'Video Tutorials', link: '/guide/video-tutorials' },
         {
           text: 'Getting Started',
           collapsed: false,
@@ -152,6 +154,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Perfect Scrollbar', link: '/guide/plugins/perfect-scrollbar' },
+            { text: 'Vite Svg Loader', link: '/guide/plugins/vite-svg-loader' },
           ],
         },
         {
@@ -164,7 +167,7 @@ export default defineConfig({
         },
       ],
       '/contribution/': [
-        { text: 'Welcome', link: '' },
+        { text: 'Contribution', link: '/contribution/' },
         { text: 'ThemeConfig', link: '/contribution/themeconfig' },
         { text: 'Styles', link: '/contribution/styles' },
       ],
@@ -185,7 +188,10 @@ export default defineConfig({
     }
   },
   markdown: {
-    theme: 'dracula',
+    theme: {
+      dark: 'dracula',
+      light: 'github-light'
+    }
   },
   transformHtml: async (code, id, ctx) => {
     if (gtmConfig.bodyNoScript && gtmConfig.bodyNoScript)

@@ -13,6 +13,7 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 definePage({
   meta: {
     layout: 'blank',
+    public: true,
   },
 })
 
@@ -32,13 +33,15 @@ const isPasswordVisible = ref(false)
       max-width="448"
     >
       <VCardText>
-        <div class="d-flex align-center gap-x-3 justify-center mb-6">
-          <VNodeRenderer :nodes="themeConfig.app.logo" />
-
-          <h1 class="auth-title">
-            {{ themeConfig.app.title }}
-          </h1>
-        </div>
+        <RouterLink to='/'>
+          <div class="d-flex align-center gap-x-3 justify-center mb-6">
+            <VNodeRenderer :nodes="themeConfig.app.logo" />
+            
+            <h1 class="auth-title">
+              {{ themeConfig.app.title }}
+            </h1>
+          </div>
+        </RouterLink>
         <h4 class="text-h4 mb-1">
           Welcome to <span class="text-capitalize">{{ themeConfig.app.title }}!</span> 👋🏻
         </h4>
@@ -159,5 +162,5 @@ const isPasswordVisible = ref(false)
 </template>
 
 <style lang="scss">
-@use "@core/scss/template/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth";
 </style>

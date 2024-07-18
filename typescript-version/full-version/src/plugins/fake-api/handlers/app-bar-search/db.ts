@@ -1,4 +1,4 @@
-import type { SearchResults } from '@/plugins/fake-api/handlers/app-bar-search/types'
+import type { SearchResults } from '@db/app-bar-search/types'
 
 interface DB {
   searchItems: SearchResults[]
@@ -86,6 +86,11 @@ export const db: DB = {
           url: { name: 'apps-calendar' },
           icon: 'ri-calendar-line',
           title: 'Calendar',
+        },
+        {
+          title: 'Kanban',
+          icon: 'ri-drag-drop-line',
+          url: { name: 'apps-kanban' },
         },
         {
           url: { name: 'apps-ecommerce-product-list' },
@@ -248,7 +253,7 @@ export const db: DB = {
           title: 'Page Not Found - 404',
         },
         {
-          url: { name: 'pages-misc-not-authorized' },
+          url: { path: '/pages/misc/not-authorized' },
           icon: 'ri-group-line',
           title: 'Not Authorized - 401',
         },

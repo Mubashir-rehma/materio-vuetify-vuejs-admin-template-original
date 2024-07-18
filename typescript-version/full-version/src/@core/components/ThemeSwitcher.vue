@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useConfigStore } from '@core/stores/config'
-import type { ThemeSwitcherTheme } from '@layouts/types'
+import { useConfigStore } from '@core/stores/config';
+import type { ThemeSwitcherTheme } from '@layouts/types';
 
 const props = defineProps<{
   themes: ThemeSwitcherTheme[]
@@ -47,9 +47,12 @@ watch(
           :prepend-icon="icon"
           color="primary"
           class="text-capitalize"
+
           @click="() => { configStore.theme = name }"
         >
-          {{ name }}
+          <VListItemTitle>
+            {{ name }}
+          </VListItemTitle>
         </VListItem>
       </VList>
     </VMenu>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CustomInputContent } from '@core/types'
+import type { CustomInputContent } from '@core/types';
 
 const radioContent: CustomInputContent[] = [
   {
@@ -218,7 +218,7 @@ const formData = ref({
               </VCol>
             </VRow>
 
-            <VDivider class="my-4" />
+            <VDivider class="my-6" />
 
             <h2 class="text-lg font-weight-medium mb-6">
               2. Delivery Type
@@ -230,7 +230,7 @@ const formData = ref({
               :grid-column="{ sm: '4', cols: '12' }"
             />
 
-            <VDivider class="my-4" />
+            <VDivider class="my-6" />
 
             <h2 class="text-lg font-weight-medium mb-6">
               3. Apply Promo code
@@ -270,7 +270,7 @@ const formData = ref({
               </VListItem>
             </VList>
 
-            <VDivider class="my-4" />
+            <VDivider class="my-6" />
 
             <h2 class="text-lg font-weight-medium mb-6">
               4. Payment Method
@@ -349,22 +349,22 @@ const formData = ref({
   transition: all 0.3s ease-in-out;
 }
 
-.layout-nav-type-vertical{
+.layout-nav-type-vertical {
   &.layout-navbar-sticky {
     .sticky-header {
       inset-block: 4rem 0;
     }
   }
 
-  &.layout-navbar-static{
+  &.layout-navbar-static {
     .sticky-header {
       inset-block: 0 0;
     }
   }
 }
 
-.layout-nav-type-horizontal{
-  &.horizontal-nav-static {
+.layout-nav-type-horizontal {
+  &.layout-navbar-static {
     .sticky-header {
       inset-block: 0 0;
     }

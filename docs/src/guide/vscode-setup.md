@@ -8,16 +8,7 @@ Open extensions and search for `@recommended`
 
 Install and enable all the recommended extensions. Read more about workspace recommended extensions in VS Code official [docs](https://code.visualstudio.com/docs/editor/extension-marketplace#_workspace-recommended-extensions).
 
-## Enable Volar Take Over Mode
-
-1. Disable built-in TypeScript extension:
-   1. Search `@builtin typescript and` in extensions panel
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload VSCode
-
-![vscode-volar-take-over-mode](/images/guide/vscode-volar-take-over-mode.png)
-
-Check full [discussion](https://github.com/johnsoncodehk/volar/discussions/471) on Volar repo.
+[Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (Previously Volar) is the official VSCode extension that provides TypeScript support inside Vue SFCs, along with many other great features.
 
 ## Comment Anchors Extension
 

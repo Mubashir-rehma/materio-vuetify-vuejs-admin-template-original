@@ -67,6 +67,8 @@ const isNotificationEnabled = ref(false)
       </p>
     </div>
 
+    <VDivider />
+
     <!-- User Data -->
     <PerfectScrollbar
       class="ps-chat-user-profile-sidebar-content pb-5 px-5"

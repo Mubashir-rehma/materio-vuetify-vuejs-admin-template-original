@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { Invoice } from '@db/apps/invoice/types'
+import type { Invoice } from '@db/apps/invoice/types';
 
 type invoiceStatus = 'Downloaded' | 'Draft' | 'Paid' | 'Sent' | 'Partial Payment' | 'Past Due' | null
 
 const searchQuery = ref('')
 const selectedStatus = ref<invoiceStatus>(null)
-const selectedRows = ref<string[]>([])
+const selectedRows = ref([])
 
 // Data table options
 const itemsPerPage = ref(10)
@@ -15,7 +15,6 @@ const orderBy = ref()
 
 // Update data table options
 const updateOptions = (options: any) => {
-  page.value = options.page
   sortBy.value = options.sortBy[0]?.key
   orderBy.value = options.sortBy[0]?.order
 }
@@ -99,6 +98,12 @@ const computedMoreList = computed(() => {
 const deleteInvoice = async (id: number) => {
   await $api(`/apps/invoice/${id}`, { method: 'DELETE' })
 
+  // Delete from selectedRows
+  const index = selectedRows.value.findIndex(row => row === id)
+  if (index !== -1)
+    selectedRows.value.splice(index, 1)
+
+  // Refetch Invoices
   fetchInvoices()
 }
 </script>
@@ -120,8 +125,15 @@ const deleteInvoice = async (id: number) => {
               class="px-6"
               :class="id !== widgetData.length - 1 && $vuetify.display.width <= 600 ? 'border-b' : ''"
             >
-              <div class="d-flex justify-space-between">
-                <div class="d-flex flex-column">
+              <div
+                class="d-flex justify-space-between"
+                :class="$vuetify.display.xs
+                  ? id !== widgetData.length - 1 ? 'border-b pb-4' : ''
+                  : $vuetify.display.sm
+                    ? id < (widgetData.length / 2) ? 'border-b pb-4' : ''
+                    : ''"
+              >
+              <div class="d-flex flex-column">
                   <h4 class="text-h4">
                     {{ data.value }}
                   </h4>
@@ -147,6 +159,7 @@ const deleteInvoice = async (id: number) => {
                   : false"
               vertical
               inset
+              length="70"
             />
           </template>
         </VRow>
@@ -190,7 +203,7 @@ const deleteInvoice = async (id: number) => {
 
       <!-- SECTION Datatable -->
       <VDataTableServer
-        v-model="selectedRows"
+        v-model:model-value="selectedRows"
         v-model:items-per-page="itemsPerPage"
         v-model:page="page"
         show-select

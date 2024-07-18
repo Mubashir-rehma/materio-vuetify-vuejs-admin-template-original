@@ -1,6 +1,6 @@
 <script setup lang="ts" generic="T extends unknown">
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { VList, VListItem } from 'vuetify/components/VList'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
+import { VList, VListItem } from 'vuetify/components/VList';
 
 interface Emit {
   (e: 'update:isDialogVisible', value: boolean): void
@@ -102,7 +102,7 @@ watch(
               <VIcon
                 size="24"
                 icon="ri-search-line"
-                style=" margin-block-start:1px; opacity: 1;"
+                style=" margin-block-start: 1px; opacity: 1;"
               />
             </div>
           </template>
@@ -205,8 +205,8 @@ watch(
 }
 
 .app-bar-search-dialog {
-  .app-bar-search-input{
-    .v-field__input{
+  .app-bar-search-input {
+    .v-field__input {
       padding-block-start: 0.2rem;
     }
   }
@@ -250,7 +250,7 @@ watch(
   }
 }
 
-@supports selector(:focus-visible){
+@supports selector(:focus-visible) {
   .app-bar-search-dialog {
     .v-list-item:focus-visible::after {
       content: none;

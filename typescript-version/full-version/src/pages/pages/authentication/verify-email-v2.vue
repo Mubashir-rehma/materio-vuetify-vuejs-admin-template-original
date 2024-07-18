@@ -22,6 +22,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 definePage({
   meta: {
     layout: 'blank',
+    public: true,
   },
 })
 </script>

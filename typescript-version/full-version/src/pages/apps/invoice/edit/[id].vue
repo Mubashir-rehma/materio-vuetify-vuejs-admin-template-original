@@ -13,28 +13,30 @@ const route = useRoute('apps-invoice-edit-id')
 
 const { data: invoiceDetails } = await useApi<any>(`/apps/invoice/${route.params.id}`)
 
-invoiceData.value = {
-  invoice: invoiceDetails.value.invoice,
-  paymentDetails: invoiceDetails.value.paymentDetails,
+if (invoiceDetails.value) {
+  invoiceData.value = {
+    invoice: invoiceDetails.value.invoice,
+    paymentDetails: invoiceDetails.value.paymentDetails,
 
-  /*
+    /*
       We are adding some extra data in response for data purpose
       Your response will contain this extra data
       Purpose is to make it more API friendly and less static as possible
     */
 
-  purchasedProducts: [
-    {
-      title: 'App Design',
-      cost: 24,
-      hours: 2,
-      description: 'Designed UI kit & app pages.',
-    },
-  ],
-  note: 'It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!',
-  paymentMethod: 'Bank Account',
-  salesperson: 'Tom Cook',
-  thanksNote: 'Thanks for your business',
+    purchasedProducts: [
+      {
+        title: 'App Design',
+        cost: 24,
+        hours: 2,
+        description: 'Designed UI kit & app pages.',
+      },
+    ],
+    note: 'It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!',
+    paymentMethod: 'Bank Account',
+    salesperson: 'Tom Cook',
+    thanksNote: 'Thanks for your business',
+  }
 }
 
 const addProduct = (value: PurchasedProduct) => {
@@ -55,7 +57,7 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
 </script>
 
 <template>
-  <VRow>
+  <VRow v-if="invoiceData && invoiceData?.invoice">
     <!-- 👉 InvoiceEditable -->
     <VCol
       cols="12"
@@ -173,4 +175,13 @@ const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
     <!-- 👉 Invoice add payment drawer -->
     <InvoiceAddPaymentDrawer v-model:isDrawerOpen="isAddPaymentSidebarActive" />
   </VRow>
+
+  <section v-else>
+    <VAlert
+      type="error"
+      variant="tonal"
+    >
+      Invoice with ID  {{ route.params.id }} not found!
+    </VAlert>
+  </section>
 </template>

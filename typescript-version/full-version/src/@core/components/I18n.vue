@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { I18nLanguage } from '@layouts/types'
+import type { I18nLanguage } from '@layouts/types';
 
 interface Props {
   languages: I18nLanguage[]
@@ -38,7 +38,9 @@ const { locale } = useI18n({ useScope: 'global' })
           @click="locale = lang.i18nLang"
         >
           <!-- Language label -->
-          <VListItemTitle>{{ lang.label }}</VListItemTitle>
+          <VListItemTitle>
+            {{ lang.label }}
+          </VListItemTitle>
         </VListItem>
       </VList>
     </VMenu>

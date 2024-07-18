@@ -33,6 +33,16 @@ const resetForm = () => {
   refVForm.value?.reset()
   emit('update:isDrawerOpen', false)
 }
+
+// 👉 drawer close
+const closeNavigationDrawer = () => {
+  emit('update:isDrawerOpen', false)
+
+  nextTick(() => {
+    refVForm.value?.reset()
+    refVForm.value?.resetValidation()
+  })
+}
 </script>
 
 <template>
@@ -46,7 +56,7 @@ const resetForm = () => {
     <!-- 👉 Header -->
     <AppDrawerHeaderSection
       title="Add a Customer"
-      @cancel="$emit('update:isDrawerOpen', false)"
+      @cancel="closeNavigationDrawer"
     />
     <VDivider />
 

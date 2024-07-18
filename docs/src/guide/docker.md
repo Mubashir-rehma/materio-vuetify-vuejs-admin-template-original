@@ -1,4 +1,11 @@
-# Docker
+
+# Docker   <Badge text='Vue Only' style="vertical-align: middle" />
+
+:::warning
+
+Please note that we do not provide Docker support for the Windows operating system.
+
+:::
 
 ## Overview
 

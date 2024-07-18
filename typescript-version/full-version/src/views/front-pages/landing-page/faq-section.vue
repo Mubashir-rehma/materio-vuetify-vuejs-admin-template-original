@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import sittingGirlWithLaptop from '@images/front-pages/landing-page/sitting-girl-with-laptop.png'
-import sectionTitleIcon from '@images/pages/section-title-icon.png'
+import sittingGirlWithLaptop from '@images/front-pages/landing-page/sitting-girl-with-laptop.png';
+import sectionTitleIcon from '@images/pages/section-title-icon.png';
 
 const faqData = [
   {

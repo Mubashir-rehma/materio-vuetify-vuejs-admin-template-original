@@ -25,12 +25,13 @@ const removeItem = (item: CartItem) => {
 
 //  cart total
 const totalCost = computed(() => {
-  return checkoutCartDataLocal.value.orderAmount = checkoutCartDataLocal.value.cartItems.reduce((acc, item) => {
+  return checkoutCartDataLocal.value.cartItems.reduce((acc, item) => {
     return acc + item.price * item.quantity
   }, 0)
 })
 
 const updateCartData = () => {
+  checkoutCartDataLocal.value.orderAmount = totalCost.value
   emit('update:checkout-data', checkoutCartDataLocal.value)
 }
 

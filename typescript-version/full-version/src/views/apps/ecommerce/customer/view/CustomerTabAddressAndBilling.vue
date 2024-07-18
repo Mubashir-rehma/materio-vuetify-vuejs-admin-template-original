@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import usFlag from '@images/icons/countries/us.png'
-import americanExpress from '@images/icons/payments/img/american-express.png'
-import mastercard from '@images/icons/payments/img/mastercard.png'
-import visa from '@images/icons/payments/img/visa-light.png'
+import usFlag from '@images/icons/countries/us.png';
+import americanExpress from '@images/icons/payments/img/american-express.png';
+import mastercard from '@images/icons/payments/img/mastercard.png';
+import visa from '@images/icons/payments/img/visa-light.png';
 
 interface CardDetails {
   number: string
@@ -419,13 +419,20 @@ const paymentData = [
             </VRow>
           </div>
         </VExpandTransition>
-        <VDivider
-          v-if="index !== paymentData.length - 1"
-          class="my-4"
-        />
+        <VDivider v-if="index !== paymentData.length - 1" />
       </template>
     </VCardText>
   </VCard>
+  <AddEditAddressDialog
+    v-model:isDialogVisible="isEditAddressDialogVisible"
+    :billing-address="editBillingData"
+  />
+  <AddEditAddressDialog v-model:isDialogVisible="isNewEditAddressDialogVisible" />
+  <CardAddEditDialog
+    v-model:isDialogVisible="isCardAddDialogVisible"
+    :card-details="currentCardDetails"
+  />
+  <CardAddEditDialog v-model:isDialogVisible="isNewCardAddDialogVisible" />
   <AddEditAddressDialog
     v-model:isDialogVisible="isEditAddressDialogVisible"
     :billing-address="editBillingData"

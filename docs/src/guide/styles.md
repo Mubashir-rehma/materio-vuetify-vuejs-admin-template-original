@@ -149,6 +149,9 @@ We have defined various custom classes in our template which makes development f
 - **clamp-text**: The `clamp-text` class is for truncating or applying ellipsis to text content after only two lines, providing a concise and visually pleasing presentation.
 - **carousel-delimiter-top-end**: The `carousel-delimiter-top-end` class moves carousel-delimiter on the top end as shown in the dashboard example.
 - **disable-tab-transition**: The `disable-tab-transition` class eliminates the transition effect on `v-window-item` components, resulting in a smooth user experience without any visual animations.
+- **leading-normal**:The `leading-normal` class applies `line-height: normal` style to the element.
+
+You can refer to `src/@core/scss/base/_utilities.scss` for more such utility classes.
 
 ## How to override styles using placeholders <Badge text="Contributors"/>
 

@@ -1,30 +1,22 @@
 <script setup lang="tsx">
-import { useStorage } from '@vueuse/core'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { useTheme } from 'vuetify'
 import { staticPrimaryColor, staticPrimaryDarkenColor } from '@/plugins/vuetify/theme'
 import { Direction, Layout, Skins, Theme } from '@core/enums'
 import { useConfigStore } from '@core/stores/config'
+import horizontalLight from '@images/customizer-icons/horizontal-light.svg'
 import { AppContentLayoutNav, ContentWidth } from '@layouts/enums'
 import { cookieRef, namespaceConfig } from '@layouts/stores/config'
 import { themeConfig } from '@themeConfig'
+import { useStorage } from '@vueuse/core'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { useTheme } from 'vuetify'
 
-import borderSkinDark from '@images/customizer-icons/border-dark.svg'
-import borderSkinLight from '@images/customizer-icons/border-light.svg'
-import collapsedDark from '@images/customizer-icons/collapsed-dark.svg'
-import collapsedLight from '@images/customizer-icons/collapsed-light.svg'
-import compactDark from '@images/customizer-icons/compact-dark.svg'
-import compactLight from '@images/customizer-icons/compact-light.svg'
-import defaultSkinDark from '@images/customizer-icons/default-dark.svg'
-import defaultSkinLight from '@images/customizer-icons/default-light.svg'
-import horizontalDark from '@images/customizer-icons/horizontal-dark.svg'
-import horizontalLight from '@images/customizer-icons/horizontal-light.svg'
-import ltrDark from '@images/customizer-icons/ltr-dark.svg'
-import ltrLight from '@images/customizer-icons/ltr-light.svg'
-import rtlDark from '@images/customizer-icons/rtl-dark.svg'
-import rtlLight from '@images/customizer-icons/rtl-light.svg'
-import wideDark from '@images/customizer-icons/wide-dark.svg'
-import wideLight from '@images/customizer-icons/wide-light.svg'
+import borderSkin from '@images/customizer-icons/border-light.svg'
+import collapsed from '@images/customizer-icons/collapsed-light.svg'
+import compact from '@images/customizer-icons/compact-light.svg'
+import defaultSkin from '@images/customizer-icons/default-light.svg'
+import ltrSvg from '@images/customizer-icons/ltr-light.svg'
+import rtlSvg from '@images/customizer-icons/rtl-light.svg'
+import wideSvg from '@images/customizer-icons/wide-light.svg'
 
 const isNavDrawerOpen = ref(false)
 
@@ -34,14 +26,14 @@ const configStore = useConfigStore()
 const vuetifyTheme = useTheme()
 
 const colors: { main: string; darken: string }[] = [
-  { main: staticPrimaryColor, darken: '#7E4EE6' },
+  { main: staticPrimaryColor, darken: staticPrimaryDarkenColor },
   { main: '#0D9394', darken: '#0C8485' },
   { main: '#FFB400', darken: '#E6A200' },
   { main: '#FF4C51', darken: '#E64449' },
   { main: '#16B1FF', darken: '#149FE6' },
 ]
 
-const customPrimaryColor = ref('#ffffff')
+const customPrimaryColor = ref('#663131')
 
 watch(
   () => configStore.theme,
@@ -66,15 +58,6 @@ const setPrimaryColor = useDebounceFn((color: { main: string; darken: string }) 
   // ℹ️ Update initial loader color
   useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = color.main
 }, 100)
-
-const defaultSkin = useGenerateImageVariant(defaultSkinLight, defaultSkinDark)
-const borderSkin = useGenerateImageVariant(borderSkinLight, borderSkinDark)
-const collapsed = useGenerateImageVariant(collapsedLight, collapsedDark)
-const compactContent = useGenerateImageVariant(compactLight, compactDark)
-const wideContent = useGenerateImageVariant(wideLight, wideDark)
-const ltrImg = useGenerateImageVariant(ltrLight, ltrDark)
-const rtlImg = useGenerateImageVariant(rtlLight, rtlDark)
-const horizontalImg = useGenerateImageVariant(horizontalLight, horizontalDark)
 
 // 👉 Mode
 const themeMode = computed(() => {
@@ -101,12 +84,12 @@ const themeMode = computed(() => {
 const themeSkin = computed(() => {
   return [
     {
-      bgImage: defaultSkin.value,
+      bgImage: defaultSkin,
       value: Skins.Default,
       label: 'Default',
     },
     {
-      bgImage: borderSkin.value,
+      bgImage: borderSkin,
       value: Skins.Bordered,
       label: 'Bordered',
     },
@@ -119,17 +102,17 @@ const currentLayout = ref<'vertical' | 'collapsed' | 'horizontal'>(configStore.i
 const layouts = computed(() => {
   return [
     {
-      bgImage: defaultSkin.value,
+      bgImage: defaultSkin,
       value: Layout.Vertical,
       label: 'Vertical',
     },
     {
-      bgImage: collapsed.value,
+      bgImage: collapsed,
       value: Layout.Collapsed,
       label: 'Collapsed',
     },
     {
-      bgImage: horizontalImg.value,
+      bgImage: horizontalLight,
       value: Layout.Horizontal,
       label: 'Horizontal',
     },
@@ -161,12 +144,12 @@ watch(
 const contentWidth = computed(() => {
   return [
     {
-      bgImage: compactContent.value,
+      bgImage: compact,
       value: ContentWidth.Boxed,
       label: 'Compact',
     },
     {
-      bgImage: wideContent.value,
+      bgImage: wideSvg,
       value: ContentWidth.Fluid,
       label: 'Wide',
     },
@@ -179,12 +162,12 @@ const currentDir = ref(configStore.isAppRTL ? 'rtl' : 'ltr')
 const direction = computed(() => {
   return [
     {
-      bgImage: ltrImg.value,
+      bgImage: ltrSvg,
       value: Direction.Ltr,
       label: 'Left to right',
     },
     {
-      bgImage: rtlImg.value,
+      bgImage: rtlSvg,
       value: Direction.Rtl,
       label: 'Right to left',
     },
@@ -262,15 +245,6 @@ const resetCustomizer = async () => {
     configStore.isVerticalNavCollapsed = themeConfig.verticalNav.isVerticalNavCollapsed
     useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = staticPrimaryColor
     currentLayout.value = themeConfig.app.contentLayoutNav
-    configStore.theme = themeConfig.app.theme
-    configStore.skin = themeConfig.app.skin
-    configStore.isVerticalNavSemiDark = themeConfig.verticalNav.isVerticalNavSemiDark
-    configStore.appContentLayoutNav = themeConfig.app.contentLayoutNav
-    configStore.appContentWidth = themeConfig.app.contentWidth
-    configStore.isAppRTL = isActiveLangRTL.value
-    configStore.isVerticalNavCollapsed = themeConfig.verticalNav.isVerticalNavCollapsed
-    useStorage<string | null>(namespaceConfig('initial-loader-color'), null).value = staticPrimaryColor
-    currentLayout.value = themeConfig.app.contentLayoutNav
 
     cookieRef('lightThemePrimaryColor', null).value = null
     cookieRef('darkThemePrimaryColor', null).value = null
@@ -285,6 +259,7 @@ const resetCustomizer = async () => {
   }
 }
 </script>
+
 
 <template>
   <div class="d-lg-block d-none">
@@ -407,7 +382,7 @@ const resetCustomizer = async () => {
               >
                 <VBtn
                   icon
-                  size="small"
+                  size="34"
                   :color="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? customPrimaryColor : $vuetify.theme.current.dark ? '#8692d029' : '#4b465c29'"
                   variant="flat"
                   style="border-radius: 0.375rem;"
@@ -415,6 +390,7 @@ const resetCustomizer = async () => {
                   <VIcon
                     size="20"
                     icon="ri-palette-line"
+                    :color="vuetifyTheme.current.value.colors.primary === customPrimaryColor ? 'rgb(var(--v-theme-on-primary))' : ''"
                   />
                 </VBtn>
 
@@ -596,12 +572,12 @@ const resetCustomizer = async () => {
     outline: 2px solid rgb(var(--v-theme-primary));
   }
 
-  .v-label.custom-input:not(.active):hover{
+  .v-label.custom-input:not(.active):hover {
     border-color: rgba(var(--v-border-color), 0.22);
   }
 
-  .customizer-skins{
-    .custom-input.active{
+  .customizer-skins {
+    .custom-input.active {
       .customizer-skins-icon-wrapper {
         background-color: rgba(var(--v-global-theme-primary), var(--v-selected-opacity));
       }
@@ -610,7 +586,7 @@ const resetCustomizer = async () => {
 
   .app-customizer-primary-colors {
     .primary-color-wrapper:not(.active) {
-      &:hover{
+      &:hover {
         outline-color: rgba(var(--v-border-color), 0.22) !important;
       }
     }

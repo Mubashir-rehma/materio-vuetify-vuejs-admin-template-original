@@ -88,7 +88,7 @@ const shipmentConfig = {
     bar: {
       columnWidth: '30%',
       borderRadius: 4,
-      borderRadiusApplication: 'around',
+      borderRadiusApplication: 'end',
     },
   },
   dataLabels: {
@@ -115,7 +115,7 @@ const shipmentConfig = {
   },
   yaxis: {
     tickAmount: 4,
-    min: 10,
+    min: 0,
     max: 50,
     labels: {
       style: {
@@ -227,7 +227,7 @@ const shipmentConfig = {
 </template>
 
 <style lang="scss">
-@use "@core/scss/template/libs/apex-chart.scss";
+@use "@core/scss/template/libs/apex-chart";
 
 .v-btn-group--divided .v-btn:not(:last-child) {
   border-inline-end-color: rgba(var(--v-theme-primary), 0.5);
@@ -239,7 +239,7 @@ const shipmentConfig = {
     line-height: 22px;
   }
 
-  .apexcharts-legend{
+  .apexcharts-legend {
     .apexcharts-legend-series {
       border: 1px solid rgba(var(--v-theme-on-surface), 0.12);
       border-radius: 0.375rem;

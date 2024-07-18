@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
 
 interface Shortcut {
   icon: string
@@ -28,6 +28,7 @@ const router = useRouter()
       activator="parent"
       offset="15px"
       location="bottom end"
+      width="340"
     >
       <VCard
         max-width="380"

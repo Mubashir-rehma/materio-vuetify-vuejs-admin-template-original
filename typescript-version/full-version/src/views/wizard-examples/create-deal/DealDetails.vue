@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { DealDetails } from './types'
+import type { DealDetails } from './types';
 
 const props = defineProps<{
   formData: DealDetails
@@ -12,6 +12,12 @@ const emit = defineEmits<{
 const formData = ref<DealDetails>(props.formData)
 
 const offeredItems = [
+  'iPhone 12 Pro Max',
+  'iPhone 12 Pro',
+  'iPhone 11 Pro Max',
+  'iPhone 11',
+  'iPhone 12 Mini',
+  'OnePlus Nord CE',
   'iPhone 12 Pro Max',
   'iPhone 12 Pro',
   'iPhone 11 Pro Max',

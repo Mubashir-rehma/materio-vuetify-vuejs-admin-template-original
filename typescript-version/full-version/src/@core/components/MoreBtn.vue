@@ -2,6 +2,7 @@
 interface Props {
   menuList?: unknown[]
   itemProps?: boolean
+  iconSize?: string
 }
 
 const props = defineProps<Props>()

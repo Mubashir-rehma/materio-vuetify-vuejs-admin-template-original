@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import Footer from '@/views/front-pages/front-page-footer.vue'
-import Navbar from '@/views/front-pages/front-page-navbar.vue'
-import type { HelpCenterArticle } from '@db/pages/help-center/types'
+import Footer from '@/views/front-pages/front-page-footer.vue';
+import Navbar from '@/views/front-pages/front-page-navbar.vue';
+import { useConfigStore } from '@core/stores/config';
+import type { HelpCenterArticle } from '@db/pages/help-center/types';
 
 const breadCrumbItems = [
   {
@@ -16,24 +17,32 @@ const breadCrumbItems = [
   },
 ]
 
+const store = useConfigStore()
+
+store.skin = 'default'
+
 definePage({
   meta: {
     layout: 'blank',
+    public: true,
   },
 })
 
 const articleData = ref<HelpCenterArticle>()
 
-const { data, error } = await useApi<any>('/pages/help-center/article')
+setTimeout(async () => {
+  const { data, error } = await useApi<any>('/pages/help-center/article')
 
-if (error.value)
-  console.log(error.value)
-else
-  articleData.value = data.value
+  if (error.value)
+    console.log(error.value)
+  else
+    articleData.value = data.value
+}, 1000)
 </script>
 
 <!-- eslint-disable vue/no-v-html -->
 <template>
+  <!-- eslint-disable vue/no-v-html -->
   <div class="bg-surface help-center-article">
     <!-- 👉 Navbar  -->
     <Navbar />
@@ -42,7 +51,7 @@ else
     <VContainer>
       <div
         class="d-flex gap-6 flex-lg-row flex-column"
-        style=" margin-block: 9.25rem 5.25rem"
+        style=" margin-block: 9.25rem 5.25rem;"
       >
         <div>
           <div>
@@ -102,7 +111,7 @@ else
             <!-- 👉 Article List  -->
             <h5
               class="text-h5 px-4 py-2 mb-4 rounded"
-              style="background: rgba(var(--v-theme-on-surface),var(--v-hover-opacity));"
+              style="background: rgba(var(--v-theme-on-surface), var(--v-hover-opacity));"
             >
               Articles in this section
             </h5>
@@ -141,7 +150,7 @@ else
   --v-card-list-gap: 1rem;
 }
 
-.help-center-article{
+.help-center-article {
   @media (min-width: 600px) and (max-width: 960px) {
     .v-container {
       padding-inline: 2rem !important;

@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { useWindowScroll } from '@vueuse/core'
-import type { RouteLocationRaw } from 'vue-router/auto'
-import { useDisplay } from 'vuetify'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
 import navImgDark from '@images/front-pages/misc/nav-img-dark.png'
 import navImgLight from '@images/front-pages/misc/nav-img-light.png'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
+import { useWindowScroll } from '@vueuse/core'
+import type { RouteLocationRaw } from 'vue-router/auto'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { useDisplay } from 'vuetify'
 
 const props = defineProps({
   activeId: String,
@@ -96,18 +97,22 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
     v-model="sidebar"
     disable-resize-watcher
   >
-    <!-- Nav items -->
-    <div>
-      <div class="d-flex flex-column gap-y-4 pa-4">
-        <RouterLink
-          v-for="(item, index) in ['Home', 'Features', 'Team', 'FAQ', 'Contact us']"
-          :key="index"
-          :to="{ name: 'front-pages-landing-page', hash: `#${item.toLowerCase().replace(' ', '-')}` }"
-          class="font-weight-medium"
-          :class="[props.activeId?.toLocaleLowerCase().replace('-', ' ') === item.toLocaleLowerCase() ? 'active-link' : 'text-high-emphasis']"
-        >
-          {{ item }}
-        </RouterLink>
+    <PerfectScrollbar
+      :options="{ wheelPropagation: false }"
+      class="h-100"
+    >
+      <!-- Nav items -->
+      <div>
+        <div class="d-flex flex-column gap-y-4 pa-4">
+          <RouterLink
+            v-for="(item, index) in ['Home', 'Features', 'Team', 'FAQ', 'Contact us']"
+            :key="index"
+            :to="{ name: 'front-pages-landing-page', hash: `#${item.toLowerCase().replace(' ', '-')}` }"
+            class="font-weight-medium"
+            :class="[props.activeId?.toLocaleLowerCase().replace('-', ' ') === item.toLocaleLowerCase() ? 'active-link' : 'text-high-emphasis']"
+          >
+            {{ item }}
+          </RouterLink>
 
         <div
           class="text-high-emphasis font-weight-medium cursor-pointer"
@@ -120,22 +125,22 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
             Pages <VIcon :icon="isMenuOpen ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'" />
           </div>
 
-          <div
-            v-for="(item, index) in menuItems"
-            :key="index"
-            :class="isMenuOpen ? 'd-block' : 'd-none'"
-          >
-            <div class="d-flex align-center gap-x-3 mb-4">
-              <VAvatar
-                variant="tonal"
-                color="primary"
-                rounded
-                :icon="item.listIcon"
-              />
-              <div class="text-body-1 text-high-emphasis font-weight-medium">
-                {{ item.listTitle }}
+            <div
+              v-for="(item, index) in menuItems"
+              :key="index"
+              :class="isMenuOpen ? 'd-block' : 'd-none'"
+            >
+              <div class="d-flex align-center gap-x-3 mb-4">
+                <VAvatar
+                  variant="tonal"
+                  color="primary"
+                  rounded
+                  :icon="item.listIcon"
+                />
+                <div class="text-body-1 text-high-emphasis font-weight-medium">
+                  {{ item.listTitle }}
+                </div>
               </div>
-            </div>
 
             <ul class="mb-6">
               <li
@@ -179,7 +184,8 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
       size="20"
       @click="sidebar = !sidebar"
     />
-  </VNavigationDrawer>
+  </PerfectScrollbar>
+</VNavigationDrawer>
 
   <!-- 👉 Navbar for desktop devices  -->
   <div class="front-page-navbar">
@@ -354,17 +360,17 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 </template>
 
 <style lang="scss" scoped>
-.front-page-navbar-box-shadow{
+.front-page-navbar-box-shadow {
   /* stylelint-disable-next-line max-line-length */
   box-shadow: 0 4px 8px -4px rgba(var(--v-shadow-key-umbra-color), 42%) !important;
 }
 
-.nav-menu{
+.nav-menu {
   display: flex;
   gap: 3rem;
 }
 
-.nav-title{
+.nav-title {
   color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
   font-size: 1.25rem;
   font-weight: 600;
@@ -372,11 +378,11 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
   line-height: 1.5rem;
 }
 
-.nav-link{
+.nav-link {
   padding-inline: 0.625rem;
 
-  &:not(:hover){
-    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity))
+  &:not(:hover) {
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
   }
 }
 
@@ -403,7 +409,7 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
     }
   }
 
-  .nav-menu{
+  .nav-menu {
     gap: 2rem;
   }
 }
@@ -434,8 +440,8 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 }
 
 .mega-menu-item {
-  &:not(:hover){
-    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity))
+  &:not(:hover) {
+    color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
   }
 }
 </style>
@@ -443,11 +449,15 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
 <style lang="scss">
 @use "@layouts/styles/mixins" as layoutMixins;
 
-.mega-menu{
+.mega-menu {
   position: fixed !important;
   inset-block-start: 4.1rem;
   inset-inline-start: 50%;
   transform: translateX(-50%);
+
+  @include layoutMixins.rtl {
+    transform: translateX(50%);
+  }
 }
 
 .front-page-navbar {

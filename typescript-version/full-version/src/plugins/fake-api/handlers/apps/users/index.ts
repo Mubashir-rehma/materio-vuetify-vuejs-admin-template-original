@@ -1,20 +1,23 @@
 import is from '@sindresorhus/is'
 import destr from 'destr'
-import { rest } from 'msw'
+import type { PathParams } from 'msw'
+import { HttpResponse, http } from 'msw'
 import { db } from '@db/apps/users/db'
 import { paginateArray } from '@api-utils/paginateArray'
 
 export const handlerAppsUsers = [
   // Get Users Details
-  rest.get(('/api/apps/users'), (req, res, ctx) => {
-    const q = req.url.searchParams.get('q')
-    const role = req.url.searchParams.get('role')
-    const plan = req.url.searchParams.get('plan')
-    const status = req.url.searchParams.get('status')
-    const sortBy = req.url.searchParams.get('sortBy')
-    const itemsPerPage = req.url.searchParams.get('itemsPerPage')
-    const page = req.url.searchParams.get('page')
-    const orderBy = req.url.searchParams.get('orderBy')
+  http.get(('/api/apps/users'), ({ request }) => {
+    const url = new URL(request.url)
+
+    const q = url.searchParams.get('q')
+    const role = url.searchParams.get('role')
+    const plan = url.searchParams.get('plan')
+    const status = url.searchParams.get('status')
+    const sortBy = url.searchParams.get('sortBy')
+    const itemsPerPage = url.searchParams.get('itemsPerPage')
+    const page = url.searchParams.get('page')
+    const orderBy = url.searchParams.get('orderBy')
 
     const searchQuery = is.string(q) ? q : undefined
     const queryLower = (searchQuery ?? '').toString().toLowerCase()
@@ -83,84 +86,72 @@ export const handlerAppsUsers = [
     // total pages
     const totalPages = Math.ceil(totalUsers / itemsPerPageLocal)
 
-    return res(
-      ctx.status(200),
-      ctx.json({
+    return HttpResponse.json(
+      {
         users: paginateArray(filteredUsers, itemsPerPageLocal, pageLocal),
         totalPages,
         totalUsers,
         page: pageLocal > Math.ceil(totalUsers / itemsPerPageLocal) ? 1 : page,
-      }),
+      },
+      { status: 200 },
     )
   }),
 
   // Get Single User Detail
-  rest.get(('/api/apps/users/:id'), (req, res, ctx) => {
-    const userId = Number(req.params.id)
+  http.get<PathParams>(('/api/apps/users/:id'), ({ params }) => {
+    const userId = Number(params.id)
 
     const user = db.users.find(e => e.id === userId)
 
     if (!user) {
-      return res(
-        ctx.status(404),
-        ctx.json({
-          message: 'User not found',
-        }),
-      )
+      return HttpResponse.json({ message: 'User not found' }, { status: 404 })
     }
     else {
-      return res(
-        ctx.status(200),
-        ctx.json(
-          {
-            ...user,
-            ...{
-              taskDone: 1230,
-              projectDone: 568,
-              taxId: 'Tax-8894',
-              language: 'English',
-            },
+      return HttpResponse.json(
+        {
+          ...user,
+          ...{
+            taskDone: 1230,
+            projectDone: 568,
+            taxId: 'Tax-8894',
+            language: 'English',
           },
-        ),
+        },
+        { status: 200 },
       )
     }
   }),
 
   // Delete User
-  rest.delete(('/api/apps/users/:id'), (req, res, ctx) => {
-    const userId = Number(req.params.id)
+  http.delete(('/api/apps/users/:id'), ({ params }) => {
+    const userId = Number(params.id)
 
     const userIndex = db.users.findIndex(e => e.id === userId)
 
     if (userIndex === -1) {
-      return res(
-        ctx.status(404),
-        ctx.json({
-          message: 'User not found',
-        }),
-      )
+      return HttpResponse.json('User not found', { status: 404 })
     }
     else {
       db.users.splice(userIndex, 1)
 
-      return res(
-        ctx.status(204),
-      )
+      return new HttpResponse(null, {
+        status: 204,
+      })
     }
   }),
 
   // 👉 Add user
-  rest.post(('/api/apps/users'), async (req, res, ctx) => {
-    const user = await req.json() as any
+  http.post(('/api/apps/users'), async ({ request }) => {
+    const user = await request.json() as any
 
     db.users.push({
       ...user,
       id: db.users.length + 1,
     })
 
-    return res(
-      ctx.status(201),
-      ctx.json({ body: user }),
+    return HttpResponse.json(
+      { body: user },
+      { status: 201 },
     )
   }),
 ]

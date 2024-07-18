@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { register } from 'swiper/element/bundle'
 import { useGenerateImageVariant } from '@/@core/composable/useGenerateImageVariant'
 import logo1dark from '@images/front-pages/branding/logo-1-dark.png'
 import logo1light from '@images/front-pages/branding/logo-1-light.png'
@@ -15,6 +14,7 @@ import logo4light from '@images/front-pages/branding/logo-4-light.png'
 import logo4 from '@images/front-pages/branding/logo-4.png'
 import logo5dark from '@images/front-pages/branding/logo-5-dark.png'
 import logo5light from '@images/front-pages/branding/logo-5-light.png'
+import { register } from 'swiper/element/bundle'
 
 import sectionTitleIcon from '@images/pages/section-title-icon.png'
 
@@ -234,7 +234,7 @@ const reviewData = [
         }"
       >
         <swiper-slide
-          v-for="(img, index) in [brandLogo1, brandLogo2, brandLogo3, brandLogo4, brandLogo5]"
+          v-for="(img, index) in [brandLogo1, brandLogo2, brandLogo3, brandLogo4, brandLogo5, brandLogo1, brandLogo2, brandLogo3, brandLogo4, brandLogo5]"
           :key="index"
         >
           <VImg

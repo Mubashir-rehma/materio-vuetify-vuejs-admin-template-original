@@ -21,15 +21,13 @@ This component uses `layouts` plugin's `VerticalNavLayout` component.
 `VerticalNavLayout` component provides four slots:
 
 1. `navbar` scoped slot
-2. `content-loading` slot
-3. `default` slot
-4. `footer` slot
+2. `default` slot
+3. `footer` slot
 
 **Related code examples:**
 
 - [Customize navbar](/code-examples/layout/customize-navbar.md)
 - [Customize footer](/code-examples/layout/customize-footer.md)
-- [Content-loading](/articles/how-to-use-content-loading-slot.md)
 
 ### 2. Horizontal nav layout
 
@@ -40,15 +38,13 @@ This component uses `layouts` plugin's `HorizontalNavLayout` component.
 `HorizontalNavLayout` component provides four slots:
 
 1. `navbar` slot
-2. `content-loading` slot
-3. `default` slot
-4. `footer` slot
+2. `default` slot
+3. `footer` slot
 
 **Related code examples:**
 
 - [Customize navbar](/code-examples/layout/customize-navbar.md)
 - [Customize footer](/code-examples/layout/customize-footer.md)
-- [Content-loading](/articles/how-to-use-content-loading-slot.md)
 
 ## 2. Blank layout
 

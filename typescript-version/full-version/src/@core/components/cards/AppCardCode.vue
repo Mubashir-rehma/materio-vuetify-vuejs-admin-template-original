@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import 'prismjs'
-import 'prismjs/themes/prism-tomorrow.css'
-import Prism from 'vue-prism-component'
+import { createHighlighter } from 'shiki';
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
 
 type CodeLanguages = 'ts' | 'js'
 
@@ -27,10 +26,20 @@ const preferredCodeLanguage = useCookie<CodeLanguages>('preferredCodeLanguage', 
 const isCodeShown = ref(false)
 
 const { copy, copied } = useClipboard({ source: computed(() => props.code[preferredCodeLanguage.value]) })
+
+const highlighter = await createHighlighter({
+  themes: ['dracula', 'dracula-soft'],
+  langs: ['vue'],
+})
+
+const codeSnippet = highlighter.codeToHtml(props.code[preferredCodeLanguage.value], {
+  lang: 'vue',
+  theme: 'dracula',
+})
 </script>
 
 <template>
-  <VCard>
+  <VCard class="app-card-code">
     <VCardItem>
       <VCardTitle>{{ props.title }}</VCardTitle>
       <template #append>
@@ -73,13 +82,13 @@ const { copy, copied } = useClipboard({ source: computed(() => props.code[prefer
           </div>
 
           <div class="position-relative">
-            <Prism
-              :key="props.code[preferredCodeLanguage]"
-              :language="props.codeLanguage"
-              :style="$vuetify.locale.isRtl ? 'text-align: right' : 'text-align: left'"
+            <PerfectScrollbar
+              style="border-radius: 6px;max-block-size: 500px;"
+              :options="{ wheelPropagation: false }"
             >
-              {{ props.code[preferredCodeLanguage] }}
-            </Prism>
+              <!-- eslint-disable-next-line vue/no-v-html -->
+              <div v-html="codeSnippet" />
+            </PerfectScrollbar>
             <IconBtn
               class="position-absolute app-card-code-copy-icon"
               color="white"
@@ -98,9 +107,10 @@ const { copy, copied } = useClipboard({ source: computed(() => props.code[prefer
 </template>
 
 <style lang="scss">
-@use "@styles/variables/vuetify.scss";
+@use "@styles/variables/vuetify";
 
-code[class*="language-"], pre[class*="language-"] {
+code[class*="language-"],
+pre[class*="language-"] {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 14px;
 }
@@ -114,5 +124,12 @@ pre[class*="language-"] {
 .app-card-code-copy-icon {
   inset-block-start: 1.2em;
   inset-inline-end: 0.8em;
+}
+
+.app-card-code {
+  .shiki {
+    padding: 0.75rem;
+    text-wrap: wrap;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import type { Notification } from '@layouts/types'
+import type { Notification } from '@layouts/types';
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
 
 interface Props {
   notifications: Notification[]
@@ -21,8 +21,9 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<Emit>()
 
-const isAllMarkRead = computed(() => props.notifications.some(item => item.isSeen === false),
-)
+const isAllMarkRead = computed(() => {
+  return props.notifications.some(item => item.isSeen === false)
+})
 
 const markAllReadOrUnread = () => {
   const allNotificationsIds = props.notifications.map(item => item.id)

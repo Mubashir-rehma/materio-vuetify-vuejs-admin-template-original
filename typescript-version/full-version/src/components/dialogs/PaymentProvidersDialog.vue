@@ -63,7 +63,6 @@ const paymentProvidersData = [
     title: 'Checkout.com',
     providers: [visa, masterCard],
   },
-
 ]
 </script>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Referrals } from '@db/apps/ecommerce/types'
-import paperImg from '@images/svg/paper.svg?raw'
+import paperImg from '@images/svg/paper-send.svg?raw'
 import rocketImg from '@images/svg/rocket.svg?raw'
 import userInfoImg from '@images/svg/user-info.svg?raw'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
@@ -39,7 +39,6 @@ const headers = [
 
 // Update data table options
 const updateOptions = (options: any) => {
-  page.value = options.page
   sortBy.value = options.sortBy[0]?.key
   orderBy.value = options.sortBy[0]?.order
 }

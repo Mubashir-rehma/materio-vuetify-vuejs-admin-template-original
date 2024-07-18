@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useTheme } from 'vuetify'
-import { hexToRgb } from '@layouts/utils'
+import { hexToRgb } from '@core/utils/colorConverter';
+import { useTheme } from 'vuetify';
 
 const vuetifyTheme = useTheme()
 
@@ -143,7 +143,7 @@ const series = [
 </template>
 
 <style lang="scss">
-.apexcharts-legend-marker{
+.apexcharts-legend-marker {
   margin-inline-end: 0.5rem !important;
 }
 </style>

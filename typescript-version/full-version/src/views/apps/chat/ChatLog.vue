@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useChatStore } from '@/views/apps/chat/useChatStore'
-import type { ChatOut } from '@db/apps/chat/types'
+import { useChatStore } from '@/views/apps/chat/useChatStore';
+import type { ChatOut } from '@db/apps/chat/types';
 
 const store = useChatStore()
 
@@ -144,12 +144,13 @@ const msgGroups = computed(() => {
       color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)) !important;
     }
 
-    &.chat-left {
-      border-start-end-radius: 6px;
-    }
+      &.chat-left {
+        border-start-end-radius: 6px;
+      }
 
-    &.chat-right {
-      border-start-start-radius: 6px;
+      &.chat-right {
+        border-start-start-radius: 6px;
+      }
     }
   }
 }

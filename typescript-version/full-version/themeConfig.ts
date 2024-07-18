@@ -1,7 +1,7 @@
-import { breakpointsVuetify } from '@vueuse/core'
-import { VIcon } from 'vuetify/components/VIcon'
 import { defineThemeConfig } from '@core'
 import { Skins } from '@core/enums'
+import { breakpointsVuetify } from '@vueuse/core'
+import { VIcon } from 'vuetify/components/VIcon'
 
 // ❗ Logo SVG must be imported with ?raw suffix
 import logo from '@images/logo.svg?raw'
@@ -66,8 +66,8 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     chevronDown: { icon: 'ri-arrow-down-s-line' },
     chevronRight: { icon: 'ri-arrow-right-s-line' },
     close: { icon: 'ri-close-line' },
-    verticalNavPinned: { icon: 'ri-radio-button-line' },
-    verticalNavUnPinned: { icon: 'ri-circle-line' },
+    verticalNavPinned: { icon: 'ri-radio-button-line', size: '20' },
+    verticalNavUnPinned: { icon: 'ri-circle-line', size: '20' },
     sectionTitlePlaceholder: { icon: 'ri-subtract-line' },
   },
 })

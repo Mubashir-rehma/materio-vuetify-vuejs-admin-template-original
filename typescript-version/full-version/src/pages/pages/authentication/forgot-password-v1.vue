@@ -11,6 +11,7 @@ const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 definePage({
   meta: {
     layout: 'blank',
+    public: true,
   },
 })
 
@@ -117,5 +118,5 @@ const form = ref({
 </template>
 
 <style lang="scss">
-@use "@core/scss/template/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth";
 </style>

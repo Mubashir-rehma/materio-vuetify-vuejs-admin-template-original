@@ -2,8 +2,7 @@
 
 Understand folder structure of template and what everything contains
 
-To gain a comprehensive visual understanding of the **Vuejs Laravel folder structure**, please check out this YouTube video.
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/B_TTEBkA73Q?si=1oCqyigdbCmkIS78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen ></iframe>
+To gain a comprehensive visual understanding of the **Vuejs Laravel folder structure**, please check out this [YouTube video](/guide/video-tutorials.html#vuejs-laravel-folder-structure).
 
 ## Overview
 

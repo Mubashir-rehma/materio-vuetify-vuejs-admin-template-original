@@ -14,11 +14,11 @@ hero:
       text: Get Started
       link: /guide/
     - theme: alt
-      text: View Demo
-      link: https://themeselection.com/demo/materio-vuetify-vuejs-admin-template/demo-1
-    - theme: alt
       text: Buy Now
       link: https://themeselection.com/item/materio-vuetify-vuejs-admin-template/
+    - theme: alt
+      text: Video Tutorial
+      link: /guide/video-tutorials.html
 
 features:
   - title: Based on Vuetify
@@ -30,11 +30,27 @@ features:
     icon:
       src: https://api.iconify.design/logos:vue.svg
     link: https://vuejs.org/api/composition-api-setup.html
-    details: Composition API is a set of additive, function-based APIs that allow flexible composition of component logic.
+    details: Composition API is a set of function-based APIs for flexible component logic.
   - title: JWT Auth, ACL, etc.
     icon:
       src: https://api.iconify.design/logos:jwt-icon.svg
     link: https://jwt.io/
-    details: Materio provides extendable JWT auth which can be configured easily and provides ready to use ACL
+    details: Materio provides extendable JWT auth with ready to use ACL.
+
+  - title: Laravel
+    icon: 
+      src: https://api.iconify.design/logos:laravel.svg
+    link: https://laravel.com/
+    details: A powerful PHP framework for web Artisans with extensive features.
+  - title: Nuxt
+    icon: 
+      src: https://api.iconify.design/logos:nuxt-icon.svg
+    link: https://nuxt.com/
+    details: Nuxt is an open source framework that makes web development intuitive and powerful.
+  - title: Typescript & JavaScript
+    icon: 
+      src: https://api.iconify.design/skill-icons:typescript.svg
+    link: https://typescriptlang.org/
+    details: Get access to both TypeScript & JavaScript Versions.
 ---
 

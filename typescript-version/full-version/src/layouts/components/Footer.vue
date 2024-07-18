@@ -32,6 +32,10 @@
         href="https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/documentation/"
         target="noopener noreferrer"
       >Documentation</a>
+      <a
+        href="https://themeselection.com/support/"
+        target="noopener noreferrer"
+      >Support</a>
     </span>
   </div>
 </template>

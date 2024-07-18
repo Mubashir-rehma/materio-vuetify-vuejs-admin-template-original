@@ -102,6 +102,8 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
 
   // 👉 Update event in calendar [UI]
   const updateEventInCalendar = (updatedEventData: Event, propsToUpdate: (keyof Event)[], extendedPropsToUpdate: (keyof Event['extendedProps'])[]) => {
+    calendarApi.value = refCalendar.value.getApi()
+
     const existingEvent = calendarApi.value?.getEventById(String(updatedEventData.id))
 
     if (!existingEvent) {
@@ -157,6 +159,7 @@ export const useCalendar = (event: Ref<Event | NewEvent>, isEventHandlerSidebarA
 
   // 👉 Update event
   const updateEvent = (_event: Event) => {
+    // ℹ️ Making API call using $api('', { method: ... })
     store.updateEvent(_event)
       .then(r => {
         const propsToUpdate = ['id', 'title', 'url'] as (keyof Event)[]

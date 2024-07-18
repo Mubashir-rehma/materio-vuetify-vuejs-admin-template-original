@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import { VideoPlayer } from '@videojs-player/vue'
 import AcademyMyCourses from '@/views/apps/academy/AcademyMyCourses.vue'
 import academyCourseIllustration1 from '@images/pages/academy-course-illustration1.png'
-import academyCourseIllustration2 from '@images/pages/academy-course-illustration2.png'
+import academyCourseIllustration2Dark from '@images/pages/academy-course-illustration2-dark.png'
+import academyCourseIllustration2Light from '@images/pages/academy-course-illustration2-light.png'
 import boyAcademyIllustration from '@images/pages/boy-academy-illustration.png'
 import girlAcademyIllustration from '@images/pages/girl-academy-illustration.png'
 import guitarCoursePoster from '@images/pages/guitar-course.png'
 import singingCoursePoster from '@images/pages/singing-course.png'
+import { VideoPlayer } from '@videojs-player/vue'
+
+const academyCourseIllustration2 = useGenerateImageVariant(academyCourseIllustration2Light, academyCourseIllustration2Dark)
 
 const searchQuery = ref('')
 </script>
@@ -45,7 +48,7 @@ const searchQuery = ref('')
         </div>
         <img
           :src="academyCourseIllustration1"
-          class="illustration1 d-none d-md-block"
+          class="illustration1 d-none d-md-block flip-in-rtl"
           height="180"
         >
         <img
@@ -213,7 +216,7 @@ const searchQuery = ref('')
 </template>
 
 <style lang="scss">
-@import 'video.js/dist/video-js.css';
+@import "video.js/dist/video-js.css";
 
 .illustration1 {
   position: absolute;

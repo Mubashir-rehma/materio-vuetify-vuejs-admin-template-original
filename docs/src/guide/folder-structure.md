@@ -2,11 +2,55 @@
 
 In addition, to below explanation if you are using nuxt, you can follow their official documentation [here](https://nuxt.com/docs/guide/directory-structure/nuxt).
 
-To gain a comprehensive visual understanding of the **Vuejs folder structure**, please check out this YouTube video.
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/_mODYgaUFeo?si=v2sfbyRHewa3lKkA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+To gain a comprehensive visual understanding of the **Vuejs folder structure**, please check out this [YouTube video](/guide/video-tutorials.html#vuejs-folder-structure).
 
-If you're using **Nuxtjs**, feel free to check out this detailed video on **Nuxtjs folder structure**.
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/YLQjRudDNic?si=14fwLZgGS2ZBHt4R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+If you're using **Nuxtjs**, feel free to check out this detailed video on **Nuxtjs folder structure** [here](/guide/video-tutorials.html#nuxtjs-folder-structure).
+
+```bash
+materialize-vuejs-template/
+├── public                   # Folder for public files
+│   ├── images/                # Public images
+│   ├── favicon.ico            # Favicon
+│   └── loader.css             # Logo while loading at initial
+│   └── mockServiceWorker.js   # Mock service provider worker
+├── src                      # Views, Layouts, plugins and vue.js components
+│   ├── @core/                 # Contains core files
+│   ├── @layouts/              # Standalone layout package
+│   ├── assets/                # Contain logos and other static assets
+│   └── components/            # Contain components
+│   └── composables/           # Contain composables
+│   └── layouts/               # Contain app's layout
+│   └── navigation/            # Contain vertical & horizontal nav items
+│   └── pages/                 # Contain app pages
+│   └── plugins/               # Contain plugins
+│   └── utils/                 # Contain utility functions
+│   └── views/                 # Separate large page in smaller chunk
+│   └── App.vue                # Main App.vue file
+│   └── main.ts                # Main typescript file
+├── .dockerignore            # Files and Directories to ignore for docker (only Vue)
+├── .editorconfig            # Config for editor
+├── .env.example             # Include Database credentials and other environment variables
+├── .eslintrc.cjs            # ESLint Configuration
+├── .gitignore               # Files and Directories to ignore
+├── .npmrc                   # npm config files
+├── .nvmrc                   # nvm config files
+├── .stylelintrc.json        # Style related file
+├── auto-imports.d.ts        # Unplugin auto import file
+├── components.d.ts          # Unplugin vue components
+├── dev.Dockerfile           # Development docker files (only Vue)
+├── docker-compose.dev.yml   # Development docker compose files (only Vue)
+├── docker-compose.prod.yml  # Production docker compose files (only Vue)
+├── env.d.ts                 # Typescript only
+├── index.html               # Main index file
+├── nginx.conf               # nginx config files (only Vue)
+├── package.json             # Dependencies used by node
+├── prod.Dockerfile          # Production docker files (only Vue)
+├── shims.d.ts               # Typescript only
+├── themeConfig.ts           # Theme Customizer
+├── tsconfig.json            # Typescript only file
+├── typed-router.d.ts        # Router typed file
+└── vite.config.ts           # 1Vite config
+```
 
 ## `@core`
 

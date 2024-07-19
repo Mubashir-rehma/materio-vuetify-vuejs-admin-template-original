@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useDropZone, useFileDialog, useObjectUrl } from '@vueuse/core'
+import { useDropZone, useFileDialog, useObjectUrl } from '@vueuse/core';
 
 const dropZoneRef = ref<HTMLDivElement>()
 interface FileData {
@@ -52,27 +52,35 @@ useDropZone(dropZoneRef, onDrop)
       >
         <div
           v-if="fileData.length === 0"
-          class="d-flex flex-column justify-center align-center gap-y-3 pa-5 border-dashed drop-zone"
+          class="d-flex flex-column justify-center align-center gap-y-2 pa-12 drop-zone rounded"
         >
           <IconBtn
             variant="tonal"
-            class="rounded-sm"
+            color="secondary"
+            class="rounded"
+            size="40"
           >
-            <VIcon icon="mdi-upload" />
+            <VIcon
+              size="24"
+              icon="ri-upload-2-line"
+            />
           </IconBtn>
-          <div class="text-base text-high-emphasis font-weight-medium">
-            Drag and Drop Your Image Here.
-          </div>
+          <h4 class="text-h4">
+            Drag and drop your image here.
+          </h4>
           <span class="text-disabled">or</span>
 
-          <VBtn variant="outlined">
+          <VBtn
+            variant="outlined"
+            size="small"
+          >
             Browse Images
           </VBtn>
         </div>
 
         <div
           v-else
-          class="d-flex justify-center align-center gap-3 pa-8 border-dashed drop-zone flex-wrap"
+          class="d-flex justify-center align-center gap-3 pa-8 drop-zone flex-wrap"
         >
           <VRow class="match-height w-100">
             <template
@@ -121,3 +129,9 @@ useDropZone(dropZoneRef, onDrop)
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.drop-zone {
+  border: 1px dashed rgba(var(--v-theme-on-surface), var(--v-border-opacity));
+}
+</style>

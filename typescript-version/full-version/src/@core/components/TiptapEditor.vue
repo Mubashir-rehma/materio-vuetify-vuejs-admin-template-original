@@ -5,9 +5,15 @@ import { Underline } from '@tiptap/extension-underline'
 import { StarterKit } from '@tiptap/starter-kit'
 import { EditorContent, useEditor } from '@tiptap/vue-3'
 
-const props = defineProps<{
+interface Props {
   modelValue: string
-}>()
+  placeholder?: string
+  isDivider?: boolean
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  isDivider: true,
+})
 
 const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void
@@ -23,7 +29,7 @@ const editor = useEditor({
       types: ['heading', 'paragraph'],
     }),
     Placeholder.configure({
-      placeholder: 'Write something here...',
+      placeholder: props.placeholder ?? 'Write something here...',
     }),
     Underline,
   ],
@@ -46,10 +52,10 @@ watch(() => props.modelValue, () => {
 </script>
 
 <template>
-  <div class="pa-5">
+  <div>
     <div
       v-if="editor"
-      class="d-flex gap-1 flex-wrap"
+      class="d-flex gap-2 px-6 py-2 flex-wrap align-center editor"
     >
       <VBtn
         :class="{ 'is-active': editor.isActive('bold') }"
@@ -124,7 +130,9 @@ watch(() => props.modelValue, () => {
         @click="editor.chain().focus().setTextAlign('justify').run()"
       />
     </div>
-    <VDivider class="my-4" />
+    
+    <VDivider v-if="props.isDivider" />
+
     <EditorContent
       ref="editorRef"
       :editor="editor"
@@ -136,6 +144,7 @@ watch(() => props.modelValue, () => {
 .ProseMirror {
   padding: 0.5rem;
   min-block-size: 15vh;
+  outline: none;
 
   p {
     margin-block-end: 0;

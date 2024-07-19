@@ -345,7 +345,7 @@ const resolveUserRoleVariant = (role: string) => {
 
   <!-- 👉 Edit user info dialog -->
   <UserInfoEditDialog
-    v-model:isDialogVisible="isUserInfoEditDialogVisible"
+    v-model:isDialogVisible.capitialize="isUserInfoEditDialogVisible"
     :user-data="props.userData"
   />
 
@@ -355,7 +355,7 @@ const resolveUserRoleVariant = (role: string) => {
 
 <style lang="scss" scoped>
 .card-list {
-  --v-card-list-gap: .5rem;
+  --v-card-list-gap: 0.5rem;
 }
 
 .current-plan {

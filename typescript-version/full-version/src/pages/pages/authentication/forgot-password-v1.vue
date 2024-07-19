@@ -27,13 +27,15 @@ const form = ref({
       max-width="460"
     >
       <VCardText>
-        <div class="d-flex align-center gap-x-3 justify-center mb-6">
-          <VNodeRenderer :nodes="themeConfig.app.logo" />
-
-          <h1 class="auth-title">
-            {{ themeConfig.app.title }}
-          </h1>
-        </div>
+        <RouterLink to="/">
+          <div class="d-flex align-center gap-x-3 justify-center mb-6">
+            <VNodeRenderer :nodes="themeConfig.app.logo" />
+            
+            <h1 class="auth-title">
+              {{ themeConfig.app.title }}
+            </h1>
+          </div>
+        </RouterLink>
 
         <h4 class="text-h4 mb-1">
           Forgot Password? 🔒

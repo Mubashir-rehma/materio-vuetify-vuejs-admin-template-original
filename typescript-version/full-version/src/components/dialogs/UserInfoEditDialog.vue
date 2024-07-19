@@ -207,7 +207,7 @@ const dialogVisibleUpdate = (val: boolean) => {
             >
               <VSelect
                 v-model="userData.country"
-                :items="['United States', 'United Kingdom', 'France']"
+                :items="['United States', 'United Kingdom', 'France', 'China']"
                 label="Country"
                 placeholder="United States"
               />

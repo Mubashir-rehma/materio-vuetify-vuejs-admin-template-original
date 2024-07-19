@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import paypal from '@images/cards/paypal-primary.png'
+import paypal from '@images/cards/paypal-primary.png';
+import { ref } from 'vue';
 
 const isAddPaymentMethodsDialogVisible = ref(false)
 const isPaymentProvidersDialogVisible = ref(false)
@@ -29,7 +29,7 @@ const isPaymentProvidersDialogVisible = ref(false)
     <!-- 👉 Supported Payment Methods -->
     <VCard
       title="Supported payment methods"
-      subtitle="Payment methods that are available with one of Vuexy's approved payment providers."
+      subtitle="Payment methods that are available with one of Materio's approved payment providers."
       class="mb-6"
     >
       <VCardText>
@@ -38,18 +38,13 @@ const isPaymentProvidersDialogVisible = ref(false)
         </h6>
         <div class="rounded bg-var-theme-background pa-5 mb-6">
           <div class="d-flex justify-space-between align-center mb-6">
-            <VAvatar
-              variant="elevated"
-              color="#ffffff"
-              rounded
-              class="px-1"
-            >
-              <VImg
+            <div class="rounded paypal-logo">
+              <img
                 :src="paypal"
-                height="21"
-                width="21"
-              />
-            </VAvatar>
+                alt="Themeselection"
+                style="padding-block: 6px;padding-inline: 18px;"
+              >
+            </div>
 
             <VBtn variant="text">
               Activate PayPal
@@ -170,3 +165,12 @@ const isPaymentProvidersDialogVisible = ref(false)
   <AddPaymentMethodDialog v-model:is-dialog-visible="isAddPaymentMethodsDialogVisible" />
   <PaymentProvidersDialog v-model:is-dialog-visible="isPaymentProvidersDialogVisible" />
 </template>
+
+<style lang="scss" scoped>
+.paypal-logo {
+  background-color: #fff;
+  block-size: 37px;
+  box-shadow: 0 2px 4px 0 rgba(165, 163, 174, 30%);
+  inline-size: 58px;
+}
+</style>

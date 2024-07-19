@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TeamsTab } from '@db/pages/profile/types'
+import type { TeamsTab } from '@db/pages/profile/types';
 
 const router = useRoute('pages-user-profile-tab')
 const teamData = ref<TeamsTab[]>([])
@@ -42,6 +42,7 @@ const moreList = [
             <VAvatar
               size="38"
               :image="team?.avatar"
+              class="me-2"
             />
           </template>
 

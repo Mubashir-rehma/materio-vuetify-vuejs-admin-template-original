@@ -116,7 +116,7 @@ const deleteUser = async (id: number) => {
 
         <VSpacer />
 
-        <div class="app-user-search-filter d-flex flex-wrap gap-4">
+        <div class="d-flex flex-wrap gap-4">
           <!-- 👉 Search  -->
 
           <div style="inline-size: 15.625rem;">

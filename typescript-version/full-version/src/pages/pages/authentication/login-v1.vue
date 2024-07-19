@@ -82,7 +82,7 @@ const isPasswordVisible = ref(false)
                 />
                 <RouterLink
                   class="text-primary"
-                  :to="{ name: 'pages-authentication-forgot-password-v2' }"
+                  :to="{ name: 'pages-authentication-forgot-password-v1' }"
                 >
                   Forgot Password?
                 </RouterLink>
@@ -103,7 +103,7 @@ const isPasswordVisible = ref(false)
             >
               <span>New on our platform?</span> <RouterLink
                 class="text-primary d-inline-block"
-                :to="{ name: 'pages-authentication-register-v2' }"
+                :to="{ name: 'pages-authentication-register-v1' }"
               >
                 Create an account
               </RouterLink>

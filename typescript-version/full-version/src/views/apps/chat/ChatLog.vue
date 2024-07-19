@@ -132,17 +132,20 @@ const msgGroups = computed(() => {
 
 <style lang=scss>
 .chat-log {
-  .chat-content {
-    border-end-end-radius: 6px;
-    border-end-start-radius: 6px;
+  .chat-body {
+    max-inline-size: calc(100% - 6.75rem);
 
-    p {
-      overflow-wrap: anywhere;
-    }
+    .chat-content {
+      border-end-end-radius: 6px;
+      border-end-start-radius: 6px;
 
-    &.bg-surface{
-      color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)) !important;
-    }
+      p {
+        overflow-wrap: anywhere;
+      }
+
+      &.bg-surface {
+        color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity)) !important;
+      }
 
       &.chat-left {
         border-start-end-radius: 6px;

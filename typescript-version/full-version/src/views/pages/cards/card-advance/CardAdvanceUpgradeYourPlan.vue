@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import briefcase from '@images/cards/briefcase.png'
-import logoCreditCard2 from '@images/cards/logo-credit-card-2.png'
-import logoMastercardSmall from '@images/cards/logo-mastercard-small.png'
+import briefcase from '@images/cards/briefcase.png';
+import logoCreditCard2 from '@images/cards/logo-credit-card-2.png';
+import logoMastercardSmall from '@images/cards/logo-mastercard-small.png';
 
 const savedCards = [
   {
@@ -45,7 +45,7 @@ const savedCards = [
           size="40"
           class="plan-details me-2 border-opacity-100 border-primary"
         >
-          <VImg
+          <img
             :src="briefcase"
             alt="briefcase"
             height="20"

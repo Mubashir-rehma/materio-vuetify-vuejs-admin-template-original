@@ -130,4 +130,10 @@ const onFinish = () => {
 
 <style lang="scss">
 @use "@core/scss/template/pages/page-auth";
+
+.v-otp-input {
+  .v-otp-input__content {
+    padding-inline: 0;
+  }
+}
 </style>

@@ -10,9 +10,9 @@ defineEmits<{
   (e: 'close'): void
 }>()
 
+const content = ref('')
+
 const to = ref('')
-const cc = ref('')
-const bcc = ref('')
 const subject = ref('')
 const message = ref('')
 
@@ -106,16 +106,16 @@ const addImage = () => {
         </template>
         <template #append>
           <span class="cursor-pointer text-medium-emphasis">
-            <span @click="emailCc = !emailCc">Cc</span>
+            <span @click="isEmailCc = !isEmailCc">Cc</span>
             <span class="mx-1">|</span>
-            <span @click="emailBcc = !emailBcc">Bcc</span>
+            <span @click="isEmailBcc = !isEmailBcc">Bcc</span>
           </span>
         </template>
       </VTextField>
     </div>
 
     <VExpandTransition>
-      <div v-if="emailCc">
+      <div v-if="isEmailCc">
         <VDivider />
 
         <VTextField
@@ -132,7 +132,7 @@ const addImage = () => {
     </VExpandTransition>
 
     <VExpandTransition>
-      <div v-if="emailBcc">
+      <div v-if="isEmailBcc">
         <VDivider />
 
         <VTextField
@@ -253,7 +253,7 @@ const addImage = () => {
         <VIcon icon="ri-more-2-line" />
       </IconBtn>
 
-      <IconBtn @click="$emit('close'); resetValues(); content = ''; isEmailCc = false; isEmailBcc = false;"
+      <IconBtn @click="$emit('close'); resetValues(); content = ''; isEmailCc = false; isEmailBcc = false;">
         <VIcon icon="ri-delete-bin-7-line" />
       </IconBtn>
     </div>
@@ -288,7 +288,7 @@ const addImage = () => {
   .ProseMirror {
     block-size: 150px;
     overflow-y: auto;
-    padding-block: .5rem;
+    padding-block: 0.5rem;
 
     &:focus-visible {
       outline: none;
@@ -306,7 +306,8 @@ const addImage = () => {
       pointer-events: none;
     }
 
-    ul,ol{
+    ul,
+    ol {
       padding-inline: 1.125rem;
     }
   }

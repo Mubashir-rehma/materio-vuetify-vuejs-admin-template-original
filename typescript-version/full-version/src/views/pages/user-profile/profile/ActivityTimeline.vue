@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import avatar1 from '@images/avatars/avatar-1.png'
-import avatar6 from '@images/avatars/avatar-6.png'
-import avatar8 from '@images/avatars/avatar-8.png'
-import pdf from '@images/icons/project-icons/pdf.png'
+import avatar1 from '@images/avatars/avatar-1.png';
+import avatar6 from '@images/avatars/avatar-6.png';
+import avatar8 from '@images/avatars/avatar-8.png';
+import pdf from '@images/icons/project-icons/pdf.png';
 </script>
 
 <template>
@@ -12,6 +12,7 @@ import pdf from '@images/icons/project-icons/pdf.png'
         <VIcon
           icon="ri-bar-chart-2-line"
           size="24"
+          class="me-2"
         />
       </template>
 

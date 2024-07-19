@@ -158,10 +158,11 @@ const onFinish = () => {
 </template>
 
 <style lang="scss">
-@use "@core/scss/template/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth";
 
-// .auth-illustration{
-//   inset-block-end: 11.5rem;
-//   inset-inline-end: 1.25rem;
-// }
+.v-otp-input {
+  .v-otp-input__content {
+    padding-inline: 0;
+  }
+}
 </style>

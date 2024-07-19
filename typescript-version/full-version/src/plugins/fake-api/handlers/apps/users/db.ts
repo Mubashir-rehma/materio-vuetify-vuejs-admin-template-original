@@ -1,4 +1,3 @@
-import type { UserProperties } from './types'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar10 from '@images/avatars/avatar-10.png'
 import avatar11 from '@images/avatars/avatar-11.png'
@@ -11,6 +10,7 @@ import avatar6 from '@images/avatars/avatar-6.png'
 import avatar7 from '@images/avatars/avatar-7.png'
 import avatar8 from '@images/avatars/avatar-8.png'
 import avatar9 from '@images/avatars/avatar-9.png'
+import type { UserProperties } from './types'
 
 interface DB {
   users: UserProperties[]
@@ -28,7 +28,7 @@ export const db: DB = {
       contact: '(479) 232-9151',
       email: 'gslixby0@abc.net.au',
       currentPlan: 'enterprise',
-      status: 'inactive',
+      status: 'Inactive',
       avatar: avatar1,
     },
     {
@@ -41,7 +41,7 @@ export const db: DB = {
       contact: '(472) 607-9137',
       email: 'hredmore1@imgur.com',
       currentPlan: 'team',
-      status: 'pending',
+      status: 'Pending',
       avatar: avatar2,
     },
     {
@@ -54,7 +54,7 @@ export const db: DB = {
       contact: '(321) 264-4599',
       email: 'msicely2@who.int',
       currentPlan: 'enterprise',
-      status: 'active',
+      status: 'Active',
       avatar: '',
     },
     {
@@ -67,7 +67,7 @@ export const db: DB = {
       contact: '(923) 690-6806',
       email: 'crisby3@wordpress.com',
       currentPlan: 'team',
-      status: 'inactive',
+      status: 'Inactive',
       avatar: avatar3,
     },
     {
@@ -80,7 +80,7 @@ export const db: DB = {
       contact: '(669) 914-1078',
       email: 'mhurran4@yahoo.co.jp',
       currentPlan: 'enterprise',
-      status: 'pending',
+      status: 'Pending',
       avatar: avatar4,
     },
     {
@@ -93,7 +93,7 @@ export const db: DB = {
       contact: '(958) 973-3093',
       email: 'shalstead5@shinystat.com',
       currentPlan: 'company',
-      status: 'active',
+      status: 'Active',
       avatar: '',
     },
     {
@@ -106,7 +106,7 @@ export const db: DB = {
       contact: '(825) 977-8152',
       email: 'bgallemore6@boston.com',
       currentPlan: 'company',
-      status: 'pending',
+      status: 'Pending',
       avatar: '',
     },
     {
@@ -119,7 +119,7 @@ export const db: DB = {
       contact: '(187) 440-0934',
       email: 'kliger7@vinaora.com',
       currentPlan: 'enterprise',
-      status: 'pending',
+      status: 'Pending',
       avatar: '',
     },
     {
@@ -132,7 +132,7 @@ export const db: DB = {
       contact: '(978) 146-5443',
       email: 'fscotfurth8@dailymotion.com',
       currentPlan: 'team',
-      status: 'pending',
+      status: 'Pending',
       avatar: '',
     },
     {
@@ -145,7 +145,7 @@ export const db: DB = {
       contact: '(589) 284-6732',
       email: 'jbellany9@kickstarter.com',
       currentPlan: 'company',
-      status: 'inactive',
+      status: 'Inactive',
       avatar: '',
     },
     {
@@ -158,7 +158,7 @@ export const db: DB = {
       contact: '(176) 532-6824',
       email: 'jwharltona@oakley.com',
       currentPlan: 'team',
-      status: 'inactive',
+      status: 'Inactive',
       avatar: '',
     },
     {
@@ -171,7 +171,7 @@ export const db: DB = {
       contact: '(234) 464-0600',
       email: 'shallamb@hugedomains.com',
       currentPlan: 'team',
-      status: 'pending',
+      status: 'Pending',
       avatar: '',
     },
     {
@@ -184,7 +184,7 @@ export const db: DB = {
       contact: '(907) 284-5083',
       email: 'ypottiec@privacy.gov.au',
       currentPlan: 'basic',
-      status: 'inactive',
+      status: 'Inactive',
       avatar: '',
     },
     {
@@ -197,7 +197,7 @@ export const db: DB = {
       contact: '(167) 135-7392',
       email: 'mkraused@stanford.edu',
       currentPlan: 'team',
-      status: 'active',
+      status: 'Active',
       avatar: '',
     },
     {
@@ -210,7 +210,7 @@ export const db: DB = {
       contact: '(317) 409-6565',
       email: 'zmcclevertye@soundcloud.com',
       currentPlan: 'enterprise',
-      status: 'active',
+      status: 'Active',
       avatar: '',
     },
     {
@@ -223,7 +223,7 @@ export const db: DB = {
       contact: '(590) 606-1056',
       email: 'bemblinf@wired.com',
       currentPlan: 'company',
-      status: 'active',
+      status: 'Active',
       avatar: '',
     },
     {
@@ -236,7 +236,7 @@ export const db: DB = {
       contact: '(553) 225-9905',
       email: 'bmylesg@amazon.com',
       currentPlan: 'basic',
-      status: 'active',
+      status: 'Active',
       avatar: '',
     },
     {
@@ -249,7 +249,7 @@ export const db: DB = {
       contact: '(901) 916-9287',
       email: 'bbinerh@mozilla.com',
       currentPlan: 'team',
-      status: 'active',
+      status: 'Active',
       avatar: '',
     },
     {
@@ -262,7 +262,7 @@ export const db: DB = {
       contact: '(524) 586-6057',
       email: 'tbruntjeni@sitemeter.com',
       currentPlan: 'enterprise',
-      status: 'active',
+      status: 'Active',
       avatar: '',
     },
     {
@@ -275,7 +275,7 @@ export const db: DB = {
       contact: '(569) 683-1292',
       email: 'wburlandj@uiuc.edu',
       currentPlan: 'team',
-      status: 'inactive',
+      status: 'Inactive',
       avatar: '',
     },
     {
@@ -284,11 +284,11 @@ export const db: DB = {
       company: 'Wayne Enterprises',
       role: 'admin',
       username: 'catwomen1940',
-      country: 'USA',
+      country: 'United Kingdom',
       contact: '(829) 537-0057',
       email: 'irena.dubrovna@wayne.com',
       currentPlan: 'team',
-      status: 'active',
+      status: 'Active',
       avatar: avatar3,
     },
     {
@@ -301,7 +301,7 @@ export const db: DB = {
       contact: '(593) 624-0222',
       email: 'jlysterl@guardian.co.uk',
       currentPlan: 'company',
-      status: 'inactive',
+      status: 'Inactive',
       avatar: '',
     },
     {
@@ -314,7 +314,7 @@ export const db: DB = {
       contact: '(254) 845-4107',
       email: 'kskitterelm@ainyx.com',
       currentPlan: 'basic',
-      status: 'pending',
+      status: 'Pending',
       avatar: '',
     },
     {
@@ -327,7 +327,7 @@ export const db: DB = {
       contact: '(700) 783-7498',
       email: 'chatherleighn@washington.edu',
       currentPlan: 'team',
-      status: 'pending',
+      status: 'Pending',
       avatar: '',
     },
     {
@@ -340,7 +340,7 @@ export const db: DB = {
       contact: '(227) 598-1841',
       email: 'amiccoo@whitehouse.gov',
       currentPlan: 'enterprise',
-      status: 'pending',
+      status: 'Pending',
       avatar: '',
     },
     {
@@ -353,7 +353,7 @@ export const db: DB = {
       contact: '(582) 516-1324',
       email: 'hhassonp@bizjournals.com',
       currentPlan: 'basic',
-      status: 'inactive',
+      status: 'Inactive',
       avatar: '',
     },
     {
@@ -366,7 +366,7 @@ export const db: DB = {
       contact: '(137) 467-5393',
       email: 'gjacombsq@jigsy.com',
       currentPlan: 'enterprise',
-      status: 'active',
+      status: 'Active',
       avatar: '',
     },
     {
@@ -379,7 +379,7 @@ export const db: DB = {
       contact: '(412) 476-0854',
       email: 'bkildayr@mashable.com',
       currentPlan: 'team',
-      status: 'active',
+      status: 'Active',
       avatar: '',
     },
     {
@@ -392,7 +392,7 @@ export const db: DB = {
       contact: '(170) 683-1520',
       email: 'cpinyons@behance.net',
       currentPlan: 'team',
-      status: 'active',
+      status: 'Active',
       avatar: '',
     },
     {
@@ -405,7 +405,7 @@ export const db: DB = {
       contact: '(332) 803-1983',
       email: 'imallindinet@shinystat.com',
       currentPlan: 'team',
-      status: 'pending',
+      status: 'Pending',
       avatar: '',
     },
     {
@@ -418,7 +418,7 @@ export const db: DB = {
       contact: '(551) 379-7460',
       email: 'gmeinekenu@hc360.com',
       currentPlan: 'basic',
-      status: 'pending',
+      status: 'Pending',
       avatar: '',
     },
     {
@@ -431,7 +431,7 @@ export const db: DB = {
       contact: '(974) 829-0911',
       email: 'rsnowballv@indiegogo.com',
       currentPlan: 'basic',
-      status: 'pending',
+      status: 'Pending',
       avatar: '',
     },
     {
@@ -444,7 +444,7 @@ export const db: DB = {
       contact: '(841) 889-3339',
       email: 'remerw@blogtalkradio.com',
       currentPlan: 'basic',
-      status: 'active',
+      status: 'Active',
       avatar: '',
     },
     {
@@ -457,7 +457,7 @@ export const db: DB = {
       contact: '(764) 885-7351',
       email: 'ofibbensx@booking.com',
       currentPlan: 'company',
-      status: 'active',
+      status: 'Active',
       avatar: '',
     },
     {
@@ -470,7 +470,7 @@ export const db: DB = {
       contact: '(350) 589-8520',
       email: 'smacgilfoyley@bigcartel.com',
       currentPlan: 'company',
-      status: 'pending',
+      status: 'Pending',
       avatar: avatar12,
     },
     {
@@ -483,7 +483,7 @@ export const db: DB = {
       contact: '(882) 933-2180',
       email: 'brosebothamz@tripadvisor.com',
       currentPlan: 'team',
-      status: 'inactive',
+      status: 'Inactive',
       avatar: avatar6,
     },
     {
@@ -496,7 +496,7 @@ export const db: DB = {
       contact: '(610) 343-1024',
       email: 'shebblethwaite10@arizona.edu',
       currentPlan: 'company',
-      status: 'inactive',
+      status: 'Inactive',
       avatar: avatar11,
     },
     {
@@ -509,7 +509,7 @@ export const db: DB = {
       contact: '(365) 277-2986',
       email: 'mpiccard11@vimeo.com',
       currentPlan: 'enterprise',
-      status: 'inactive',
+      status: 'Inactive',
       avatar: '',
     },
     {
@@ -522,7 +522,7 @@ export const db: DB = {
       contact: '(531) 731-0928',
       email: 'twidmore12@bravesites.com',
       currentPlan: 'team',
-      status: 'pending',
+      status: 'Pending',
       avatar: avatar8,
     },
     {
@@ -535,7 +535,7 @@ export const db: DB = {
       contact: '(312) 104-2638',
       email: 'fdesporte13@omniture.com',
       currentPlan: 'company',
-      status: 'active',
+      status: 'Active',
       avatar: '',
     },
     {
@@ -548,7 +548,7 @@ export const db: DB = {
       contact: '(315) 329-3578',
       email: 'ebaldetti14@theguardian.com',
       currentPlan: 'team',
-      status: 'pending',
+      status: 'Pending',
       avatar: avatar10,
     },
     {
@@ -561,7 +561,7 @@ export const db: DB = {
       contact: '(323) 175-6741',
       email: 'brossiter15@craigslist.org',
       currentPlan: 'team',
-      status: 'inactive',
+      status: 'Inactive',
       avatar: avatar9,
     },
     {
@@ -574,7 +574,7 @@ export const db: DB = {
       contact: '(242) 952-0916',
       email: 'mmcnirlan16@hc360.com',
       currentPlan: 'basic',
-      status: 'inactive',
+      status: 'Inactive',
       avatar: '',
     },
     {
@@ -587,7 +587,7 @@ export const db: DB = {
       contact: '(531) 758-8335',
       email: 'vkoschek17@abc.net.au',
       currentPlan: 'team',
-      status: 'active',
+      status: 'Active',
       avatar: avatar7,
     },
     {
@@ -600,7 +600,7 @@ export const db: DB = {
       contact: '(659) 385-6808',
       email: 'cperot18@goo.ne.jp',
       currentPlan: 'team',
-      status: 'pending',
+      status: 'Pending',
       avatar: avatar6,
     },
     {
@@ -613,7 +613,7 @@ export const db: DB = {
       contact: '(200) 586-2264',
       email: 'soffner19@mac.com',
       currentPlan: 'enterprise',
-      status: 'pending',
+      status: 'Pending',
       avatar: avatar5,
     },
     {
@@ -626,7 +626,7 @@ export const db: DB = {
       contact: '(478) 199-0020',
       email: 'kcourtliff1a@bbc.co.uk',
       currentPlan: 'basic',
-      status: 'active',
+      status: 'Active',
       avatar: avatar4,
     },
     {
@@ -639,7 +639,7 @@ export const db: DB = {
       contact: '(344) 262-7270',
       email: 'owind1b@yandex.ru',
       currentPlan: 'basic',
-      status: 'pending',
+      status: 'Pending',
       avatar: avatar2,
     },
     {
@@ -652,7 +652,7 @@ export const db: DB = {
       contact: '(694) 676-1275',
       email: 'pdurber1c@gov.uk',
       currentPlan: 'team',
-      status: 'inactive',
+      status: 'Inactive',
       avatar: avatar3,
     },
     {
@@ -665,7 +665,7 @@ export const db: DB = {
       contact: '(397) 294-5153',
       email: 'bkrabbe1d@home.pl',
       currentPlan: 'company',
-      status: 'active',
+      status: 'Active',
       avatar: avatar1,
     },
   ],

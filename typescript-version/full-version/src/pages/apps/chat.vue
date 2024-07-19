@@ -264,14 +264,14 @@ const chatContentContainerBg = computed(() => {
             autofocus
           >
             <template #append-inner>
-              <div class="d-flex gap-1">
-                <IconBtn>
+              <div class="d-flex gap-1 align-center">
+                <IconBtn size="small">
                   <VIcon
                     icon="ri-mic-line"
                     class="text-high-emphasis"
                   />
                 </IconBtn>
-                <IconBtn @click="refInputEl?.click()">
+                <IconBtn size="small" @click="refInputEl?.click()">
                   <VIcon
                     icon="ri-attachment-2"
                     class="text-high-emphasis"

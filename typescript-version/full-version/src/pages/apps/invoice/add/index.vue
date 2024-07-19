@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import InvoiceEditable from '@/views/apps/invoice/InvoiceEditable.vue'
-import InvoiceSendInvoiceDrawer from '@/views/apps/invoice/InvoiceSendInvoiceDrawer.vue'
+import InvoiceEditable from '@/views/apps/invoice/InvoiceEditable.vue';
+import InvoiceSendInvoiceDrawer from '@/views/apps/invoice/InvoiceSendInvoiceDrawer.vue';
 
 // Type: Invoice data
-import type { InvoiceData, PurchasedProduct } from '@/views/apps/invoice/types'
+import type { InvoiceData, PurchasedProduct } from '@/views/apps/invoice/types';
 
 // 👉 Default Blank Data
 const invoiceData = ref<InvoiceData>({
@@ -124,7 +124,7 @@ const removeProduct = (id: number) => {
       />
 
       <!-- 👉 Payment Terms -->
-      <div class="d-flex align-center justify-space-between mb-2">
+      <div class="d-flex align-center justify-space-between mb-1">
         <VLabel for="payment-terms">
           Payment Terms
         </VLabel>
@@ -137,7 +137,7 @@ const removeProduct = (id: number) => {
       </div>
 
       <!-- 👉  Client Notes -->
-      <div class="d-flex align-center justify-space-between mb-2">
+      <div class="d-flex align-center justify-space-between mb-1">
         <VLabel for="client-notes">
           Client Notes
         </VLabel>

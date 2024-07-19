@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { useTheme } from 'vuetify'
-
-import { hexToRgb } from '@layouts/utils'
+import { hexToRgb } from '@core/utils/colorConverter';
+import { useTheme } from 'vuetify';
 
 const vuetifyTheme = useTheme()
 

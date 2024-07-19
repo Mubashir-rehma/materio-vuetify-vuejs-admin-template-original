@@ -95,12 +95,13 @@ const isTaxable = ref(true)
                 />
               </VCol>
               <VCol>
-                <VLabel class="mb-1">
+                <VLabel>
                   Description (Optional)
                 </VLabel>
-                <TiptapEditor
+                <ProductDescriptionEditor
                   v-model="content"
-                  class="border rounded"
+                  placeholder="Product Description"
+                  class="border mt-1 rounded"
                 />
               </VCol>
             </VRow>
@@ -466,23 +467,22 @@ const isTaxable = ref(true)
                 label="Vendor"
                 :items="['Men\'s Clothing', 'Women\'s Clothing', 'Kid\'s Clothing']"
               />
+              <div class="d-flex gap-x-4 align-center">
+                <VSelect
+                  placeholder="Select Category"
+                  label="Category"
+                   :items="['Household', 'Office', 'Electronics', 'Management', 'Automotive']"
+                />
+                <IconBtn
+                  icon="ri-add-line"
+                  variant="outlined"
+                  color="primary"
+                  rounded
+                />
+              </div>
               <VSelect
-                placeholder="Select Category"
-                label="Category"
-                :items="['Household', 'Office', 'Electronics', 'Management', 'Automotive']"
-              >
-                <template #append>
-                  <IconBtn
-                    icon="ri-add-line"
-                    variant="outlined"
-                    color="primary"
-                    rounded
-                  />
-                </template>
-              </VSelect>
-              <VSelect
-                placeholder="Select Collection"
                 label="Collection"
+                placeholder="Select Collection"
                 :items="['Men\'s Clothing', 'Women\'s Clothing', 'Kid\'s Clothing']"
               />
               <VSelect

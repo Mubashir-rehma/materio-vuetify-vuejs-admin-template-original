@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { useChat } from './useChat'
-import { useChatStore } from '@/views/apps/chat/useChatStore'
+import { useChatStore } from '@/views/apps/chat/useChatStore';
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
+import { useChat } from './useChat';
 
 defineEmits<{
   (e: 'close'): void
@@ -93,12 +93,11 @@ const isNotificationEnabled = ref(false)
 
       <!-- Status -->
       <div class="mb-6">
-        <p class="text-base text-disabled mb-0">
+        <p class="text-base text-disabled mb-1">
           STATUS
         </p>
         <VRadioGroup
           v-model="store.profileUser.status"
-          class="ms-2 mt-1"
         >
           <VRadio
             v-for="radioOption in userStatusRadioOptions"
@@ -111,7 +110,7 @@ const isNotificationEnabled = ref(false)
       </div>
 
       <!-- Settings -->
-      <div class="text-medium-emphasis">
+      <div class="text-medium-emphasis chat-settings-section">
         <p class="text-base text-disabled mb-0">
           SETTINGS
         </p>
@@ -128,7 +127,7 @@ const isNotificationEnabled = ref(false)
 
           <VSpacer />
 
-          <VSwitch v-model="isTwoStepVerified" />
+          <VSwitch v-model="isTwoStepVerified" density="compact"/>
         </div>
         <div class="d-flex align-center pa-2">
           <VIcon
@@ -143,7 +142,7 @@ const isNotificationEnabled = ref(false)
 
           <VSpacer />
 
-          <VSwitch v-model="isNotificationEnabled" />
+          <VSwitch v-model="isNotificationEnabled" density="compact" />
         </div>
         <div class="d-flex align-center pa-2">
           <VIcon
@@ -181,3 +180,15 @@ const isNotificationEnabled = ref(false)
     </PerfectScrollbar>
   </template>
 </template>
+
+<style lang="scss">
+.chat-settings-section {
+  .v-switch {
+    .v-input__control {
+      .v-selection-control__wrapper {
+        block-size: 18px;
+      }
+    }
+  }
+}
+</style>

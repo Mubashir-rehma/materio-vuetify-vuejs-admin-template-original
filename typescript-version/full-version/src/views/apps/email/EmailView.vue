@@ -264,9 +264,12 @@ const addImage = () => {
             :color="props.email.isStarred ? 'warning' : 'default'"
             @click="props.email?.isStarred ? $emit('unstar') : $emit('star'); $emit('refresh')"
           >
-            <VIcon :icon="props.email.isStarred ? 'ri-star-fill' : 'ri-star-line' " />
+            <VIcon 
+              :color="props.email.isStarred ? 'warning' : '' "
+              icon="ri-star-line"
+             />
           </IconBtn>
-          <MoreBtn>
+          <MoreBtn />
         </div>
       </div>
 
@@ -278,7 +281,7 @@ const addImage = () => {
         class="mail-content-container flex-grow-1 pa-sm-12 pa-6"
         :options="{ wheelPropagation: false }"
       >
-        <VCard class="ma-6 mb-4">
+        <VCard class="mb-4">
           <VCardText class="mail-header">
             <div class="d-flex align-start">
               <VAvatar
@@ -370,16 +373,17 @@ const addImage = () => {
 
         <VCard v-if="showReplyBox">
           <VCardText>
-            <h6 class="text-h6 mb-6">
+            <h6 class="text-body-1 text-high-emphasis mb-4">
               Reply to {{ email?.from.name }}
             </h6>
             <TiptapEditor
               v-model="emailReply"
               placeholder="Write your message..."
+              :is-divider="false"
             />
             <div class="d-flex justify-end gap-4 pt-2 flex-wrap">
               <IconBtn
-                icon="mdi-delete"
+                icon="ri-delete-bin-7-line"
                 @click="showReplyBox = !showReplyBox; showReplyCard = !showReplyCard; emailReply = ''"
               />
               <VBtn
@@ -388,14 +392,13 @@ const addImage = () => {
               >
                 <template #prepend>
                   <VIcon
-                    icon="mdi-paperclip"
+                    icon="ri-attachment-2"
                     class="text-high-emphasis"
-                    size="16"
                   />
                 </template>
                 Attachments
               </VBtn>
-              <VBtn append-icon="mdi-send">
+              <VBtn append-icon="ri-send-plane-line">
                 Send
               </VBtn>
             </div>
@@ -418,13 +421,17 @@ const addImage = () => {
     inline-size: calc(100% - 256px) !important;
   }
 
+  .editor {
+    padding-block-start: 0 !important;
+    padding-inline: 0 !important;
+  }
+
   .v-navigation-drawer__content {
     display: flex;
     flex-direction: column;
   }
 
   .ProseMirror {
-    padding: 0;
     block-size: 100px;
     overflow-y: auto;
 
@@ -440,7 +447,8 @@ const addImage = () => {
       pointer-events: none;
     }
 
-    ul,ol{
+    ul,
+    ol {
       padding-inline: 1.125rem;
     }
   }
@@ -451,7 +459,7 @@ const addImage = () => {
     color: rgb(var(--v-theme-primary));
   }
 
-  .ProseMirror-focused{
+  .ProseMirror-focused {
     outline: none !important;
   }
 }

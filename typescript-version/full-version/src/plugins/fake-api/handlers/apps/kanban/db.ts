@@ -2,24 +2,24 @@ import type { KanbanData } from '@db/apps/kanban/types'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
-import img5 from '@images/pages/5.jpg'
+import treePot from '@images/pages/tree-pot.png'
 
 export const database: KanbanData = {
   boards: [
     {
       id: 1,
       title: 'In Progress',
-      itemsIds: [1, 2, 3],
+      itemsIds: [1, 2],
     },
     {
       id: 2,
       title: 'In Review',
-      itemsIds: [4, 5],
+      itemsIds: [3, 4],
     },
     {
       id: 3,
       title: 'Done',
-      itemsIds: [6],
+      itemsIds: [5, 6],
     },
   ],
   items: [
@@ -63,7 +63,7 @@ export const database: KanbanData = {
       labels: ['Image'],
       members: [{ img: avatar1, name: 'John Doe' }, { img: avatar2, name: 'Jane Smith' }],
       comments: 'New images need to be found for the new pages.',
-      image: img5,
+      image: treePot,
       attachments: 5,
       commentsCount: 4,
     },
@@ -71,7 +71,7 @@ export const database: KanbanData = {
       id: 5,
       title: 'Forms & tables section',
       dueDate: '',
-      labels: ['Bug'],
+      labels: ['App'],
       members: [{ img: avatar1, name: 'John Doe' }, { img: avatar2, name: 'Jane Smith' }],
       comments: 'Forms and tables need to be updated.',
       attachments: 7,
@@ -82,7 +82,7 @@ export const database: KanbanData = {
       id: 6,
       title: 'Completed charts & maps',
       dueDate: '',
-      labels: ['Bug'],
+      labels: ['Charts & Maps'],
       members: [{ img: avatar1, name: 'John Doe' }, { img: avatar2, name: 'Jane Smith' }],
       comments: 'Charts and maps need to be updated.',
       attachments: 1,

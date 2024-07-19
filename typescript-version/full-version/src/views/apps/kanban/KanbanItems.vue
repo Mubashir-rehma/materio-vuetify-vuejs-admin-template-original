@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import KanbanCard from '@/views/apps/kanban/KanbanCard.vue'
+import type { AddNewKanbanItem, EditKanbanItem, KanbanData, KanbanState, RenameKanbanBoard } from '@db/apps/kanban/types'
 import { animations, handleEnd, performTransfer } from '@formkit/drag-and-drop'
 import { dragAndDrop } from '@formkit/drag-and-drop/vue'
 import { VForm } from 'vuetify/components/VForm'
-import type { AddNewKanbanItem, EditKanbanItem, KanbanData, KanbanState, RenameKanbanBoard } from '@db/apps/kanban/types'
-import KanbanCard from '@/views/apps/kanban/KanbanCard.vue'
 
 const props = defineProps<{
   kanbanIds: number[]
@@ -37,12 +37,12 @@ const refKanbanBoardTitle = ref<VForm>()
 const boardActions = [
   {
     title: 'Rename',
-    prependIcon: 'mdi-pencil-outline',
+    prependIcon: 'ri-pencil-line',
     onClick: () => { isBoardNameEditing.value = true },
   },
   {
     title: 'Delete',
-    prependIcon: 'mdi-delete-outline',
+    prependIcon: 'ri-delete-bin-line',
     onClick: () => (emit('deleteBoard', props.boardId)),
   },
 ]
@@ -152,20 +152,25 @@ const handleEnterKeydown = (event: { key: string; shiftKey: any }) => {
           @keydown.esc="hideResetBoardNameForm"
         >
           <template #append-inner>
-            <VIcon
-              size="20"
-              color="success"
-              icon="mdi-check"
-              class="me-1"
-              @click="renameBoard"
-            />
+            <div class="d-flex align-center gap-1 h-100">
+              <VIcon
+                size="small"
+                variant="text"
+                color="success"
+                icon="ri-check-line"
+                class="cursor-pointer"
+                @click="renameBoard"
+              />
 
-            <VIcon
-              size="20"
-              color="error"
-              icon="mdi-close"
-              @click="hideResetBoardNameForm"
-            />
+              <VIcon
+                size="small"
+                variant="text"
+                color="error"
+                icon="ri-close-line"
+                class="cursor-pointer"
+                @click="hideResetBoardNameForm"
+              />
+            </div>
           </template>
         </VTextField>
       </VForm>
@@ -182,11 +187,11 @@ const handleEnterKeydown = (event: { key: string; shiftKey: any }) => {
           <VIcon
             class="drag-handler"
             size="20"
-            icon="mdi-drag-variant"
+            icon="ri-drag-move-fill"
           />
 
           <MoreBtn
-            size="small"
+            size="x-small"
             icon-size="20"
             :menu-list="boardActions"
             item-props
@@ -218,12 +223,12 @@ const handleEnterKeydown = (event: { key: string; shiftKey: any }) => {
       <!-- 👉 Add new Form -->
       <div class="add-new-form">
         <h6
-          class="text-base font-weight-medium cursor-pointer ms-4"
+          class="text-base font-weight-regular cursor-pointer ms-4"
           @click="isAddNewFormVisible = !isAddNewFormVisible"
         >
           <VIcon
             size="15"
-            icon="mdi-plus"
+            icon="ri-add-line"
           /> Add New Item
         </h6>
 
@@ -246,7 +251,7 @@ const handleEnterKeydown = (event: { key: string; shiftKey: any }) => {
               @keydown.esc="hideAddNewForm"
             />
           </div>
-          <div class="d-flex gap-3 flex-wrap">
+          <div class="d-flex gap-4 flex-wrap">
             <VBtn
               size="small"
               type="submit"
@@ -255,7 +260,7 @@ const handleEnterKeydown = (event: { key: string; shiftKey: any }) => {
             </VBtn>
             <VBtn
               size="small"
-              variant="tonal"
+              variant="outlined"
               color="secondary"
               @click="hideAddNewForm"
             >

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { EditKanbanItem, KanbanItem } from '@db/apps/kanban/types'
+import type { EditKanbanItem, KanbanItem } from '@db/apps/kanban/types';
 
 const props = defineProps<{
   item: KanbanItem | undefined
@@ -14,9 +14,10 @@ const emit = defineEmits<{
 const resolveLabelColor: any = {
   'UX': 'success',
   'Image': 'warning',
-  'Code Review': 'info',
-  'Dashboard': 'primary',
-  'Bug': 'error',
+  'Code Review': 'error',
+  'Dashboard': 'info',
+  'App': 'secondary',
+  'Charts & Maps': 'primary',
 }
 
 const moreOptions = [
@@ -66,7 +67,7 @@ const moreOptions = [
           <template #activator="{ props: p, isActive }">
             <VIcon
               v-bind="p"
-              icon="mdi-dots-vertical"
+              icon="ri-more-2-line"
               class="position-absolute more-options"
               style="inset-block-start: 16px; inset-inline-end: 10px;"
               :style="isActive ? 'opacity: 1' : ''"
@@ -97,35 +98,35 @@ const moreOptions = [
       <div class="task-footer d-flex align-center flex-wrap justify-space-between">
         <div
           v-if="item.attachments || item.commentsCount"
-          class="d-flex align-center gap-1 mt-2"
+          class="d-flex align-center gap-4"
         >
           <div v-if="item.attachments">
             <VIcon
-              size="18"
-              icon="mdi-link-variant"
+              size="20"
+              icon="ri-attachment-2"
               class="me-1"
             />
-            <span class="me-3">{{ item.attachments }}</span>
+            <span class="text-body-1 d-inline-block">{{ item.attachments }}</span>
           </div>
 
           <div v-if="item.commentsCount">
             <VIcon
-              size="18"
-              icon="mdi-chat-outline"
+              size="20"
+              icon="ri-wechat-line"
               class="me-1"
             />
-            <span>{{ item.commentsCount }}</span>
+            <span class="text-body-1 d-inline-block">{{ item.commentsCount }}</span>
           </div>
         </div>
 
         <div
           v-if="item.members && item.members.length"
-          class="v-avatar-group mt-2"
+          class="v-avatar-group"
         >
           <VAvatar
             v-for="avatar in item.members"
             :key="avatar.name"
-            size="28"
+            size="30"
           >
             <VImg :src="avatar.img" />
             <VTooltip activator="parent">

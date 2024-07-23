@@ -222,7 +222,6 @@ onClickOutside(refAddNewBoard, hideAddNewForm)
   padding-inline-start: 0.6rem;
 
   .kanban-board {
-    z-index: 1 !important;
     inline-size: 16.875rem;
     min-inline-size: 16.875rem;
 

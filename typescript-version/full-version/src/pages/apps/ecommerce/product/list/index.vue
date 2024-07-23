@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ECommerceProduct } from '@db/apps/ecommerce/types';
+import type { ECommerceProduct } from '@db/apps/ecommerce/types'
 
 const widgetData = ref([
   { title: 'In-Store Sales', value: '$5,345', icon: 'ri-home-6-line', desc: '5k orders', change: 5.7 },
@@ -133,9 +133,9 @@ const deleteProduct = async (id: number) => {
               <div
                 class="d-flex justify-space-between"
                 :class="$vuetify.display.xs
-                  ? id !== widgetData.length - 1 ? 'border-b pb-4' : ''
+                  ? index !== widgetData.length - 1 ? 'border-b pb-4' : ''
                   : $vuetify.display.sm
-                    ? id < (widgetData.length / 2) ? 'border-b pb-4' : ''
+                    ? index < (widgetData.length / 2) ? 'border-b pb-4' : ''
                     : ''"
               >
                 <div class="d-flex flex-column gap-y-1">

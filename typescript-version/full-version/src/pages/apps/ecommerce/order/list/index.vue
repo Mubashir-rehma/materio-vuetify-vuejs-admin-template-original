@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { Order } from '@db/apps/ecommerce/types';
-import mastercard from '@images/logos/mastercard.png';
-import paypal from '@images/logos/paypal.png';
+import type { Order } from '@db/apps/ecommerce/types'
+import mastercard from '@images/logos/mastercard.png'
+import paypal from '@images/logos/paypal.png'
 
 const widgetData = ref([
   { title: 'Pending Payment', value: 56, icon: 'ri-calendar-2-line' },
@@ -108,9 +108,9 @@ const deleteOrder = async (id: number) => {
               <div
                 class="d-flex justify-space-between"
                 :class="$vuetify.display.xs
-                  ? id !== widgetData.length - 1 ? 'border-b pb-4' : ''
+                  ? index !== widgetData.length - 1 ? 'border-b pb-4' : ''
                   : $vuetify.display.sm
-                    ? id < (widgetData.length / 2) ? 'border-b pb-4' : ''
+                    ? index < (widgetData.length / 2) ? 'border-b pb-4' : ''
                     : ''"
               >
                 <div class="d-flex flex-column gap-y-1">
@@ -135,10 +135,12 @@ const deleteOrder = async (id: number) => {
               </div>
             </VCol>
             <VDivider
-              v-if="$vuetify.display.mdAndUp ? index !== widgetData.length - 1 : $vuetify.display.smAndUp ? index % 2 === 0 : false"
+              v-if="$vuetify.display.mdAndUp ? index !== widgetData.length - 1
+                : $vuetify.display.smAndUp ? index % 2 === 0
+                  : false"
               vertical
               inset
-              length="100"
+              length="60"
             />
           </template>
         </VRow>
@@ -339,7 +341,7 @@ const deleteOrder = async (id: number) => {
   }
 }
 
-.product-widget{
+.product-widget {
   border-block-end: 1px solid rgba(var(--v-theme-on-surface), var(--v-border-opacity));
   padding-block-end: 1rem;
 }

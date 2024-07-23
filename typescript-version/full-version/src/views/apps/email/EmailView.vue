@@ -1,14 +1,8 @@
 <script setup lang="ts">
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
 import { useEmail } from '@/views/apps/email/useEmail'
 import type { Email } from '@db/apps/email/types'
-import { Image } from '@tiptap/extension-image'
-import { Link } from '@tiptap/extension-link'
-import { Placeholder } from '@tiptap/extension-placeholder'
-import { Underline } from '@tiptap/extension-underline'
-import { StarterKit } from '@tiptap/starter-kit'
-import { useEditor } from '@tiptap/vue-3'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 
 interface Props {
   email: Email | null
@@ -48,52 +42,6 @@ const updateMailLabel = async (label: Email['labels'][number]) => {
   await updateEmailLabels([(props.email as Email).id], label)
 
   emit('refresh')
-}
-
-const editor = useEditor({
-  content: '',
-
-  extensions: [
-    StarterKit,
-    Image,
-    Placeholder.configure({
-      placeholder: 'Write a Comment...',
-    }),
-    Underline,
-    Link.configure(
-      {
-        openOnClick: false,
-      },
-    ),
-  ],
-})
-
-const setLink = () => {
-  const previousUrl = editor.value?.getAttributes('link').href
-  // eslint-disable-next-line no-alert
-  const url = window.prompt('URL', previousUrl)
-
-  // cancelled
-  if (url === null)
-    return
-
-  // empty
-  if (url === '') {
-    editor.value?.chain().focus().extendMarkRange('link').unsetLink().run()
-
-    return
-  }
-
-  // update link
-  editor.value?.chain().focus().extendMarkRange('link').setLink({ href: url }).run()
-}
-
-const addImage = () => {
-  // eslint-disable-next-line no-alert
-  const url = window.prompt('URL')
-
-  if (url)
-    editor.value?.chain().focus().setImage({ src: url }).run()
 }
 </script>
 
@@ -264,10 +212,10 @@ const addImage = () => {
             :color="props.email.isStarred ? 'warning' : 'default'"
             @click="props.email?.isStarred ? $emit('unstar') : $emit('star'); $emit('refresh')"
           >
-            <VIcon 
+            <VIcon
               :color="props.email.isStarred ? 'warning' : '' "
               icon="ri-star-line"
-             />
+            />
           </IconBtn>
           <MoreBtn />
         </div>
@@ -304,7 +252,7 @@ const addImage = () => {
                   </p>
                 </div>
 
-              <VSpacer />
+                <VSpacer />
 
                 <div class="d-flex align-center">
                   <span class="text-disabled me-4">{{ formatDate(props.email.time) }}</span>

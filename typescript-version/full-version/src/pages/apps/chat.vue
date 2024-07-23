@@ -116,7 +116,10 @@ const chatContentContainerBg = computed(() => {
 </script>
 
 <template>
-  <VLayout class="chat-app-layout bg-surface">
+  <VLayout
+    class="chat-app-layout bg-surface"
+    style="z-index: 0;"
+  >
     <!-- 👉 user profile sidebar -->
     <VNavigationDrawer
       v-model="isUserProfileSidebarOpen"

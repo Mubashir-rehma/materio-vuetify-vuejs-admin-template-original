@@ -187,7 +187,7 @@ watch(
 
 <template>
   <VLayout
-    style="min-block-size: 100%;"
+    style=" z-index: 0;min-block-size: 100%;"
     class="email-app-layout"
   >
     <VNavigationDrawer

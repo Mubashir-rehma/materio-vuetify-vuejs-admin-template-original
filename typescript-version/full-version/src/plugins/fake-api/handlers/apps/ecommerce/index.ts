@@ -150,7 +150,7 @@ export const handlerAppsEcommerce = [
 
   // 👉 Orders
   // Get single Customer
-  http.get(('/api/apps/ecommerce/order/:id'), ({ params }) => {
+  http.get(('/api/apps/ecommerce/orders/:id'), ({ params }) => {
     const orderId = Number(params.id)
 
     try {

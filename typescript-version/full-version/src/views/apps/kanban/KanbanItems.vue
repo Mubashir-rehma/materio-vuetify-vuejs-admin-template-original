@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import KanbanCard from '@/views/apps/kanban/KanbanCard.vue'
-import type { AddNewKanbanItem, EditKanbanItem, KanbanData, KanbanState, RenameKanbanBoard } from '@db/apps/kanban/types'
 import { animations, handleEnd, performTransfer } from '@formkit/drag-and-drop'
 import { dragAndDrop } from '@formkit/drag-and-drop/vue'
 import { VForm } from 'vuetify/components/VForm'
+import type { AddNewKanbanItem, EditKanbanItem, KanbanData, KanbanState, RenameKanbanBoard } from '@db/apps/kanban/types'
+import KanbanCard from '@/views/apps/kanban/KanbanCard.vue'
 
 const props = defineProps<{
   kanbanIds: number[]
@@ -94,7 +94,7 @@ dragAndDrop({
 })
 
 // 👉 watch kanbanIds its is useful when you add new task
-watch(props, () => {
+watch(() => props, () => {
   localIds.value = props.kanbanIds
 }, { immediate: true, deep: true })
 

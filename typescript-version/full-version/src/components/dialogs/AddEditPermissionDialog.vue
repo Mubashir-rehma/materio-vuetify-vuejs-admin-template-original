@@ -26,7 +26,7 @@ const onSubmit = () => {
   emit('update:permissionName', currentPermissionName.value)
 }
 
-watch(props, () => {
+watch(() => props, () => {
   currentPermissionName.value = props.permissionName
 })
 </script>

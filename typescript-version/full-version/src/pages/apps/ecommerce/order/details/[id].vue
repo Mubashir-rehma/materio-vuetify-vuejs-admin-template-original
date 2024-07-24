@@ -9,7 +9,7 @@ const orderData = ref<Order>()
 
 const route = useRoute('apps-ecommerce-order-details-id')
 
-const { data } = await useApi<Order>(`/apps/ecommerce/order/${route.params.id}`)
+const { data } = await useApi<Order>(`/apps/ecommerce/orders/${route.params.id}`)
 
 if (data.value)
   orderData.value = data.value

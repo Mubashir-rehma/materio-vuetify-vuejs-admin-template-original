@@ -32,7 +32,7 @@ const emit = defineEmits<Emit>()
 
 const cardDetails = ref<Details>(structuredClone(toRaw(props.cardDetails)))
 
-watch(props, () => {
+watch(() => props, () => {
   cardDetails.value = structuredClone(toRaw(props.cardDetails))
 })
 

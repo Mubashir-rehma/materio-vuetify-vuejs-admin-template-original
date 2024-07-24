@@ -51,7 +51,7 @@ const emit = defineEmits<Emit>()
 
 const userData = ref<UserData>(structuredClone(toRaw(props.userData)))
 
-watch(props, () => {
+watch(() => props, () => {
   userData.value = structuredClone(toRaw(props.userData))
 })
 

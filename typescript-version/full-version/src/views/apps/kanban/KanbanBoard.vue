@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import KanbanBoardEditDrawer from '@/views/apps/kanban/KanbanBoardEditDrawer.vue'
-import KanbanItems from '@/views/apps/kanban/KanbanItems.vue'
-import type { AddNewKanbanItem, EditKanbanItem, KanbanBoard, KanbanData, KanbanState, RenameKanbanBoard } from '@db/apps/kanban/types'
 import { animations, remapNodes } from '@formkit/drag-and-drop'
 import { dragAndDrop } from '@formkit/drag-and-drop/vue'
 import { VForm } from 'vuetify/components/VForm'
+import KanbanBoardEditDrawer from '@/views/apps/kanban/KanbanBoardEditDrawer.vue'
+import KanbanItems from '@/views/apps/kanban/KanbanItems.vue'
+import type { AddNewKanbanItem, EditKanbanItem, KanbanBoard, KanbanData, KanbanState, RenameKanbanBoard } from '@db/apps/kanban/types'
 
 const props = withDefaults(defineProps<{
   kanbanData: KanbanData
@@ -82,7 +82,7 @@ dragAndDrop({
 })
 
 // assign the new kanban data to the local kanban data
-watch(props, () => {
+watch(() => props, () => {
   localKanbanData.value = props.kanbanData.boards
 
   // 👉 remap the nodes when we rename the board: https://github.com/formkit/drag-and-drop/discussions/52#discussioncomment-8995203

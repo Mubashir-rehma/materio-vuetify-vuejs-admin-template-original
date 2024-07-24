@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { createHighlighter } from 'shiki';
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
+import { getSingletonHighlighter } from 'shiki'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 
 type CodeLanguages = 'ts' | 'js'
 
@@ -27,7 +27,7 @@ const isCodeShown = ref(false)
 
 const { copy, copied } = useClipboard({ source: computed(() => props.code[preferredCodeLanguage.value]) })
 
-const highlighter = await createHighlighter({
+const highlighter = await getSingletonHighlighter({
   themes: ['dracula', 'dracula-soft'],
   langs: ['vue'],
 })

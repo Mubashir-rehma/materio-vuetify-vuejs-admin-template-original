@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import { useMouse } from '@vueuse/core'
+import { useTheme } from 'vuetify'
 import { useGenerateImageVariant } from '@/@core/composable/useGenerateImageVariant'
 import darkBg from '@images/front-pages/backgrounds/hero-bg-dark.png'
 import lightBg from '@images/front-pages/backgrounds/hero-bg.png'
 import heroDashboardImgDark from '@images/front-pages/landing-page/hero-dashboard-dark.png'
 import heroDashboardImgLight from '@images/front-pages/landing-page/hero-dashboard-light.png'
-import { useMouse } from '@vueuse/core'
-import { useTheme } from 'vuetify'
 
 import heroElementsImgDark from '@images/front-pages/landing-page/hero-elements-dark.png'
 import heroElementsImgLight from '@images/front-pages/landing-page/hero-elements-light.png'
@@ -32,6 +32,9 @@ const translateMouse = computed(() => (speed: number) => {
 
     return { transform: `translate(${positionX.value}px,${positionY.value}px` }
   }
+
+  // Default Return value for hydration mismatch issue
+  return { transform: 'translate(12.24px,9.68px)' }
 })
 </script>
 
@@ -145,27 +148,27 @@ section {
   margin-block-start: 6.25rem;
 }
 
-.landing-page-title{
+.landing-page-title {
   color: rgb(var(--v-theme-primary));
   font-size: 2.375rem;
   font-weight: 800;
-  line-height: 2.75rem
+  line-height: 2.75rem;
 }
 
-.hero-animation-img{
-  inset-block-start:0;
+.hero-animation-img {
+  inset-block-start: 0;
   margin-block-end: -16rem;
 }
 
-@media (max-width: 960px ){
-  .hero-animation-img{
+@media (max-width: 960px) {
+  .hero-animation-img {
     inset-block-start: 2rem;
     margin-block-end: -8rem;
   }
 }
 
-@media (max-width: 600px ){
-  .hero-animation-img{
+@media (max-width: 600px) {
+  .hero-animation-img {
     inset-block-start: 1rem;
     margin-block-end: -2rem;
   }

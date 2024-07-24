@@ -25,16 +25,21 @@ const heroDashboardImg = useGenerateImageVariant(heroDashboardImgLight, heroDash
 
 const { x, y } = useMouse({ touch: false })
 
-const translateMouse = computed(() => (speed: number) => {
-  if (typeof window !== 'undefined') {
-    const positionX = computed (() => (window.innerWidth - (x.value * speed)) / 100)
-    const positionY = computed (() => Math.max((window.innerHeight - (y.value * speed)) / 100, -40))
+const transformDashboardImg = ref('translate(0px, 0px)')
+const transformHeroElements = ref('translate(0px, 0px)')
 
-    return { transform: `translate(${positionX.value}px,${positionY.value}px` }
-  }
+const calculatePosition = (speed: number) => {
+  const positionX = (window.innerWidth - (x.value * speed)) / 100
+  const positionY = Math.max((window.innerHeight - (y.value * speed)) / 100, -40)
 
-  // Default Return value for hydration mismatch issue
-  return { transform: 'translate(12.24px,9.68px)' }
+  return `translate(${positionX}px, ${positionY}px)`
+}
+
+onMounted(() => {
+  watchEffect(() => {
+    transformDashboardImg.value = calculatePosition(2.5)
+    transformHeroElements.value = calculatePosition(5)
+  })
 })
 </script>
 
@@ -84,7 +89,7 @@ const translateMouse = computed(() => (speed: number) => {
               <img
                 :src="heroDashboardImg"
                 class="mx-auto cursor-pointer"
-                :style="translateMouse(2.5)"
+                :style="{ transform: transformDashboardImg }"
               >
             </RouterLink>
           </div>
@@ -97,7 +102,7 @@ const translateMouse = computed(() => (speed: number) => {
               <img
                 class="cursor-pointer"
                 :src="heroElementsImg"
-                :style="translateMouse(5)"
+                :style="{ transform: transformHeroElements }"
                 target="_blank"
               >
             </RouterLink>

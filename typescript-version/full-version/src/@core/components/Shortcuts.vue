@@ -28,7 +28,6 @@ const router = useRouter()
       activator="parent"
       offset="15px"
       location="bottom end"
-      width="340"
     >
       <VCard
         max-width="380"

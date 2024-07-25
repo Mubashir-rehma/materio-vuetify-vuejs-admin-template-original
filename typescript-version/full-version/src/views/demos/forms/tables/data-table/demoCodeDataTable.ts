@@ -1,5 +1,6 @@
-export const basic = { ts: `<script setup lang="ts">
-import data from '@/views/demos/forms/tables/data-table/datatable'
+export const basic = {
+  ts: `<script setup lang="ts">
+import data from '@/views/demos/forms/tables/data-table/datatable';
 
 const headers = [
   { title: 'ID', key: 'id' },
@@ -23,7 +24,8 @@ const headers = [
     </template>
   </VDataTable>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const headers = [
@@ -66,9 +68,11 @@ const headers = [
     </template>
   </VDataTable>
 </template>
-` }
+`,
+}
 
-export const cellSlot = { ts: `<script setup lang="ts">
+export const cellSlot = {
+  ts: `<script setup lang="ts">
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const headers = [
@@ -137,7 +141,8 @@ const resolveStatusVariant = (status: number) => {
     </template>
   </VDataTable>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const headers = [
@@ -239,9 +244,11 @@ const resolveStatusVariant = status => {
     </template>
   </VDataTable>
 </template>
-` }
+`,
+}
 
-export const dense = { ts: `<script setup lang="ts">
+export const dense = {
+  ts: `<script setup lang="ts">
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const headers = [
@@ -263,7 +270,8 @@ const headers = [
     class="text-no-wrap"
   />
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const headers = [
@@ -303,9 +311,11 @@ const headers = [
     class="text-no-wrap"
   />
 </template>
-` }
+`,
+}
 
-export const expandableRows = { ts: `<script setup lang="ts">
+export const expandableRows = {
+  ts: `<script setup lang="ts">
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 // Headers
@@ -392,7 +402,8 @@ const resolveStatusVariant = (status: number) => {
     </template>
   </VDataTable>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 // Headers
@@ -515,9 +526,11 @@ const resolveStatusVariant = status => {
     </template>
   </VDataTable>
 </template>
-` }
+`,
+}
 
-export const externalPagination = { ts: `<script setup lang="ts">
+export const externalPagination = {
+  ts: `<script setup lang="ts">
 import data from '@/views/demos/forms/tables/data-table/datatable'
 import type { Data } from '@db/pages/datatable/types'
 
@@ -600,13 +613,10 @@ onMounted(() => {
     <template #bottom>
       <VCardText class="pt-2">
         <div class="d-flex flex-wrap justify-center justify-sm-space-between gap-y-2 mt-2">
-          <VTextField
+          <VSelect
             v-model="options.itemsPerPage"
+            :items="[5, 10, 25, 50, 100]"
             label="Rows per page:"
-            type="number"
-            min="-1"
-            max="15"
-            hide-details
             variant="underlined"
             style="max-inline-size: 8rem;min-inline-size: 5rem;"
           />
@@ -621,7 +631,8 @@ onMounted(() => {
     </template>
   </VDataTable>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const userList = ref([])
@@ -742,13 +753,10 @@ onMounted(() => {
     <template #bottom>
       <VCardText class="pt-2">
         <div class="d-flex flex-wrap justify-center justify-sm-space-between gap-y-2 mt-2">
-          <VTextField
+          <VSelect
             v-model="options.itemsPerPage"
+            :items="[5, 10, 25, 50, 100]"
             label="Rows per page:"
-            type="number"
-            min="-1"
-            max="15"
-            hide-details
             variant="underlined"
             style="max-inline-size: 8rem;min-inline-size: 5rem;"
           />
@@ -763,9 +771,11 @@ onMounted(() => {
     </template>
   </VDataTable>
 </template>
-` }
+`,
+}
 
-export const fixedHeader = { ts: `<script setup lang="ts">
+export const fixedHeader = {
+  ts: `<script setup lang="ts">
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const headers = [
@@ -837,7 +847,8 @@ const resolveStatusVariant = (status: number) => {
     </template>
   </VDataTable>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const headers = [
@@ -942,9 +953,11 @@ const resolveStatusVariant = status => {
     </template>
   </VDataTable>
 </template>
-` }
+`,
+}
 
-export const groupingRows = { ts: `<script setup lang="ts">
+export const groupingRows = {
+  ts: `<script setup lang="ts">
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar4 from '@images/avatars/avatar-4.png'
@@ -1323,7 +1336,8 @@ const getIcon = (props: Record<string, unknown>) => props.icon as any
     </template>
   </VDataTable>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar4 from '@images/avatars/avatar-4.png'
@@ -1720,9 +1734,11 @@ const getIcon = props => props.icon
     </template>
   </VDataTable>
 </template>
-` }
+`,
+}
 
-export const kitchenSink = { ts: `<script setup lang="ts">
+export const kitchenSink = {
+  ts: `<script setup lang="ts">
 import type { SalesDetails } from '@db/pages/datatable/types'
 
 const { data: productList } = await useApi<SalesDetails[]>('pages/datatable')
@@ -1921,7 +1937,8 @@ const categoryIconFilter = (categoryName: string): {
     </VDataTable>
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const { data: productList } = await useApi('pages/datatable')
 const search = ref('')
 
@@ -2226,9 +2243,11 @@ const categoryIconFilter = categoryName => {
     </VDataTable>
   </div>
 </template>
-` }
+`,
+}
 
-export const rowEditingViaDialog = { ts: `<script setup lang="ts">
+export const rowEditingViaDialog = {
+  ts: `<script setup lang="ts">
 import data from '@/views/demos/forms/tables/data-table/datatable'
 import type { Data } from '@db/pages/datatable/types'
 
@@ -2401,115 +2420,104 @@ onMounted(() => {
     v-model="editDialog"
     max-width="600px"
   >
-    <VCard>
-      <VCardTitle>
-        <span class="headline">Edit Item</span>
-      </VCardTitle>
-
+    <VCard title="Edit Item">
       <VCardText>
-        <VContainer>
-          <VRow>
-            <!-- fullName -->
-            <VCol
-              cols="12"
-              sm="6"
-              md="4"
-            >
-              <VTextField
-                v-model="editedItem.fullName"
-                label="User name"
-              />
-            </VCol>
+        <div class="text-body-1 mb-6">
+          Name: <span class="text-h6">{{ editedItem?.fullName }}</span>
+        </div>
+        <VRow>
+          <!-- fullName -->
+          <VCol
+            cols="12"
+            sm="6"
+          >
+            <VTextField
+              v-model="editedItem.fullName"
+              label="User name"
+            />
+          </VCol>
 
-            <!-- email -->
-            <VCol
-              cols="12"
-              sm="6"
-              md="4"
-            >
-              <VTextField
-                v-model="editedItem.email"
-                label="Email"
-              />
-            </VCol>
+          <!-- email -->
+          <VCol
+            cols="12"
+            sm="6"
+          >
+            <VTextField
+              v-model="editedItem.email"
+              label="Email"
+            />
+          </VCol>
 
-            <!-- salary -->
-            <VCol
-              cols="12"
-              sm="6"
-              md="4"
-            >
-              <VTextField
-                v-model="editedItem.salary"
-                label="Salary"
-                prefix="$"
-                type="number"
-              />
-            </VCol>
+          <!-- salary -->
+          <VCol
+            cols="12"
+            sm="6"
+          >
+            <VTextField
+              v-model="editedItem.salary"
+              label="Salary"
+              prefix="$"
+              type="number"
+            />
+          </VCol>
 
-            <!-- age -->
-            <VCol
-              cols="12"
-              sm="6"
-              md="4"
-            >
-              <VTextField
-                v-model="editedItem.age"
-                label="Age"
-                type="number"
-              />
-            </VCol>
+          <!-- age -->
+          <VCol
+            cols="12"
+            sm="6"
+          >
+            <VTextField
+              v-model="editedItem.age"
+              label="Age"
+              type="number"
+            />
+          </VCol>
 
-            <!-- start date -->
-            <VCol
-              cols="12"
-              sm="6"
-              md="4"
-            >
-              <VTextField
-                v-model="editedItem.startDate"
-                label="Date"
-              />
-            </VCol>
+          <!-- start date -->
+          <VCol
+            cols="12"
+            sm="6"
+          >
+            <VTextField
+              v-model="editedItem.startDate"
+              label="Date"
+            />
+          </VCol>
 
-            <!-- status -->
-            <VCol
-              cols="12"
-              sm="6"
-              md="4"
-            >
-              <VSelect
-                v-model="editedItem.status"
-                :items="selectedOptions"
-                item-title="text"
-                item-value="value"
-                label="Status"
-                variant="outlined"
-              />
-            </VCol>
-          </VRow>
-        </VContainer>
+          <!-- status -->
+          <VCol
+            cols="12"
+            sm="6"
+          >
+            <VSelect
+              v-model="editedItem.status"
+              :items="selectedOptions"
+              item-title="text"
+              item-value="value"
+              label="Standard"
+            />
+          </VCol>
+        </VRow>
       </VCardText>
 
-      <VCardActions>
-        <VSpacer />
-
-        <VBtn
-          color="error"
-          variant="outlined"
-          @click="close"
-        >
-          Cancel
-        </VBtn>
-
-        <VBtn
-          color="success"
-          variant="elevated"
-          @click="save"
-        >
-          Save
-        </VBtn>
-      </VCardActions>
+      <VCardText>
+        <div class="self-align-end d-flex gap-4 justify-end">
+          <VBtn
+            color="error"
+            variant="outlined"
+            @click="close"
+          >
+            Cancel
+          </VBtn>
+          <VBtn
+            color="success"
+            variant="elevated"
+            @click="save"
+          >
+            Save
+          </VBtn>
+        </div>
+      </VCardText>
     </VCard>
   </VDialog>
 
@@ -2518,36 +2526,30 @@ onMounted(() => {
     v-model="deleteDialog"
     max-width="500px"
   >
-    <VCard>
-      <VCardTitle>
-        Are you sure you want to delete this item?
-      </VCardTitle>
-
-      <VCardActions>
-        <VSpacer />
-
-        <VBtn
-          color="error"
-          variant="outlined"
-          @click="closeDelete"
-        >
-          Cancel
-        </VBtn>
-
-        <VBtn
-          color="success"
-          variant="elevated"
-          @click="deleteItemConfirm"
-        >
-          OK
-        </VBtn>
-
-        <VSpacer />
-      </VCardActions>
+    <VCard title="Are you sure you want to delete this item?">
+      <VCardText>
+        <div class="d-flex justify-center gap-4">
+          <VBtn
+            color="error"
+            variant="outlined"
+            @click="closeDelete"
+          >
+            Cancel
+          </VBtn>
+          <VBtn
+            color="success"
+            variant="elevated"
+            @click="deleteItemConfirm"
+          >
+            OK
+          </VBtn>
+        </div>
+      </VCardText>
     </VCard>
   </VDialog>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const editDialog = ref(false)
@@ -2767,115 +2769,104 @@ onMounted(() => {
     v-model="editDialog"
     max-width="600px"
   >
-    <VCard>
-      <VCardTitle>
-        <span class="headline">Edit Item</span>
-      </VCardTitle>
-
+    <VCard title="Edit Item">
       <VCardText>
-        <VContainer>
-          <VRow>
-            <!-- fullName -->
-            <VCol
-              cols="12"
-              sm="6"
-              md="4"
-            >
-              <VTextField
-                v-model="editedItem.fullName"
-                label="User name"
-              />
-            </VCol>
+        <div class="text-body-1 mb-6">
+          Name: <span class="text-h6">{{ editedItem?.fullName }}</span>
+        </div>
+        <VRow>
+          <!-- fullName -->
+          <VCol
+            cols="12"
+            sm="6"
+          >
+            <VTextField
+              v-model="editedItem.fullName"
+              label="User name"
+            />
+          </VCol>
 
-            <!-- email -->
-            <VCol
-              cols="12"
-              sm="6"
-              md="4"
-            >
-              <VTextField
-                v-model="editedItem.email"
-                label="Email"
-              />
-            </VCol>
+          <!-- email -->
+          <VCol
+            cols="12"
+            sm="6"
+          >
+            <VTextField
+              v-model="editedItem.email"
+              label="Email"
+            />
+          </VCol>
 
-            <!-- salary -->
-            <VCol
-              cols="12"
-              sm="6"
-              md="4"
-            >
-              <VTextField
-                v-model="editedItem.salary"
-                label="Salary"
-                prefix="$"
-                type="number"
-              />
-            </VCol>
+          <!-- salary -->
+          <VCol
+            cols="12"
+            sm="6"
+          >
+            <VTextField
+              v-model="editedItem.salary"
+              label="Salary"
+              prefix="$"
+              type="number"
+            />
+          </VCol>
 
-            <!-- age -->
-            <VCol
-              cols="12"
-              sm="6"
-              md="4"
-            >
-              <VTextField
-                v-model="editedItem.age"
-                label="Age"
-                type="number"
-              />
-            </VCol>
+          <!-- age -->
+          <VCol
+            cols="12"
+            sm="6"
+          >
+            <VTextField
+              v-model="editedItem.age"
+              label="Age"
+              type="number"
+            />
+          </VCol>
 
-            <!-- start date -->
-            <VCol
-              cols="12"
-              sm="6"
-              md="4"
-            >
-              <VTextField
-                v-model="editedItem.startDate"
-                label="Date"
-              />
-            </VCol>
+          <!-- start date -->
+          <VCol
+            cols="12"
+            sm="6"
+          >
+            <VTextField
+              v-model="editedItem.startDate"
+              label="Date"
+            />
+          </VCol>
 
-            <!-- status -->
-            <VCol
-              cols="12"
-              sm="6"
-              md="4"
-            >
-              <VSelect
-                v-model="editedItem.status"
-                :items="selectedOptions"
-                item-title="text"
-                item-value="value"
-                label="Status"
-                variant="outlined"
-              />
-            </VCol>
-          </VRow>
-        </VContainer>
+          <!-- status -->
+          <VCol
+            cols="12"
+            sm="6"
+          >
+            <VSelect
+              v-model="editedItem.status"
+              :items="selectedOptions"
+              item-title="text"
+              item-value="value"
+              label="Standard"
+            />
+          </VCol>
+        </VRow>
       </VCardText>
 
-      <VCardActions>
-        <VSpacer />
-
-        <VBtn
-          color="error"
-          variant="outlined"
-          @click="close"
-        >
-          Cancel
-        </VBtn>
-
-        <VBtn
-          color="success"
-          variant="elevated"
-          @click="save"
-        >
-          Save
-        </VBtn>
-      </VCardActions>
+      <VCardText>
+        <div class="self-align-end d-flex gap-4 justify-end">
+          <VBtn
+            color="error"
+            variant="outlined"
+            @click="close"
+          >
+            Cancel
+          </VBtn>
+          <VBtn
+            color="success"
+            variant="elevated"
+            @click="save"
+          >
+            Save
+          </VBtn>
+        </div>
+      </VCardText>
     </VCard>
   </VDialog>
 
@@ -2884,38 +2875,33 @@ onMounted(() => {
     v-model="deleteDialog"
     max-width="500px"
   >
-    <VCard>
-      <VCardTitle>
-        Are you sure you want to delete this item?
-      </VCardTitle>
-
-      <VCardActions>
-        <VSpacer />
-
-        <VBtn
-          color="error"
-          variant="outlined"
-          @click="closeDelete"
-        >
-          Cancel
-        </VBtn>
-
-        <VBtn
-          color="success"
-          variant="elevated"
-          @click="deleteItemConfirm"
-        >
-          OK
-        </VBtn>
-
-        <VSpacer />
-      </VCardActions>
+    <VCard title="Are you sure you want to delete this item?">
+      <VCardText>
+        <div class="d-flex justify-center gap-4">
+          <VBtn
+            color="error"
+            variant="outlined"
+            @click="closeDelete"
+          >
+            Cancel
+          </VBtn>
+          <VBtn
+            color="success"
+            variant="elevated"
+            @click="deleteItemConfirm"
+          >
+            OK
+          </VBtn>
+        </div>
+      </VCardText>
     </VCard>
   </VDialog>
 </template>
-` }
+`,
+}
 
-export const rowSelection = { ts: `<script setup lang="ts">
+export const rowSelection = {
+  ts: `<script setup lang="ts">
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const headers = [
@@ -2986,7 +2972,8 @@ const resolveStatusVariant = (status: number) => {
     </template>
   </VDataTable>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const headers = [
@@ -3090,5 +3077,5 @@ const resolveStatusVariant = status => {
     </template>
   </VDataTable>
 </template>
-` }
-
+`,
+}

@@ -1,20 +1,27 @@
-export const basic = { ts: `<template>
+export const basic = {
+  ts: `<template>
   <VRating />
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VRating />
 </template>
-` }
+`,
+}
 
-export const clearable = { ts: `<template>
+export const clearable = {
+  ts: `<template>
   <VRating clearable />
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VRating clearable />
 </template>
-` }
+`,
+}
 
-export const colors = { ts: `<script lang="ts" setup>
+export const colors = {
+  ts: `<script lang="ts" setup>
 const rating = ref(4)
 const ratingColors = ['primary', 'secondary', 'success', 'info', 'warning', 'error']
 </script>
@@ -29,7 +36,8 @@ const ratingColors = ['primary', 'secondary', 'success', 'info', 'warning', 'err
     />
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const rating = ref(4)
 
 const ratingColors = [
@@ -52,25 +60,33 @@ const ratingColors = [
     />
   </div>
 </template>
-` }
+`,
+}
 
-export const density = { ts: `<template>
+export const density = {
+  ts: `<template>
   <VRating density="compact" />
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VRating density="compact" />
 </template>
-` }
+`,
+}
 
-export const hover = { ts: `<template>
+export const hover = {
+  ts: `<template>
   <VRating hover />
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VRating hover />
 </template>
-` }
+`,
+}
 
-export const incremented = { ts: `<script lang="ts" setup>
+export const incremented = {
+  ts: `<script lang="ts" setup>
 const rating = ref(4.5)
 </script>
 
@@ -82,7 +98,8 @@ const rating = ref(4.5)
     color="secondary"
   />
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const rating = ref(4.5)
 </script>
 
@@ -94,9 +111,11 @@ const rating = ref(4.5)
     color="secondary"
   />
 </template>
-` }
+`,
+}
 
-export const itemSlot = { ts: `<script lang="ts" setup>
+export const itemSlot = {
+  ts: `<script lang="ts" setup>
 const rating = ref(4.5)
 </script>
 
@@ -113,7 +132,8 @@ const rating = ref(4.5)
     </template>
   </VRating>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const rating = ref(4.5)
 </script>
 
@@ -130,9 +150,11 @@ const rating = ref(4.5)
     </template>
   </VRating>
 </template>
-` }
+`,
+}
 
-export const length = { ts: `<script lang="ts" setup>
+export const length = {
+  ts: `<script lang="ts" setup>
 const length = ref(5)
 const rating = ref(2)
 </script>
@@ -156,7 +178,8 @@ const rating = ref(2)
     Model: {{ rating }}
   </p>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const length = ref(5)
 const rating = ref(2)
 </script>
@@ -180,23 +203,28 @@ const rating = ref(2)
     Model: {{ rating }}
   </p>
 </template>
-` }
+`,
+}
 
-export const readonly = { ts: `<template>
+export const readonly = {
+  ts: `<template>
   <VRating
     readonly
     :model-value="4"
   />
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VRating
     readonly
     :model-value="4"
   />
 </template>
-` }
+`,
+}
 
-export const size = { ts: `<script lang="ts" setup>
+export const size = {
+  ts: `<script lang="ts" setup>
 const rating = ref(4)
 </script>
 
@@ -225,7 +253,8 @@ const rating = ref(4)
     />
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const rating = ref(4)
 </script>
 
@@ -254,5 +283,5 @@ const rating = ref(4)
     />
   </div>
 </template>
-` }
-
+`,
+}

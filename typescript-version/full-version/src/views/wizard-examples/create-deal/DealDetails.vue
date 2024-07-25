@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { DealDetails } from './types';
+import type { DealDetails } from './types'
 
 const props = defineProps<{
   formData: DealDetails

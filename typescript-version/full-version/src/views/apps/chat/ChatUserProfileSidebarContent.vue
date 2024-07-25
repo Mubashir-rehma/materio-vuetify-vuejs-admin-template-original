@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { useChatStore } from '@/views/apps/chat/useChatStore';
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
-import { useChat } from './useChat';
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { useChat } from './useChat'
+import { useChatStore } from '@/views/apps/chat/useChatStore'
 
 defineEmits<{
   (e: 'close'): void
@@ -96,9 +96,7 @@ const isNotificationEnabled = ref(false)
         <p class="text-base text-disabled mb-1">
           STATUS
         </p>
-        <VRadioGroup
-          v-model="store.profileUser.status"
-        >
+        <VRadioGroup v-model="store.profileUser.status">
           <VRadio
             v-for="radioOption in userStatusRadioOptions"
             :key="radioOption.title"
@@ -127,7 +125,10 @@ const isNotificationEnabled = ref(false)
 
           <VSpacer />
 
-          <VSwitch v-model="isTwoStepVerified" density="compact"/>
+          <VSwitch
+            v-model="isTwoStepVerified"
+            density="compact"
+          />
         </div>
         <div class="d-flex align-center pa-2">
           <VIcon
@@ -142,7 +143,10 @@ const isNotificationEnabled = ref(false)
 
           <VSpacer />
 
-          <VSwitch v-model="isNotificationEnabled" density="compact" />
+          <VSwitch
+            v-model="isNotificationEnabled"
+            density="compact"
+          />
         </div>
         <div class="d-flex align-center pa-2">
           <VIcon

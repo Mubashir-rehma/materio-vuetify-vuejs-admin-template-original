@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useConfigStore } from '@core/stores/config';
-import type { ThemeSwitcherTheme } from '@layouts/types';
+import { useConfigStore } from '@core/stores/config'
+import type { ThemeSwitcherTheme } from '@layouts/types'
 
 const props = defineProps<{
   themes: ThemeSwitcherTheme[]

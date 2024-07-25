@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import briefcase from '@images/cards/briefcase.png';
-import logoCreditCard2 from '@images/cards/logo-credit-card-2.png';
-import logoMastercardSmall from '@images/cards/logo-mastercard-small.png';
+import briefcase from '@images/cards/briefcase.png'
+import logoCreditCard2 from '@images/cards/logo-credit-card-2.png'
+import logoMastercardSmall from '@images/cards/logo-mastercard-small.png'
 
 const savedCards = [
   {
@@ -49,7 +49,7 @@ const savedCards = [
             :src="briefcase"
             alt="briefcase"
             height="20"
-          />
+          >
         </VAvatar>
 
         <div class="d-flex flex-column">

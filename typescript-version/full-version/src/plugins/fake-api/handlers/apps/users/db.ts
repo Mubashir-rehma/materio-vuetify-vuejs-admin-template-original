@@ -1,3 +1,4 @@
+import type { UserProperties } from './types'
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar10 from '@images/avatars/avatar-10.png'
 import avatar11 from '@images/avatars/avatar-11.png'
@@ -10,7 +11,6 @@ import avatar6 from '@images/avatars/avatar-6.png'
 import avatar7 from '@images/avatars/avatar-7.png'
 import avatar8 from '@images/avatars/avatar-8.png'
 import avatar9 from '@images/avatars/avatar-9.png'
-import type { UserProperties } from './types'
 
 interface DB {
   users: UserProperties[]

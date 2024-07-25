@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import stepperCheck from '@images/svg/stepper-check.svg';
+import stepperCheck from '@images/svg/stepper-check.svg'
 
 interface Item {
   title: string

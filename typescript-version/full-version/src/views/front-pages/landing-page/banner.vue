@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ctaDashborad from '@images/front-pages/landing-page/cta-dashboard.png';
+import ctaDashborad from '@images/front-pages/landing-page/cta-dashboard.png'
 </script>
 
 <template>

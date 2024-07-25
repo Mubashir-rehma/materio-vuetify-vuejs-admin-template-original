@@ -1,4 +1,5 @@
-export const closable = { ts: `<script lang="ts" setup>
+export const closable = {
+  ts: `<script lang="ts" setup>
 const isDefaultChipVisible = ref(true)
 const isPrimaryChipVisible = ref(true)
 const isSecondaryChipVisible = ref(true)
@@ -73,7 +74,8 @@ const isErrorChipVisible = ref(true)
     </VChip>
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const isDefaultChipVisible = ref(true)
 const isPrimaryChipVisible = ref(true)
 const isSecondaryChipVisible = ref(true)
@@ -148,9 +150,11 @@ const isErrorChipVisible = ref(true)
     </VChip>
   </div>
 </template>
-` }
+`,
+}
 
-export const color = { ts: `<template>
+export const color = {
+  ts: `<template>
   <div class="demo-space-x">
     <VChip>
       Default
@@ -181,7 +185,8 @@ export const color = { ts: `<template>
     </VChip>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VChip>
       Default
@@ -212,9 +217,11 @@ export const color = { ts: `<template>
     </VChip>
   </div>
 </template>
-` }
+`,
+}
 
-export const elevated = { ts: `<template>
+export const elevated = {
+  ts: `<template>
   <div class="demo-space-x">
     <VChip variant="elevated">
       Default
@@ -263,7 +270,8 @@ export const elevated = { ts: `<template>
     </VChip>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VChip variant="elevated">
       Default
@@ -312,9 +320,11 @@ export const elevated = { ts: `<template>
     </VChip>
   </div>
 </template>
-` }
+`,
+}
 
-export const expandable = { ts: `<script lang="ts" setup>
+export const expandable = {
+  ts: `<script lang="ts" setup>
 const isMenuVisible = ref(false)
 </script>
 
@@ -350,7 +360,8 @@ const isMenuVisible = ref(false)
     </VList>
   </VMenu>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const isMenuVisible = ref(false)
 </script>
 
@@ -386,9 +397,11 @@ const isMenuVisible = ref(false)
     </VList>
   </VMenu>
 </template>
-` }
+`,
+}
 
-export const inSelects = { ts: `<script lang="ts" setup>
+export const inSelects = {
+  ts: `<script lang="ts" setup>
 const chips = ref(['Programming', 'Playing games', 'Sleeping'])
 const items = ref(['Streaming', 'Eating', 'Programming', 'Playing games', 'Sleeping'])
 </script>
@@ -406,7 +419,8 @@ const items = ref(['Streaming', 'Eating', 'Programming', 'Playing games', 'Sleep
     prepend-icon="ri-filter-3-line"
   />
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const chips = ref([
   'Programming',
   'Playing games',
@@ -435,9 +449,11 @@ const items = ref([
     prepend-icon="ri-filter-3-line"
   />
 </template>
-` }
+`,
+}
 
-export const label = { ts: `<template>
+export const label = {
+  ts: `<template>
   <div class="demo-space-x">
     <VChip label>
       Default
@@ -486,7 +502,8 @@ export const label = { ts: `<template>
     </VChip>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VChip label>
       Default
@@ -535,9 +552,11 @@ export const label = { ts: `<template>
     </VChip>
   </div>
 </template>
-` }
+`,
+}
 
-export const outlined = { ts: `<template>
+export const outlined = {
+  ts: `<template>
   <div class="demo-space-x">
     <VChip variant="outlined">
       Default
@@ -586,7 +605,8 @@ export const outlined = { ts: `<template>
     </VChip>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VChip variant="outlined">
       Default
@@ -635,9 +655,11 @@ export const outlined = { ts: `<template>
     </VChip>
   </div>
 </template>
-` }
+`,
+}
 
-export const sizes = { ts: `<template>
+export const sizes = {
+  ts: `<template>
   <div class="demo-space-x">
     <VChip size="x-small">
       x-small chip
@@ -658,7 +680,8 @@ export const sizes = { ts: `<template>
     </VChip>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VChip size="x-small">
       x-small chip
@@ -679,9 +702,38 @@ export const sizes = { ts: `<template>
     </VChip>
   </div>
 </template>
-` }
+`,
+}
 
-export const withAvatar = { ts: `<script setup lang="ts">
+export const withAvatar = {
+  ts: `<script setup lang="ts">
+import avatar1 from '@images/avatars/avatar-1.png';
+import avatar2 from '@images/avatars/avatar-2.png';
+import avatar3 from '@images/avatars/avatar-3.png';
+import avatar4 from '@images/avatars/avatar-4.png';
+</script>
+
+<template>
+  <div class="demo-space-x">
+    <VChip :prepend-avatar="avatar1">
+      <span>Chip</span>
+    </VChip>
+
+    <VChip :prepend-avatar="avatar2">
+      <span>Darcy Nooser</span>
+    </VChip>
+
+    <VChip :prepend-avatar="avatar3" pill>
+      <span>Felicia Risker</span>
+    </VChip>
+
+    <VChip :prepend-avatar="avatar4" :pill="false">
+      <span>Minnie Mostly</span>
+    </VChip>
+  </div>
+</template>
+`,
+  js: `<script setup>
 import avatar1 from '@images/avatars/avatar-1.png'
 import avatar2 from '@images/avatars/avatar-2.png'
 import avatar3 from '@images/avatars/avatar-3.png'
@@ -698,44 +750,26 @@ import avatar4 from '@images/avatars/avatar-4.png'
       <span>Darcy Nooser</span>
     </VChip>
 
-    <VChip :prepend-avatar="avatar3">
+    <VChip
+      :prepend-avatar="avatar3"
+      pill
+    >
       <span>Felicia Risker</span>
     </VChip>
 
-    <VChip :prepend-avatar="avatar4">
+    <VChip
+      :prepend-avatar="avatar4"
+      :pill="false"
+    >
       <span>Minnie Mostly</span>
     </VChip>
   </div>
 </template>
-`, js: `<script setup>
-import avatar1 from '@images/avatars/avatar-1.png'
-import avatar2 from '@images/avatars/avatar-2.png'
-import avatar3 from '@images/avatars/avatar-3.png'
-import avatar4 from '@images/avatars/avatar-4.png'
-</script>
+`,
+}
 
-<template>
-  <div class="demo-space-x">
-    <VChip :prepend-avatar="avatar1">
-      <span>Chip</span>
-    </VChip>
-
-    <VChip :prepend-avatar="avatar2">
-      <span>Darcy Nooser</span>
-    </VChip>
-
-    <VChip :prepend-avatar="avatar3">
-      <span>Felicia Risker</span>
-    </VChip>
-
-    <VChip :prepend-avatar="avatar4">
-      <span>Minnie Mostly</span>
-    </VChip>
-  </div>
-</template>
-` }
-
-export const withIcon = { ts: `<template>
+export const withIcon = {
+  ts: `<template>
   <div class="demo-space-x">
     <VChip prepend-icon="ri-user-line">
       Account
@@ -784,7 +818,8 @@ export const withIcon = { ts: `<template>
     </VChip>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VChip prepend-icon="ri-user-line">
       Account
@@ -833,5 +868,5 @@ export const withIcon = { ts: `<template>
     </VChip>
   </div>
 </template>
-` }
-
+`,
+}

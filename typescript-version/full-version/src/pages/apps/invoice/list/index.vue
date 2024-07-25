@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Invoice } from '@db/apps/invoice/types';
+import type { Invoice } from '@db/apps/invoice/types'
 
 type invoiceStatus = 'Downloaded' | 'Draft' | 'Paid' | 'Sent' | 'Partial Payment' | 'Past Due' | null
 
@@ -133,7 +133,7 @@ const deleteInvoice = async (id: number) => {
                     ? id < (widgetData.length / 2) ? 'border-b pb-4' : ''
                     : ''"
               >
-              <div class="d-flex flex-column">
+                <div class="d-flex flex-column">
                   <h4 class="text-h4">
                     {{ data.value }}
                   </h4>

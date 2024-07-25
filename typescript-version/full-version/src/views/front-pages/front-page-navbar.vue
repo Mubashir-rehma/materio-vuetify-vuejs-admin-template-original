@@ -1,13 +1,13 @@
 <script setup lang="ts">
+import { useWindowScroll } from '@vueuse/core'
+import type { RouteLocationRaw } from 'vue-router/auto'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { useDisplay } from 'vuetify'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
 import navImgDark from '@images/front-pages/misc/nav-img-dark.png'
 import navImgLight from '@images/front-pages/misc/nav-img-light.png'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
-import { useWindowScroll } from '@vueuse/core'
-import type { RouteLocationRaw } from 'vue-router/auto'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { useDisplay } from 'vuetify'
 
 const props = defineProps({
   activeId: String,
@@ -114,16 +114,16 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
             {{ item }}
           </RouterLink>
 
-        <div
-          class="text-high-emphasis font-weight-medium cursor-pointer"
-          :class="isPageActive ? 'active-link' : 'text-high-emphasis'"
-        >
           <div
-            :class="isMenuOpen ? 'mb-6' : ''"
-            @click="isMenuOpen = !isMenuOpen"
+            class="text-high-emphasis font-weight-medium cursor-pointer"
+            :class="isPageActive ? 'active-link' : 'text-high-emphasis'"
           >
-            Pages <VIcon :icon="isMenuOpen ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'" />
-          </div>
+            <div
+              :class="isMenuOpen ? 'mb-6' : ''"
+              @click="isMenuOpen = !isMenuOpen"
+            >
+              Pages <VIcon :icon="isMenuOpen ? 'ri-arrow-up-s-line' : 'ri-arrow-down-s-line'" />
+            </div>
 
             <div
               v-for="(item, index) in menuItems"
@@ -142,50 +142,50 @@ const isPageActive = computed(() => menuItems.some(item => item.navItems.some(li
                 </div>
               </div>
 
-            <ul class="mb-6">
-              <li
-                v-for="listItem in item.navItems"
-                :key="listItem.name"
-                style="list-style: none;"
-                class="text-body-1 mb-4"
-              >
-                <RouterLink
-                  :to="listItem.to"
-                  :target="item.listTitle === 'Page' ? '_self' : '_blank'"
-                  class="mega-menu-item"
-                  :class="isCurrentRoute(listItem.to) ? 'active-link' : ''"
+              <ul class="mb-6">
+                <li
+                  v-for="listItem in item.navItems"
+                  :key="listItem.name"
+                  style="list-style: none;"
+                  class="text-body-1 mb-4"
                 >
-                  <VIcon
-                    icon="ri-circle-line"
-                    :size="10"
-                    class="me-2"
-                  />
-                  <span>  {{ listItem.name }}</span>
-                </RouterLink>
-              </li>
-            </ul>
+                  <RouterLink
+                    :to="listItem.to"
+                    :target="item.listTitle === 'Page' ? '_self' : '_blank'"
+                    class="mega-menu-item"
+                    :class="isCurrentRoute(listItem.to) ? 'active-link' : ''"
+                  >
+                    <VIcon
+                      icon="ri-circle-line"
+                      :size="10"
+                      class="me-2"
+                    />
+                    <span>  {{ listItem.name }}</span>
+                  </RouterLink>
+                </li>
+              </ul>
+            </div>
           </div>
+
+          <RouterLink
+            to="/"
+            target="_blank"
+            class="text-body-1 font-weight-medium nav-link px-0"
+          >
+            Admin
+          </RouterLink>
         </div>
-
-        <RouterLink
-          to="/"
-          target="_blank"
-          class="text-body-1 font-weight-medium nav-link px-0"
-        >
-          Admin
-        </RouterLink>
       </div>
-    </div>
 
-    <!-- Navigation drawer close icon -->
-    <VIcon
-      id="navigation-drawer-close-btn"
-      icon="ri-close-line"
-      size="20"
-      @click="sidebar = !sidebar"
-    />
-  </PerfectScrollbar>
-</VNavigationDrawer>
+      <!-- Navigation drawer close icon -->
+      <VIcon
+        id="navigation-drawer-close-btn"
+        icon="ri-close-line"
+        size="20"
+        @click="sidebar = !sidebar"
+      />
+    </PerfectScrollbar>
+  </VNavigationDrawer>
 
   <!-- 👉 Navbar for desktop devices  -->
   <div class="front-page-navbar">

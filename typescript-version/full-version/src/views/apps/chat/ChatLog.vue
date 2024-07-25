@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useChatStore } from '@/views/apps/chat/useChatStore';
-import type { ChatOut } from '@db/apps/chat/types';
+import { useChatStore } from '@/views/apps/chat/useChatStore'
+import type { ChatOut } from '@db/apps/chat/types'
 
 const store = useChatStore()
 

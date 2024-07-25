@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import avatar1 from '@images/avatars/avatar-1.png';
-import avatar6 from '@images/avatars/avatar-6.png';
-import avatar8 from '@images/avatars/avatar-8.png';
-import pdf from '@images/icons/project-icons/pdf.png';
+import avatar1 from '@images/avatars/avatar-1.png'
+import avatar6 from '@images/avatars/avatar-6.png'
+import avatar8 from '@images/avatars/avatar-8.png'
+import pdf from '@images/icons/project-icons/pdf.png'
 </script>
 
 <template>

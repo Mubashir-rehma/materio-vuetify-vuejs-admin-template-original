@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { UserProperties } from '@db/apps/users/types';
+import type { UserProperties } from '@db/apps/users/types'
 
 const searchQuery = ref('')
 const selectedRole = ref()

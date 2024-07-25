@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { CustomInputContent } from '@core/types';
-import registerMultiStepIllustration from '@images/pages/register-multi-step-illustration.png';
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer';
-import { themeConfig } from '@themeConfig';
+import type { CustomInputContent } from '@core/types'
+import registerMultiStepIllustration from '@images/pages/register-multi-step-illustration.png'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
+import { themeConfig } from '@themeConfig'
 
 definePage({
   meta: {

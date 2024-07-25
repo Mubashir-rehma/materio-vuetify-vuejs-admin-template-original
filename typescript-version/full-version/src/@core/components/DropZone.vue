@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useDropZone, useFileDialog, useObjectUrl } from '@vueuse/core';
+import { useDropZone, useFileDialog, useObjectUrl } from '@vueuse/core'
 
 const dropZoneRef = ref<HTMLDivElement>()
 interface FileData {

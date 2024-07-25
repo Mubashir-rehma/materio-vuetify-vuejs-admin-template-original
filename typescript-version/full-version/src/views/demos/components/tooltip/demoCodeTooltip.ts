@@ -1,4 +1,5 @@
-export const delayOnHover = { ts: `<template>
+export const delayOnHover = {
+  ts: `<template>
   <!-- Delay on open -->
   <VBtn variant="outlined">
     <span>Open Delay On Hover</span> <VTooltip
@@ -10,7 +11,8 @@ export const delayOnHover = { ts: `<template>
     </VTooltip>
   </VBtn>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <!-- Delay on open -->
   <VBtn variant="outlined">
     <span>Open Delay On Hover</span> <VTooltip
@@ -22,9 +24,11 @@ export const delayOnHover = { ts: `<template>
     </VTooltip>
   </VBtn>
 </template>
-` }
+`,
+}
 
-export const events = { ts: `<template>
+export const events = {
+  ts: `<template>
   <div class="demo-space-x">
     <!-- open on hover -->
     <VBtn variant="outlined">
@@ -67,7 +71,8 @@ export const events = { ts: `<template>
     </VBtn>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <!-- open on hover -->
     <VBtn variant="outlined">
@@ -110,9 +115,11 @@ export const events = { ts: `<template>
     </VBtn>
   </div>
 </template>
-` }
+`,
+}
 
-export const location = { ts: `<template>
+export const location = {
+  ts: `<template>
   <div class="demo-space-x">
     <VBtn variant="tonal">
       Tooltip on End
@@ -155,7 +162,8 @@ export const location = { ts: `<template>
     </VBtn>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VBtn variant="tonal">
       Tooltip on End
@@ -198,9 +206,11 @@ export const location = { ts: `<template>
     </VBtn>
   </div>
 </template>
-` }
+`,
+}
 
-export const tooltipOnVariousElements = { ts: `<script setup lang="ts">
+export const tooltipOnVariousElements = {
+  ts: `<script setup lang="ts">
 import avatar4 from '@images/avatars/avatar-4.png'
 </script>
 
@@ -238,7 +248,8 @@ import avatar4 from '@images/avatars/avatar-4.png'
     </VTooltip>
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 import avatar4 from '@images/avatars/avatar-4.png'
 </script>
 
@@ -276,9 +287,11 @@ import avatar4 from '@images/avatars/avatar-4.png'
     </VTooltip>
   </div>
 </template>
-` }
+`,
+}
 
-export const transition = { ts: `<template>
+export const transition = {
+  ts: `<template>
   <div class="demo-space-x">
     <!-- Scale transition -->
     <VBtn>
@@ -317,7 +330,8 @@ export const transition = { ts: `<template>
     </VBtn>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <!-- Scale transition -->
     <VBtn>
@@ -356,9 +370,11 @@ export const transition = { ts: `<template>
     </VBtn>
   </div>
 </template>
-` }
+`,
+}
 
-export const vModelSupport = { ts: `<script lang="ts" setup>
+export const vModelSupport = {
+  ts: `<script lang="ts" setup>
 const isTooltipVisible = ref(false)
 </script>
 
@@ -382,7 +398,8 @@ const isTooltipVisible = ref(false)
     </VTooltip>
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const isTooltipVisible = ref(false)
 </script>
 
@@ -406,5 +423,5 @@ const isTooltipVisible = ref(false)
     </VTooltip>
   </div>
 </template>
-` }
-
+`,
+}

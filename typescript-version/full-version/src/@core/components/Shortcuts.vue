@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar';
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 
 interface Shortcut {
   icon: string

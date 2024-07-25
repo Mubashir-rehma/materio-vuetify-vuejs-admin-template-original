@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 const optionCounter = ref(1)
 
@@ -471,7 +471,7 @@ const isTaxable = ref(true)
                 <VSelect
                   placeholder="Select Category"
                   label="Category"
-                   :items="['Household', 'Office', 'Electronics', 'Management', 'Automotive']"
+                  :items="['Household', 'Office', 'Electronics', 'Management', 'Automotive']"
                 />
                 <IconBtn
                   icon="ri-add-line"

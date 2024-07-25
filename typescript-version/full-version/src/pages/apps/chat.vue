@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { useDisplay, useTheme } from 'vuetify'
 import { themes } from '@/plugins/vuetify/theme'
 import ChatActiveChatUserProfileSidebarContent from '@/views/apps/chat/ChatActiveChatUserProfileSidebarContent.vue'
 import ChatLeftSidebarContent from '@/views/apps/chat/ChatLeftSidebarContent.vue'
@@ -7,8 +9,6 @@ import ChatUserProfileSidebarContent from '@/views/apps/chat/ChatUserProfileSide
 import { useChat } from '@/views/apps/chat/useChat'
 import { useChatStore } from '@/views/apps/chat/useChatStore'
 import type { ChatContact as TypeChatContact } from '@db/apps/chat/types'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { useDisplay, useTheme } from 'vuetify'
 
 definePage({
   meta: {
@@ -274,7 +274,10 @@ const chatContentContainerBg = computed(() => {
                     class="text-high-emphasis"
                   />
                 </IconBtn>
-                <IconBtn size="small" @click="refInputEl?.click()">
+                <IconBtn
+                  size="small"
+                  @click="refInputEl?.click()"
+                >
                   <VIcon
                     icon="ri-attachment-2"
                     class="text-high-emphasis"

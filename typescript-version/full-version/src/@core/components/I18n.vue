@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { I18nLanguage } from '@layouts/types';
+import type { I18nLanguage } from '@layouts/types'
 
 interface Props {
   languages: I18nLanguage[]

@@ -1,4 +1,7 @@
 <script setup lang="tsx">
+import { useStorage } from '@vueuse/core'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { useTheme } from 'vuetify'
 import { staticPrimaryColor, staticPrimaryDarkenColor } from '@/plugins/vuetify/theme'
 import { Direction, Layout, Skins, Theme } from '@core/enums'
 import { useConfigStore } from '@core/stores/config'
@@ -6,9 +9,6 @@ import horizontalLight from '@images/customizer-icons/horizontal-light.svg'
 import { AppContentLayoutNav, ContentWidth } from '@layouts/enums'
 import { cookieRef, namespaceConfig } from '@layouts/stores/config'
 import { themeConfig } from '@themeConfig'
-import { useStorage } from '@vueuse/core'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { useTheme } from 'vuetify'
 
 import borderSkin from '@images/customizer-icons/border-light.svg'
 import collapsed from '@images/customizer-icons/collapsed-light.svg'
@@ -259,7 +259,6 @@ const resetCustomizer = async () => {
   }
 }
 </script>
-
 
 <template>
   <div class="d-lg-block d-none">

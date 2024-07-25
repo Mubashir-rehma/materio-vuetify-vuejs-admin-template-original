@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import usFlag from '@images/icons/countries/us.png';
-import americanExpress from '@images/icons/payments/img/american-express.png';
-import mastercard from '@images/icons/payments/img/mastercard.png';
-import visa from '@images/icons/payments/img/visa-light.png';
+import usFlag from '@images/icons/countries/us.png'
+import americanExpress from '@images/icons/payments/img/american-express.png'
+import mastercard from '@images/icons/payments/img/mastercard.png'
+import visa from '@images/icons/payments/img/visa-light.png'
 
 interface CardDetails {
   number: string

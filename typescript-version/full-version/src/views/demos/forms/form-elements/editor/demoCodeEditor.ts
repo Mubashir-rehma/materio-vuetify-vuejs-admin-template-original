@@ -1,4 +1,5 @@
-export const basicEditor = { ts: `<script setup lang="ts">
+export const basicEditor = {
+  ts: `<script setup lang="ts">
 const basicEditorContent = ref(\`
 <p>
   This is a radically reduced version of tiptap. It has support for a document, with paragraphs and text. That's it. It's probably too much for real minimalists though.
@@ -26,7 +27,8 @@ const basicEditorContent = ref(\`
   padding-inline: 0.5rem;
 }
 </style>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const basicEditorContent = ref(\`
 <p>
   This is a radically reduced version of tiptap. It has support for a document, with paragraphs and text. That's it. It's probably too much for real minimalists though.
@@ -54,9 +56,11 @@ const basicEditorContent = ref(\`
   padding-inline: 0.5rem;
 }
 </style>
-` }
+`,
+}
 
-export const customEditor = { ts: `<script setup lang="ts">
+export const customEditor = {
+  ts: `<script setup lang="ts">
 import { Placeholder } from '@tiptap/extension-placeholder'
 import { TextAlign } from '@tiptap/extension-text-align'
 import { Underline } from '@tiptap/extension-underline'
@@ -322,7 +326,8 @@ const editor = useEditor({
   }
 }
 </style>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 import { Placeholder } from '@tiptap/extension-placeholder'
 import { TextAlign } from '@tiptap/extension-text-align'
 import { Underline } from '@tiptap/extension-underline'
@@ -592,5 +597,5 @@ const editor = useEditor({
   }
 }
 </style>
-` }
-
+`,
+}

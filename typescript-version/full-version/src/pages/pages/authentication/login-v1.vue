@@ -33,10 +33,10 @@ const isPasswordVisible = ref(false)
       max-width="448"
     >
       <VCardText>
-        <RouterLink to='/'>
+        <RouterLink to="/">
           <div class="d-flex align-center gap-x-3 justify-center mb-6">
             <VNodeRenderer :nodes="themeConfig.app.logo" />
-            
+
             <h1 class="auth-title">
               {{ themeConfig.app.title }}
             </h1>

@@ -1,4 +1,5 @@
-export const color = { ts: `<template>
+export const color = {
+  ts: `<template>
   <div class="demo-space-x">
     <VProgressCircular
       model-value="50"
@@ -31,7 +32,8 @@ export const color = { ts: `<template>
     />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VProgressCircular
       model-value="50"
@@ -64,9 +66,11 @@ export const color = { ts: `<template>
     />
   </div>
 </template>
-` }
+`,
+}
 
-export const indeterminate = { ts: `<template>
+export const indeterminate = {
+  ts: `<template>
   <div class="demo-space-x">
     <VProgressCircular
       indeterminate
@@ -99,7 +103,8 @@ export const indeterminate = { ts: `<template>
     />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VProgressCircular
       indeterminate
@@ -132,9 +137,11 @@ export const indeterminate = { ts: `<template>
     />
   </div>
 </template>
-` }
+`,
+}
 
-export const rotate = { ts: `<script setup lang="ts">
+export const rotate = {
+  ts: `<script setup lang="ts">
 const interval = ref()
 const progressValue = ref(0)
 
@@ -194,7 +201,8 @@ onBeforeUnmount(() => {
     </VProgressCircular>
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const interval = ref()
 const progressValue = ref(0)
 
@@ -253,9 +261,11 @@ onBeforeUnmount(() => {
     </VProgressCircular>
   </div>
 </template>
-` }
+`,
+}
 
-export const size = { ts: `<template>
+export const size = {
+  ts: `<template>
   <div class="demo-space-x">
     <VProgressCircular
       :size="30"
@@ -283,7 +293,8 @@ export const size = { ts: `<template>
     />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-x">
     <VProgressCircular
       :size="30"
@@ -311,5 +322,5 @@ export const size = { ts: `<template>
     />
   </div>
 </template>
-` }
-
+`,
+}

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Review } from '@db/apps/ecommerce/types';
+import type { Review } from '@db/apps/ecommerce/types'
 
 const selectedStatus = ref('All')
 const searchQuery = ref('')

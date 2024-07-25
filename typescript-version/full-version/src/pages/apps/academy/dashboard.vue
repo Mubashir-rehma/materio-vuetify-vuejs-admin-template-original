@@ -10,7 +10,6 @@ import customCheck from '@images/svg/check.svg'
 import customLaptop from '@images/svg/laptop.svg'
 import customLightbulb from '@images/svg/lightbulb.svg'
 
-
 const borderColor = 'rgba(var(--v-border-color), var(--v-border-opacity))'
 
 // Topics Charts config

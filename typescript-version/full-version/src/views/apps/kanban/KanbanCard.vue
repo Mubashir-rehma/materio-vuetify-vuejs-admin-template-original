@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { EditKanbanItem, KanbanItem } from '@db/apps/kanban/types';
+import type { EditKanbanItem, KanbanItem } from '@db/apps/kanban/types'
 
 const props = defineProps<{
   item: KanbanItem | undefined

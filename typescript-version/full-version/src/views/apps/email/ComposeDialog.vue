@@ -237,10 +237,12 @@ const addImage = () => {
     </div>
 
     <div class="d-flex align-center px-5 py-4 gap-4">
-      <VBtn append-icon="ri-send-plane-line" :disabled="to === '' ? true : false"
-      @click="$emit('close'); content = ''; resetValues(); isEmailCc = false; isEmailBcc = false;">
+      <VBtn
+        append-icon="ri-send-plane-line"
+        :disabled="to === '' ? true : false"
+        @click="$emit('close'); content = ''; resetValues(); isEmailCc = false; isEmailBcc = false;"
+      >
         Send
-    
       </VBtn>
 
       <IconBtn>

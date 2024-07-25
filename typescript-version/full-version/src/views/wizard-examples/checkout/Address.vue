@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CheckoutData } from './types';
+import type { CheckoutData } from './types'
 
 interface Props {
   currentStep?: number
@@ -48,8 +48,8 @@ const resolveAddressBadgeColor: any = {
 
 const resolveDeliveryBadgeData: any = {
   free: { color: 'success', price: 0, text: 'Free' },
-  express: { color: 'secondary', price: 10, text: '$10'},
-  overnight: { color: 'secondary', price: 15, text: '$15'},
+  express: { color: 'secondary', price: 10, text: '$10' },
+  overnight: { color: 'secondary', price: 15, text: '$15' },
 }
 
 const totalPriceWithDeliveryCharges = computed(() => {

@@ -100,7 +100,7 @@ const refForm = ref()
 ` }
 
 export const validatingMultipleRules = { ts: `<script lang="ts" setup>
-import { VForm } from 'vuetify/components/VForm';
+import { VForm } from 'vuetify/components/VForm'
 
 const name = ref()
 const email = ref()

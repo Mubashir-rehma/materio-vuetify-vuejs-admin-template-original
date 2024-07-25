@@ -1,6 +1,5 @@
 // ❗ WARNING please use your access token from mapbox.com
 <script setup>
-import fleetImg from '@images/misc/fleet-car.png'
 import mapboxgl from 'mapbox-gl'
 import {
   onMounted,
@@ -8,6 +7,7 @@ import {
 } from 'vue'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useDisplay } from 'vuetify'
+import fleetImg from '@images/misc/fleet-car.png'
 
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 const accessToken = 'pk.eyJ1Ijoic29jaWFsZXhwbG9yZXIiLCJhIjoiREFQbXBISSJ9.dwFTwfSaWsHvktHrRtpydQ'

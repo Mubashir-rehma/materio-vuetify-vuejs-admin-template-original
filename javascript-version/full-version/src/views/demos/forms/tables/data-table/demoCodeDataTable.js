@@ -1,5 +1,5 @@
 export const basic = { ts: `<script setup lang="ts">
-import data from '@/views/demos/forms/tables/data-table/datatable';
+import data from '@/views/demos/forms/tables/data-table/datatable'
 
 const headers = [
   { title: 'ID', key: 'id' },

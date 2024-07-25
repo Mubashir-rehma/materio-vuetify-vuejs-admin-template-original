@@ -135,7 +135,7 @@ watch(() => props.modelValue, () => {
         @click="editor.chain().focus().setTextAlign('justify').run()"
       />
     </div>
-    
+
     <VDivider v-if="props.isDivider" />
 
     <EditorContent

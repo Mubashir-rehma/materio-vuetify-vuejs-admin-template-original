@@ -1,6 +1,6 @@
 <script setup>
-import instructorPosterImage from '@images/pages/instructor-poster-image.png'
 import { VideoPlayer } from '@videojs-player/vue'
+import instructorPosterImage from '@images/pages/instructor-poster-image.png'
 import 'video.js/dist/video-js.css'
 
 const courseDetails = ref()

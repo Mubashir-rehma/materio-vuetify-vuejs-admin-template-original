@@ -65,7 +65,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
   icons: {
     chevronDown: { icon: 'ri-arrow-down-s-line' },
     chevronRight: { icon: 'ri-arrow-right-s-line' },
-    close: { icon: 'ri-close-line' },
+    close: { icon: 'ri-close-line', size: '20' },
     verticalNavPinned: { icon: 'ri-radio-button-line', size: '20' },
     verticalNavUnPinned: { icon: 'ri-circle-line', size: '20' },
     sectionTitlePlaceholder: { icon: 'ri-subtract-line' },

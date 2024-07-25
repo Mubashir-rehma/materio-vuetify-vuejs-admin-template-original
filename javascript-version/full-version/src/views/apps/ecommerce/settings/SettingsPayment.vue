@@ -1,6 +1,6 @@
 <script setup>
-import paypal from '@images/cards/paypal-primary.png'
 import { ref } from 'vue'
+import paypal from '@images/cards/paypal-primary.png'
 
 const isAddPaymentMethodsDialogVisible = ref(false)
 const isPaymentProvidersDialogVisible = ref(false)

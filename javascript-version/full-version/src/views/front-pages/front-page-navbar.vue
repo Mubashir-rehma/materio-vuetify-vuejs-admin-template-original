@@ -1,12 +1,12 @@
 <script setup>
+import { useWindowScroll } from '@vueuse/core'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { useDisplay } from 'vuetify'
 import NavbarThemeSwitcher from '@/layouts/components/NavbarThemeSwitcher.vue'
 import navImgDark from '@images/front-pages/misc/nav-img-dark.png'
 import navImgLight from '@images/front-pages/misc/nav-img-light.png'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
-import { useWindowScroll } from '@vueuse/core'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { useDisplay } from 'vuetify'
 
 const props = defineProps({ activeId: String })
 

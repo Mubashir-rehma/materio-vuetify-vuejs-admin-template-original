@@ -3,10 +3,10 @@
     --vp-font-family-mono: 'JetBrains Mono', monospace;
 
     /* Branding */
-    --a-primary-hue: 204;
-    --vp-c-brand-1: hsl(var(--a-primary-hue), 97%, 55%);
-    --vp-c-brand-2: hsl(var(--a-primary-hue), 97%, 60%); 
-    --vp-c-brand-3: hsl(var(--a-primary-hue), 97%, 66%);
+    --a-primary-hue: 259;
+    --vp-c-brand-1: hsl(var(--a-primary-hue), 100%, 67%);
+    --vp-c-brand-2: hsl(var(--a-primary-hue), 75%, 60%); 
+    --vp-c-brand-3: hsl(var(--a-primary-hue), 100%, 67%);
 }
 
 .language-vue span[style="color: rgb(255, 85, 85); font-style: italic; text-decoration: underline;"],

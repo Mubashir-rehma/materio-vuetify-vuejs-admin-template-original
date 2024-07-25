@@ -53,7 +53,7 @@ You might get some warnings while running `npm install` or `yarn install` like b
 npm ERR! code ERESOLVE
 npm ERR! ERESOLVE unable to resolve dependency tree
 npm ERR! 
-npm ERR! While resolving: materialize-vuejs-admin-template@2.0.0
+npm ERR! While resolving: materio-vuejs-admin-template@2.0.0
 npm ERR! Found: video.js@8.10.0
 npm ERR! node_modules/video.js
 npm ERR!   dev video.js@"8.10.0" from the root project

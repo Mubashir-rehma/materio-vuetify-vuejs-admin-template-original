@@ -7,7 +7,7 @@ To gain a comprehensive visual understanding of the **Vuejs folder structure**, 
 If you're using **Nuxtjs**, feel free to check out this detailed video on **Nuxtjs folder structure** [here](/guide/video-tutorials.html#nuxtjs-folder-structure).
 
 ```bash
-materialize-vuejs-template/
+materio-vuejs-template/
 ├── public                   # Folder for public files
 │   ├── images/                # Public images
 │   ├── favicon.ico            # Favicon

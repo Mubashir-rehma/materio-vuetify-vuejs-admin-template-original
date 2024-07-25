@@ -37,7 +37,7 @@ export default defineConfig({
         text: 'Other',
         items: [
           { text: 'Contribution', link: '/contribution/' },
-          { text: 'Changelog', link: 'https://demos.pixinvent.com/materialize/changelog.html' },
+          { text: 'Changelog', link: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/changelog.html' },
         ],
       },
       {

@@ -20,7 +20,7 @@ export default defineConfig({
       getRouteName: routeNode => {
         // Convert pascal case to kebab case
         return getPascalCaseRouteName(routeNode)
-          .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+          .replace(/([a-z\d])([A-Z])/g, '$1-$2')
           .toLowerCase()
       },
 

@@ -36,8 +36,8 @@ const props = defineProps<Props>()
 
 <style lang="scss" scoped>
 .error-title {
-  font-size: 6rem;
+  font-size: clamp(3rem, 5vw, 6rem);
   font-weight: 500;
-  line-height: 1;
+  line-height: clamp(3rem, 5vw, 6rem);
 }
 </style>

@@ -5,6 +5,7 @@ import { VBtn } from 'vuetify/components/VBtn'
 import defaults from './defaults'
 import { icons } from './icons'
 import { staticPrimaryColor, staticPrimaryDarkenColor, themes } from './theme'
+import { themeConfig } from '@themeConfig'
 
 // Styles
 import { cookieRef } from '@/@layouts/stores/config'
@@ -13,7 +14,7 @@ import 'vuetify/styles'
 
 export default function (app: App) {
   const cookieThemeValues = {
-    defaultTheme: resolveVuetifyTheme(),
+    defaultTheme: resolveVuetifyTheme(themeConfig.app.theme),
     themes: {
       light: {
         colors: {

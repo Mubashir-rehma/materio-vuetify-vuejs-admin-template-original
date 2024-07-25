@@ -27,19 +27,6 @@ const hideTitleAndBadge = configStore.isVerticalNavMini()
 */
 const isVerticalNavHovered = inject(injectionKeyIsVerticalNavHovered, ref(false))
 
-/*
-  ℹ️ We have to add watcher for `isVerticalNavCollapsed` to open & close the group when menu collapse state is changed
-  We can't rely on watcher for `isVerticalNavHovered` because nav menu can be collapsed via customizer (basically without entering mouse inside nav menu)
-  Hence, watcher for `isVerticalNavHovered` won't get triggered and there will no change in open state of nav group when menu is collapsed via customizer.
-*/
-// watch(isVerticalNavCollapsed, value => {
-//   // If mouse in nav menu `isVerticalNavHovered` watcher will take care of open/close group
-//   if (isVerticalNavHovered.value)
-//     return
-
-//   isGroupOpen.value = value ? false : isGroupActive.value
-// })
-
 const isGroupActive = ref(false)
 const isGroupOpen = ref(false)
 
@@ -75,13 +62,17 @@ const collapseChildren = (children: NavGroup['children']) => {
 
   updates isActive & isOpen based on active state of group.
 */
-watch(() => route.path, () => {
-  const isActive = isNavGroupActive(props.item.children, router)
+watch(
+  () => route.path,
+  () => {
+    const isActive = isNavGroupActive(props.item.children, router)
 
-  // Don't open group if vertical nav is collapsed and window size is more than overlay nav breakpoint
-  isGroupOpen.value = isActive && !configStore.isVerticalNavMini(isVerticalNavHovered).value
-  isGroupActive.value = isActive
-}, { immediate: true })
+    // Don't open group if vertical nav is collapsed and window size is more than overlay nav breakpoint
+    isGroupOpen.value = isActive && !configStore.isVerticalNavMini(isVerticalNavHovered).value
+    isGroupActive.value = isActive
+  },
+  { immediate: true },
+)
 
 /*
   Watch for isGroupOpen
@@ -148,32 +139,6 @@ watch(
     isGroupOpen.value = val ? false : isGroupActive.value
   },
 )
-
-// watch(isVerticalNavHovered, val => {
-//   // If menu is not collapsed ignore
-//   if (!(isVerticalNavCollapsed.value && !isLessThanOverlayNavBreakpoint.value(windowWidth.value)))
-//     return
-
-//   isGroupOpen.value = val ? isGroupActive.value : false
-// })
-
-/*
-  Update: We don't need this watcher any more because we have new watch isVerticalNavMini that includes this one
-  ℹ️ We need this watcher to
-    - Collapse the group when going to `lgAndUp` if vertical nav is collapsed (else block)
-    - Expand the group if it's active and screen is `mdAndDown`. Because in this screen vertical nav will be overlay nav
-*/
-// watch(() => isLessThanOverlayNavBreakpoint.value(windowWidth.value), isLessThanOverlayNavBreakpoint_ => {
-//   // If window size is more than overlay nav breakpoint => expand group if its active
-//   if (isLessThanOverlayNavBreakpoint_) { isGroupOpen.value = isGroupActive.value }
-
-//   else {
-//     if (isVerticalNavCollapsed.value)
-//       isGroupOpen.value = false
-//   }
-// })
-
-const isMounted = useMounted()
 </script>
 
 <template>
@@ -197,14 +162,10 @@ const isMounted = useMounted()
         v-bind="item.icon || layoutConfig.verticalNav.defaultNavItemIconProps"
         class="nav-item-icon"
       />
-      <!--
-        ℹ️ isMounted is workaround of nuxt's hydration issue:
-        https://github.com/vuejs/core/issues/6715
-      -->
+
       <Component
-        :is="isMounted ? TransitionGroup : 'div'"
+        :is="TransitionGroup"
         name="transition-slide-x"
-        v-bind="!isMounted ? { class: 'd-flex align-center flex-grow-1' } : undefined"
       >
         <!-- 👉 Title -->
         <Component

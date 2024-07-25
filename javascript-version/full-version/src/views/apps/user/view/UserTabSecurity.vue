@@ -122,13 +122,12 @@ const recentDevices = [
             <h4 class="font-weight-medium mb-1">
               SMS
             </h4>
-            <VTextField
-              :model-value="smsVerificationNumber"
-              readonly
-              placeholder="+1(968) 819-2547"
-              density="compact"
-            >
-              <template #append>
+            <div class="d-flex gap-5">
+              <VTextField
+                placeholder="+1(968) 819-2547"
+                density="compact"
+              />
+              <div>
                 <IconBtn
                   rounded
                   variant="outlined"
@@ -140,7 +139,7 @@ const recentDevices = [
                     @click="isTwoFactorDialogOpen = true"
                   />
                 </IconBtn>
-
+                
                 <IconBtn
                   rounded
                   variant="outlined"
@@ -148,8 +147,8 @@ const recentDevices = [
                 >
                   <VIcon icon="ri-user-add-line" />
                 </IconBtn>
-              </template>
-            </VTextField>
+              </div>
+            </div>
           </div>
 
           <p class="mb-0 mt-4">

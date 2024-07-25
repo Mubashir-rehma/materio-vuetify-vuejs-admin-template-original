@@ -57,6 +57,7 @@ const { resolveAvatarBadgeVariant } = useChat()
       </p>
     </div>
 
+    <VDivider />
     <!-- User Data -->
     <PerfectScrollbar
       class="ps-chat-user-profile-sidebar-content text-medium-emphasis pb-5 px-5"

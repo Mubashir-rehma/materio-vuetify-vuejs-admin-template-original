@@ -6,20 +6,21 @@ import InvoiceSendInvoiceDrawer from '@/views/apps/invoice/InvoiceSendInvoiceDra
 const invoiceData = ref()
 const route = useRoute('apps-invoice-edit-id')
 const { data: invoiceDetails } = await useApi(`/apps/invoice/${ route.params.id }`)
-
-invoiceData.value = {
-  invoice: invoiceDetails.value.invoice,
-  paymentDetails: invoiceDetails.value.paymentDetails,
-  purchasedProducts: [{
-    title: 'App Design',
-    cost: 24,
-    hours: 2,
-    description: 'Designed UI kit & app pages.',
-  }],
-  note: 'It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!',
-  paymentMethod: 'Bank Account',
-  salesperson: 'Tom Cook',
-  thanksNote: 'Thanks for your business',
+if (invoiceDetails.value) {
+  invoiceData.value = {
+    invoice: invoiceDetails.value.invoice,
+    paymentDetails: invoiceDetails.value.paymentDetails,
+    purchasedProducts: [{
+      title: 'App Design',
+      cost: 24,
+      hours: 2,
+      description: 'Designed UI kit & app pages.',
+    }],
+    note: 'It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance projects. Thank You!',
+    paymentMethod: 'Bank Account',
+    salesperson: 'Tom Cook',
+    thanksNote: 'Thanks for your business',
+  }
 }
 
 const addProduct = value => {
@@ -45,7 +46,7 @@ const paymentMethods = [
 </script>
 
 <template>
-  <VRow>
+  <VRow v-if="invoiceData && invoiceData?.invoice">
     <!-- 👉 InvoiceEditable -->
     <VCol
       cols="12"
@@ -163,4 +164,13 @@ const paymentMethods = [
     <!-- 👉 Invoice add payment drawer -->
     <InvoiceAddPaymentDrawer v-model:isDrawerOpen="isAddPaymentSidebarActive" />
   </VRow>
+
+  <section v-else>
+    <VAlert
+      type="error"
+      variant="tonal"
+    >
+      Invoice with ID  {{ route.params.id }} not found!
+    </VAlert>
+  </section>
 </template>

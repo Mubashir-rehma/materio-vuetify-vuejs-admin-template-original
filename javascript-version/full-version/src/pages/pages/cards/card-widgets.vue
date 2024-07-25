@@ -145,5 +145,5 @@ import CardWidgetsInterestedTopics from '@/views/pages/cards/card-widgets/cardWi
 </template>
 
 <style lang="scss">
-@use "@core/scss/template/libs/apex-chart.scss";
+@use "@core/scss/template/libs/apex-chart";
 </style>

@@ -44,6 +44,7 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
 
   // ℹ️ Extract event data from event API
   const extractEventDataFromEventApi = eventApi => {
+        
     const { id, title, start, end, url, extendedProps: { calendar, guests, location, description }, allDay } = eventApi
     
     return {
@@ -61,7 +62,7 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
       allDay,
     }
   }
-
+    
   if (typeof process !== 'undefined' && process.server)
     store.fetchEvents()
 
@@ -93,6 +94,8 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
 
   // 👉 Update event in calendar [UI]
   const updateEventInCalendar = (updatedEventData, propsToUpdate, extendedPropsToUpdate) => {
+    calendarApi.value = refCalendar.value.getApi()
+
     const existingEvent = calendarApi.value?.getEventById(String(updatedEventData.id))
     if (!existingEvent) {
       console.warn('Can\'t found event in calendar to update')
@@ -150,6 +153,7 @@ export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpe
 
   // 👉 Update event
   const updateEvent = _event => {
+    // ℹ️ Making API call using $api('', { method: ... })
     store.updateEvent(_event)
       .then(r => {
         const propsToUpdate = ['id', 'title', 'url']

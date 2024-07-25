@@ -119,13 +119,10 @@ onMounted(() => {
     <template #bottom>
       <VCardText class="pt-2">
         <div class="d-flex flex-wrap justify-center justify-sm-space-between gap-y-2 mt-2">
-          <VTextField
+          <VSelect
             v-model="options.itemsPerPage"
+            :items="[5, 10, 25, 50, 100]"
             label="Rows per page:"
-            type="number"
-            min="-1"
-            max="15"
-            hide-details
             variant="underlined"
             style="max-inline-size: 8rem;min-inline-size: 5rem;"
           />

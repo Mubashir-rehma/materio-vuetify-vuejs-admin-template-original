@@ -86,7 +86,10 @@ const resolveChipColor = tags => {
       </div>
 
       <!-- 👉 Course List -->
-      <div class="mb-6">
+      <div
+        v-if="courses.length"
+        class="mb-6"
+      >
         <VRow class="match-height">
           <template
             v-for="course in courses"
@@ -215,6 +218,12 @@ const resolveChipColor = tags => {
         </VRow>
       </div>
 
+      <div v-else>
+        <h4 class="text-h4 text-center mb-6">
+          No Course Found
+        </h4>
+      </div>
+
       <VPagination
         v-model="page"
         rounded
@@ -226,9 +235,9 @@ const resolveChipColor = tags => {
 </template>
 
 <style lang="scss" scoped>
-.course-title{
-  &:not(:hover){
-    color: rgba(var(--v-theme-on-surface), var(--v-text-high-emphasis))
+.course-title {
+  &:not(:hover) {
+    color: rgba(var(--v-theme-on-surface), var(--v-text-high-emphasis));
   }
 }
 </style>

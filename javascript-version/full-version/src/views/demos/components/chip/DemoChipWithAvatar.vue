@@ -15,11 +15,17 @@ import avatar4 from '@images/avatars/avatar-4.png'
       <span>Darcy Nooser</span>
     </VChip>
 
-    <VChip :prepend-avatar="avatar3">
+    <VChip
+      :prepend-avatar="avatar3"
+      pill
+    >
       <span>Felicia Risker</span>
     </VChip>
 
-    <VChip :prepend-avatar="avatar4">
+    <VChip
+      :prepend-avatar="avatar4"
+      :pill="false"
+    >
       <span>Minnie Mostly</span>
     </VChip>
   </div>

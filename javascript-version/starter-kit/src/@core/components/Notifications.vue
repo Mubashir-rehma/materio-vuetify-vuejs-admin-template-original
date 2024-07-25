@@ -25,7 +25,9 @@ const emit = defineEmits([
   'click:notification',
 ])
 
-const isAllMarkRead = computed(() => props.notifications.some(item => item.isSeen === false))
+const isAllMarkRead = computed(() => {
+  return props.notifications.some(item => item.isSeen === false)
+})
 
 const markAllReadOrUnread = () => {
   const allNotificationsIds = props.notifications.map(item => item.id)

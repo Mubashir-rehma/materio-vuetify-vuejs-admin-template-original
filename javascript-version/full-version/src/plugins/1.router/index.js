@@ -1,5 +1,4 @@
 import { setupLayouts } from 'virtual:generated-layouts'
-// eslint-disable-next-line import/no-unresolved
 import { createRouter, createWebHistory } from 'vue-router/auto'
 import { redirects, routes } from './additional-routes'
 import { setupGuards } from './guards'

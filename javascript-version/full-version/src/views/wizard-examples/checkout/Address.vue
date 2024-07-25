@@ -15,8 +15,12 @@ const emit = defineEmits([
   'update:checkout-data',
 ])
 
-const checkoutAddressDataLocal = ref(props.checkoutData)
+const checkoutAddressDataLocal = ref(JSON.parse(JSON.stringify(props.checkoutData)))
 const isEditAddressDialogVisible = ref(false)
+
+watch(() => props.checkoutData, value => {
+  checkoutAddressDataLocal.value = JSON.parse(JSON.stringify(value))
+})
 
 const deliveryOptions = [
   {
@@ -47,27 +51,31 @@ const resolveAddressBadgeColor = {
 const resolveDeliveryBadgeData = {
   free: {
     color: 'success',
-    price: 'Free',
+    price: 0,
+    text: 'Free',
   },
   express: {
     color: 'secondary',
     price: 10,
+    text: '$10',
   },
   overnight: {
     color: 'secondary',
     price: 15,
+    text: '$15',
   },
 }
 
 const totalPriceWithDeliveryCharges = computed(() => {
-  checkoutAddressDataLocal.value.deliveryCharges = 0
+  let deliveryCharges = 0
   if (checkoutAddressDataLocal.value.deliverySpeed !== 'free')
-    checkoutAddressDataLocal.value.deliveryCharges = resolveDeliveryBadgeData[checkoutAddressDataLocal.value.deliverySpeed].price
+    deliveryCharges = resolveDeliveryBadgeData[checkoutAddressDataLocal.value.deliverySpeed].price
   
-  return checkoutAddressDataLocal.value.orderAmount + checkoutAddressDataLocal.value.deliveryCharges
+  return checkoutAddressDataLocal.value.orderAmount + deliveryCharges
 })
 
 const updateAddressData = () => {
+  checkoutAddressDataLocal.value.deliveryCharges = resolveDeliveryBadgeData[checkoutAddressDataLocal.value.deliverySpeed].price
   emit('update:checkout-data', checkoutAddressDataLocal.value)
 }
 
@@ -166,10 +174,7 @@ watch(() => props.currentStep, updateAddressData)
                 :color="resolveDeliveryBadgeData[item.value].color"
                 size="small"
               >
-                {{
-                  resolveDeliveryBadgeData[item.value].price === 'Free'
-                    ? resolveDeliveryBadgeData[item.value].price : `$${resolveDeliveryBadgeData[item.value].price}`
-                }}
+                {{ resolveDeliveryBadgeData[item.value].text }}
               </VChip>
             </div>
 
@@ -270,6 +275,7 @@ watch(() => props.currentStep, updateAddressData)
           <span class="text-base font-weight-medium">Total</span>
           <span class="text-base font-weight-medium">
             ${{ totalPriceWithDeliveryCharges }}
+
           </span>
         </VCardText>
       </VCard>

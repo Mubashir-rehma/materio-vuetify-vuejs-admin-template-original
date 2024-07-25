@@ -30,7 +30,7 @@ const formData = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 
 })
 
@@ -229,7 +229,7 @@ const onSubmit = () => {
                 md="6"
               >
                 <VTextField
-                  v-model="formData.linkedIn"
+                  v-model="formData.LinkedIn"
                   placeholder="https://linkedin.com/abc"
                   label="LinkedIn"
                 />
@@ -311,7 +311,7 @@ const formData = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 })
 
 const onSubmit = () => {
@@ -509,7 +509,7 @@ const onSubmit = () => {
                 md="6"
               >
                 <VTextField
-                  v-model="formData.linkedIn"
+                  v-model="formData.LinkedIn"
                   placeholder="https://linkedin.com/abc"
                   label="LinkedIn"
                 />
@@ -605,7 +605,7 @@ const socialForm = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 
 })
 
@@ -913,7 +913,7 @@ const validateSocialLinkForm = () => {
                 md="6"
               >
                 <VTextField
-                  v-model="socialForm.linkedIn"
+                  v-model="socialForm.LinkedIn"
                   placeholder="https://likedin.com/abc"
                   :rules="[requiredValidator, urlValidator]"
                   label="LinkedIn"
@@ -994,7 +994,7 @@ const socialForm = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 })
 
 const validateAccountForm = () => {
@@ -1303,7 +1303,7 @@ const validateSocialLinkForm = () => {
                 md="6"
               >
                 <VTextField
-                  v-model="socialForm.linkedIn"
+                  v-model="socialForm.LinkedIn"
                   placeholder="https://likedin.com/abc"
                   :rules="[requiredValidator, urlValidator]"
                   label="LinkedIn"
@@ -1374,7 +1374,7 @@ const formData = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 
 })
 
@@ -1582,7 +1582,7 @@ const onSubmit = () => {
                     md="6"
                   >
                     <VTextField
-                      v-model="formData.linkedIn"
+                      v-model="formData.LinkedIn"
                       placeholder="https://linkedin.com/abc"
                       label="LinkedIn"
                     />
@@ -1666,7 +1666,7 @@ const formData = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 })
 
 const onSubmit = () => {
@@ -1873,7 +1873,7 @@ const onSubmit = () => {
                     md="6"
                   >
                     <VTextField
-                      v-model="formData.linkedIn"
+                      v-model="formData.LinkedIn"
                       placeholder="https://linkedin.com/abc"
                       label="LinkedIn"
                     />

@@ -100,13 +100,13 @@ const refForm = ref()
 ` }
 
 export const validatingMultipleRules = { ts: `<script lang="ts" setup>
-import { VForm } from 'vuetify/components/VForm'
+import { VForm } from 'vuetify/components/VForm';
 
-const name = ref('')
-const email = ref('')
+const name = ref()
+const email = ref()
 const refForm = ref<VForm>()
-const password = ref('')
-const confirmPassword = ref('')
+const password = ref()
+const confirmPassword = ref()
 const isPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
 </script>
@@ -187,11 +187,11 @@ const isConfirmPasswordVisible = ref(false)
 `, js: `<script setup>
 import { VForm } from 'vuetify/components/VForm'
 
-const name = ref('')
-const email = ref('')
+const name = ref()
+const email = ref()
 const refForm = ref()
-const password = ref('')
-const confirmPassword = ref('')
+const password = ref()
+const confirmPassword = ref()
 const isPasswordVisible = ref(false)
 const isConfirmPasswordVisible = ref(false)
 </script>

@@ -1,10 +1,12 @@
 import is from '@sindresorhus/is'
-import { rest } from 'msw'
+import { HttpResponse, http } from 'msw'
 import { db } from '@db/pages/faq/db'
 
+// Handler for pages/faq
 export const handlerPagesFaq = [
-  rest.get(('/api/pages/faq'), (req, res, ctx) => {
-    const q = req.url.searchParams.get('q') ?? ''
+  http.get(('/api/pages/faq'), ({ request }) => {
+    const url = new URL(request.url)
+    const q = url.searchParams.get('q') ?? ''
     const searchQuery = is.string(q) ? q : undefined
     const queryLowered = (searchQuery ?? '').toString().toLowerCase()
     const filteredData = []
@@ -18,6 +20,6 @@ export const handlerPagesFaq = [
         filteredData.push({ ...faqObj, faqs: filteredQAndA })
     })
     
-    return res(ctx.status(200), ctx.json(filteredData))
+    return HttpResponse.json(filteredData, { status: 200 })
   }),
 ]

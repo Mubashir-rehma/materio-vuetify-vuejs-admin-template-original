@@ -407,13 +407,20 @@ const paymentData = [
             </VRow>
           </div>
         </VExpandTransition>
-        <VDivider
-          v-if="index !== paymentData.length - 1"
-          class="my-4"
-        />
+        <VDivider v-if="index !== paymentData.length - 1" />
       </template>
     </VCardText>
   </VCard>
+  <AddEditAddressDialog
+    v-model:isDialogVisible="isEditAddressDialogVisible"
+    :billing-address="editBillingData"
+  />
+  <AddEditAddressDialog v-model:isDialogVisible="isNewEditAddressDialogVisible" />
+  <CardAddEditDialog
+    v-model:isDialogVisible="isCardAddDialogVisible"
+    :card-details="currentCardDetails"
+  />
+  <CardAddEditDialog v-model:isDialogVisible="isNewCardAddDialogVisible" />
   <AddEditAddressDialog
     v-model:isDialogVisible="isEditAddressDialogVisible"
     :billing-address="editBillingData"

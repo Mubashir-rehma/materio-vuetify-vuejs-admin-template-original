@@ -1,8 +1,9 @@
-import { rest } from 'msw'
+import { HttpResponse, http } from 'msw'
 import { db } from '@db/pages/datatable/db'
 
+// Handler for pages/datatable
 export const handlerPagesDatatable = [
-  rest.get(('/api/pages/datatable'), (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(db.salesDetails))
+  http.get(('/api/pages/datatable'), () => {
+    return HttpResponse.json(db.salesDetails, { status: 200 })
   }),
 ]

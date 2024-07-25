@@ -92,7 +92,6 @@ const socialAccounts = ref([
             >
               <template #prepend>
                 <VAvatar
-                  start
                   :size="36"
                   :image="account.img"
                 />
@@ -132,7 +131,6 @@ const socialAccounts = ref([
             >
               <template #prepend>
                 <VAvatar
-                  start
                   size="36"
                   rounded="0"
                   :image="account.img"

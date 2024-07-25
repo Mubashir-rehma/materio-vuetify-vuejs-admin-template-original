@@ -196,7 +196,10 @@ watch(totalPrice, () => {
       class="d-flex flex-column align-end item-actions"
       :class="$vuetify.display.smAndUp ? 'border-s' : 'border-b' "
     >
-      <IconBtn @click="removeProduct">
+      <IconBtn
+        class="align-self-end"
+        @click="removeProduct"
+      >
         <VIcon
           :size="20"
           icon="ri-close-line"

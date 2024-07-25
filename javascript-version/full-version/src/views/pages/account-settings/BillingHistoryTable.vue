@@ -10,7 +10,6 @@ const sortBy = ref()
 const orderBy = ref()
 
 const updateOptions = options => {
-  page.value = options.page
   sortBy.value = options.sortBy[0]?.key
   orderBy.value = options.sortBy[0]?.order
 }
@@ -399,8 +398,8 @@ const deleteInvoice = async id => {
 </style>
 
 <style lang="scss" scoped>
-.client-title{
-  &:not(:hover){
+.client-title {
+  &:not(:hover) {
     color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
   }
 }

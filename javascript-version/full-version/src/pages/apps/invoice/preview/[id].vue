@@ -8,8 +8,12 @@ const route = useRoute('apps-invoice-preview-id')
 const isAddPaymentSidebarVisible = ref(false)
 const isSendPaymentSidebarVisible = ref(false)
 const { data: invoiceData } = await useApi(`/apps/invoice/${ Number(route.params.id) }`)
-const invoice = invoiceData.value.invoice
-const paymentDetails = invoiceData.value.paymentDetails
+const invoice = ref()
+const paymentDetails = ref()
+if (invoiceData.value) {
+  invoice.value = invoiceData.value.invoice
+  paymentDetails.value = invoiceData.value.paymentDetails
+}
 
 const purchasedProducts = [
   {
@@ -42,17 +46,22 @@ const purchasedProducts = [
   },
 ]
 
+const isPrinting = ref(false)
+
 const printInvoice = () => {
+  isPrinting.value = true
   window.print()
+  isPrinting.value = false
 }
 </script>
 
 <template>
-  <section v-if="invoiceData">
+  <section v-if="invoice && paymentDetails">
     <VRow>
       <VCol
         cols="12"
         md="9"
+        class="print-col"
       >
         <VCard class="invoice-preview-wrapper pa-12">
           <!-- SECTION Header -->
@@ -380,6 +389,14 @@ const printInvoice = () => {
     <!-- 👉 Send Invoice Sidebar -->
     <InvoiceSendInvoiceDrawer v-model:isDrawerOpen="isSendPaymentSidebarVisible" />
   </section>
+  <section v-else>
+    <VAlert
+      type="error"
+      variant="tonal"
+    >
+      Invoice with ID  {{ route.params.id }} not found!
+    </VAlert>
+  </section>
 </template>
 
 <style lang="scss">
@@ -392,9 +409,25 @@ const printInvoice = () => {
 }
 
 @media print {
+  @page {
+    margin: 0;
+    size: a4;
+  }
+
+  html,
+  body {
+    block-size: 100%;
+    inline-size: 210mm; // A4 Paper width
+  }
+
   .v-theme--dark {
     --v-theme-surface: 255, 255, 255;
     --v-theme-on-surface: 94, 86, 105;
+  }
+
+  .print-col {
+    flex: 0 0 100% !important;
+    max-inline-size: 100% !important;
   }
 
   body {
@@ -433,6 +466,10 @@ const printInvoice = () => {
 
   .v-table__wrapper {
     overflow: hidden !important;
+  }
+
+  .vue-devtools__anchor {
+    display: none;
   }
 }
 </style>

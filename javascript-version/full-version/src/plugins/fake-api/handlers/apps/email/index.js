@@ -1,13 +1,14 @@
 import { destr } from 'destr'
-import { rest } from 'msw'
+import { HttpResponse, http } from 'msw'
 import { db } from '@db/apps/email/db'
 
 export const handlerAppsEmail = [
   // 👉 Get Email List
-  rest.get(('/api/apps/email'), (req, res, ctx) => {
-    const q = req.url.searchParams.get('q') || ''
-    const filter = req.url.searchParams.get('filter') || 'inbox'
-    const label = req.url.searchParams.get('label') || ''
+  http.get(('/api/apps/email'), ({ request }) => {
+    const url = new URL(request.url)
+    const q = url.searchParams.get('q') || ''
+    const filter = url.searchParams.get('filter') || 'inbox'
+    const label = url.searchParams.get('label') || ''
     const queryLowered = q.toLowerCase()
     function isInFolder(email) {
       if (filter === 'trashed')
@@ -28,16 +29,17 @@ export const handlerAppsEmail = [
     // ------------------------------------------------
     const emailsMeta = {
       inbox: db.emails.filter(email => !email.isDeleted && !email.isRead && email.folder === 'inbox').length,
-      draft: db.emails.filter(email => email.folder === 'draft').length,
+      draft: db.emails.filter(email => !email.isDeleted && email.folder === 'draft').length,
       spam: db.emails.filter(email => !email.isDeleted && !email.isRead && email.folder === 'spam').length,
+      star: db.emails.filter(email => !email.isDeleted && email.isStarred).length,
     }
 
-    return res(ctx.status(200), ctx.json({ emails: filteredData, emailsMeta }))
+    return HttpResponse.json({ emails: filteredData, emailsMeta }, { status: 200 })
   }),
 
   // 👉 Update Email Meta
-  rest.post(('/api/apps/email'), async (req, res, ctx) => {
-    const { ids, data, label } = await req.json()
+  http.post(('/api/apps/email'), async ({ request }) => {
+    const { ids, data, label } = await request.json()
     const labelLocal = destr(label)
     if (!labelLocal) {
       const emailIdsLocal = destr(ids)
@@ -49,7 +51,7 @@ export const handlerAppsEmail = [
           updateMailData(email)
       })
       
-      return res(ctx.status(200))
+      return new HttpResponse(null, { status: 201 })
     }
     else {
       function updateMailLabels(email) {
@@ -64,7 +66,7 @@ export const handlerAppsEmail = [
           updateMailLabels(email)
       })
       
-      return res(ctx.status(200))
+      return new HttpResponse(null, { status: 201 })
     }
   }),
 ]

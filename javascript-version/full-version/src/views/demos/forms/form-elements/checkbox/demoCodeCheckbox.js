@@ -98,7 +98,7 @@ const checkboxString = ref('Show')
 
 export const colors = { ts: `<script lang="ts" setup>
 const colorCheckbox = ref(['Primary', 'Secondary', 'Success', 'Info', 'Warning', 'Error'])
-const selectedCheckbox = ref([])
+const selectedCheckbox = ref(['Primary', 'Secondary', 'Success', 'Info', 'Warning', 'Error'])
 </script>
 
 <template>
@@ -123,7 +123,14 @@ const colorCheckbox = ref([
   'Error',
 ])
 
-const selectedCheckbox = ref([])
+const selectedCheckbox = ref([
+  'Primary',
+  'Secondary',
+  'Success',
+  'Info',
+  'Warning',
+  'Error',
+])
 </script>
 
 <template>

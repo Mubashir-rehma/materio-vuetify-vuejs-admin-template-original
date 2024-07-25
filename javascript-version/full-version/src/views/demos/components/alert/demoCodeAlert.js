@@ -7,9 +7,8 @@ export const basic = { ts: `<template>
       title="Alert Title"
       type="error"
       closable
-    >
-      Alert content
-    </VAlert>
+      text="Alert content"
+    />
   </div>
 </template>
 `, js: `<template>
@@ -21,9 +20,8 @@ export const basic = { ts: `<template>
       title="Alert Title"
       type="error"
       closable
-    >
-      Alert content
-    </VAlert>
+      text="Alert content"
+    />
   </div>
 </template>
 ` }

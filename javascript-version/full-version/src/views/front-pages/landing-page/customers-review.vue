@@ -1,5 +1,4 @@
 <script setup>
-import { register } from 'swiper/element/bundle'
 import { useGenerateImageVariant } from '@/@core/composable/useGenerateImageVariant'
 import logo1dark from '@images/front-pages/branding/logo-1-dark.png'
 import logo1light from '@images/front-pages/branding/logo-1-light.png'
@@ -15,6 +14,7 @@ import logo4light from '@images/front-pages/branding/logo-4-light.png'
 import logo4 from '@images/front-pages/branding/logo-4.png'
 import logo5dark from '@images/front-pages/branding/logo-5-dark.png'
 import logo5light from '@images/front-pages/branding/logo-5-light.png'
+import { register } from 'swiper/element/bundle'
 import sectionTitleIcon from '@images/pages/section-title-icon.png'
 
 register()
@@ -27,7 +27,7 @@ const brandLogo5 = useGenerateImageVariant(logo5light, logo5dark)
 
 const reviewData = [
   {
-    desc: 'I\'ve never used a theme as versatile and flexible as Vuexy. It\'s my go to for building dashboard sites on almost any project.',
+    desc: 'I\'ve never used a theme as versatile and flexible as Materio. It\'s my go to for building dashboard sites on almost any project.',
     img: logo1,
     rating: 5,
     name: 'Eugenia Moore',
@@ -62,7 +62,7 @@ const reviewData = [
     position: 'Founder of Levis',
   },
   {
-    desc: 'I\'ve never used a theme as versatile and flexible as Vuexy. It\'s my go to for building dashboard sites on almost any project.',
+    desc: 'I\'ve never used a theme as versatile and flexible as Materio. It\'s my go to for building dashboard sites on almost any project.',
     img: logo1,
     rating: 5,
     name: 'Eugenia Moore',
@@ -233,7 +233,7 @@ const reviewData = [
         }"
       >
         <swiper-slide
-          v-for="(img, index) in [brandLogo1, brandLogo2, brandLogo3, brandLogo4, brandLogo5]"
+          v-for="(img, index) in [brandLogo1, brandLogo2, brandLogo3, brandLogo4, brandLogo5, brandLogo1, brandLogo2, brandLogo3, brandLogo4, brandLogo5]"
           :key="index"
         >
           <VImg

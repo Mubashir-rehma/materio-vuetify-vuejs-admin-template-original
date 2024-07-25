@@ -1,19 +1,43 @@
 <script setup>
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 
+const props = defineProps({
+  emailsMeta: {
+    type: Object,
+    required: true,
+  },
+})
+
 const emit = defineEmits(['toggleComposeDialogVisibility'])
 
 defineOptions({
   inheritAttrs: false,
 })
 
-const folders = [
+const inboxEmails = ref(0)
+const draftEmails = ref(0)
+const spamEmails = ref(0)
+const starredEmails = ref(0)
+
+watch(() => props.emailsMeta, emailsMeta => {
+  if (!emailsMeta)
+    return
+  inboxEmails.value = emailsMeta.inbox
+  draftEmails.value = emailsMeta.draft
+  spamEmails.value = emailsMeta.spam
+  starredEmails.value = emailsMeta.star
+}, {
+  immediate: true,
+  deep: true,
+})
+
+const folders = computed(() => [
   {
     title: 'Inbox',
     prependIcon: 'ri-mail-line',
     to: { name: 'apps-email' },
     badge: {
-      content: '21',
+      content: inboxEmails.value,
       color: 'primary',
     },
   },
@@ -33,7 +57,7 @@ const folders = [
       params: { filter: 'draft' },
     },
     badge: {
-      content: '2',
+      content: draftEmails.value,
       color: 'warning',
     },
   },
@@ -44,6 +68,10 @@ const folders = [
       name: 'apps-email-filter',
       params: { filter: 'starred' },
     },
+    badge: {
+      content: starredEmails.value,
+      color: 'success',
+    },
   },
   {
     title: 'Spam',
@@ -53,7 +81,7 @@ const folders = [
       params: { filter: 'spam' },
     },
     badge: {
-      content: '4',
+      content: spamEmails.value,
       color: 'error',
     },
   },
@@ -65,7 +93,7 @@ const folders = [
       params: { filter: 'trashed' },
     },
   },
-]
+])
 
 const labels = [
   {

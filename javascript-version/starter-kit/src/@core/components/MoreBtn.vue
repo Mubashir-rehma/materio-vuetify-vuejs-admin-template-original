@@ -8,12 +8,19 @@ const props = defineProps({
     type: Boolean,
     required: false,
   },
+  iconSize: {
+    type: String,
+    required: false,
+  },
 })
 </script>
 
 <template>
   <IconBtn>
-    <VIcon icon="ri-more-2-line" />
+    <VIcon
+      icon="ri-more-2-line"
+      :size="iconSize"
+    />
 
     <VMenu
       v-if="props.menuList"

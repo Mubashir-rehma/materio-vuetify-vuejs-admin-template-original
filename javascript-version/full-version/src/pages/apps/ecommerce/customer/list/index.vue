@@ -35,7 +35,6 @@ const headers = [
 ]
 
 const updateOptions = options => {
-  page.value = options.page
   sortBy.value = options.sortBy[0]?.key
   orderBy.value = options.sortBy[0]?.order
 }

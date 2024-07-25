@@ -48,7 +48,7 @@ const formData = ref({
   twitter: 'https://twitter.com/abc',
   facebook: 'https://facebook.com/abc',
   googlePlus: 'https://plus.google.com/abc',
-  linkedIn: 'https://linkedin.com/abc',
+  LinkedIn: 'https://linkedin.com/abc',
 })
 
 const onSubmit = () => {
@@ -305,7 +305,7 @@ const onSubmit = () => {
                 md="6"
               >
                 <VTextField
-                  v-model="formData.linkedIn"
+                  v-model="formData.LinkedIn"
                   placeholder="https://linkedin.com/abc"
                   label="LinkedIn"
                 />
@@ -380,7 +380,7 @@ const onSubmit = () => {
                 {{ formData.googlePlus }}
               </p>
               <p class="mb-1">
-                {{ formData.linkedIn }}
+                {{ formData.LinkedIn }}
               </p>
             </div>
           </VWindowItem>
@@ -477,7 +477,7 @@ const formData = ref({
   twitter: 'https://twitter.com/abc',
   facebook: 'https://facebook.com/abc',
   googlePlus: 'https://plus.google.com/abc',
-  linkedIn: 'https://linkedin.com/abc',
+  LinkedIn: 'https://linkedin.com/abc',
 })
 
 const onSubmit = () => {
@@ -734,7 +734,7 @@ const onSubmit = () => {
                 md="6"
               >
                 <VTextField
-                  v-model="formData.linkedIn"
+                  v-model="formData.LinkedIn"
                   placeholder="https://linkedin.com/abc"
                   label="LinkedIn"
                 />
@@ -809,7 +809,7 @@ const onSubmit = () => {
                 {{ formData.googlePlus }}
               </p>
               <p class="mb-1">
-                {{ formData.linkedIn }}
+                {{ formData.LinkedIn }}
               </p>
             </div>
           </VWindowItem>
@@ -859,12 +859,12 @@ const onSubmit = () => {
 ` }
 
 export const validation = { ts: `<script setup lang="ts">
-import { VForm } from 'vuetify/components/VForm'
 import customWizardAccount from '@images/svg/wizard-account.svg'
 import customWizardAddress from '@images/svg/wizard-address.svg'
 import customWizardPersonal from '@images/svg/wizard-personal.svg'
 import customWizardSocialLink from '@images/svg/wizard-social-link.svg'
 import customWizardSubmit from '@images/svg/wizard-submit.svg'
+import { VForm } from 'vuetify/components/VForm'
 
 const iconsSteps = [
   {
@@ -916,7 +916,7 @@ const socialForm = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 })
 
 const addressForm = ref({
@@ -1329,7 +1329,7 @@ const validateSocialLinkForm = () => {
                 md="6"
               >
                 <VTextField
-                  v-model="socialForm.linkedIn"
+                  v-model="socialForm.LinkedIn"
                   placeholder="https://linkedin.com/abc"
                   :rules="[requiredValidator, urlValidator]"
                   label="LinkedIn"
@@ -1432,7 +1432,7 @@ const validateSocialLinkForm = () => {
               {{ socialForm.googlePlus }}
             </p>
             <p class="mb-1">
-              {{ socialForm.linkedIn }}
+              {{ socialForm.LinkedIn }}
             </p>
           </div>
 
@@ -1470,12 +1470,12 @@ const validateSocialLinkForm = () => {
   </VCard>
 </template>
 `, js: `<script setup>
-import { VForm } from 'vuetify/components/VForm'
 import customWizardAccount from '@images/svg/wizard-account.svg'
 import customWizardAddress from '@images/svg/wizard-address.svg'
 import customWizardPersonal from '@images/svg/wizard-personal.svg'
 import customWizardSocialLink from '@images/svg/wizard-social-link.svg'
 import customWizardSubmit from '@images/svg/wizard-submit.svg'
+import { VForm } from 'vuetify/components/VForm'
 
 const iconsSteps = [
   {
@@ -1527,7 +1527,7 @@ const socialForm = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 })
 
 const addressForm = ref({
@@ -1944,7 +1944,7 @@ const validateSocialLinkForm = () => {
                 md="6"
               >
                 <VTextField
-                  v-model="socialForm.linkedIn"
+                  v-model="socialForm.LinkedIn"
                   placeholder="https://linkedin.com/abc"
                   :rules="[requiredValidator, urlValidator]"
                   label="LinkedIn"
@@ -2047,7 +2047,7 @@ const validateSocialLinkForm = () => {
               {{ socialForm.googlePlus }}
             </p>
             <p class="mb-1">
-              {{ socialForm.linkedIn }}
+              {{ socialForm.LinkedIn }}
             </p>
           </div>
 
@@ -2118,7 +2118,7 @@ const formData = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 
 })
 
@@ -2328,7 +2328,7 @@ const onSubmit = () => {
                     md="6"
                   >
                     <VTextField
-                      v-model="formData.linkedIn"
+                      v-model="formData.LinkedIn"
                       placeholder="https://linkedin.com/abc"
                       label="LinkedIn"
                     />
@@ -2412,7 +2412,7 @@ const formData = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 })
 
 const onSubmit = () => {
@@ -2621,7 +2621,7 @@ const onSubmit = () => {
                     md="6"
                   >
                     <VTextField
-                      v-model="formData.linkedIn"
+                      v-model="formData.LinkedIn"
                       placeholder="https://linkedin.com/abc"
                       label="LinkedIn"
                     />

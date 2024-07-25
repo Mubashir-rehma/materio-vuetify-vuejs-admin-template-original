@@ -204,7 +204,7 @@ watchEffect(() => {
   // 👉 stepper step with icon and  default
   .v-slide-group__content {
     .stepper-step-indicator {
-      border: .1875rem solid rgb(var(--v-theme-primary));
+      border: 0.1875rem solid rgb(var(--v-theme-primary));
       border-radius: 50%;
       background-color: rgb(var(--v-theme-surface));
       block-size: 1.25rem;
@@ -268,19 +268,19 @@ watchEffect(() => {
     }
 
     .app-stepper-step:not(.stepper-steps-active,.stepper-steps-completed) {
-      .step-number{
+      .step-number {
         color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity));
       }
     }
   }
 
-  .app-stepper-title-wrapper{
+  .app-stepper-title-wrapper {
     text-wrap: nowrap;
   }
 
   // 👉 stepper step with bg color
   &.stepper-icon-step-bg {
-    .v-slide-group__content{
+    .v-slide-group__content {
       row-gap: 1.5rem;
     }
 
@@ -380,7 +380,7 @@ watchEffect(() => {
       }
     }
 
-    &.v-slide-group--vertical{
+    &.v-slide-group--vertical {
       .step-wrapper {
         padding-inline: 0;
       }

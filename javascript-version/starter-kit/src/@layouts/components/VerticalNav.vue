@@ -99,28 +99,30 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered)
         </RouterLink>
         <!-- 👉 Vertical nav actions -->
         <!-- Show toggle collapsible in >md and close button in <md -->
-        <Component
-          :is="layoutConfig.app.iconRenderer || 'div'"
-          v-show="configStore.isVerticalNavCollapsed"
-          class="header-action d-none nav-unpin"
-          :class="configStore.isVerticalNavCollapsed && 'd-lg-block'"
-          v-bind="layoutConfig.icons.verticalNavUnPinned"
-          @click="configStore.isVerticalNavCollapsed = !configStore.isVerticalNavCollapsed"
-        />
-        <Component
-          :is="layoutConfig.app.iconRenderer || 'div'"
-          v-show="!configStore.isVerticalNavCollapsed"
-          class="header-action d-none nav-pin"
-          :class="!configStore.isVerticalNavCollapsed && 'd-lg-block'"
-          v-bind="layoutConfig.icons.verticalNavPinned"
-          @click="configStore.isVerticalNavCollapsed = !configStore.isVerticalNavCollapsed"
-        />
-        <Component
-          :is="layoutConfig.app.iconRenderer || 'div'"
-          class="header-action d-lg-none"
-          v-bind="layoutConfig.icons.close"
-          @click="toggleIsOverlayNavActive(false)"
-        />
+        <div class="header-action">
+          <Component
+            :is="layoutConfig.app.iconRenderer || 'div'"
+            v-show="configStore.isVerticalNavCollapsed"
+            class="d-none nav-unpin"
+            :class="configStore.isVerticalNavCollapsed && 'd-lg-block'"
+            v-bind="layoutConfig.icons.verticalNavUnPinned"
+            @click="configStore.isVerticalNavCollapsed = !configStore.isVerticalNavCollapsed"
+          />
+          <Component
+            :is="layoutConfig.app.iconRenderer || 'div'"
+            v-show="!configStore.isVerticalNavCollapsed"
+            class="d-none nav-pin"
+            :class="!configStore.isVerticalNavCollapsed && 'd-lg-block'"
+            v-bind="layoutConfig.icons.verticalNavPinned"
+            @click="configStore.isVerticalNavCollapsed = !configStore.isVerticalNavCollapsed"
+          />
+          <Component
+            :is="layoutConfig.app.iconRenderer || 'div'"
+            class="d-lg-none"
+            v-bind="layoutConfig.icons.close"
+            @click="toggleIsOverlayNavActive(false)"
+          />
+        </div>
       </slot>
     </div>
     <slot name="before-nav-items">
@@ -230,7 +232,7 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered)
 }
 
 // Small screen vertical nav transition
-@media (max-width:1279px) {
+@media (max-width: 1279px) {
   .layout-vertical-nav {
     &:not(.visible) {
       transform: translateX(-#{variables.$layout-vertical-nav-width});

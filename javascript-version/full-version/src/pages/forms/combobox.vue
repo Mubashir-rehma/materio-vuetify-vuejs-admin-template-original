@@ -51,22 +51,20 @@ import * as demoCode from '@/views/demos/forms/form-elements/combobox/demoCodeCo
       </AppCardCode>
     </VCol>
 
-    <!--
-      <VCol
+    <VCol
       cols="12"
       md="6"
-      >
-      // 👉 Multiple
+    >
+      <!-- 👉 Multiple -->
       <AppCardCode
-      title="Multiple"
-      :code="demoCode.multiple"
+        title="Multiple"
+        :code="demoCode.multiple"
       >
-      <p>Previously known as tags - user is allowed to enter more than 1 value</p>
+        <p>Previously known as tags - user is allowed to enter more than 1 value</p>
 
-      <DemoComboboxMultiple />
+        <DemoComboboxMultiple />
       </AppCardCode>
-      </VCol>
-    -->
+    </VCol>
 
     <VCol
       cols="12"

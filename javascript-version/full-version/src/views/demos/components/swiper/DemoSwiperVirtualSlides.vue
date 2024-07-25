@@ -58,7 +58,9 @@ const appendSlide = () => {
         v-for="(item, index) in slides"
         :key="index"
       >
-        {{ item }}
+        <div class="text-secondary">
+          {{ item }}
+        </div>
       </swiper-slide>
     </swiper-container>
 

@@ -32,6 +32,7 @@ const itemsPerPage = ref(10)
 const page = ref(1)
 const sortBy = ref()
 const orderBy = ref()
+const selectedRows = ref([])
 
 // Data table Headers
 const headers = [
@@ -69,7 +70,6 @@ const headers = [
 ]
 
 const updateOptions = options => {
-  page.value = options.page
   sortBy.value = options.sortBy[0]?.key
   orderBy.value = options.sortBy[0]?.order
 }
@@ -138,6 +138,13 @@ const totalOrder = computed(() => ordersData.value.total)
 
 const deleteOrder = async id => {
   await $api(`/apps/ecommerce/orders/${ id }`, { method: 'DELETE' })
+
+  // Delete from selectedRows
+  const index = selectedRows.value.findIndex(row => row === id)
+  if (index !== -1)
+    selectedRows.value.splice(index, 1)
+
+  // Refetch Orders
   fetchOrders()
 }
 </script>
@@ -159,7 +166,11 @@ const deleteOrder = async id => {
             >
               <div
                 class="d-flex justify-space-between"
-                :class="$vuetify.display.xs ? 'product-widget' : $vuetify.display.sm ? index < 2 ? 'product-widget' : '' : ''"
+                :class="$vuetify.display.xs
+                  ? index !== widgetData.length - 1 ? 'border-b pb-4' : ''
+                  : $vuetify.display.sm
+                    ? index < (widgetData.length / 2) ? 'border-b pb-4' : ''
+                    : ''"
               >
                 <div class="d-flex flex-column gap-y-1">
                   <h4 class="text-h4">
@@ -183,10 +194,12 @@ const deleteOrder = async id => {
               </div>
             </VCol>
             <VDivider
-              v-if="$vuetify.display.mdAndUp ? index !== widgetData.length - 1 : $vuetify.display.smAndUp ? index % 2 === 0 : false"
+              v-if="$vuetify.display.mdAndUp ? index !== widgetData.length - 1
+                : $vuetify.display.smAndUp ? index % 2 === 0
+                  : false"
               vertical
               inset
-              length="100"
+              length="60"
             />
           </template>
         </VRow>
@@ -215,10 +228,9 @@ const deleteOrder = async id => {
 
       <VDataTableServer
         v-model:items-per-page="itemsPerPage"
-        v-model:page="page"
+        v-model:model-value="selectedRows"
         :headers="headers"
         :items="orders"
-        item-value="order"
         :items-length="totalOrder"
         show-select
         class="text-no-wrap"
@@ -382,13 +394,13 @@ const deleteOrder = async id => {
 </template>
 
 <style lang="scss" scoped>
-#customer-link{
-  &:hover{
-    color: '#000' !important
+#customer-link {
+  &:hover {
+    color: "#000" !important;
   }
 }
 
-.product-widget{
+.product-widget {
   border-block-end: 1px solid rgba(var(--v-theme-on-surface), var(--v-border-opacity));
   padding-block-end: 1rem;
 }

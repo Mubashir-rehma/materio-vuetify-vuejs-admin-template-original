@@ -23,6 +23,7 @@ const topicsChartConfig = {
       barHeight: '70%',
       distributed: true,
       borderRadius: 7,
+      borderRadiusApplication: 'end',
     },
   },
   colors: [
@@ -269,7 +270,7 @@ const timeSpendingChartSeries = [
             <div>
               <VChip
                 color="success"
-                density="comfortable"
+                size="small"
               >
                 +18.4%
               </VChip>
@@ -342,11 +343,11 @@ const timeSpendingChartSeries = [
 </template>
 
 <style lang="scss">
-@use "@core/scss/template/libs/apex-chart.scss";
+@use "@core/scss/template/libs/apex-chart";
 
-.topicCard{
-  .v-badge.v-badge--dot{
-    .v-badge__badge{
+.topicCard {
+  .v-badge.v-badge--dot {
+    .v-badge__badge {
       border-radius: 6px;
       block-size: 12px;
       inline-size: 12px;

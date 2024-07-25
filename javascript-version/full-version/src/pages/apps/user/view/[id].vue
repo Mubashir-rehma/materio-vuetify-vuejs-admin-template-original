@@ -93,9 +93,12 @@ const { data: userData } = await useApi(`/apps/users/${ route.params.id }`)
       </VWindow>
     </VCol>
   </VRow>
-  <VCard v-else>
-    <VCardTitle class="text-center">
-      No User Found
-    </VCardTitle>
-  </VCard>
+  <div v-else>
+    <VAlert
+      type="error"
+      variant="tonal"
+    >
+      Invoice with ID  {{ route.params.id }} not found!
+    </VAlert>
+  </div>
 </template>

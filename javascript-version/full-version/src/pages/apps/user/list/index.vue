@@ -12,9 +12,9 @@ const itemsPerPage = ref(10)
 const page = ref(1)
 const sortBy = ref()
 const orderBy = ref()
+const selectedRows = ref([])
 
 const updateOptions = options => {
-  page.value = options.page
   sortBy.value = options.sortBy[0]?.key
   orderBy.value = options.sortBy[0]?.order
 }
@@ -181,14 +181,19 @@ const addNewUser = async userData => {
     body: userData,
   })
 
-  // refetch User
+  // Refetch User
   fetchUsers()
 }
 
 const deleteUser = async id => {
   await $api(`/apps/users/${ id }`, { method: 'DELETE' })
 
-  // refetch User
+  // Delete from selectedRows
+  const index = selectedRows.value.findIndex(row => row === id)
+  if (index !== -1)
+    selectedRows.value.splice(index, 1)
+
+  // Refetch User
   fetchUsers()
 }
 
@@ -359,6 +364,7 @@ const widgetData = ref([
       <!-- SECTION datatable -->
       <VDataTableServer
         v-model:items-per-page="itemsPerPage"
+        v-model:model-value="selectedRows"
         v-model:page="page"
         :items="users"
         item-value="id"

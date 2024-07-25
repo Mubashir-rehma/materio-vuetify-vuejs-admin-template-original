@@ -100,7 +100,7 @@ const logisticData = ref([
   }
 }
 
-.skin--bordered{
+.skin--bordered {
   .logistics-card-statistics {
     &:hover {
       margin-block-end: -2px;

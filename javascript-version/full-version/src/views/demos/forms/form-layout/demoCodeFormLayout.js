@@ -235,28 +235,32 @@ const paymentMethods = [
           >
             <VForm class="pt-4 pb-2">
               <!-- 👉 Payment Method -->
-              <div>
-                <VRadioGroup
-                  v-model="paymentMethod"
-                  inline
-                >
+              <VRow>
+                <VCol cols="12">
                   <div>
-                    <VRadio
-                      v-for="payment in paymentMethods"
-                      :key="payment.radioValue"
-                      :value="payment.radioValue"
+                    <VRadioGroup
+                      v-model="paymentMethod"
+                      inline
                     >
-                      <template #label>
-                        <span class="me-1">{{ payment.radioLabel }}</span>
-                        <VIcon
-                          size="18"
-                          :icon="payment.icon"
-                        />
-                      </template>
-                    </VRadio>
+                      <div>
+                        <VRadio
+                          v-for="payment in paymentMethods"
+                          :key="payment.radioValue"
+                          :value="payment.radioValue"
+                        >
+                          <template #label>
+                            <span class="me-1">{{ payment.radioLabel }}</span>
+                            <VIcon
+                              size="18"
+                              :icon="payment.icon"
+                            />
+                          </template>
+                        </VRadio>
+                      </div>
+                    </VRadioGroup>
                   </div>
-                </VRadioGroup>
-              </div>
+                </VCol>
+              </VRow>
 
               <VRow v-show="paymentMethod === 'credit-debit-card'">
                 <!-- 👉 Card Number -->
@@ -302,23 +306,33 @@ const paymentMethods = [
                     placeholder="123"
                   />
                 </VCol>
+                <VCol>
+                  <div class="d-flex gap-4">
+                    <VBtn>Place Order</VBtn>
+                    <VBtn
+                      color="secondary"
+                      variant="tonal"
+                    >
+                      Cancel
+                    </VBtn>
+                  </div>
+                </VCol>
+              </VRow>
+
+              <VRow v-show="paymentMethod === 'cash-on-delivery'">
+                <VCol cols="12">
+                  <p class="text-base text-high-emphasis">
+                    Cash on Delivery is a type of payment method where the recipient make payment for the order at the time of delivery rather than in advance.
+                  </p>
+
+                  <VBtn>
+                    Pay on delivery
+                  </VBtn>
+                </VCol>
               </VRow>
             </VForm>
           </VCol>
         </VRow>
-
-        <VDivider class="my-5" />
-
-        <!-- 👉 Place Order -->
-        <div class="d-flex gap-4">
-          <VBtn>Place Order</VBtn>
-          <VBtn
-            color="secondary"
-            variant="tonal"
-          >
-            Cancel
-          </VBtn>
-        </div>
       </VExpansionPanelText>
     </VExpansionPanel>
     <!-- !SECTION Payment Method -->
@@ -580,28 +594,32 @@ const paymentMethods = [
           >
             <VForm class="pt-4 pb-2">
               <!-- 👉 Payment Method -->
-              <div>
-                <VRadioGroup
-                  v-model="paymentMethod"
-                  inline
-                >
+              <VRow>
+                <VCol cols="12">
                   <div>
-                    <VRadio
-                      v-for="payment in paymentMethods"
-                      :key="payment.radioValue"
-                      :value="payment.radioValue"
+                    <VRadioGroup
+                      v-model="paymentMethod"
+                      inline
                     >
-                      <template #label>
-                        <span class="me-1">{{ payment.radioLabel }}</span>
-                        <VIcon
-                          size="18"
-                          :icon="payment.icon"
-                        />
-                      </template>
-                    </VRadio>
+                      <div>
+                        <VRadio
+                          v-for="payment in paymentMethods"
+                          :key="payment.radioValue"
+                          :value="payment.radioValue"
+                        >
+                          <template #label>
+                            <span class="me-1">{{ payment.radioLabel }}</span>
+                            <VIcon
+                              size="18"
+                              :icon="payment.icon"
+                            />
+                          </template>
+                        </VRadio>
+                      </div>
+                    </VRadioGroup>
                   </div>
-                </VRadioGroup>
-              </div>
+                </VCol>
+              </VRow>
 
               <VRow v-show="paymentMethod === 'credit-debit-card'">
                 <!-- 👉 Card Number -->
@@ -647,23 +665,33 @@ const paymentMethods = [
                     placeholder="123"
                   />
                 </VCol>
+                <VCol>
+                  <div class="d-flex gap-4">
+                    <VBtn>Place Order</VBtn>
+                    <VBtn
+                      color="secondary"
+                      variant="tonal"
+                    >
+                      Cancel
+                    </VBtn>
+                  </div>
+                </VCol>
+              </VRow>
+
+              <VRow v-show="paymentMethod === 'cash-on-delivery'">
+                <VCol cols="12">
+                  <p class="text-base text-high-emphasis">
+                    Cash on Delivery is a type of payment method where the recipient make payment for the order at the time of delivery rather than in advance.
+                  </p>
+
+                  <VBtn>
+                    Pay on delivery
+                  </VBtn>
+                </VCol>
               </VRow>
             </VForm>
           </VCol>
         </VRow>
-
-        <VDivider class="my-5" />
-
-        <!-- 👉 Place Order -->
-        <div class="d-flex gap-4">
-          <VBtn>Place Order</VBtn>
-          <VBtn
-            color="secondary"
-            variant="tonal"
-          >
-            Cancel
-          </VBtn>
-        </div>
       </VExpansionPanelText>
     </VExpansionPanel>
     <!-- !SECTION Payment Method -->
@@ -868,7 +896,7 @@ const values = ref([])
 ` }
 
 export const formSticky = { ts: `<script setup lang="ts">
-import type { CustomInputContent } from '@core/types'
+import type { CustomInputContent } from '@core/types';
 
 const radioContent: CustomInputContent[] = [
   {
@@ -1087,7 +1115,7 @@ const formData = ref({
               </VCol>
             </VRow>
 
-            <VDivider class="my-4" />
+            <VDivider class="my-6" />
 
             <h2 class="text-lg font-weight-medium mb-6">
               2. Delivery Type
@@ -1099,7 +1127,7 @@ const formData = ref({
               :grid-column="{ sm: '4', cols: '12' }"
             />
 
-            <VDivider class="my-4" />
+            <VDivider class="my-6" />
 
             <h2 class="text-lg font-weight-medium mb-6">
               3. Apply Promo code
@@ -1139,7 +1167,7 @@ const formData = ref({
               </VListItem>
             </VList>
 
-            <VDivider class="my-4" />
+            <VDivider class="my-6" />
 
             <h2 class="text-lg font-weight-medium mb-6">
               4. Payment Method
@@ -1218,22 +1246,22 @@ const formData = ref({
   transition: all 0.3s ease-in-out;
 }
 
-.layout-nav-type-vertical{
+.layout-nav-type-vertical {
   &.layout-navbar-sticky {
     .sticky-header {
       inset-block: 4rem 0;
     }
   }
 
-  &.layout-navbar-static{
+  &.layout-navbar-static {
     .sticky-header {
       inset-block: 0 0;
     }
   }
 }
 
-.layout-nav-type-horizontal{
-  &.horizontal-nav-static {
+.layout-nav-type-horizontal {
+  &.layout-navbar-static {
     .sticky-header {
       inset-block: 0 0;
     }
@@ -1464,7 +1492,7 @@ const formData = ref({
               </VCol>
             </VRow>
 
-            <VDivider class="my-4" />
+            <VDivider class="my-6" />
 
             <h2 class="text-lg font-weight-medium mb-6">
               2. Delivery Type
@@ -1476,7 +1504,7 @@ const formData = ref({
               :grid-column="{ sm: '4', cols: '12' }"
             />
 
-            <VDivider class="my-4" />
+            <VDivider class="my-6" />
 
             <h2 class="text-lg font-weight-medium mb-6">
               3. Apply Promo code
@@ -1516,7 +1544,7 @@ const formData = ref({
               </VListItem>
             </VList>
 
-            <VDivider class="my-4" />
+            <VDivider class="my-6" />
 
             <h2 class="text-lg font-weight-medium mb-6">
               4. Payment Method
@@ -1595,22 +1623,22 @@ const formData = ref({
   transition: all 0.3s ease-in-out;
 }
 
-.layout-nav-type-vertical{
+.layout-nav-type-vertical {
   &.layout-navbar-sticky {
     .sticky-header {
       inset-block: 4rem 0;
     }
   }
 
-  &.layout-navbar-static{
+  &.layout-navbar-static {
     .sticky-header {
       inset-block: 0 0;
     }
   }
 }
 
-.layout-nav-type-horizontal{
-  &.horizontal-nav-static {
+.layout-nav-type-horizontal {
+  &.layout-navbar-static {
     .sticky-header {
       inset-block: 0 0;
     }
@@ -1626,7 +1654,6 @@ const formData = ref({
 ` }
 
 export const formValidation = { ts: `<script lang="ts" setup>
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { VForm } from 'vuetify/components/VForm'
 
 const name = ref('')
@@ -2454,34 +2481,50 @@ const checkbox = ref(false)
       </VCol>
 
       <!-- 👉 Remember me -->
-      <VCol
-        offset-md="3"
-        cols="12"
-        md="9"
-      >
-        <VCheckbox
-          v-model="checkbox"
-          label="Remember me"
-        />
+      <VCol cols="12">
+        <VRow no-gutters>
+          <VCol
+            cols="12"
+            md="3"
+          />
+          <VCol
+            cols="12"
+            md="9"
+          >
+            <VCheckbox
+              v-model="checkbox"
+              label="Remember me"
+            />
+          </VCol>
+        </VRow>
       </VCol>
 
       <!-- 👉 submit and reset button -->
-      <VCol
-        offset-md="3"
-        cols="12"
-        md="9"
-        class="d-flex gap-4"
-      >
-        <VBtn type="submit">
-          Submit
-        </VBtn>
-        <VBtn
-          color="secondary"
-          variant="tonal"
-          type="reset"
-        >
-          Reset
-        </VBtn>
+      <VCol cols="12">
+        <VRow no-gutters>
+          <VCol
+            cols="12"
+            md="3"
+          />
+          <VCol
+            cols="12"
+            md="9"
+          >
+            <VBtn
+              type="submit"
+              class="me-4"
+            >
+              Submit
+            </VBtn>
+            <VBtn
+              color="secondary"
+              variant="tonal"
+              type="reset"
+            >
+              Reset
+            </VBtn>
+          </VCol>
+        </VRow>
       </VCol>
     </VRow>
   </VForm>
@@ -2597,34 +2640,50 @@ const checkbox = ref(false)
       </VCol>
 
       <!-- 👉 Remember me -->
-      <VCol
-        offset-md="3"
-        cols="12"
-        md="9"
-      >
-        <VCheckbox
-          v-model="checkbox"
-          label="Remember me"
-        />
+      <VCol cols="12">
+        <VRow no-gutters>
+          <VCol
+            cols="12"
+            md="3"
+          />
+          <VCol
+            cols="12"
+            md="9"
+          >
+            <VCheckbox
+              v-model="checkbox"
+              label="Remember me"
+            />
+          </VCol>
+        </VRow>
       </VCol>
 
       <!-- 👉 submit and reset button -->
-      <VCol
-        offset-md="3"
-        cols="12"
-        md="9"
-        class="d-flex gap-4"
-      >
-        <VBtn type="submit">
-          Submit
-        </VBtn>
-        <VBtn
-          color="secondary"
-          variant="tonal"
-          type="reset"
-        >
-          Reset
-        </VBtn>
+      <VCol cols="12">
+        <VRow no-gutters>
+          <VCol
+            cols="12"
+            md="3"
+          />
+          <VCol
+            cols="12"
+            md="9"
+          >
+            <VBtn
+              type="submit"
+              class="me-4"
+            >
+              Submit
+            </VBtn>
+            <VBtn
+              color="secondary"
+              variant="tonal"
+              type="reset"
+            >
+              Reset
+            </VBtn>
+          </VCol>
+        </VRow>
       </VCol>
     </VRow>
   </VForm>
@@ -2746,34 +2805,50 @@ const checkbox = ref(false)
       </VCol>
 
       <!-- 👉 Checkbox -->
-      <VCol
-        offset-md="3"
-        cols="12"
-        md="9"
-      >
-        <VCheckbox
-          v-model="checkbox"
-          label="Remember me"
-        />
+      <VCol cols="12">
+        <VRow no-gutters>
+          <VCol
+            cols="12"
+            md="3"
+          />
+          <VCol
+            cols="12"
+            md="9"
+          >
+            <VCheckbox
+              v-model="checkbox"
+              label="Remember me"
+            />
+          </VCol>
+        </VRow>
       </VCol>
 
       <!-- 👉 submit and reset button -->
-      <VCol
-        offset-md="3"
-        cols="12"
-        md="9"
-        class="d-flex gap-4"
-      >
-        <VBtn type="submit">
-          Submit
-        </VBtn>
-        <VBtn
-          color="secondary"
-          type="reset"
-          variant="tonal"
-        >
-          Reset
-        </VBtn>
+      <VCol cols="12">
+        <VRow no-gutters>
+          <VCol
+            cols="12"
+            md="3"
+          />
+          <VCol
+            cols="12"
+            md="9"
+          >
+            <VBtn
+              type="submit"
+              class="me-4"
+            >
+              Submit
+            </VBtn>
+            <VBtn
+              color="secondary"
+              variant="tonal"
+              type="reset"
+            >
+              Reset
+            </VBtn>
+          </VCol>
+        </VRow>
       </VCol>
     </VRow>
   </VForm>
@@ -2893,34 +2968,50 @@ const checkbox = ref(false)
       </VCol>
 
       <!-- 👉 Checkbox -->
-      <VCol
-        offset-md="3"
-        cols="12"
-        md="9"
-      >
-        <VCheckbox
-          v-model="checkbox"
-          label="Remember me"
-        />
+      <VCol cols="12">
+        <VRow no-gutters>
+          <VCol
+            cols="12"
+            md="3"
+          />
+          <VCol
+            cols="12"
+            md="9"
+          >
+            <VCheckbox
+              v-model="checkbox"
+              label="Remember me"
+            />
+          </VCol>
+        </VRow>
       </VCol>
 
       <!-- 👉 submit and reset button -->
-      <VCol
-        offset-md="3"
-        cols="12"
-        md="9"
-        class="d-flex gap-4"
-      >
-        <VBtn type="submit">
-          Submit
-        </VBtn>
-        <VBtn
-          color="secondary"
-          type="reset"
-          variant="tonal"
-        >
-          Reset
-        </VBtn>
+      <VCol cols="12">
+        <VRow no-gutters>
+          <VCol
+            cols="12"
+            md="3"
+          />
+          <VCol
+            cols="12"
+            md="9"
+          >
+            <VBtn
+              type="submit"
+              class="me-4"
+            >
+              Submit
+            </VBtn>
+            <VBtn
+              color="secondary"
+              variant="tonal"
+              type="reset"
+            >
+              Reset
+            </VBtn>
+          </VCol>
+        </VRow>
       </VCol>
     </VRow>
   </VForm>

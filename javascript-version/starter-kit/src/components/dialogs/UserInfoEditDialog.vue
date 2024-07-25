@@ -34,7 +34,7 @@ const emit = defineEmits([
 
 const userData = ref(structuredClone(toRaw(props.userData)))
 
-watch(props, () => {
+watch(() => props, () => {
   userData.value = structuredClone(toRaw(props.userData))
 })
 
@@ -189,7 +189,7 @@ const dialogVisibleUpdate = val => {
             >
               <VSelect
                 v-model="userData.country"
-                :items="['United States', 'United Kingdom', 'France']"
+                :items="['United States', 'United Kingdom', 'France', 'China']"
                 label="Country"
                 placeholder="United States"
               />

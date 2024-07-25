@@ -12,6 +12,7 @@ import pdf from '@images/icons/project-icons/pdf.png'
         <VIcon
           icon="ri-bar-chart-2-line"
           size="24"
+          class="me-2"
         />
       </template>
 

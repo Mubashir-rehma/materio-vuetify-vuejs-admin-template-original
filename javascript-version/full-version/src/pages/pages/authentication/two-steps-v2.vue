@@ -12,7 +12,12 @@ import authV2TwoStepsIllustrationLight from '@images/pages/auth-v2-two-steps-ill
 const authThemeImg = useGenerateImageVariant(authV2TwoStepsIllustrationLight, authV2TwoStepsIllustrationDark, authV2TwoStepsIllustrationBorderedLight, authV2TwoStepsIllustrationBorderedDark, true)
 const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 
-definePage({ meta: { layout: 'blank' } })
+definePage({
+  meta: {
+    layout: 'blank',
+    public: true,
+  },
+})
 
 const router = useRouter()
 const otp = ref('')
@@ -145,10 +150,11 @@ const onFinish = () => {
 </template>
 
 <style lang="scss">
-@use "@core/scss/template/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth";
 
-// .auth-illustration{
-//   inset-block-end: 11.5rem;
-//   inset-inline-end: 1.25rem;
-// }
+.v-otp-input {
+  .v-otp-input__content {
+    padding-inline: 0;
+  }
+}
 </style>

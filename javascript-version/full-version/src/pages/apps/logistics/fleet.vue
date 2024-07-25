@@ -1,5 +1,6 @@
 // ❗ WARNING please use your access token from mapbox.com
 <script setup>
+import fleetImg from '@images/misc/fleet-car.png'
 import mapboxgl from 'mapbox-gl'
 import {
   onMounted,
@@ -7,7 +8,6 @@ import {
 } from 'vue'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useDisplay } from 'vuetify'
-import fleetImg from '@images/misc/fleet-car.png'
 
 const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 const accessToken = 'pk.eyJ1Ijoic29jaWFsZXhwbG9yZXIiLCJhIjoiREFQbXBISSJ9.dwFTwfSaWsHvktHrRtpydQ'
@@ -80,7 +80,8 @@ const geojson = {
 
 const activeIndex = ref(0)
 
-onMounted(() => {
+onMounted(async () => {
+  await new Promise(resolve => setTimeout(resolve, 100))
   mapboxgl.accessToken = accessToken
   map.value = new mapboxgl.Map({
     container: 'mapContainer',
@@ -343,14 +344,14 @@ watch(activeIndex, () => {
   }
 }
 
-.navigation-toggle-btn{
+.navigation-toggle-btn {
   position: absolute;
   z-index: 1;
   inset-block-start: 1rem;
   inset-inline-start: 1rem;
 }
 
-.navigation-close-btn{
+.navigation-close-btn {
   position: absolute;
   z-index: 1;
   inset-block-start: 1rem;
@@ -373,6 +374,6 @@ watch(activeIndex, () => {
 
 /* stylelint-disable-next-line selector-id-pattern */
 #mapContainer {
-  block-size: 100vh !important;
+  block-size: 100dvh !important;
 }
 </style>

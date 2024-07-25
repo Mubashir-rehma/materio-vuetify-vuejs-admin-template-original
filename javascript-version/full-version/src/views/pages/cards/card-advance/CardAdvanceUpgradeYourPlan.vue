@@ -45,11 +45,11 @@ const savedCards = [
           size="40"
           class="plan-details me-2 border-opacity-100 border-primary"
         >
-          <VImg
+          <img
             :src="briefcase"
             alt="briefcase"
             height="20"
-          />
+          >
         </VAvatar>
 
         <div class="d-flex flex-column">

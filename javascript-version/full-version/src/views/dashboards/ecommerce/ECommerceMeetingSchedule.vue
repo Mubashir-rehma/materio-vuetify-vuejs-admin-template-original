@@ -83,7 +83,6 @@ const meetingTypeUiColors = {
           <!-- 👉 Avatar -->
           <template #prepend>
             <VAvatar
-              start
               :size="38"
               :image="meeting.profile"
             />

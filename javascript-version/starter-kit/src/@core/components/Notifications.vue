@@ -103,7 +103,7 @@ const totalUnreadNotifications = computed(() => props.notifications.filter(item 
         <!-- 👉 Notifications list -->
         <PerfectScrollbar
           :options="{ wheelPropagation: false }"
-          style="max-block-size: 27rem"
+          style="max-block-size: 27rem;"
         >
           <VList class="py-0">
             <template
@@ -121,15 +121,22 @@ const totalUnreadNotifications = computed(() => props.notifications.filter(item 
                 <!-- Slot: Prepend -->
                 <!-- Handles Avatar: Image, Icon, Text -->
                 <div class="d-flex align-start gap-3">
-                  <VAvatar
-                    size="40"
-                    :color="notification.color && !notification.img ? notification.color : undefined"
-                    :image="notification.img || undefined"
-                    :icon="notification.icon || undefined"
-                    :variant="notification.img ? undefined : 'tonal' "
-                  >
-                    <span v-if="notification.text">{{ avatarText(notification.text) }}</span>
-                  </VAvatar>
+                  <div>
+                    <VAvatar
+                      :color="notification.color && !notification.img ? notification.color : undefined"
+                      :variant="notification.img ? undefined : 'tonal' "
+                    >
+                      <span v-if="notification.text">{{ avatarText(notification.text) }}</span>
+                      <VImg
+                        v-if="notification.img"
+                        :src="notification.img"
+                      />
+                      <VIcon
+                        v-if="notification.icon"
+                        :icon="notification.icon"
+                      />
+                    </VAvatar>
+                  </div>
 
                   <div>
                     <h6 class="text-h6 mb-1">

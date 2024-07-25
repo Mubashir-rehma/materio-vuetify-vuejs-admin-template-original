@@ -1494,7 +1494,7 @@ register()
 
 export const virtualSlides = {
   ts: `<script setup lang="ts">
-import { register } from 'swiper/element/bundle';
+import { register } from 'swiper/element/bundle'
 
 register()
 
@@ -1555,7 +1555,7 @@ const appendSlide = () => {
         v-for="(item, index) in slides"
         :key="index"
       >
-      <div class="text-secondary">
+        <div class="text-secondary">
           {{ item }}
         </div>
       </swiper-slide>

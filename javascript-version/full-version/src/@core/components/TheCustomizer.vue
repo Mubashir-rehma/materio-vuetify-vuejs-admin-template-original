@@ -1,4 +1,7 @@
 <script setup>
+import { useStorage } from '@vueuse/core'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { useTheme } from 'vuetify'
 import {
   staticPrimaryColor,
   staticPrimaryDarkenColor,
@@ -20,9 +23,6 @@ import {
   namespaceConfig,
 } from '@layouts/stores/config'
 import { themeConfig } from '@themeConfig'
-import { useStorage } from '@vueuse/core'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { useTheme } from 'vuetify'
 import borderSkin from '@images/customizer-icons/border-light.svg'
 import collapsed from '@images/customizer-icons/collapsed-light.svg'
 import compact from '@images/customizer-icons/compact-light.svg'
@@ -253,7 +253,6 @@ const resetCustomizer = async () => {
   }
 }
 </script>
-
 
 <template>
   <div class="d-lg-block d-none">

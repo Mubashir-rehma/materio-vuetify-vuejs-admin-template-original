@@ -863,12 +863,12 @@ const onSubmit = () => {
 
 export const validation = {
   ts: `<script setup lang="ts">
+import { VForm } from 'vuetify/components/VForm'
 import customWizardAccount from '@images/svg/wizard-account.svg'
 import customWizardAddress from '@images/svg/wizard-address.svg'
 import customWizardPersonal from '@images/svg/wizard-personal.svg'
 import customWizardSocialLink from '@images/svg/wizard-social-link.svg'
 import customWizardSubmit from '@images/svg/wizard-submit.svg'
-import { VForm } from 'vuetify/components/VForm'
 
 const iconsSteps = [
   {
@@ -1475,12 +1475,12 @@ const validateSocialLinkForm = () => {
 </template>
 `,
   js: `<script setup>
+import { VForm } from 'vuetify/components/VForm'
 import customWizardAccount from '@images/svg/wizard-account.svg'
 import customWizardAddress from '@images/svg/wizard-address.svg'
 import customWizardPersonal from '@images/svg/wizard-personal.svg'
 import customWizardSocialLink from '@images/svg/wizard-social-link.svg'
 import customWizardSubmit from '@images/svg/wizard-submit.svg'
-import { VForm } from 'vuetify/components/VForm'
 
 const iconsSteps = [
   {

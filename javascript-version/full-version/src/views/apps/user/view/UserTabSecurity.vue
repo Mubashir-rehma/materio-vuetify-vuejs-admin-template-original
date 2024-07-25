@@ -139,7 +139,7 @@ const recentDevices = [
                     @click="isTwoFactorDialogOpen = true"
                   />
                 </IconBtn>
-                
+
                 <IconBtn
                   rounded
                   variant="outlined"

@@ -1,9 +1,9 @@
 <script setup>
-import { hexToRgb } from '@core/utils/colorConverter'
 import {
   useDisplay,
   useTheme,
 } from 'vuetify'
+import { hexToRgb } from '@core/utils/colorConverter'
 
 const vuetifyTheme = useTheme()
 const { thresholds } = useDisplay()

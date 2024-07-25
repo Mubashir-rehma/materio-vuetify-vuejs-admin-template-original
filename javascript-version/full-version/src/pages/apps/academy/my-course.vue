@@ -1,4 +1,5 @@
 <script setup>
+import { VideoPlayer } from '@videojs-player/vue'
 import AcademyMyCourses from '@/views/apps/academy/AcademyMyCourses.vue'
 import academyCourseIllustration1 from '@images/pages/academy-course-illustration1.png'
 import academyCourseIllustration2Dark from '@images/pages/academy-course-illustration2-dark.png'
@@ -7,7 +8,6 @@ import boyAcademyIllustration from '@images/pages/boy-academy-illustration.png'
 import girlAcademyIllustration from '@images/pages/girl-academy-illustration.png'
 import guitarCoursePoster from '@images/pages/guitar-course.png'
 import singingCoursePoster from '@images/pages/singing-course.png'
-import { VideoPlayer } from '@videojs-player/vue'
 
 const academyCourseIllustration2 = useGenerateImageVariant(academyCourseIllustration2Light, academyCourseIllustration2Dark)
 const searchQuery = ref('')

@@ -4,6 +4,20 @@
 
 All notable changes to this template will be documented in this file
 
+## v3.1.0 (2024-07-25)
+
+### Added
+
+- Added Kanban app
+  
+### Updated
+
+- Updated all the libraries to the latest version
+
+### Fixed
+  
+- Fixed Apps & Front-pages bugs
+
 ## v3.0.0 (2024-01-01)
 
 ### Added

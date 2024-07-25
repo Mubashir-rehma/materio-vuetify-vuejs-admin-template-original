@@ -1,4 +1,5 @@
-export const basic = { ts: `<script lang="ts" setup>
+export const basic = {
+  ts: `<script lang="ts" setup>
 const selectedItem = ref('Programming')
 const items = ['Programming', 'Design', 'Vue', 'Vuetify']
 </script>
@@ -10,7 +11,8 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
     placeholder="deployment"
   />
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const selectedItem = ref('Programming')
 
 const items = [
@@ -28,9 +30,11 @@ const items = [
     placeholder="deployment"
   />
 </template>
-` }
+`,
+}
 
-export const clearable = { ts: `<script lang="ts" setup>
+export const clearable = {
+  ts: `<script lang="ts" setup>
 const select = ref(['Vuetify', 'Programming'])
 const items = ['Programming', 'Design', 'Vue', 'Vuetify']
 </script>
@@ -45,7 +49,8 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
     clearable
   />
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const select = ref([
   'Vuetify',
   'Programming',
@@ -69,9 +74,11 @@ const items = [
     clearable
   />
 </template>
-` }
+`,
+}
 
-export const density = { ts: `<script lang="ts" setup>
+export const density = {
+  ts: `<script lang="ts" setup>
 const select = ref(['Vuetify', 'Programming'])
 const items = ['Programming', 'Design', 'Vue', 'Vuetify']
 </script>
@@ -86,7 +93,8 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
     multiple
   />
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const select = ref([
   'Vuetify',
   'Programming',
@@ -110,9 +118,11 @@ const items = [
     multiple
   />
 </template>
-` }
+`,
+}
 
-export const multiple = { ts: `<script lang="ts" setup>
+export const multiple = {
+  ts: `<script lang="ts" setup>
 const selectedItem = ref(['Vuetify', 'Programming'])
 const items = ['Programming', 'Design', 'Vue', 'Vuetify']
 </script>
@@ -177,7 +187,8 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
     </VCol>
   </VRow>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const selectedItem = ref([
   'Vuetify',
   'Programming',
@@ -251,9 +262,11 @@ const items = [
     </VCol>
   </VRow>
 </template>
-` }
+`,
+}
 
-export const noDataWithChips = { ts: `<script lang="ts" setup>
+export const noDataWithChips = {
+  ts: `<script lang="ts" setup>
 const items = ['Gaming', 'Programming', 'Vue', 'Vuetify']
 const selectedList = ref(['Vuetify'])
 const search = ref(null)
@@ -286,7 +299,8 @@ watch(selectedList, value => {
     </template>
   </VCombobox>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const items = [
   'Gaming',
   'Programming',
@@ -325,9 +339,11 @@ watch(selectedList, value => {
     </template>
   </VCombobox>
 </template>
-` }
+`,
+}
 
-export const variant = { ts: `<script lang="ts" setup>
+export const variant = {
+  ts: `<script lang="ts" setup>
 const selectedItem = ref(['Programming'])
 const items = ['Programming', 'Design', 'Vue', 'Vuetify']
 </script>
@@ -391,7 +407,8 @@ const items = ['Programming', 'Design', 'Vue', 'Vuetify']
     </VCol>
   </VRow>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const selectedItem = ref(['Programming'])
 
 const items = [
@@ -461,5 +478,5 @@ const items = [
     </VCol>
   </VRow>
 </template>
-` }
-
+`,
+}

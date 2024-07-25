@@ -1,4 +1,5 @@
-export const alignment = { ts: `<template>
+export const alignment = {
+  ts: `<template>
   <!-- Default -->
   <VTabs>
     <VTab>Home</VTab>
@@ -20,7 +21,8 @@ export const alignment = { ts: `<template>
     <VTab>Account</VTab>
   </VTabs>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <!-- Default -->
   <VTabs>
     <VTab>Home</VTab>
@@ -42,9 +44,11 @@ export const alignment = { ts: `<template>
     <VTab>Account</VTab>
   </VTabs>
 </template>
-` }
+`,
+}
 
-export const basic = { ts: `<script lang="ts" setup>
+export const basic = {
+  ts: `<script lang="ts" setup>
 const currentTab = ref(0)
 const tabItemContent = 'Candy canes donut chupa chups candy canes lemon drops oat cake wafer. Cotton candy candy canes marzipan carrot cake. Sesame snaps lemon drops candy marzipan donut brownie tootsie roll. Icing croissant bonbon biscuit gummi bears. Pudding candy canes sugar plum cookie chocolate cake powder croissant.'
 </script>
@@ -68,7 +72,8 @@ const tabItemContent = 'Candy canes donut chupa chups candy canes lemon drops oa
     </VWindowItem>
   </VWindow>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const currentTab = ref(0)
 const tabItemContent = 'Candy canes donut chupa chups candy canes lemon drops oat cake wafer. Cotton candy candy canes marzipan carrot cake. Sesame snaps lemon drops candy marzipan donut brownie tootsie roll. Icing croissant bonbon biscuit gummi bears. Pudding candy canes sugar plum cookie chocolate cake powder croissant.'
 </script>
@@ -92,9 +97,11 @@ const tabItemContent = 'Candy canes donut chupa chups candy canes lemon drops oa
     </VWindowItem>
   </VWindow>
 </template>
-` }
+`,
+}
 
-export const basicPill = { ts: `<script lang="ts" setup>
+export const basicPill = {
+  ts: `<script lang="ts" setup>
 const currentTab = ref(0)
 const tabItemContent = 'Candy canes donut chupa chups candy canes lemon drops oat cake wafer. Cotton candy candy canes marzipan carrot cake. Sesame snaps lemon drops candy marzipan donut brownie tootsie roll. Icing croissant bonbon biscuit gummi bears. Pudding candy canes sugar plum cookie chocolate cake powder croissant.'
 </script>
@@ -121,7 +128,8 @@ const tabItemContent = 'Candy canes donut chupa chups candy canes lemon drops oa
     </VWindowItem>
   </VWindow>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const currentTab = ref(0)
 const tabItemContent = 'Candy canes donut chupa chups candy canes lemon drops oat cake wafer. Cotton candy candy canes marzipan carrot cake. Sesame snaps lemon drops candy marzipan donut brownie tootsie roll. Icing croissant bonbon biscuit gummi bears. Pudding candy canes sugar plum cookie chocolate cake powder croissant.'
 </script>
@@ -148,9 +156,11 @@ const tabItemContent = 'Candy canes donut chupa chups candy canes lemon drops oa
     </VWindowItem>
   </VWindow>
 </template>
-` }
+`,
+}
 
-export const customIcons = { ts: `<template>
+export const customIcons = {
+  ts: `<template>
   <VTabs
     next-icon="ri-arrow-right-line"
     prev-icon="ri-arrow-left-line"
@@ -164,7 +174,8 @@ export const customIcons = { ts: `<template>
     </VTab>
   </VTabs>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VTabs
     next-icon="ri-arrow-right-line"
     prev-icon="ri-arrow-left-line"
@@ -178,9 +189,11 @@ export const customIcons = { ts: `<template>
     </VTab>
   </VTabs>
 </template>
-` }
+`,
+}
 
-export const dynamic = { ts: `<script lang="ts" setup>
+export const dynamic = {
+  ts: `<script lang="ts" setup>
 const totalTabs = ref(3)
 const currentTab = ref(0)
 
@@ -218,7 +231,8 @@ watch(totalTabs, newValue => {
     </VBtn>
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const totalTabs = ref(3)
 const currentTab = ref(0)
 
@@ -256,9 +270,11 @@ watch(totalTabs, newValue => {
     </VBtn>
   </div>
 </template>
-` }
+`,
+}
 
-export const fixed = { ts: `<template>
+export const fixed = {
+  ts: `<template>
   <VTabs fixed-tabs>
     <VTab>
       Fixed Tab 1
@@ -274,7 +290,8 @@ export const fixed = { ts: `<template>
     </VTab>
   </VTabs>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VTabs fixed-tabs>
     <VTab>
       Fixed Tab 1
@@ -290,9 +307,11 @@ export const fixed = { ts: `<template>
     </VTab>
   </VTabs>
 </template>
-` }
+`,
+}
 
-export const grow = { ts: `<script lang="ts" setup>
+export const grow = {
+  ts: `<script lang="ts" setup>
 const currentTab = ref('Appetizers')
 const items = ['Appetizers', 'Entrees', 'Deserts', 'Cocktails']
 const tabItemText = 'hortbread chocolate bar marshmallow bear claw tiramisu chocolate cookie wafer. Gummies sweet brownie brownie marshmallow chocolate cake pastry. Topping macaroon shortbread liquorice dragée macaroon.'
@@ -325,7 +344,8 @@ const tabItemText = 'hortbread chocolate bar marshmallow bear claw tiramisu choc
     </VWindowItem>
   </VWindow>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const currentTab = ref('Appetizers')
 
 const items = [
@@ -365,9 +385,11 @@ const tabItemText = 'hortbread chocolate bar marshmallow bear claw tiramisu choc
     </VWindowItem>
   </VWindow>
 </template>
-` }
+`,
+}
 
-export const pagination = { ts: `<template>
+export const pagination = {
+  ts: `<template>
   <VTabs show-arrows>
     <VTab
       v-for="i in 10"
@@ -378,7 +400,8 @@ export const pagination = { ts: `<template>
     </VTab>
   </VTabs>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VTabs show-arrows>
     <VTab
       v-for="i in 10"
@@ -389,9 +412,11 @@ export const pagination = { ts: `<template>
     </VTab>
   </VTabs>
 </template>
-` }
+`,
+}
 
-export const programmaticNavigation = { ts: `<script lang="ts" setup>
+export const programmaticNavigation = {
+  ts: `<script lang="ts" setup>
 const currentTab = ref(1)
 const items = ['Appetizers', 'Entrees', 'Deserts', 'Cocktails']
 const tabItemText = 'Chocolate cake marshmallow toffee sweet caramels tootsie roll chocolate bar. Chocolate candy lemon drops cupcake macaroon liquorice. Icing tiramisu cake pastry jujubes lollipop gummies sugar plum pie.'
@@ -453,7 +478,8 @@ const nextTab = () => {
     </VBtn>
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const currentTab = ref(1)
 
 const items = [
@@ -522,9 +548,11 @@ const nextTab = () => {
     </VBtn>
   </div>
 </template>
-` }
+`,
+}
 
-export const stacked = { ts: `<script lang="ts" setup>
+export const stacked = {
+  ts: `<script lang="ts" setup>
 const currentTab = ref('tab-1')
 const tabItemText = 'Biscuit cheesecake gingerbread oat cake tiramisu. Marzipan tiramisu jelly-o muffin biscuit jelly cake pie. Chocolate cookie candy croissant brownie cupcake powder cheesecake. Biscuit sesame snaps biscuit topping tiramisu croissant.'
 </script>
@@ -573,7 +601,8 @@ const tabItemText = 'Biscuit cheesecake gingerbread oat cake tiramisu. Marzipan 
     </VWindowItem>
   </VWindow>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const currentTab = ref('tab-1')
 const tabItemText = 'Biscuit cheesecake gingerbread oat cake tiramisu. Marzipan tiramisu jelly-o muffin biscuit jelly cake pie. Chocolate cookie candy croissant brownie cupcake powder cheesecake. Biscuit sesame snaps biscuit topping tiramisu croissant.'
 </script>
@@ -622,9 +651,11 @@ const tabItemText = 'Biscuit cheesecake gingerbread oat cake tiramisu. Marzipan 
     </VWindowItem>
   </VWindow>
 </template>
-` }
+`,
+}
 
-export const vertical = { ts: `<script setup lang="ts">
+export const vertical = {
+  ts: `<script setup lang="ts">
 const currentTab = ref(0)
 </script>
 
@@ -690,7 +721,8 @@ const currentTab = ref(0)
     </VCol>
   </VRow>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const currentTab = ref(0)
 </script>
 
@@ -756,9 +788,11 @@ const currentTab = ref(0)
     </VCol>
   </VRow>
 </template>
-` }
+`,
+}
 
-export const verticalPill = { ts: `<script setup lang="ts">
+export const verticalPill = {
+  ts: `<script setup lang="ts">
 const currentTab = ref(0)
 </script>
 
@@ -825,7 +859,8 @@ const currentTab = ref(0)
     </VCol>
   </VRow>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const currentTab = ref(0)
 </script>
 
@@ -892,5 +927,5 @@ const currentTab = ref(0)
     </VCol>
   </VRow>
 </template>
-` }
-
+`,
+}

@@ -8,6 +8,24 @@ const isUpgradePlanDialogVisible = ref(false)
 interface Props {
   customerData: Customer
 }
+
+const customerData = {
+  id: props.customerData.id,
+  fullName: props.customerData.customer,
+  company: '',
+  role: '',
+  username: props.customerData.customer.split(' ')[1],
+  country: props.customerData.country,
+  contact: props.customerData.contact,
+  email: props.customerData.email,
+  currentPlan: '',
+  status: props.customerData.status,
+  avatar: '',
+  taskDone: null,
+  projectDone: null,
+  taxId: 'Tax-8894',
+  language: 'English',
+}
 </script>
 
 <template>
@@ -184,7 +202,10 @@ interface Props {
     </VCol>
     <!-- !SECTION -->
   </VRow>
-  <UserInfoEditDialog v-model:isDialogVisible="isUserInfoEditDialogVisible" />
+  <UserInfoEditDialog
+    v-model:isDialogVisible="isUserInfoEditDialogVisible"
+    :user-data="customerData"
+  />
   <UserUpgradePlanDialog v-model:isDialogVisible="isUpgradePlanDialogVisible" />
 </template>
 

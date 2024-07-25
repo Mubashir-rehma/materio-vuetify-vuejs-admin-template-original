@@ -80,6 +80,11 @@ export default [
         icon: { icon: 'ri-calendar-line' },
       },
       {
+        title: 'Kanban',
+        icon: { icon: 'ri-drag-drop-line' },
+        to: 'apps-kanban',
+      },
+      {
         title: 'Invoice',
         icon: { icon: 'ri-article-line' },
         children: [

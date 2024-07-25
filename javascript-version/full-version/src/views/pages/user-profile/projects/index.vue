@@ -52,6 +52,7 @@ const moreList = [
             <VAvatar
               :image="data.avatar"
               size="38"
+              class="me-2"
             />
           </template>
 

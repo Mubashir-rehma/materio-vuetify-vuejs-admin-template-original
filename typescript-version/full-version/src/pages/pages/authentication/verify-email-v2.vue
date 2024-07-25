@@ -22,6 +22,7 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 definePage({
   meta: {
     layout: 'blank',
+    public: true,
   },
 })
 </script>
@@ -116,5 +117,5 @@ definePage({
 </template>
 
 <style lang="scss">
-@use "@core/scss/template/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth";
 </style>

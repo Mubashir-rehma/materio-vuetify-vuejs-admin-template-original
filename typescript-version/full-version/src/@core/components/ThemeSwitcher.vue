@@ -46,10 +46,12 @@ watch(
           :value="name"
           :prepend-icon="icon"
           color="primary"
-          class="text-capitalize"
+
           @click="() => { configStore.theme = name }"
         >
-          {{ name }}
+          <VListItemTitle class="text-capitalize">
+            {{ name }}
+          </VListItemTitle>
         </VListItem>
       </VList>
     </VMenu>

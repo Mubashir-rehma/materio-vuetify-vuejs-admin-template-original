@@ -26,7 +26,7 @@ const onSubmit = () => {
   emit('update:permissionName', currentPermissionName.value)
 }
 
-watch(props, () => {
+watch(() => props, () => {
   currentPermissionName.value = props.permissionName
 })
 </script>
@@ -65,7 +65,7 @@ watch(props, () => {
             variant="tonal"
             class="mb-6"
           >
-            By editing the permission name, you might break the system permissions functionality. Please ensure you're absolutely certain before proceeding.
+            By {{ props.permissionName ? 'Edit' : 'Add' }} the permission name, you might break the system permissions functionality.
           </VAlert>
 
           <!-- 👉 Role name -->
@@ -77,7 +77,7 @@ watch(props, () => {
             />
 
             <VBtn @click="onSubmit">
-              Update
+              {{ props.permissionName ? 'Update' : 'Add' }}
             </VBtn>
           </div>
 

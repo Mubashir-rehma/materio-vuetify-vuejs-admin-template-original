@@ -1,11 +1,14 @@
 <script setup>
-import avatar1 from '@images/avatars/avatar-1.png'
 import product21 from '@images/ecommerce-images/product-21.png'
 import product22 from '@images/ecommerce-images/product-22.png'
 import product23 from '@images/ecommerce-images/product-23.png'
 import product24 from '@images/ecommerce-images/product-24.png'
 
+const orderData = ref()
 const route = useRoute('apps-ecommerce-order-details-id')
+const { data } = await useApi(`/apps/ecommerce/orders/${ route.params.id }`)
+if (data.value)
+  orderData.value = data.value
 const isConfirmDialogVisible = ref(false)
 const isUserInfoEditDialogVisible = ref(false)
 const isEditAddressDialogVisible = ref(false)
@@ -30,7 +33,84 @@ const headers = [
   },
 ]
 
-const orderData = [
+const resolvePaymentStatus = payment => {
+  if (payment === 1)
+    return {
+      text: 'Paid',
+      color: 'success',
+    }
+  if (payment === 2)
+    return {
+      text: 'Pending',
+      color: 'warning',
+    }
+  if (payment === 3)
+    return {
+      text: 'Cancelled',
+      color: 'secondary',
+    }
+  if (payment === 4)
+    return {
+      text: 'Failed',
+      color: 'error',
+    }
+}
+
+const resolveStatus = status => {
+  if (status === 'Delivered')
+    return {
+      text: 'Delivered',
+      color: 'success',
+    }
+  if (status === 'Out for Delivery')
+    return {
+      text: 'Out for Delivery',
+      color: 'primary',
+    }
+  if (status === 'Ready to Pickup')
+    return {
+      text: 'Ready to Pickup',
+      color: 'info',
+    }
+  if (status === 'Dispatched')
+    return {
+      text: 'Dispatched',
+      color: 'warning',
+    }
+}
+
+const userData = {
+  id: orderData.value?.id,
+  company: 'Themeselection',
+  role: 'Web developer',
+  username: 'T1940',
+  country: 'United States',
+  contact: '+1 (609) 972-22-22',
+  email: orderData.value?.email,
+  status: 'Active',
+  taxId: 'Tax-8894',
+  language: 'English',
+  fullName: orderData.value?.customer,
+  currentPlan: '',
+  avatar: 'string',
+  taskDone: null,
+  projectDone: null,
+}
+
+const currentBillingAddress = {
+  firstName: orderData.value?.customer.split(' ')[0],
+  lastName: orderData.value?.customer.split(' ')[1],
+  selectedCountry: 'USA',
+  addressLine1: '45 Rocker Terrace',
+  addressLine2: 'Latheronwheel',
+  landmark: 'KW5 8NW, London',
+  contact: '+1 (609) 972-22-22',
+  country: 'USA',
+  state: 'London',
+  zipCode: 110001,
+}
+
+const orderDetail = [
   {
     productName: 'OnePlus 7 Pro',
     productImage: product21,
@@ -72,19 +152,18 @@ const orderData = [
           </h5>
           <div class="d-flex gap-x-2">
             <VChip
+              v-if="orderData?.payment"
               variant="tonal"
-              color="success"
+              :color="resolvePaymentStatus(orderData.payment)?.color"
               size="small"
             >
-              Paid
+              {{ resolvePaymentStatus(orderData.payment)?.text }}
             </VChip>
             <VChip
-              variant="tonal"
-              color="info"
+              v-if="orderData?.status"
+              v-bind="resolveStatus(orderData?.status)"
               size="small"
-            >
-              Ready to Pickup
-            </VChip>
+            />
           </div>
         </div>
         <div>
@@ -123,7 +202,7 @@ const orderData = [
 
           <VDataTable
             :headers="headers"
-            :items="orderData"
+            :items="orderDetail"
             item-value="productName"
             show-select
             class="text-no-wrap"
@@ -307,14 +386,27 @@ const orderData = [
 
             <div class="d-flex align-center">
               <VAvatar
-                :image="avatar1"
+                v-if="orderData"
+                size="34"
+                :variant="!orderData?.avatar.length ? 'tonal' : undefined"
+                :rounded="1"
                 class="me-3"
-              />
+              >
+                <VImg
+                  v-if="orderData?.avatar"
+                  :src="orderData?.avatar"
+                />
+
+                <span
+                  v-else
+                  class="font-weight-medium"
+                >{{ avatarText(orderData?.customer) }}</span>
+              </VAvatar>
               <div>
                 <div class="text-body-1 text-high-emphasis font-weight-medium">
-                  Shamus Tuttle
+                  {{ orderData?.customer }}
                 </div>
-                <span>Customer ID: #47389</span>
+                <span>Customer ID: #{{ orderData?.order }}</span>
               </div>
             </div>
 
@@ -344,7 +436,7 @@ const orderData = [
                   Edit
                 </span>
               </div>
-              <span>Email: Sheldon88@yahoo.com</span>
+              <span>Email: {{ orderData?.email }}</span>
               <span>Mobile: +1 (609) 972-22-22</span>
             </div>
           </VCardText>
@@ -389,7 +481,7 @@ const orderData = [
                 Mastercard
               </h6>
               <div class="text-base">
-                Card Number: ******4291
+                Card Number: ******{{ orderData?.methodNumber }}
               </div>
             </div>
           </VCardText>
@@ -406,8 +498,14 @@ const orderData = [
       confirm-title="Cancelled!"
     />
 
-    <UserInfoEditDialog v-model:isDialogVisible="isUserInfoEditDialogVisible" />
+    <UserInfoEditDialog
+      v-model:isDialogVisible="isUserInfoEditDialogVisible"
+      :user-data="userData"
+    />
 
-    <AddEditAddressDialog v-model:isDialogVisible="isEditAddressDialogVisible" />
+    <AddEditAddressDialog
+      v-model:isDialogVisible="isEditAddressDialogVisible"
+      :billing-address="currentBillingAddress"
+    />
   </div>
 </template>

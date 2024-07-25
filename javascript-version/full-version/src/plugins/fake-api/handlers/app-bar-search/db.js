@@ -82,6 +82,11 @@ export const db = {
           title: 'Calendar',
         },
         {
+          title: 'Kanban',
+          icon: 'ri-drag-drop-line',
+          url: { name: 'apps-kanban' },
+        },
+        {
           url: { name: 'apps-ecommerce-product-list' },
           icon: 'ri-file-list-line',
           title: 'Ecommerce - Product List',
@@ -187,11 +192,6 @@ export const db = {
           title: 'User View',
         },
         {
-          url: { name: 'pages-help-center' },
-          icon: 'ri-question-line',
-          title: 'Help Center',
-        },
-        {
           url: { name: 'pages-user-profile-tab', params: { tab: 'profile' } },
           icon: 'ri-user-settings-line',
           title: 'User Profile - Profile',
@@ -247,7 +247,7 @@ export const db = {
           title: 'Page Not Found - 404',
         },
         {
-          url: { name: 'pages-misc-not-authorized' },
+          url: { path: '/pages/misc/not-authorized' },
           icon: 'ri-group-line',
           title: 'Not Authorized - 401',
         },

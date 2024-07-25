@@ -105,7 +105,6 @@ const socialAccounts = ref([
               >
                 <template #prepend>
                   <VAvatar
-                    start
                     size="32"
                     rounded
                   >
@@ -163,7 +162,6 @@ const socialAccounts = ref([
               >
                 <template #prepend>
                   <VAvatar
-                    start
                     rounded="0"
                     size="32"
                   >
@@ -216,7 +214,7 @@ const socialAccounts = ref([
 </template>
 
 <style lang="scss">
-.card-list{
+.card-list {
   --v-card-list-gap: 1rem;
 }
 </style>

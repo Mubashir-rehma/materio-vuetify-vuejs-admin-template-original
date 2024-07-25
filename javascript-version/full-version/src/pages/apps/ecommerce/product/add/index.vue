@@ -1,39 +1,7 @@
 <script setup>
-import {
-  useDropZone,
-  useFileDialog,
-  useObjectUrl,
-} from '@vueuse/core'
 import { ref } from 'vue'
 
 const optionCounter = ref(1)
-const dropZoneRef = ref()
-const fileData = ref([])
-const { open, onChange } = useFileDialog({ accept: 'image/*' })
-function onDrop(DroppedFiles) {
-  DroppedFiles?.forEach(file => {
-    if (file.type.slice(0, 6) !== 'image/') {
-      alert('Only image files are allowed')
-      
-      return
-    }
-    fileData.value.push({
-      file,
-      url: useObjectUrl(file).value ?? '',
-    })
-  })
-}
-onChange(selectedFiles => {
-  if (!selectedFiles)
-    return
-  for (const file of selectedFiles) {
-    fileData.value.push({
-      file,
-      url: useObjectUrl(file).value ?? '',
-    })
-  }
-})
-useDropZone(dropZoneRef, onDrop)
 
 const content = ref(`<p>
       This is a radically reduced version of tiptap. It has support for a document, with paragraphs and text. That's it. It's probably too much for real minimalists though.
@@ -99,7 +67,7 @@ const isTaxable = ref(true)
 
 <template>
   <div>
-    <div class="d-flex flex-wrap justify-space-between gap-4 mb-6">
+    <div class="d-flex flex-wrap justify-center justify-md-space-between gap-4 mb-6">
       <div class="d-flex flex-column justify-center">
         <h4 class="text-h4">
           Add a new product
@@ -158,12 +126,13 @@ const isTaxable = ref(true)
                 />
               </VCol>
               <VCol>
-                <VLabel class="mb-1">
+                <VLabel>
                   Description (Optional)
                 </VLabel>
-                <TiptapEditor
+                <ProductDescriptionEditor
                   v-model="content"
-                  class="border rounded"
+                  placeholder="Product Description"
+                  class="border mt-1 rounded"
                 />
               </VCol>
             </VRow>
@@ -184,87 +153,7 @@ const isTaxable = ref(true)
           </VCardItem>
 
           <VCardText>
-            <div class="flex">
-              <div class="w-full h-auto relative">
-                <div
-                  ref="dropZoneRef"
-                  class="cursor-pointer"
-                  @click="() => open()"
-                >
-                  <div
-                    v-if="fileData.length === 0"
-                    class="d-flex flex-column justify-center align-center gap-y-2 pa-12 border-dashed drop-zone"
-                  >
-                    <VAvatar
-                      variant="tonal"
-                      color="secondary"
-                      rounded
-                    >
-                      <VIcon icon="ri-upload-2-line" />
-                    </VAvatar>
-                    <h4 class="text-h4">
-                      Drag and Drop Your Image Here.
-                    </h4>
-                    <span class="text-disabled">or</span>
-
-                    <VBtn variant="outlined">
-                      Browse Images
-                    </VBtn>
-                  </div>
-
-                  <div
-                    v-else
-                    class="d-flex justify-center align-center gap-3 pa-8 border-dashed drop-zone flex-wrap"
-                  >
-                    <VRow class="match-height w-100">
-                      <template
-                        v-for="(item, index) in fileData"
-                        :key="index"
-                      >
-                        <VCol
-                          cols="12"
-                          sm="4"
-                        >
-                          <VCard
-                            :ripple="false"
-                            border
-                          >
-                            <VCardText
-                              class="d-flex flex-column"
-                              @click.stop
-                            >
-                              <VImg
-                                :src="item.url"
-                                width="200px"
-                                height="150px"
-                                class="w-100 mx-auto"
-                              />
-                              <div class="mt-2">
-                                <span class="clamp-text text-wrap">
-                                  {{ item.file.name }}
-                                </span>
-                                <span>
-                                  {{ item.file.size / 1000 }} KB
-                                </span>
-                              </div>
-                            </VCardText>
-                            <VCardActions>
-                              <VBtn
-                                variant="text"
-                                block
-                                @click.stop="fileData.splice(index, 1)"
-                              >
-                                Remove File
-                              </VBtn>
-                            </VCardActions>
-                          </VCard>
-                        </VCol>
-                      </template>
-                    </VRow>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <DropZone />
           </VCardText>
         </VCard>
 
@@ -284,7 +173,7 @@ const isTaxable = ref(true)
                   md="4"
                 >
                   <VSelect
-                    :items="['Size', 'Color', 'Weight', 'Smell']"
+                    :items="['Size', 'Color', 'Weight']"
                     placeholder="Select Variant"
                     label="Select Variant"
                   />
@@ -477,54 +366,51 @@ const isTaxable = ref(true)
                   </VWindowItem>
 
                   <VWindowItem value="Attributes">
-                    <div class="mb-2 text-base font-weight-medium">
-                      Attributes
-                    </div>
-                    <div>
-                      <VCheckbox
-                        v-model="selectedAttrs"
-                        label="Fragile Product"
-                        value="Fragile Product"
-                        class="ps-3"
-                      />
-                      <VCheckbox
-                        v-model="selectedAttrs"
-                        value="Biodegradable"
-                        label="Biodegradable"
-                        class="ps-3"
-                      />
-                      <VCheckbox
-                        v-model="selectedAttrs"
-                        value="Frozen Product"
-                        class="ps-3"
-                      >
-                        <template #label>
-                          <div class="d-flex flex-column mb-1">
-                            <div>Frozen Product</div>
-                            <VTextField
-                              placeholder="40 C"
-                              type="number"
-                              style="min-inline-size: 250px;"
-                            />
-                          </div>
-                        </template>
-                      </VCheckbox>
-
-                      <VCheckbox
-                        v-model="selectedAttrs"
-                        value="Expiry Date"
-                        class="ps-3"
-                      >
-                        <template #label>
-                          <div class="d-flex flex-column mb-1">
-                            <div>Expiry Date of Product</div>
-                            <AppDateTimePicker
-                              model-value="2025-06-14"
-                              placeholder="Select a Date"
-                            />
-                          </div>
-                        </template>
-                      </VCheckbox>
+                    <div class="ps-3">
+                      <div class="mb-6 text-h6">
+                        Attributes
+                      </div>
+                      <div>
+                        <VCheckbox
+                          v-model="selectedAttrs"
+                          label="Fragile Product"
+                          value="Fragile Product"
+                        />
+                        <VCheckbox
+                          v-model="selectedAttrs"
+                          value="Biodegradable"
+                          label="Biodegradable"
+                        />
+                        <VCheckbox
+                          v-model="selectedAttrs"
+                          value="Frozen Product"
+                        >
+                          <template #label>
+                            <div class="d-flex flex-column mb-1">
+                              <div>Frozen Product</div>
+                              <VTextField
+                                placeholder="40 C"
+                                type="number"
+                              />
+                            </div>
+                          </template>
+                        </VCheckbox>
+                        <VCheckbox
+                          v-model="selectedAttrs"
+                          value="Expiry Date"
+                        >
+                          <template #label>
+                            <div class="d-flex flex-column mb-1">
+                              <div>Expiry Date of Product</div>
+                              <AppDateTimePicker
+                                model-value="2025-06-14"
+                                placeholder="Select a Date"
+                                density="compact"
+                              />
+                            </div>
+                          </template>
+                        </VCheckbox>
+                      </div>
                     </div>
                   </VWindowItem>
 
@@ -612,23 +498,22 @@ const isTaxable = ref(true)
                 label="Vendor"
                 :items="['Men\'s Clothing', 'Women\'s Clothing', 'Kid\'s Clothing']"
               />
+              <div class="d-flex gap-x-4 align-center">
+                <VSelect
+                  placeholder="Select Category"
+                  label="Category"
+                  :items="['Household', 'Office', 'Electronics', 'Management', 'Automotive']"
+                />
+                <IconBtn
+                  icon="ri-add-line"
+                  variant="outlined"
+                  color="primary"
+                  rounded
+                />
+              </div>
               <VSelect
-                placeholder="Select Category"
-                label="Category"
-                :items="['Household', 'Office', 'Electronics', 'Management', 'Automotive']"
-              >
-                <template #append>
-                  <IconBtn
-                    icon="ri-add-line"
-                    variant="outlined"
-                    color="primary"
-                    rounded
-                  />
-                </template>
-              </VSelect>
-              <VSelect
-                placeholder="Select Collection"
                 label="Collection"
+                placeholder="Select Collection"
                 :items="['Men\'s Clothing', 'Women\'s Clothing', 'Kid\'s Clothing']"
               />
               <VSelect
@@ -656,7 +541,7 @@ const isTaxable = ref(true)
 </style>
 
 <style lang="scss">
-.inventory-card{
+.inventory-card {
   .v-radio-group,
   .v-checkbox {
     .v-selection-control {
@@ -669,8 +554,8 @@ const isTaxable = ref(true)
   }
 }
 
-.ProseMirror{
-  p{
+.ProseMirror {
+  p {
     margin-block-end: 0;
   }
 

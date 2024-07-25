@@ -142,6 +142,10 @@ const calendarApi = ref(null)
     border-end-start-radius: 0.375rem;
     border-start-start-radius: 0.375rem;
   }
+
+  &.v-navigation-drawer--temporary:not(.v-navigation-drawer--active) {
+    transform: translateX(-110%) !important;
+  }
 }
 
 .calendar-date-picker {

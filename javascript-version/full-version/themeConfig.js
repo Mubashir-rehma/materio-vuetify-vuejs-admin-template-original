@@ -1,4 +1,4 @@
-import { breakpointsVuetify } from '@vueuse/core'
+import { breakpointsVuetifyV3 } from '@vueuse/core'
 import { VIcon } from 'vuetify/components/VIcon'
 import { defineThemeConfig } from '@core'
 import { Skins } from '@core/enums'
@@ -15,7 +15,7 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
     logo: h('div', { innerHTML: logo, style: 'line-height:0; color: rgb(var(--v-global-theme-primary))' }),
     contentWidth: ContentWidth.Boxed,
     contentLayoutNav: AppContentLayoutNav.Vertical,
-    overlayNavFromBreakpoint: breakpointsVuetify.md + 16, // 16 for scrollbar. Docs: https://next.vuetifyjs.com/en/features/display-and-platform/
+    overlayNavFromBreakpoint: breakpointsVuetifyV3.lg - 1, // 1 for matching with vuetify breakpoint. Docs: https://next.vuetifyjs.com/en/features/display-and-platform/
     i18n: {
       enable: true,
       defaultLocale: 'en',
@@ -64,9 +64,9 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
   icons: {
     chevronDown: { icon: 'ri-arrow-down-s-line' },
     chevronRight: { icon: 'ri-arrow-right-s-line' },
-    close: { icon: 'ri-close-line' },
-    verticalNavPinned: { icon: 'ri-radio-button-line' },
-    verticalNavUnPinned: { icon: 'ri-circle-line' },
+    close: { icon: 'ri-close-line', size: '20' },
+    verticalNavPinned: { icon: 'ri-radio-button-line', size: '20' },
+    verticalNavUnPinned: { icon: 'ri-circle-line', size: '20' },
     sectionTitlePlaceholder: { icon: 'ri-subtract-line' },
   },
 })

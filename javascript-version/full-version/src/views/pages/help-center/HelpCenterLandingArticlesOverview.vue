@@ -1,6 +1,4 @@
 <script setup>
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
-
 const props = defineProps({
   articles: {
     type: Array,
@@ -10,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <VRow>
+  <VRow v-if="props.articles.length">
     <VCol
       v-for="article in props.articles"
       :key="article.title"
@@ -22,7 +20,13 @@ const props = defineProps({
         border
       >
         <VCardText class="text-center">
-          <VNodeRenderer :nodes="h('div', { class: 'help-center-article-icon', innerHTML: article.img })" />
+          <img
+            :src="article.img"
+            alt="svg"
+            height="58"
+            width="58"
+          >
+
           <h5 class="text-h5 my-3">
             {{ article.title }}
           </h5>
@@ -47,10 +51,3 @@ const props = defineProps({
     </VCol>
   </VRow>
 </template>
-
-<style lang="scss">
-.help-center-article-icon svg {
-  block-size: 58px;
-  inline-size: 58px;
-}
-</style>

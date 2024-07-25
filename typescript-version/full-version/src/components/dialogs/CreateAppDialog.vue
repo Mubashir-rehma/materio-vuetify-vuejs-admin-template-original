@@ -144,7 +144,7 @@ const dialogVisibleUpdate = (val: boolean) => {
   currentStep.value = 0
 }
 
-watch(props, () => {
+watch(() => props, () => {
   if (!props.isDialogVisible)
     currentStep.value = 0
 })

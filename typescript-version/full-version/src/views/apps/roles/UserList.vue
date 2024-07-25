@@ -11,10 +11,10 @@ const itemsPerPage = ref(10)
 const page = ref(1)
 const sortBy = ref()
 const orderBy = ref()
+const selectedRows = ref([])
 
 // Update data table options
 const updateOptions = (options: any) => {
-  page.value = options.page
   sortBy.value = options.sortBy[0]?.key
   orderBy.value = options.sortBy[0]?.order
 }
@@ -90,6 +90,11 @@ const deleteUser = async (id: number) => {
     method: 'DELETE',
   })
 
+  // Delete from selectedRows
+  const index = selectedRows.value.findIndex(row => row === id)
+  if (index !== -1)
+    selectedRows.value.splice(index, 1)
+
   // refetch User
   // TODO: Make this async
   fetchUsers()
@@ -111,7 +116,7 @@ const deleteUser = async (id: number) => {
 
         <VSpacer />
 
-        <div class="app-user-search-filter d-flex flex-wrap gap-4">
+        <div class="d-flex flex-wrap gap-4">
           <!-- 👉 Search  -->
 
           <div style="inline-size: 15.625rem;">
@@ -139,6 +144,7 @@ const deleteUser = async (id: number) => {
       <!-- SECTION datatable -->
       <VDataTableServer
         v-model:items-per-page="itemsPerPage"
+        v-model:model-value="selectedRows"
         :items-per-page-options="[
           { value: 10, title: '10' },
           { value: 20, title: '20' },

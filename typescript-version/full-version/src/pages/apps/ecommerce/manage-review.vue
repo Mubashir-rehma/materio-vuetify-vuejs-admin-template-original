@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Review } from '@db/apps/ecommerce/types';
+import type { Review } from '@db/apps/ecommerce/types'
 
 const selectedStatus = ref('All')
 const searchQuery = ref('')
@@ -9,6 +9,7 @@ const itemsPerPage = ref(10)
 const page = ref(1)
 const sortBy = ref()
 const orderBy = ref()
+const selectedRows = ref([])
 
 // Fetch Reviews
 const { data: ReviewData, execute: fetchReviews } = await useApi<any>(createUrl('/apps/ecommerce/reviews', {
@@ -27,7 +28,6 @@ const totalReviews = computed(() => ReviewData.value.total)
 
 // Update data table options
 const updateOptions = (options: any) => {
-  page.value = options.page
   sortBy.value = options.sortBy[0]?.key
   orderBy.value = options.sortBy[0]?.order
 }
@@ -38,6 +38,12 @@ const deleteReview = async (id: number) => {
     method: 'DELETE',
   })
 
+  // Delete from selectedRows
+  const index = selectedRows.value.findIndex(row => row === id)
+  if (index !== -1)
+    selectedRows.value.splice(index, 1)
+
+  // Refetch review
   fetchReviews()
 }
 
@@ -417,7 +423,7 @@ const reviewStatChartConfig = {
 
         <VDataTableServer
           v-model:items-per-page="itemsPerPage"
-          v-model:page="page"
+          v-model:model-value="selectedRows"
           :headers="headers"
           :items="reviews"
           show-select
@@ -559,6 +565,10 @@ const reviewStatChartConfig = {
     </VCol>
   </VRow>
 </template>
+
+<style lang="scss">
+@use "@core/scss/template/libs/apex-chart.scss";
+</style>
 
 <style lang="scss">
 @use "@core/scss/template/libs/apex-chart.scss";

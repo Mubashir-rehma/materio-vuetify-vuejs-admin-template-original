@@ -1,34 +1,41 @@
-export const basic = { ts: `<template>
+export const basic = {
+  ts: `<template>
   <VTextField
     label="Regular"
     placeholder="Placeholder Text"
   />
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VTextField
     label="Regular"
     placeholder="Placeholder Text"
   />
 </template>
-` }
+`,
+}
 
-export const clearable = { ts: `<template>
+export const clearable = {
+  ts: `<template>
   <VTextField
     placeholder="Placeholder Text"
     label="Regular"
     clearable
   />
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VTextField
     placeholder="Placeholder Text"
     label="Regular"
     clearable
   />
 </template>
-` }
+`,
+}
 
-export const counter = { ts: `<script lang="ts" setup>
+export const counter = {
+  ts: `<script lang="ts" setup>
 const title = ref('Preliminary report')
 const description = ref('California is a state in the western United States')
 const rules = [(v: string) => v.length <= 25 || 'Max 25 characters']
@@ -60,7 +67,8 @@ const rules = [(v: string) => v.length <= 25 || 'Max 25 characters']
     </VCol>
   </VRow>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const title = ref('Preliminary report')
 const description = ref('California is a state in the western United States')
 const rules = [v => v.length <= 25 || 'Max 25 characters']
@@ -92,41 +100,49 @@ const rules = [v => v.length <= 25 || 'Max 25 characters']
     </VCol>
   </VRow>
 </template>
-` }
+`,
+}
 
-export const customColors = { ts: `<template>
+export const customColors = {
+  ts: `<template>
   <VTextField
     color="success"
     label="First name"
     placeholder="Placeholder Text"
   />
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VTextField
     color="success"
     label="First name"
     placeholder="Placeholder Text"
   />
 </template>
-` }
+`,
+}
 
-export const density = { ts: `<template>
+export const density = {
+  ts: `<template>
   <VTextField
     label="Compact"
     density="compact"
     placeholder="Placeholder Text"
   />
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VTextField
     label="Compact"
     density="compact"
     placeholder="Placeholder Text"
   />
 </template>
-` }
+`,
+}
 
-export const iconEvents = { ts: `<script lang="ts" setup>
+export const iconEvents = {
+  ts: `<script lang="ts" setup>
 const message = ref('Hey!')
 const marker = ref(true)
 const iconIndex = ref(0)
@@ -165,7 +181,8 @@ const sendMessage = () => {
     @click:clear="clearMessage"
   />
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const message = ref('Hey!')
 const marker = ref(true)
 const iconIndex = ref(0)
@@ -204,9 +221,11 @@ const sendMessage = () => {
     @click:clear="clearMessage"
   />
 </template>
-` }
+`,
+}
 
-export const iconSlots = { ts: `<script lang="ts" setup>
+export const iconSlots = {
+  ts: `<script lang="ts" setup>
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
@@ -280,7 +299,8 @@ const clickMe = () => {
     </template>
   </VTextField>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 
@@ -353,9 +373,11 @@ const clickMe = () => {
     </template>
   </VTextField>
 </template>
-` }
+`,
+}
 
-export const icons = { ts: `<template>
+export const icons = {
+  ts: `<template>
   <VRow>
     <VCol cols="12">
       <VTextField
@@ -390,7 +412,8 @@ export const icons = { ts: `<template>
     </VCol>
   </VRow>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VRow>
     <VCol cols="12">
       <VTextField
@@ -425,9 +448,11 @@ export const icons = { ts: `<template>
     </VCol>
   </VRow>
 </template>
-` }
+`,
+}
 
-export const labelSlot = { ts: `<template>
+export const labelSlot = {
+  ts: `<template>
   <VTextField placeholder="Placeholder Text">
     <template #label>
       What about &nbsp;<strong>icon</strong>&nbsp;here?
@@ -435,7 +460,8 @@ export const labelSlot = { ts: `<template>
     </template>
   </VTextField>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VTextField placeholder="Placeholder Text">
     <template #label>
       What about &nbsp;<strong>icon</strong>&nbsp;here?
@@ -443,9 +469,11 @@ export const labelSlot = { ts: `<template>
     </template>
   </VTextField>
 </template>
-` }
+`,
+}
 
-export const passwordInput = { ts: `<script lang="ts" setup>
+export const passwordInput = {
+  ts: `<script lang="ts" setup>
 const show1 = ref(false)
 const show2 = ref(true)
 const password = ref('Password')
@@ -495,7 +523,8 @@ const rules = {
     </VCol>
   </VRow>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const show1 = ref(false)
 const show2 = ref(true)
 const password = ref('Password')
@@ -545,9 +574,11 @@ const rules = {
     </VCol>
   </VRow>
 </template>
-` }
+`,
+}
 
-export const prefixesAndSuffixes = { ts: `<script setup lang="ts">
+export const prefixesAndSuffixes = {
+  ts: `<script setup lang="ts">
 const amount = ref(10.05)
 const weight = ref(28.02)
 const email = ref('example')
@@ -596,7 +627,8 @@ const time = ref('04:56')
     </VCol>
   </VRow>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const amount = ref(10.05)
 const weight = ref(28.02)
 const email = ref('example')
@@ -645,25 +677,30 @@ const time = ref('04:56')
     </VCol>
   </VRow>
 </template>
-` }
+`,
+}
 
-export const singleLine = { ts: `<template>
+export const singleLine = {
+  ts: `<template>
   <VTextField
     label="Regular"
     placeholder="Placeholder Text"
     single-line
   />
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VTextField
     label="Regular"
     placeholder="Placeholder Text"
     single-line
   />
 </template>
-` }
+`,
+}
 
-export const state = { ts: `<template>
+export const state = {
+  ts: `<template>
   <VRow>
     <VCol>
       <VTextField
@@ -682,7 +719,8 @@ export const state = { ts: `<template>
     </VCol>
   </VRow>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VRow>
     <VCol>
       <VTextField
@@ -701,9 +739,11 @@ export const state = { ts: `<template>
     </VCol>
   </VRow>
 </template>
-` }
+`,
+}
 
-export const validation = { ts: `<script lang="ts" setup>
+export const validation = {
+  ts: `<script lang="ts" setup>
 const email = ref('')
 </script>
 
@@ -717,7 +757,8 @@ const email = ref('')
     />
   </VForm>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const email = ref('')
 </script>
 
@@ -731,9 +772,11 @@ const email = ref('')
     />
   </VForm>
 </template>
-` }
+`,
+}
 
-export const variant = { ts: `<template>
+export const variant = {
+  ts: `<template>
   <VRow>
     <VCol
       cols="12"
@@ -790,7 +833,8 @@ export const variant = { ts: `<template>
     </VCol>
   </VRow>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VRow>
     <VCol
       cols="12"
@@ -847,5 +891,5 @@ export const variant = { ts: `<template>
     </VCol>
   </VRow>
 </template>
-` }
-
+`,
+}

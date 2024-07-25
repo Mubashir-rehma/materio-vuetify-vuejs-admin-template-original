@@ -131,7 +131,7 @@ watch(permissions, () => {
 }, { deep: true })
 
 // if rolePermissions is not empty, then set permissions
-watch(props, () => {
+watch(() => props, () => {
   if (props.rolePermissions && props.rolePermissions.permissions.length) {
     role.value = props.rolePermissions.name
     permissions.value = permissions.value.map(permission => {

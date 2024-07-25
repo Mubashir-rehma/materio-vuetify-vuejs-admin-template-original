@@ -1,13 +1,4 @@
 <script setup>
-import { Image } from '@tiptap/extension-image'
-import { Link } from '@tiptap/extension-link'
-import { Placeholder } from '@tiptap/extension-placeholder'
-import { Underline } from '@tiptap/extension-underline'
-import { StarterKit } from '@tiptap/starter-kit'
-import {
-  EditorContent,
-  useEditor,
-} from '@tiptap/vue-3'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useEmail } from '@/views/apps/email/useEmail'
 
@@ -33,11 +24,14 @@ const emit = defineEmits([
   'unstar',
 ])
 
+const emailReply = ref('')
+const showReplyBox = ref(false)
+const showReplyCard = ref(true)
 const { updateEmailLabels } = useEmail()
 const { labels, resolveLabelColor, emailMoveToFolderActions, shallShowMoveToActionFor, moveSelectedEmailTo } = useEmail()
 
-const handleMoveMailsTo = action => {
-  moveSelectedEmailTo(action, [props.email.id])
+const handleMoveMailsTo = async action => {
+  await moveSelectedEmailTo(action, [props.email.id])
   emit('refresh')
   emit('close')
 }
@@ -45,46 +39,6 @@ const handleMoveMailsTo = action => {
 const updateMailLabel = async label => {
   await updateEmailLabels([props.email.id], label)
   emit('refresh')
-}
-
-const editor = useEditor({
-  content: '',
-  extensions: [
-    StarterKit,
-    Image,
-    Placeholder.configure({ placeholder: 'Write a Comment...' }),
-    Underline,
-    Link.configure({ openOnClick: false }),
-  ],
-})
-
-const setLink = () => {
-  const previousUrl = editor.value?.getAttributes('link').href
-
-  // eslint-disable-next-line no-alert
-  const url = window.prompt('URL', previousUrl)
-
-  // cancelled
-  if (url === null)
-    return
-
-  // empty
-  if (url === '') {
-    editor.value?.chain().focus().extendMarkRange('link').unsetLink().run()
-    
-    return
-  }
-
-  // update link
-  editor.value?.chain().focus().extendMarkRange('link').setLink({ href: url }).run()
-}
-
-const addImage = () => {
-
-  // eslint-disable-next-line no-alert
-  const url = window.prompt('URL')
-  if (url)
-    editor.value?.chain().focus().setImage({ src: url }).run()
 }
 </script>
 
@@ -104,7 +58,7 @@ const addImage = () => {
       <div class="email-view-header d-flex align-center px-5 py-4">
         <IconBtn
           class="me-2 flip-in-rtl"
-          @click="$emit('close')"
+          @click="$emit('close'); showReplyBox = false; showReplyCard = true; emailReply = ''"
         >
           <VIcon icon="ri-arrow-left-s-line" />
         </IconBtn>
@@ -249,16 +203,19 @@ const addImage = () => {
 
         <VSpacer />
 
-        <!-- Star/Unstar -->
-        <IconBtn
-          :color="props.email.isStarred ? 'warning' : 'default'"
-          @click="props.email?.isStarred ? $emit('unstar') : $emit('star')"
-        >
-          <VIcon icon="ri-star-line" />
-        </IconBtn>
-
-        <!-- Dots vertical -->
-        <MoreBtn />
+        <div class="d-flex align-center gap-x-1">
+          <!-- Star/Unstar -->
+          <IconBtn
+            :color="props.email.isStarred ? 'warning' : 'default'"
+            @click="props.email?.isStarred ? $emit('unstar') : $emit('star'); $emit('refresh')"
+          >
+            <VIcon
+              :color="props.email.isStarred ? 'warning' : '' "
+              icon="ri-star-line"
+            />
+          </IconBtn>
+          <MoreBtn />
+        </div>
       </div>
 
       <VDivider />
@@ -266,10 +223,10 @@ const addImage = () => {
       <!-- 👉 Mail Content -->
       <PerfectScrollbar
         tag="div"
-        class="mail-content-container flex-grow-1"
+        class="mail-content-container flex-grow-1 pa-sm-12 pa-6"
         :options="{ wheelPropagation: false }"
       >
-        <VCard class="ma-6 mb-4">
+        <VCard class="mb-4">
           <VCardText class="mail-header">
             <div class="d-flex align-start">
               <VAvatar
@@ -309,6 +266,9 @@ const addImage = () => {
 
           <VCardText>
             <!-- eslint-disable vue/no-v-html -->
+            <div class="text-body-1 font-weight-medium text-truncate mb-4">
+              {{ props.email.from.name }},
+            </div>
             <div
               class="text-base"
               v-html="props.email.message"
@@ -319,8 +279,8 @@ const addImage = () => {
           <template v-if="props.email.attachments.length">
             <VDivider />
 
-            <VCardText class="d-flex flex-column gap-y-4">
-              <span>Attachments</span>
+            <VCardText class="d-flex flex-column gap-y-4 pt-4">
+              <span>2 Attachments</span>
               <div
                 v-for="attachment in props.email.attachments"
                 :key="attachment.fileName"
@@ -340,80 +300,51 @@ const addImage = () => {
           </template>
         </VCard>
 
-        <VCard class="ma-6">
-          <VCardText>
-            <h6 class="text-h6 font-weight-regular mb-6">
-              Reply to Ross Geller
-            </h6>
-            <!-- 👉 Tiptap editor -->
-            <div class="tiptap-editor-wrapper">
-              <div
-                v-if="editor"
-                class="d-flex flex-wrap gap-x-2 mb-6"
+        <!-- Reply or Forward -->
+        <VCard v-show="showReplyCard">
+          <VCardText class="font-weight-medium text-high-emphasis">
+            <div class="text-base">
+              Click here to <span
+                class="text-primary cursor-pointer"
+                @click="showReplyBox = !showReplyBox; showReplyCard = !showReplyCard"
               >
-                <VIcon
-                  icon="ri-bold"
-                  :color="editor.isActive('bold') ? 'primary' : ''"
-                  size="20"
-                  @click="editor.chain().focus().toggleBold().run()"
-                />
-
-                <VIcon
-                  :color="editor.isActive('underline') ? 'primary' : ''"
-                  icon="ri-underline"
-                  size="20"
-                  @click="editor.commands.toggleUnderline()"
-                />
-
-                <VIcon
-                  :color="editor.isActive('italic') ? 'primary' : ''"
-                  icon="ri-italic"
-                  size="20"
-                  @click="editor.chain().focus().toggleItalic().run()"
-                />
-
-                <VIcon
-                  :color="editor.isActive('bulletList') ? 'primary' : ''"
-                  icon="ri-list-check"
-                  size="20"
-                  @click="editor.chain().focus().toggleBulletList().run()"
-                />
-
-                <VIcon
-                  :color="editor.isActive('orderedList') ? 'primary' : ''"
-                  icon="ri-list-ordered-2"
-                  size="20"
-                  @click="editor.chain().focus().toggleOrderedList().run()"
-                />
-
-                <VIcon
-                  icon="ri-links-line"
-                  size="20"
-                  @click="setLink"
-                />
-
-                <VIcon
-                  icon="ri-image-line"
-                  size="20"
-                  @click="addImage"
-                />
-              </div>
-
-              <EditorContent :editor="editor" />
+                Reply
+              </span> or <span class="text-primary cursor-pointer">
+                Forward
+              </span>
             </div>
+          </VCardText>
+        </VCard>
 
-            <div class="d-flex align-center justify-end mt-6">
+        <VCard v-if="showReplyBox">
+          <VCardText>
+            <h6 class="text-body-1 text-high-emphasis mb-4">
+              Reply to {{ email?.from.name }}
+            </h6>
+            <TiptapEditor
+              v-model="emailReply"
+              placeholder="Write your message..."
+              :is-divider="false"
+            />
+            <div class="d-flex justify-end gap-4 pt-2 flex-wrap">
+              <IconBtn
+                icon="ri-delete-bin-7-line"
+                @click="showReplyBox = !showReplyBox; showReplyCard = !showReplyCard; emailReply = ''"
+              />
               <VBtn
+                variant="text"
                 color="secondary"
-                variant="plain"
-                class="me-4"
               >
-                <VIcon icon="ri-attachment-2" />
-                <span>Attachments</span>
+                <template #prepend>
+                  <VIcon
+                    icon="ri-attachment-2"
+                    class="text-high-emphasis"
+                  />
+                </template>
+                Attachments
               </VBtn>
-              <VBtn>
-                <span>Send</span>
-                <VIcon icon="ri-send-plane-line" />
+              <VBtn append-icon="ri-send-plane-line">
+                Send
               </VBtn>
             </div>
           </VCardText>
@@ -425,10 +356,19 @@ const addImage = () => {
 
 <style lang="scss">
 .email-view {
+  &:not(.v-navigation-drawer--active) {
+    transform: translateX(110%) !important;
+  }
+
   inline-size: 100% !important;
 
   @media only screen and (min-width: 1280px) {
     inline-size: calc(100% - 256px) !important;
+  }
+
+  .editor {
+    padding-block-start: 0 !important;
+    padding-inline: 0 !important;
   }
 
   .v-navigation-drawer__content {
@@ -437,7 +377,6 @@ const addImage = () => {
   }
 
   .ProseMirror {
-    padding: 0;
     block-size: 100px;
     overflow-y: auto;
 
@@ -453,7 +392,8 @@ const addImage = () => {
       pointer-events: none;
     }
 
-    ul,ol{
+    ul,
+    ol {
       padding-inline: 1.125rem;
     }
   }
@@ -464,7 +404,7 @@ const addImage = () => {
     color: rgb(var(--v-theme-primary));
   }
 
-  .ProseMirror-focused{
+  .ProseMirror-focused {
     outline: none !important;
   }
 }

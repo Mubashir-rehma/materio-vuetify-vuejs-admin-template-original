@@ -13,7 +13,6 @@ const orderBy = ref()
 
 // Update data table options
 const updateOptions = (options: any) => {
-  page.value = options.page
   sortBy.value = options.sortBy[0]?.key
   orderBy.value = options.sortBy[0]?.order
 }
@@ -41,8 +40,8 @@ const { data: invoiceData, execute: fetchInvoices } = await useApi<any>(createUr
   },
 }))
 
-const invoices = computed((): Invoice[] => invoiceData.value.invoices)
-const totalInvoices = computed(() => invoiceData.value.totalInvoices)
+const invoices = computed((): Invoice[] => invoiceData.value?.invoices)
+const totalInvoices = computed(() => invoiceData.value?.totalInvoices)
 
 // 👉 Invoice balance variant resolver
 const resolveInvoiceBalanceVariant = (balance: string | number, total: number) => {
@@ -339,8 +338,8 @@ const deleteInvoice = async (id: number) => {
 </style>
 
 <style lang="scss" scoped>
-.client-title{
-  &:not(:hover){
+.client-title {
+  &:not(:hover) {
     color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
   }
 }

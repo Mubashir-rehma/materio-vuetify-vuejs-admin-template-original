@@ -36,6 +36,7 @@ const {
 }))
 
 const emails = computed(() => emailData.value.emails)
+const emailsMeta = computed(() => emailData.value.emailsMeta)
 
 const toggleSelectedEmail = emailId => {
   const emailIndex = selectedEmails.value.indexOf(emailId)
@@ -108,13 +109,19 @@ const handleActionClick = async (action, emailIds = selectedEmails.value) => {
     await updateEmails(emailIds, { isStarred: true })
   else if (action === 'unstar')
     await updateEmails(emailIds, { isStarred: false })
-  await fetchEmails()
   if (openedEmail.value)
     refreshOpenedEmail()
+  else
+    await fetchEmails()
 }
 
 const handleMoveMailsTo = async action => {
-  moveSelectedEmailTo(action, selectedEmails.value)
+  await moveSelectedEmailTo(action, selectedEmails.value)
+  await fetchEmails()
+}
+
+const handleEmailLabels = async labelTitle => {
+  await updateEmailLabels(selectedEmails.value, labelTitle)
   await fetchEmails()
 }
 
@@ -139,7 +146,7 @@ watch(() => route.params, () => {
 
 <template>
   <VLayout
-    style="min-block-size: 100%;"
+    style=" z-index: 0;min-block-size: 100%;"
     class="email-app-layout"
   >
     <VNavigationDrawer
@@ -149,7 +156,10 @@ watch(() => route.params, () => {
       location="start"
       :temporary="$vuetify.display.mdAndDown"
     >
-      <EmailLeftSidebarContent @toggle-compose-dialog-visibility="isComposeDialogVisible = !isComposeDialogVisible" />
+      <EmailLeftSidebarContent
+        :emails-meta="emailsMeta"
+        @toggle-compose-dialog-visibility="isComposeDialogVisible = !isComposeDialogVisible"
+      />
     </VNavigationDrawer>
     <EmailView
       :email="openedEmail"
@@ -157,7 +167,7 @@ watch(() => route.params, () => {
       @refresh="refreshOpenedEmail"
       @navigated="changeOpenedEmail"
       @close="openedEmail = null"
-      @remove="handleActionClick('trash', openedEmail ? [openedEmail.id] : [])"
+      @trash="handleActionClick('trash', openedEmail ? [openedEmail.id] : [])"
       @unread="handleActionClick('unread', openedEmail ? [openedEmail.id] : [])"
       @star="handleActionClick('star', openedEmail ? [openedEmail.id] : [])"
       @unstar="handleActionClick('unstar', openedEmail ? [openedEmail.id] : [])"
@@ -197,7 +207,7 @@ watch(() => route.params, () => {
           <VCheckbox
             :model-value="selectAllEmailCheckbox"
             :indeterminate="isSelectAllEmailCheckboxIndeterminate"
-            class="me-1"
+            class="d-flex"
             @update:model-value="selectAllCheckboxUpdate"
           />
           <div
@@ -290,7 +300,7 @@ watch(() => route.params, () => {
                     v-for="label in labels"
                     :key="label.title"
                     href="#"
-                    @click="updateEmailLabels(selectedEmails, label.title)"
+                    @click="handleEmailLabels(label.title)"
                   >
                     <template #prepend>
                       <VBadge
@@ -427,8 +437,8 @@ watch(() => route.params, () => {
 </template>
 
 <style lang="scss">
-@use "@styles/variables/vuetify.scss";
-@use "@core/scss/base/mixins.scss";
+@use "@styles/variables/vuetify";
+@use "@core/scss/base/mixins";
 
 // ℹ️ Remove border. Using variant plain cause UI issue, caret isn't align in center
 .email-search {

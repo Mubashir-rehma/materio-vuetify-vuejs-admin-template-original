@@ -1,5 +1,6 @@
 <script setup>
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
+import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 import { themeConfig } from '@themeConfig'
 import tree1 from '@images/misc/tree1.png'
 import authV2LoginIllustrationBorderedDark from '@images/pages/auth-v2-login-illustration-bordered-dark.png'
@@ -8,11 +9,16 @@ import authV2LoginIllustrationDark from '@images/pages/auth-v2-login-illustratio
 import authV2LoginIllustrationLight from '@images/pages/auth-v2-login-illustration-light.png'
 import authV2MaskDark from '@images/pages/mask-v2-dark.png'
 import authV2MaskLight from '@images/pages/mask-v2-light.png'
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 
-const router = useRouter()
 const authThemeImg = useGenerateImageVariant(authV2LoginIllustrationLight, authV2LoginIllustrationDark, authV2LoginIllustrationBorderedLight, authV2LoginIllustrationBorderedDark, true)
 const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
+
+definePage({
+  meta: {
+    layout: 'blank',
+    public: true,
+  },
+})
 
 const form = ref({
   email: '',
@@ -21,18 +27,26 @@ const form = ref({
 })
 
 const isPasswordVisible = ref(false)
-
-definePage({ meta: { layout: 'blank' } })
 </script>
 
 <template>
-  <div class="auth-logo d-flex align-center gap-x-3">
-    <VNodeRenderer :nodes="themeConfig.app.logo" />
+  <a href="javascript:void(0)">
+    <div class="auth-logo d-flex align-center gap-x-3">
+      <VNodeRenderer :nodes="themeConfig.app.logo" />
+      <h1 class="auth-title">
+        {{ themeConfig.app.title }}
+      </h1>
+    </div>
+  </a>
 
-    <h1 class="auth-title">
-      {{ themeConfig.app.title }}
-    </h1>
-  </div>
+  <a href="javascript:void(0)">
+    <div class="auth-logo d-flex align-center gap-x-3">
+      <VNodeRenderer :nodes="themeConfig.app.logo" />
+      <h1 class="auth-title">
+        {{ themeConfig.app.title }}
+      </h1>
+    </div>
+  </a>
 
   <VRow
     no-gutters
@@ -42,7 +56,10 @@ definePage({ meta: { layout: 'blank' } })
       md="8"
       class="d-none d-md-flex position-relative"
     >
-      <div class="d-flex align-center justify-end w-100 h-100 pa-10 pe-0">
+      <div
+        class="d-flex align-center justify-end w-100 h-100 pa-10"
+        :class="$vuetify.locale.isRtl ? 'pe-10' : 'pe-0'"
+      >
         <VImg
           max-width="797"
           :src="authThemeImg"
@@ -78,14 +95,14 @@ definePage({ meta: { layout: 'blank' } })
       >
         <VCardText>
           <h4 class="text-h4 mb-1">
-            Welcome to {{ themeConfig.app.title }}! 👋🏻
+            Welcome to <span class="text-capitalize">{{ themeConfig.app.title }}!</span> 👋🏻
           </h4>
           <p class="mb-0">
             Please sign-in to your account and start the adventure
           </p>
         </VCardText>
         <VCardText>
-          <VForm @submit.prevent="router.push('/')">
+          <VForm @submit.prevent="() => {}">
             <VRow>
               <!-- email -->
               <VCol cols="12">
@@ -109,14 +126,14 @@ definePage({ meta: { layout: 'blank' } })
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
 
-                <div class="d-flex align-center flex-wrap justify-space-between my-5 gap-4">
+                <div class="d-flex align-center flex-wrap justify-space-between my-5 gap-2">
                   <VCheckbox
                     v-model="form.remember"
                     label="Remember me"
                   />
                   <a
                     class="text-primary"
-                    href="#"
+                    href="javascript:void(0)"
                   >
                     Forgot Password?
                   </a>
@@ -135,10 +152,9 @@ definePage({ meta: { layout: 'blank' } })
                 cols="12"
                 class="text-center text-base"
               >
-                <span>New on our platform?</span>
-                <a
-                  class="text-primary"
-                  href="#"
+                <span>New on our platform?</span> <a
+                  class="text-primary d-inline-block"
+                  href="javascript:void(0)"
                 >
                   Create an account
                 </a>
@@ -169,5 +185,5 @@ definePage({ meta: { layout: 'blank' } })
 </template>
 
 <style lang="scss">
-@use "@core/scss/template/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth";
 </style>

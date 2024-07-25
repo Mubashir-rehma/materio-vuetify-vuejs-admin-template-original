@@ -2,51 +2,19 @@
 
 I18n has been implemented in the full version only. If you have started your project using the starter kit as per our suggestion, please follow the below steps to implement i18n functionality:
 
-- Add the `NavBarI18n.vue` component in the navbar of the horizontal and vertical layout.
-
-  ```vue{12}
-  # DefaultLayoutWithVerticalNav.vue | DefaultLayoutWithHorizontalNav.vue
-  <script lang="ts" setup>
-  import NavBarI18n from '@/layouts/components/NavBarI18n.vue'
-  </script>
-
-  <template>
-    <VerticalNavLayout>
-      <template #navbar="{ toggleVerticalOverlayNavActive }">
-      ...
-        <NavbarThemeSwitcher />
-        <VSpacer />
-        <NavBarI18n />
-        <UserProfile />
-      </template>
-    </VerticalNavLayout>
-  </template>
-  ```
-
-- Register the `i18n` plugin in the `main.ts` file.
-
-  ```ts{6}
-  # main.ts
-  import i18n from '@/plugins/i18n'
-
-  const app = createApp(App)
-
-  app.use(i18n)
-
-  // Mount vue app
-  app.mount('#app')
-  ```
+- Copy `src/plugins/i18n` directory from full version and paste it in starter kit. As plugins are auto-imported , there is no need to register plugin.
 
 - Also, register `vite-plugin-vue-i18n` in the vite config.
 
   ```ts{4,7,8,9,10,11,12}
-  import VueI18n from '@intlify/vite-plugin-vue-i18n'
+  import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
+
   export default defineConfig({
     AutoImport({
       imports: [...,'vue-i18n'],
       vueTemplate: true,
     }),
-    VueI18n({
+     VueI18nPlugin({
       runtimeOnly: true,
       compositionOnly: true,
       include: [

@@ -8,6 +8,7 @@ import * as demoCode from '@/views/demos/forms/tables/simple-table/demoCodeSimpl
       <AppCardCode
         title="Basic"
         :code="demoCode.basic"
+        no-padding
       >
         <DemoSimpleTableBasic />
       </AppCardCode>
@@ -17,10 +18,11 @@ import * as demoCode from '@/views/demos/forms/tables/simple-table/demoCodeSimpl
       <AppCardCode
         title="Theme"
         :code="demoCode.theme"
+        no-padding
       >
-        <p>
+        <VCardText>
           use <code>theme</code> prop to switch table to the dark theme.
-        </p>
+        </VCardText>
         <DemoSimpleTableTheme />
       </AppCardCode>
     </VCol>
@@ -29,10 +31,11 @@ import * as demoCode from '@/views/demos/forms/tables/simple-table/demoCodeSimpl
       <AppCardCode
         title="Density"
         :code="demoCode.density"
+        no-padding
       >
-        <p>
+        <VCardText>
           You can show a dense version of the table by using the <code>density</code> prop.
-        </p>
+        </VCardText>
         <DemoSimpleTableDensity />
       </AppCardCode>
     </VCol>
@@ -41,10 +44,11 @@ import * as demoCode from '@/views/demos/forms/tables/simple-table/demoCodeSimpl
       <AppCardCode
         title="Height"
         :code="demoCode.height"
+        no-padding
       >
-        <p>
+        <VCardText>
           You can set the height of the table by using the <code>height</code> prop.
-        </p>
+        </VCardText>
         <DemoSimpleTableHeight />
       </AppCardCode>
     </VCol>
@@ -53,10 +57,11 @@ import * as demoCode from '@/views/demos/forms/tables/simple-table/demoCodeSimpl
       <AppCardCode
         title="Fixed Header"
         :code="demoCode.fixedHeader"
+        no-padding
       >
-        <p>
+        <VCardText>
           You can fix the header of table by using the <code>fixed-header</code> prop.
-        </p>
+        </VCardText>
         <DemoSimpleTableFixedHeader />
       </AppCardCode>
     </VCol>

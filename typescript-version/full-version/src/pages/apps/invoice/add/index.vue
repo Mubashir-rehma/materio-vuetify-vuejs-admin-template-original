@@ -124,7 +124,7 @@ const removeProduct = (id: number) => {
       />
 
       <!-- 👉 Payment Terms -->
-      <div class="d-flex align-center justify-space-between mb-2">
+      <div class="d-flex align-center justify-space-between mb-1">
         <VLabel for="payment-terms">
           Payment Terms
         </VLabel>
@@ -137,7 +137,7 @@ const removeProduct = (id: number) => {
       </div>
 
       <!-- 👉  Client Notes -->
-      <div class="d-flex align-center justify-space-between mb-2">
+      <div class="d-flex align-center justify-space-between mb-1">
         <VLabel for="client-notes">
           Client Notes
         </VLabel>

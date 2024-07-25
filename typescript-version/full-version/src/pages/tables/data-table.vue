@@ -9,6 +9,7 @@ import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTab
       <AppCardCode
         title="Basic"
         :code="demoCode.basic"
+        no-padding
       >
         <DemoDataTableBasic />
       </AppCardCode>
@@ -19,6 +20,7 @@ import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTab
       <AppCardCode
         title="Dense"
         :code="demoCode.dense"
+        no-padding
       >
         <DemoDataTableDense />
       </AppCardCode>
@@ -29,6 +31,7 @@ import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTab
       <AppCardCode
         title="Cell Slot"
         :code="demoCode.cellSlot"
+        no-padding
       >
         <DemoDataTableCellSlot />
       </AppCardCode>
@@ -39,6 +42,7 @@ import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTab
       <AppCardCode
         title="Row Selection"
         :code="demoCode.rowSelection"
+        no-padding
       >
         <DemoDataTableRowSelection />
       </AppCardCode>
@@ -49,6 +53,7 @@ import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTab
       <AppCardCode
         title="Fixed Header"
         :code="demoCode.fixedHeader"
+        no-padding
       >
         <DemoDataTableFixedHeader />
       </AppCardCode>
@@ -59,6 +64,7 @@ import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTab
       <AppCardCode
         title="Expandable Rows"
         :code="demoCode.expandableRows"
+        no-padding
       >
         <DemoDataTableExpandableRows />
       </AppCardCode>
@@ -68,6 +74,7 @@ import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTab
       <AppCardCode
         title="Grouping Rows"
         :code="demoCode.groupingRows"
+        no-padding
       >
         <DemoDataTableGroupingRows />
       </AppCardCode>
@@ -78,6 +85,7 @@ import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTab
       <AppCardCode
         title="Row Editing via Dialog"
         :code="demoCode.rowEditingViaDialog"
+        no-padding
       >
         <DemoDataTableRowEditingViaDialog />
       </AppCardCode>
@@ -88,6 +96,7 @@ import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTab
       <AppCardCode
         title="External Pagination"
         :code="demoCode.externalPagination"
+        no-padding
       >
         <DemoDataTableExternalPagination />
       </AppCardCode>
@@ -98,6 +107,7 @@ import * as demoCode from '@/views/demos/forms/tables/data-table/demoCodeDataTab
       <AppCardCode
         title="Kitchen Sink"
         :code="demoCode.kitchenSink"
+        no-padding
       >
         <DemoDataTableKitchenSink />
       </AppCardCode>

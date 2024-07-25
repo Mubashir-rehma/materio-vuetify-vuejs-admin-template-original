@@ -12,7 +12,7 @@ const chartOptions = {
   plotOptions: {
     bar: {
       barHeight: '85%',
-      columnWidth: '35px',
+      columnWidth: '7px',
       borderRadius: 3,
       distributed: true,
     },

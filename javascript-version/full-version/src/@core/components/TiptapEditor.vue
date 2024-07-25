@@ -13,6 +13,15 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  placeholder: {
+    type: String,
+    required: false,
+  },
+  isDivider: {
+    type: Boolean,
+    required: false,
+    default: true,
+  },
 })
 
 const emit = defineEmits(['update:modelValue'])
@@ -29,7 +38,7 @@ const editor = useEditor({
         'paragraph',
       ],
     }),
-    Placeholder.configure({ placeholder: 'Write something here...' }),
+    Placeholder.configure({ placeholder: props.placeholder ?? 'Write something here...' }),
     Underline,
   ],
   onUpdate() {
@@ -48,10 +57,10 @@ watch(() => props.modelValue, () => {
 </script>
 
 <template>
-  <div class="pa-5">
+  <div>
     <div
       v-if="editor"
-      class="d-flex gap-1 flex-wrap"
+      class="d-flex gap-2 px-6 py-2 flex-wrap align-center editor"
     >
       <VBtn
         :class="{ 'is-active': editor.isActive('bold') }"
@@ -126,7 +135,9 @@ watch(() => props.modelValue, () => {
         @click="editor.chain().focus().setTextAlign('justify').run()"
       />
     </div>
-    <VDivider class="my-4" />
+
+    <VDivider v-if="props.isDivider" />
+
     <EditorContent
       ref="editorRef"
       :editor="editor"
@@ -138,6 +149,7 @@ watch(() => props.modelValue, () => {
 .ProseMirror {
   padding: 0.5rem;
   min-block-size: 15vh;
+  outline: none;
 
   p {
     margin-block-end: 0;

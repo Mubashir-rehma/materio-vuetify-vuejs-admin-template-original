@@ -13,11 +13,18 @@ import customCart from '@images/svg/cart.svg'
 import customPayment from '@images/svg/payment.svg'
 import customTrending from '@images/svg/trending.svg'
 
+import { useConfigStore } from '@core/stores/config'
+
 definePage({
   meta: {
     layout: 'blank',
+    public: true,
   },
 })
+
+const store = useConfigStore()
+
+store.skin = 'default'
 
 const checkoutSteps = [
   {

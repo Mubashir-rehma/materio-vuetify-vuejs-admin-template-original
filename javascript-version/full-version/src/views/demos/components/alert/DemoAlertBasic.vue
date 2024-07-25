@@ -7,8 +7,7 @@
       title="Alert Title"
       type="error"
       closable
-    >
-      Alert content
-    </VAlert>
+      text="Alert content"
+    />
   </div>
 </template>

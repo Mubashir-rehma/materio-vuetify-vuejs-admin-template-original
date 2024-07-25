@@ -8,7 +8,7 @@ export const actionAndItemGroup = { ts: `<template>
 
     <VListItem value="notifications">
       <template #prepend="{ isActive }">
-        <VListItemAction start>
+        <VListItemAction>
           <VCheckbox
             :model-value="isActive"
             color="primary"
@@ -23,7 +23,7 @@ export const actionAndItemGroup = { ts: `<template>
 
     <VListItem value="sound">
       <template #prepend="{ isActive }">
-        <VListItemAction start>
+        <VListItemAction>
           <VCheckbox
             :model-value="isActive"
             color="primary"
@@ -38,7 +38,7 @@ export const actionAndItemGroup = { ts: `<template>
 
     <VListItem value="widgets">
       <template #prepend="{ isActive }">
-        <VListItemAction start>
+        <VListItemAction>
           <VCheckbox
             :model-value="isActive"
             color="primary"
@@ -62,7 +62,7 @@ export const actionAndItemGroup = { ts: `<template>
 
     <VListItem value="notifications">
       <template #prepend="{ isActive }">
-        <VListItemAction start>
+        <VListItemAction>
           <VCheckbox
             :model-value="isActive"
             color="primary"
@@ -77,7 +77,7 @@ export const actionAndItemGroup = { ts: `<template>
 
     <VListItem value="sound">
       <template #prepend="{ isActive }">
-        <VListItemAction start>
+        <VListItemAction>
           <VCheckbox
             :model-value="isActive"
             color="primary"
@@ -92,7 +92,7 @@ export const actionAndItemGroup = { ts: `<template>
 
     <VListItem value="widgets">
       <template #prepend="{ isActive }">
-        <VListItemAction start>
+        <VListItemAction>
           <VCheckbox
             :model-value="isActive"
             color="primary"

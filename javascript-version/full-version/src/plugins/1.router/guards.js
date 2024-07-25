@@ -28,7 +28,7 @@ export const setupGuards = router => {
       else
         return undefined
     }
-    if (!canNavigate(to)) {
+    if (!canNavigate(to) && to.matched.length) {
       /* eslint-disable indent */
             return isLoggedIn
                 ? { name: 'not-authorized' }

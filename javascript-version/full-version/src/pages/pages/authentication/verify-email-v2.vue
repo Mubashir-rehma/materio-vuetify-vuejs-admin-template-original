@@ -12,7 +12,12 @@ import authV2VerifyEmailIllustrationLight from '@images/pages/auth-v2-verify-ema
 const authThemeImg = useGenerateImageVariant(authV2VerifyEmailIllustrationLight, authV2VerifyEmailIllustrationDark, authV2VerifyEmailIllustrationBorderedLight, authV2VerifyEmailIllustrationBorderedDark, true)
 const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 
-definePage({ meta: { layout: 'blank' } })
+definePage({
+  meta: {
+    layout: 'blank',
+    public: true,
+  },
+})
 </script>
 
 <template>
@@ -105,5 +110,5 @@ definePage({ meta: { layout: 'blank' } })
 </template>
 
 <style lang="scss">
-@use "@core/scss/template/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth";
 </style>

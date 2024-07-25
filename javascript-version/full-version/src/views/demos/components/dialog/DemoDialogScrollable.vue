@@ -113,7 +113,7 @@ const isDialogVisible = ref(false)
 
       <VDivider />
 
-      <VCardText class="pt-5 text-end">
+      <VCardText class="pt-5 text-end overflow-visible">
         <VSpacer />
         <VBtn
           variant="outlined"

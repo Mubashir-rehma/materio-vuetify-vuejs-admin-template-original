@@ -67,6 +67,8 @@ const isNotificationEnabled = ref(false)
       </p>
     </div>
 
+    <VDivider />
+
     <!-- User Data -->
     <PerfectScrollbar
       class="ps-chat-user-profile-sidebar-content pb-5 px-5"
@@ -91,13 +93,10 @@ const isNotificationEnabled = ref(false)
 
       <!-- Status -->
       <div class="mb-6">
-        <p class="text-base text-disabled mb-0">
+        <p class="text-base text-disabled mb-1">
           STATUS
         </p>
-        <VRadioGroup
-          v-model="store.profileUser.status"
-          class="ms-2 mt-1"
-        >
+        <VRadioGroup v-model="store.profileUser.status">
           <VRadio
             v-for="radioOption in userStatusRadioOptions"
             :key="radioOption.title"
@@ -109,7 +108,7 @@ const isNotificationEnabled = ref(false)
       </div>
 
       <!-- Settings -->
-      <div class="text-medium-emphasis">
+      <div class="text-medium-emphasis chat-settings-section">
         <p class="text-base text-disabled mb-0">
           SETTINGS
         </p>
@@ -126,7 +125,10 @@ const isNotificationEnabled = ref(false)
 
           <VSpacer />
 
-          <VSwitch v-model="isTwoStepVerified" />
+          <VSwitch
+            v-model="isTwoStepVerified"
+            density="compact"
+          />
         </div>
         <div class="d-flex align-center pa-2">
           <VIcon
@@ -141,7 +143,10 @@ const isNotificationEnabled = ref(false)
 
           <VSpacer />
 
-          <VSwitch v-model="isNotificationEnabled" />
+          <VSwitch
+            v-model="isNotificationEnabled"
+            density="compact"
+          />
         </div>
         <div class="d-flex align-center pa-2">
           <VIcon
@@ -179,3 +184,15 @@ const isNotificationEnabled = ref(false)
     </PerfectScrollbar>
   </template>
 </template>
+
+<style lang="scss">
+.chat-settings-section {
+  .v-switch {
+    .v-input__control {
+      .v-selection-control__wrapper {
+        block-size: 18px;
+      }
+    }
+  }
+}
+</style>

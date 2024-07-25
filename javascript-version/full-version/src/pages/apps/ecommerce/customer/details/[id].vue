@@ -28,10 +28,8 @@ const tabs = [
   },
 ]
 
-const { data, error } = await useApi(`/apps/ecommerce/customers/${ route.params.id }`)
-if (error.value)
-  console.log(error.value)
-else if (data.value)
+const { data } = await useApi(`/apps/ecommerce/customers/${ route.params.id }`)
+if (data.value)
   customerData.value = data.value
 </script>
 
@@ -57,6 +55,7 @@ else if (data.value)
     <!-- 👉 Customer Profile  -->
     <VRow v-if="customerData">
       <VCol
+        v-if="customerData"
         cols="12"
         md="5"
         lg="4"

@@ -10,21 +10,6 @@ import NavBarI18n from '@core/components/I18n.vue'
 
 // @layouts plugin
 import { VerticalNavLayout } from '@layouts'
-
-// SECTION: Loading Indicator
-const isFallbackStateActive = ref(false)
-const refLoadingIndicator = ref(null)
-
-watch([
-  isFallbackStateActive,
-  refLoadingIndicator,
-], () => {
-  if (isFallbackStateActive.value && refLoadingIndicator.value)
-    refLoadingIndicator.value.fallbackHandle()
-  if (!isFallbackStateActive.value && refLoadingIndicator.value)
-    refLoadingIndicator.value.resolveHandle()
-}, { immediate: true })
-// !SECTION
 </script>
 
 <template>
@@ -52,18 +37,8 @@ watch([
       </div>
     </template>
 
-    <AppLoadingIndicator ref="refLoadingIndicator" />
-
     <!-- 👉 Pages -->
-    <RouterView v-slot="{ Component }">
-      <Suspense
-        :timeout="0"
-        @fallback="isFallbackStateActive = true"
-        @resolve="isFallbackStateActive = false"
-      >
-        <Component :is="Component" />
-      </Suspense>
-    </RouterView>
+    <slot />
 
     <!-- 👉 Footer -->
     <template #footer>

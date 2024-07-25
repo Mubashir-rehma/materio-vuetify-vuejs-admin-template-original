@@ -1,9 +1,10 @@
-import { rest } from 'msw'
+import { HttpResponse, http } from 'msw'
 import { db } from '@db/auth/db'
 
+// Handlers for auth
 export const handlerAuth = [
-  rest.post(('/api/auth/login'), async (req, res, ctx) => {
-    const { email, password } = await req.json()
+  http.post(('/api/auth/login'), async ({ request }) => {
+    const { email, password } = await request.json()
     let errors = {
       email: ['Something went wrong'],
     }
@@ -24,7 +25,7 @@ export const handlerAuth = [
           userData: userOutData,
         }
 
-        return res(ctx.status(200), ctx.json(response))
+        return HttpResponse.json(response, { status: 201 })
       }
       catch (e) {
         errors = { email: [e] }
@@ -34,6 +35,6 @@ export const handlerAuth = [
       errors = { email: ['Invalid email or password'] }
     }
     
-    return res(ctx.status(400), ctx.json({ errors }))
+    return HttpResponse.json({ errors }, { status: 400 })
   }),
 ]

@@ -1,4 +1,5 @@
 <script setup>
+import { VNodeRenderer } from '@/@layouts/components/VNodeRenderer'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 import authV2RegisterIllustrationDark from '@images/pages/auth-v2-register-illustration-dark.png'
 import authV2RegisterIllustrationLight from '@images/pages/auth-v2-register-illustration-light.png'
@@ -8,12 +9,16 @@ import authV2RegisterIllustrationBorderedDark from '@images/pages/auth-v2-regist
 import authV2RegisterIllustrationBorderedLight from '@images/pages/auth-v2-register-illustration-bordered-light.png'
 import authV2MaskDark from '@images/pages/mask-v2-dark.png'
 import authV2MaskLight from '@images/pages/mask-v2-light.png'
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
 
 const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
 const authThemeImg = useGenerateImageVariant(authV2RegisterIllustrationLight, authV2RegisterIllustrationDark, authV2RegisterIllustrationBorderedLight, authV2RegisterIllustrationBorderedDark, true)
 
-definePage({ meta: { layout: 'blank' } })
+definePage({
+  meta: {
+    layout: 'blank',
+    public: true,
+  },
+})
 
 const form = ref({
   username: '',
@@ -26,6 +31,15 @@ const isPasswordVisible = ref(false)
 </script>
 
 <template>
+  <RouterLink to="/">
+    <div class="auth-logo d-flex align-center gap-x-3">
+      <VNodeRenderer :nodes="themeConfig.app.logo" />
+      <h1 class="auth-title">
+        {{ themeConfig.app.title }}
+      </h1>
+    </div>
+  </RouterLink>
+
   <RouterLink to="/">
     <div class="auth-logo d-flex align-center gap-x-3">
       <VNodeRenderer :nodes="themeConfig.app.logo" />
@@ -85,7 +99,7 @@ const isPasswordVisible = ref(false)
       <VCard
         flat
         :max-width="500"
-        class="mt-12 mt-sm-0 pa-4"
+        class="mt-12 mt-sm-12 pa-4"
       >
         <VCardText>
           <h4 class="text-h4 mb-1">
@@ -185,5 +199,5 @@ const isPasswordVisible = ref(false)
 </template>
 
 <style lang="scss">
-@use "@core/scss/template/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth";
 </style>

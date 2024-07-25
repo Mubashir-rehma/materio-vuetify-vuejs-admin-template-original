@@ -23,6 +23,7 @@ const selectedStatus = ref()
 const selectedCategory = ref()
 const selectedStock = ref<boolean | undefined>()
 const searchQuery = ref('')
+const selectedRows = ref([])
 
 const status = ref([
   { title: 'Scheduled', value: 'Scheduled' },
@@ -52,7 +53,6 @@ const orderBy = ref()
 
 // Update data table options
 const updateOptions = (options: any) => {
-  page.value = options.page
   sortBy.value = options.sortBy[0]?.key
   orderBy.value = options.sortBy[0]?.order
 }
@@ -104,6 +104,12 @@ const deleteProduct = async (id: number) => {
     method: 'DELETE',
   })
 
+  // Delete from selectedRows
+  const index = selectedRows.value.findIndex(row => row === id)
+  if (index !== -1)
+    selectedRows.value.splice(index, 1)
+
+  // Refetch products
   fetchProducts()
 }
 </script>
@@ -126,7 +132,11 @@ const deleteProduct = async (id: number) => {
             >
               <div
                 class="d-flex justify-space-between"
-                :class="$vuetify.display.xs ? 'product-widget' : $vuetify.display.sm ? index < 2 ? 'product-widget' : '' : ''"
+                :class="$vuetify.display.xs
+                  ? index !== widgetData.length - 1 ? 'border-b pb-4' : ''
+                  : $vuetify.display.sm
+                    ? index < (widgetData.length / 2) ? 'border-b pb-4' : ''
+                    : ''"
               >
                 <div class="d-flex flex-column gap-y-1">
                   <p class="text-capitalize mb-0">
@@ -268,6 +278,7 @@ const deleteProduct = async (id: number) => {
       <!-- 👉 Datatable  -->
       <VDataTableServer
         v-model:items-per-page="itemsPerPage"
+        v-model:model-value="selectedRows"
         v-model:page="page"
         :headers="headers"
         show-select
@@ -405,10 +416,3 @@ const deleteProduct = async (id: number) => {
     </VCard>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.product-widget{
-  border-block-end: 1px solid rgba(var(--v-theme-on-surface), var(--v-border-opacity));
-  padding-block-end: 1rem;
-}
-</style>

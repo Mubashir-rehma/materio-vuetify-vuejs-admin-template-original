@@ -1,4 +1,5 @@
-export const buffering = { ts: `<script setup lang="ts">
+export const buffering = {
+  ts: `<script setup lang="ts">
 const modelValue = ref(10)
 const bufferValue = ref(20)
 const interval = ref()
@@ -38,7 +39,8 @@ watch(modelValue, () => {
     />
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const modelValue = ref(10)
 const bufferValue = ref(20)
 const interval = ref()
@@ -74,9 +76,11 @@ watch(modelValue, () => {
     />
   </div>
 </template>
-` }
+`,
+}
 
-export const color = { ts: `<template>
+export const color = {
+  ts: `<template>
   <div class="demo-space-y">
     <VProgressLinear
       model-value="15"
@@ -97,7 +101,8 @@ export const color = { ts: `<template>
     />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VProgressLinear
       model-value="15"
@@ -118,39 +123,47 @@ export const color = { ts: `<template>
     />
   </div>
 </template>
-` }
+`,
+}
 
-export const indeterminate = { ts: `<template>
+export const indeterminate = {
+  ts: `<template>
   <VProgressLinear
     indeterminate
     color="primary"
   />
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VProgressLinear
     indeterminate
     color="primary"
   />
 </template>
-` }
+`,
+}
 
-export const reversed = { ts: `<template>
+export const reversed = {
+  ts: `<template>
   <VProgressLinear
     color="primary"
     indeterminate
     reverse
   />
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <VProgressLinear
     color="primary"
     indeterminate
     reverse
   />
 </template>
-` }
+`,
+}
 
-export const rounded = { ts: `<template>
+export const rounded = {
+  ts: `<template>
   <div class="demo-space-y">
     <VProgressLinear
       model-value="78"
@@ -174,7 +187,8 @@ export const rounded = { ts: `<template>
     />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VProgressLinear
       model-value="78"
@@ -198,9 +212,11 @@ export const rounded = { ts: `<template>
     />
   </div>
 </template>
-` }
+`,
+}
 
-export const slots = { ts: `<script setup lang="ts">
+export const slots = {
+  ts: `<script setup lang="ts">
 const skill = ref(20)
 const knowledge = ref(33)
 const power = ref(78)
@@ -233,7 +249,8 @@ const power = ref(78)
     </VProgressLinear>
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const skill = ref(20)
 const knowledge = ref(33)
 const power = ref(78)
@@ -266,9 +283,11 @@ const power = ref(78)
     </VProgressLinear>
   </div>
 </template>
-` }
+`,
+}
 
-export const striped = { ts: `<template>
+export const striped = {
+  ts: `<template>
   <div class="demo-space-y">
     <VProgressLinear
       color="rgb(var(--v-theme-primary))"
@@ -289,7 +308,8 @@ export const striped = { ts: `<template>
     />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VProgressLinear
       color="rgb(var(--v-theme-primary))"
@@ -310,5 +330,5 @@ export const striped = { ts: `<template>
     />
   </div>
 </template>
-` }
-
+`,
+}

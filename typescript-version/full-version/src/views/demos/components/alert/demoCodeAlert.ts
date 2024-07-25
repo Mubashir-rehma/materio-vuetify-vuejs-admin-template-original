@@ -1,4 +1,5 @@
-export const basic = { ts: `<template>
+export const basic = {
+  ts: `<template>
   <div class="demo-space-y">
     <VAlert color="primary">
       Good Morning! Start your day with some alerts.
@@ -7,12 +8,12 @@ export const basic = { ts: `<template>
       title="Alert Title"
       type="error"
       closable
-    >
-      Alert content
-    </VAlert>
+      text="Alert content"
+    />
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VAlert color="primary">
       Good Morning! Start your day with some alerts.
@@ -21,14 +22,15 @@ export const basic = { ts: `<template>
       title="Alert Title"
       type="error"
       closable
-    >
-      Alert content
-    </VAlert>
+      text="Alert content"
+    />
   </div>
 </template>
-` }
+`,
+}
 
-export const border = { ts: `<template>
+export const border = {
+  ts: `<template>
   <div class="demo-space-y">
     <VAlert
       color="primary"
@@ -63,7 +65,8 @@ export const border = { ts: `<template>
     </VAlert>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VAlert
       color="primary"
@@ -98,9 +101,11 @@ export const border = { ts: `<template>
     </VAlert>
   </div>
 </template>
-` }
+`,
+}
 
-export const closable = { ts: `<script lang="ts" setup>
+export const closable = {
+  ts: `<script lang="ts" setup>
 const isAlertVisible = ref(true)
 </script>
 
@@ -124,7 +129,8 @@ const isAlertVisible = ref(true)
     </VBtn>
   </div>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const isAlertVisible = ref(true)
 </script>
 
@@ -148,9 +154,11 @@ const isAlertVisible = ref(true)
     </VBtn>
   </div>
 </template>
-` }
+`,
+}
 
-export const coloredBorder = { ts: `<template>
+export const coloredBorder = {
+  ts: `<template>
   <div class="demo-space-y">
     <VAlert
       border="start"
@@ -192,7 +200,8 @@ export const coloredBorder = { ts: `<template>
     </VAlert>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VAlert
       border="start"
@@ -234,9 +243,11 @@ export const coloredBorder = { ts: `<template>
     </VAlert>
   </div>
 </template>
-` }
+`,
+}
 
-export const colors = { ts: `<template>
+export const colors = {
+  ts: `<template>
   <div class="demo-space-y">
     <VAlert color="primary">
       I'm an alert with primary background color.
@@ -263,7 +274,8 @@ export const colors = { ts: `<template>
     </VAlert>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VAlert color="primary">
       I'm an alert with primary background color.
@@ -290,9 +302,11 @@ export const colors = { ts: `<template>
     </VAlert>
   </div>
 </template>
-` }
+`,
+}
 
-export const density = { ts: `<template>
+export const density = {
+  ts: `<template>
   <div class="demo-space-y">
     <VAlert
       density="compact"
@@ -319,7 +333,8 @@ export const density = { ts: `<template>
     </VAlert>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VAlert
       density="compact"
@@ -346,9 +361,11 @@ export const density = { ts: `<template>
     </VAlert>
   </div>
 </template>
-` }
+`,
+}
 
-export const elevation = { ts: `<script lang="ts" setup>
+export const elevation = {
+  ts: `<script lang="ts" setup>
 const alertShadow = ref(5)
 </script>
 
@@ -370,7 +387,8 @@ const alertShadow = ref(5)
     I'm an alert with box shadow.
   </VAlert>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const alertShadow = ref(5)
 </script>
 
@@ -392,9 +410,11 @@ const alertShadow = ref(5)
     I'm an alert with box shadow.
   </VAlert>
 </template>
-` }
+`,
+}
 
-export const icons = { ts: `<template>
+export const icons = {
+  ts: `<template>
   <div class="demo-space-y">
     <VAlert
       color="primary"
@@ -420,7 +440,8 @@ export const icons = { ts: `<template>
     </VAlert>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VAlert
       color="primary"
@@ -446,9 +467,11 @@ export const icons = { ts: `<template>
     </VAlert>
   </div>
 </template>
-` }
+`,
+}
 
-export const outlined = { ts: `<template>
+export const outlined = {
+  ts: `<template>
   <div class="demo-space-y">
     <VAlert
       variant="outlined"
@@ -493,7 +516,8 @@ export const outlined = { ts: `<template>
     </VAlert>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VAlert
       variant="outlined"
@@ -538,9 +562,11 @@ export const outlined = { ts: `<template>
     </VAlert>
   </div>
 </template>
-` }
+`,
+}
 
-export const prominent = { ts: `<template>
+export const prominent = {
+  ts: `<template>
   <div class="demo-space-y">
     <VAlert
       prominent
@@ -568,7 +594,8 @@ export const prominent = { ts: `<template>
     </VAlert>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VAlert
       prominent
@@ -596,9 +623,11 @@ export const prominent = { ts: `<template>
     </VAlert>
   </div>
 </template>
-` }
+`,
+}
 
-export const tonal = { ts: `<template>
+export const tonal = {
+  ts: `<template>
   <div class="demo-space-y">
     <VAlert
       variant="tonal"
@@ -643,7 +672,8 @@ export const tonal = { ts: `<template>
     </VAlert>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VAlert
       variant="tonal"
@@ -688,9 +718,11 @@ export const tonal = { ts: `<template>
     </VAlert>
   </div>
 </template>
-` }
+`,
+}
 
-export const type = { ts: `<template>
+export const type = {
+  ts: `<template>
   <div class="demo-space-y">
     <VAlert type="info">
       I'm a alert with a <strong>type</strong> of info
@@ -709,7 +741,8 @@ export const type = { ts: `<template>
     </VAlert>
   </div>
 </template>
-`, js: `<template>
+`,
+  js: `<template>
   <div class="demo-space-y">
     <VAlert type="info">
       I'm a alert with a <strong>type</strong> of info
@@ -728,9 +761,11 @@ export const type = { ts: `<template>
     </VAlert>
   </div>
 </template>
-` }
+`,
+}
 
-export const vModelSupport = { ts: `<script lang="ts" setup>
+export const vModelSupport = {
+  ts: `<script lang="ts" setup>
 const isAlertVisible = ref(true)
 </script>
 
@@ -757,7 +792,8 @@ const isAlertVisible = ref(true)
   min-block-size: 80px;
 }
 </style>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const isAlertVisible = ref(true)
 </script>
 
@@ -784,5 +820,5 @@ const isAlertVisible = ref(true)
   min-block-size: 80px;
 }
 </style>
-` }
-
+`,
+}

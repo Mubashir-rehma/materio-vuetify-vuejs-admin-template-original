@@ -77,6 +77,11 @@ export default [
     to: 'apps-calendar',
   },
   {
+    title: 'Kanban',
+    icon: { icon: 'ri-drag-drop-line' },
+    to: 'apps-kanban',
+  },
+  {
     title: 'Invoice',
     icon: { icon: 'ri-bill-line' },
     children: [

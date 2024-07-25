@@ -11,6 +11,7 @@ import {
   makeVInputProps,
 } from 'vuetify/lib/components/VInput/VInput'
 
+
 import { filterInputAttrs } from 'vuetify/lib/util/helpers'
 import { useConfigStore } from '@core/stores/config'
 
@@ -57,13 +58,8 @@ defineOptions({
 const configStore = useConfigStore()
 const attrs = useAttrs()
 const [rootAttrs, compAttrs] = filterInputAttrs(attrs)
-
-const {
-  modelValue: _,
-  ...inputProps
-} = VInput.filterProps(props)
-
-const fieldProps = filterFieldProps(props)
+const inputProps = ref(VInput.filterProps(props))
+const fieldProps = ref(filterFieldProps(props))
 const refFlatPicker = ref()
 const { focused } = useFocus(refFlatPicker)
 const isCalendarOpen = ref(false)
@@ -106,6 +102,14 @@ onMounted(() => {
 const emitModelValue = val => {
   emit('update:modelValue', val)
 }
+
+watch(() => props, () => {
+  fieldProps.value = filterFieldProps(props)
+  inputProps.value = VInput.filterProps(props)
+}, {
+  deep: true,
+  immediate: true,
+})
 </script>
 
 <template>
@@ -122,7 +126,7 @@ const emitModelValue = val => {
       class="position-relative v-text-field"
       :style="props.style"
     >
-      <template #default="{ id, isDirty, isValid, isDisabled, isReadonly }">
+      <template #default="{ id, isDirty, isValid, isDisabled, isReadonly, validate }">
         <!-- v-field -->
         <VField
           v-bind="{ ...fieldProps }"
@@ -145,10 +149,10 @@ const emitModelValue = val => {
                 :model-value="modelValue"
                 :placeholder="props.placeholder"
                 :readonly="isReadonly.value"
-                class="flat-picker-custom-style"
+                class="flat-picker-custom-style h-100 w-100"
                 :disabled="isReadonly.value"
                 @on-open="isCalendarOpen = true"
-                @on-close="isCalendarOpen = false"
+                @on-close="isCalendarOpen = false; validate()"
                 @update:model-value="emitModelValue"
               />
 
@@ -158,7 +162,7 @@ const emitModelValue = val => {
                 :value="modelValue"
                 :placeholder="props.placeholder"
                 :readonly="isReadonly.value"
-                class="flat-picker-custom-style"
+                class="flat-picker-custom-style h-100 w-100"
                 type="text"
               >
             </div>
@@ -358,6 +362,7 @@ input[altinputclass="inlinePicker"] {
 
   &.hasTime.open {
     .flatpickr-time {
+      border: none;
       border-color: rgba(var(--v-border-color), var(--v-border-opacity));
       block-size: auto;
     }

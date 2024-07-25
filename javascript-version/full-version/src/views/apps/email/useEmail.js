@@ -64,7 +64,7 @@ export const useEmail = () => {
     return false
   }
 
-  const moveSelectedEmailTo = (action, selectedEmails) => {
+  const moveSelectedEmailTo = async (action, selectedEmails) => {
     const dataToUpdate = {}
     if (action === 'inbox') {
       if (route.params.filter === 'trashed')
@@ -79,7 +79,7 @@ export const useEmail = () => {
     else if (action === 'trash') {
       dataToUpdate.isDeleted = true
     }
-    updateEmails(selectedEmails, dataToUpdate)
+    await updateEmails(selectedEmails, dataToUpdate)
   }
 
   return {

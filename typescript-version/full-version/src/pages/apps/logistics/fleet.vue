@@ -61,7 +61,9 @@ const geojson = {
 
 const activeIndex = ref(0)
 
-onMounted(() => {
+onMounted(async () => {
+  await new Promise(resolve => setTimeout(resolve, 100))
+
   mapboxgl.accessToken = accessToken
 
   map.value = new mapboxgl.Map({
@@ -326,14 +328,14 @@ watch(activeIndex, () => {
   }
 }
 
-.navigation-toggle-btn{
+.navigation-toggle-btn {
   position: absolute;
   z-index: 1;
   inset-block-start: 1rem;
   inset-inline-start: 1rem;
 }
 
-.navigation-close-btn{
+.navigation-close-btn {
   position: absolute;
   z-index: 1;
   inset-block-start: 1rem;
@@ -356,6 +358,6 @@ watch(activeIndex, () => {
 
 /* stylelint-disable-next-line selector-id-pattern */
 #mapContainer {
-  block-size: 100vh !important;
+  block-size: 100dvh !important;
 }
 </style>

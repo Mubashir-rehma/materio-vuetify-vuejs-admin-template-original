@@ -7,7 +7,12 @@ import miscComingSoon from '@images/pages/misc-coming-soon.png'
 
 const authThemeMask = useGenerateImageVariant(miscMaskLight, miscMaskDark)
 
-definePage({ meta: { layout: 'blank' } })
+definePage({
+  meta: {
+    layout: 'blank',
+    public: true,
+  },
+})
 
 const email = ref('')
 </script>

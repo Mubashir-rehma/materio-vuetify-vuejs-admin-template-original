@@ -25,13 +25,21 @@ const heroDashboardImg = useGenerateImageVariant(heroDashboardImgLight, heroDash
 
 const { x, y } = useMouse({ touch: false })
 
-const translateMouse = computed(() => (speed: number) => {
-  if (typeof window !== 'undefined') {
-    const positionX = computed (() => (window.innerWidth - (x.value * speed)) / 100)
-    const positionY = computed (() => Math.max((window.innerHeight - (y.value * speed)) / 100, -40))
+const transformDashboardImg = ref('translate(0px, 0px)')
+const transformHeroElements = ref('translate(0px, 0px)')
 
-    return { transform: `translate(${positionX.value}px,${positionY.value}px` }
-  }
+const calculatePosition = (speed: number) => {
+  const positionX = (window.innerWidth - (x.value * speed)) / 100
+  const positionY = Math.max((window.innerHeight - (y.value * speed)) / 100, -40)
+
+  return `translate(${positionX}px, ${positionY}px)`
+}
+
+onMounted(() => {
+  watchEffect(() => {
+    transformDashboardImg.value = calculatePosition(2.5)
+    transformHeroElements.value = calculatePosition(5)
+  })
 })
 </script>
 
@@ -81,7 +89,7 @@ const translateMouse = computed(() => (speed: number) => {
               <img
                 :src="heroDashboardImg"
                 class="mx-auto cursor-pointer"
-                :style="translateMouse(2.5)"
+                :style="{ transform: transformDashboardImg }"
               >
             </RouterLink>
           </div>
@@ -94,7 +102,7 @@ const translateMouse = computed(() => (speed: number) => {
               <img
                 class="cursor-pointer"
                 :src="heroElementsImg"
-                :style="translateMouse(5)"
+                :style="{ transform: transformHeroElements }"
                 target="_blank"
               >
             </RouterLink>
@@ -127,9 +135,9 @@ section {
 .hero-elements-img {
   position: absolute;
   inline-size: 100%;
-  inset-block-start: 50%;
-  inset-inline-start: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  margin-block: 15%;
+  margin-inline: auto;
 
   img {
     inline-size: 100%;
@@ -145,27 +153,27 @@ section {
   margin-block-start: 6.25rem;
 }
 
-.landing-page-title{
+.landing-page-title {
   color: rgb(var(--v-theme-primary));
   font-size: 2.375rem;
   font-weight: 800;
-  line-height: 2.75rem
+  line-height: 2.75rem;
 }
 
-.hero-animation-img{
-  inset-block-start:0;
+.hero-animation-img {
+  inset-block-start: 0;
   margin-block-end: -16rem;
 }
 
-@media (max-width: 960px ){
-  .hero-animation-img{
+@media (max-width: 960px) {
+  .hero-animation-img {
     inset-block-start: 2rem;
     margin-block-end: -8rem;
   }
 }
 
-@media (max-width: 600px ){
-  .hero-animation-img{
+@media (max-width: 600px) {
+  .hero-animation-img {
     inset-block-start: 1rem;
     margin-block-end: -2rem;
   }

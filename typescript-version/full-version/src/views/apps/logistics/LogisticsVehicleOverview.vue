@@ -100,13 +100,11 @@ const vehicleData = [
 .v-progress-linear__content {
   justify-content: start;
   padding-inline-start: 1rem;
-
 }
 
 @media (max-width: 1080px) {
   .v-progress-linear__content {
     padding-inline-start: 0.75rem !important;
-
   }
 }
 

@@ -7,6 +7,7 @@ import { themeConfig } from '@themeConfig'
 definePage({
   meta: {
     layout: 'blank',
+    public: true,
   },
 })
 
@@ -84,6 +85,15 @@ const onSubmit = () => {
     </div>
   </RouterLink>
 
+  <RouterLink to="/">
+    <div class="auth-logo d-flex align-center gap-x-3">
+      <VNodeRenderer :nodes="themeConfig.app.logo" />
+      <h1 class="auth-title">
+        {{ themeConfig.app.title }}
+      </h1>
+    </div>
+  </RouterLink>
+
   <VRow
     no-gutters
     class="auth-wrapper"
@@ -114,7 +124,7 @@ const onSubmit = () => {
     >
       <VCard
         flat
-        class="mt-12 mt-sm-0"
+        class="mt-12 mt-sm-10"
       >
         <AppStepper
           v-model:current-step="currentStep"
@@ -430,5 +440,5 @@ const onSubmit = () => {
 </template>
 
 <style lang="scss">
-@use "@core/scss/template/pages/page-auth.scss";
+@use "@core/scss/template/pages/page-auth";
 </style>

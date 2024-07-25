@@ -28,7 +28,7 @@ const brandLogo5 = useGenerateImageVariant(logo5light, logo5dark)
 
 const reviewData = [
   {
-    desc: 'I\'ve never used a theme as versatile and flexible as Vuexy. It\'s my go to for building dashboard sites on almost any project.',
+    desc: 'I\'ve never used a theme as versatile and flexible as Materio. It\'s my go to for building dashboard sites on almost any project.',
     img: logo1,
     rating: 5,
     name: 'Eugenia Moore',
@@ -63,7 +63,7 @@ const reviewData = [
     position: 'Founder of Levis',
   },
   {
-    desc: 'I\'ve never used a theme as versatile and flexible as Vuexy. It\'s my go to for building dashboard sites on almost any project.',
+    desc: 'I\'ve never used a theme as versatile and flexible as Materio. It\'s my go to for building dashboard sites on almost any project.',
     img: logo1,
     rating: 5,
     name: 'Eugenia Moore',
@@ -234,7 +234,7 @@ const reviewData = [
         }"
       >
         <swiper-slide
-          v-for="(img, index) in [brandLogo1, brandLogo2, brandLogo3, brandLogo4, brandLogo5]"
+          v-for="(img, index) in [brandLogo1, brandLogo2, brandLogo3, brandLogo4, brandLogo5, brandLogo1, brandLogo2, brandLogo3, brandLogo4, brandLogo5]"
           :key="index"
         >
           <VImg

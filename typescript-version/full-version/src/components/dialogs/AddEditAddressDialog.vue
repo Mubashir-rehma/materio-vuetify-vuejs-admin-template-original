@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface BillingAddress {
-  firstName: string
-  lastName: string
+  firstName: string | undefined
+  lastName: string | undefined
   selectedCountry: string | null
   addressLine1: string
   addressLine2: string

@@ -64,7 +64,7 @@ const isConfirmDialogVisible = ref(false)
 
       <VDivider class="mb-5" />
 
-      <VCardText class="px-15">
+      <VCardText class="px-md-15 px-10">
         <p class="font-weight-medium mb-2">
           User current plan is standard plan
         </p>

@@ -741,7 +741,10 @@ const desserts = [
 </script>
 
 <template>
-  <VTable theme="dark">
+  <VTable
+    theme="dark"
+    class="rounded-0"
+  >
     <thead>
       <tr>
         <th class="text-uppercase">
@@ -827,7 +830,10 @@ const desserts = [
 </script>
 
 <template>
-  <VTable theme="dark">
+  <VTable
+    theme="dark"
+    class="rounded-0"
+  >
     <thead>
       <tr>
         <th class="text-uppercase">

@@ -36,7 +36,7 @@ const menus = [
           <!-- 👉 Footer  -->
           <VCol
             cols="12"
-            lg="5"
+            md="5"
           >
             <div class="mb-4 footer-form">
               <div class="d-flex align-center gap-x-3 mb-6">
@@ -61,98 +61,114 @@ const menus = [
             </div>
           </VCol>
 
-          <!-- 👉 Pages -->
-          <VCol>
-            <div class="d-flex justify-space-between  flex-grow-1 gap-x-16 gap-y-8 flex-md-row flex-column">
-              <div>
-                <div class="footer-heading mb-6">
-                  Pages
-                </div>
-                <ul style="list-style: none;">
-                  <li
-                    v-for="(item, index) in menus"
-                    :key="index"
-                    class="mb-4"
-                  >
-                    <RouterLink
-                      class="footer-text text-no-wrap"
-                      :to="item.to"
-                    >
-                      <div class="d-flex align-center">
-                        <div>{{ item.name }}</div>
-                        <template v-if="item.isNew">
-                          <VChip
-                            color="primary"
-                            variant="elevated"
-                            size="small"
-                            class="ms-2"
-                          >
-                            New
-                          </VChip>
-                        </template>
-                      </div>
-                    </RouterLink>
-                  </li>
-                </ul>
+          <!-- 👉 Pages  -->
+          <VCol
+            md="2"
+            sm="4"
+            xs="6"
+          >
+            <div class="footer-links">
+              <div class="footer-heading mb-6">
+                Pages
               </div>
-              <!-- 👉 Products  -->
-              <div>
-                <div class="footer-heading mb-6">
-                  Products
-                </div>
-                <ul>
-                  <li
-                    v-for="(item, index) in ['Page Builder', 'Admin Dashboards', 'UI Kits', 'Illustrations']"
-                    :key="index"
-                    class="mb-4"
-                    style="list-style: none;"
+              <ul style="list-style: none;">
+                <li
+                  v-for="(item, index) in menus"
+                  :key="index"
+                  class="mb-4"
+                >
+                  <RouterLink
+                    class="footer-text text-no-wrap"
+                    :to="item.to"
                   >
-                    <RouterLink
-                      to=""
-                      class="footer-text text-no-wrap"
-                    >
-                      {{ item }}
-                    </RouterLink>
-                  </li>
-                </ul>
+                    <div class="d-flex align-center">
+                      <div>{{ item.name }}</div>
+                      <template v-if="item.isNew">
+                        <VChip
+                          color="primary"
+                          variant="elevated"
+                          size="small"
+                          class="ms-2"
+                        >
+                          New
+                        </VChip>
+                      </template>
+                    </div>
+                  </RouterLink>
+                </li>
+              </ul>
+            </div>
+          </VCol>
+
+          <!-- 👉 Products -->
+          <VCol
+            md="2"
+            sm="4"
+            xs="6"
+          >
+            <div class="footer-links">
+              <div class="footer-heading mb-6">
+                Products
               </div>
-              <!-- 👉 Download App -->
-              <div>
-                <div class="footer-heading mb-6">
-                  Download our app
-                </div>
-                <div>
-                  <VBtn
-                    v-for="(item, index) in [
-                      { image: appleImg, store: 'App Store' },
-                      { image: googlePlayImg, store: 'Google Play' },
-                    ]"
-                    :key="index"
-                    color="#211B2C"
-                    size="x-large"
-                    class="mb-4 d-block"
+              <ul>
+                <li
+                  v-for="(item, index) in ['Page Builder', 'Admin Dashboards', 'UI Kits', 'Illustrations']"
+                  :key="index"
+                  class="mb-4"
+                  style="list-style: none;"
+                >
+                  <RouterLink
+                    to=""
+                    class="footer-text text-no-wrap"
                   >
-                    <template #default>
-                      <div class="d-flex gap-x-3">
-                        <div>
-                          <VImg
-                            :src="item.image"
-                            height="34"
-                            width="34"
-                          />
+                    {{ item }}
+                  </RouterLink>
+                </li>
+              </ul>
+            </div>
+          </VCol>
+
+          <!-- 👉 Download App -->
+          <VCol
+            cols="12"
+            md="3"
+            sm="4"
+          >
+            <div>
+              <div class="footer-heading mb-6">
+                Download our app
+              </div>
+              <div>
+                <VBtn
+                  v-for="(item, index) in [
+                    { image: appleImg, store: 'App Store' },
+                    { image: googlePlayImg, store: 'Google Play' },
+                  ]"
+                  :key="index"
+                  color="#211B2C"
+                  size="x-large"
+                  class="mb-4 d-block"
+                >
+                  <template #default>
+                    <div class="d-flex gap-x-3">
+                      <div>
+                        <VImg
+                          :src="item.image"
+                          height="34"
+                          width="34"
+                        />
+                      </div>
+                      <div>
+                        <div class="text-body-2 text-white">
+                          Download on the
                         </div>
-                        <div>
-                          <div class="text-body-2 text-white">
-                            Download on the
-                          </div>
-                          <div class="text-body-2 font-weight-medium text-white">
-                            {{ item.store }}
-                          </div>
+                        <div class="text-body-2 font-weight-medium text-white">
+                          {{ item.store }}
                         </div>
                       </div>
-                    </template>
-                  </VBtn>
-                </div>
+                    </div>
+                  </template>
+                </VBtn>
               </div>
             </div>
           </VCol>
@@ -172,7 +188,7 @@ const menus = [
               target="_blank"
               rel="noopener noreferrer"
               class="ms-1 font-weight-medium"
-              style="color: rgba(255,255,255,var(--v-high-emphasis-opacity));"
+              style="color: rgba(255, 255, 255, var(--v-high-emphasis-opacity));"
             >ThemeSelection</a>
           </span>
           <div class="d-flex gap-x-2">
@@ -207,16 +223,16 @@ const menus = [
   background: url("@images/front-pages/backgrounds/footer-bg.png") lightgray 50% / cover no-repeat;
 }
 
-.footer-heading{
+.footer-heading {
   color: rgba(255, 255, 255, var(--v-high-emphasis-opacity));
   font-weight: 500;
 }
 
-.footer-text{
+.footer-text {
   color: rgba(255, 255, 255, var(--v-medium-emphasis-opacity));
 }
 
-.footer-title{
+.footer-title {
   color: rgba(255, 255, 255, var(--v-high-emphasis-opacity));
   font-size: 1.25rem;
   font-weight: 600;
@@ -231,8 +247,14 @@ const menus = [
   line-height: 20px;
 }
 
-.footer{
+.footer {
   color: rgba(255, 255, 255, 70%);
+}
+
+.footer-links {
+  .footer-text:hover {
+    color: #fff;
+  }
 }
 </style>
 
@@ -245,7 +267,7 @@ const menus = [
   }
 }
 
-.footer-form{
+.footer-form {
   @media (min-width: 1280px) {
     max-inline-size: 400px;
   }

@@ -1,4 +1,5 @@
-export const basic = { ts: `<script setup lang="ts">
+export const basic = {
+  ts: `<script setup lang="ts">
 const numberedSteps = [
   {
     title: 'Account Details',
@@ -30,7 +31,7 @@ const formData = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 
 })
 
@@ -229,7 +230,7 @@ const onSubmit = () => {
                 md="6"
               >
                 <VTextField
-                  v-model="formData.linkedIn"
+                  v-model="formData.LinkedIn"
                   placeholder="https://linkedin.com/abc"
                   label="LinkedIn"
                 />
@@ -279,7 +280,8 @@ const onSubmit = () => {
     </VCardText>
   </VCard>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const numberedSteps = [
   {
     title: 'Account Details',
@@ -311,7 +313,7 @@ const formData = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 })
 
 const onSubmit = () => {
@@ -509,7 +511,7 @@ const onSubmit = () => {
                 md="6"
               >
                 <VTextField
-                  v-model="formData.linkedIn"
+                  v-model="formData.LinkedIn"
                   placeholder="https://linkedin.com/abc"
                   label="LinkedIn"
                 />
@@ -559,9 +561,11 @@ const onSubmit = () => {
     </VCardText>
   </VCard>
 </template>
-` }
+`,
+}
 
-export const validation = { ts: `<script setup lang="ts">
+export const validation = {
+  ts: `<script setup lang="ts">
 import { VForm } from 'vuetify/components/VForm'
 
 const numberedSteps = [
@@ -605,7 +609,7 @@ const socialForm = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 
 })
 
@@ -913,7 +917,7 @@ const validateSocialLinkForm = () => {
                 md="6"
               >
                 <VTextField
-                  v-model="socialForm.linkedIn"
+                  v-model="socialForm.LinkedIn"
                   placeholder="https://likedin.com/abc"
                   :rules="[requiredValidator, urlValidator]"
                   label="LinkedIn"
@@ -950,7 +954,8 @@ const validateSocialLinkForm = () => {
     </VCardText>
   </VCard>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 import { VForm } from 'vuetify/components/VForm'
 
 const numberedSteps = [
@@ -994,7 +999,7 @@ const socialForm = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 })
 
 const validateAccountForm = () => {
@@ -1303,7 +1308,7 @@ const validateSocialLinkForm = () => {
                 md="6"
               >
                 <VTextField
-                  v-model="socialForm.linkedIn"
+                  v-model="socialForm.LinkedIn"
                   placeholder="https://likedin.com/abc"
                   :rules="[requiredValidator, urlValidator]"
                   label="LinkedIn"
@@ -1340,9 +1345,11 @@ const validateSocialLinkForm = () => {
     </VCardText>
   </VCard>
 </template>
-` }
+`,
+}
 
-export const vertical = { ts: `<script setup lang="ts">
+export const vertical = {
+  ts: `<script setup lang="ts">
 const numberedSteps = [
   {
     title: 'Account Details',
@@ -1374,7 +1381,7 @@ const formData = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 
 })
 
@@ -1582,7 +1589,7 @@ const onSubmit = () => {
                     md="6"
                   >
                     <VTextField
-                      v-model="formData.linkedIn"
+                      v-model="formData.LinkedIn"
                       placeholder="https://linkedin.com/abc"
                       label="LinkedIn"
                     />
@@ -1634,7 +1641,8 @@ const onSubmit = () => {
     </VRow>
   </VCard>
 </template>
-`, js: `<script setup>
+`,
+  js: `<script setup>
 const numberedSteps = [
   {
     title: 'Account Details',
@@ -1666,7 +1674,7 @@ const formData = ref({
   twitter: '',
   facebook: '',
   googlePlus: '',
-  linkedIn: '',
+  LinkedIn: '',
 })
 
 const onSubmit = () => {
@@ -1873,7 +1881,7 @@ const onSubmit = () => {
                     md="6"
                   >
                     <VTextField
-                      v-model="formData.linkedIn"
+                      v-model="formData.LinkedIn"
                       placeholder="https://linkedin.com/abc"
                       label="LinkedIn"
                     />
@@ -1925,5 +1933,5 @@ const onSubmit = () => {
     </VRow>
   </VCard>
 </template>
-` }
-
+`,
+}

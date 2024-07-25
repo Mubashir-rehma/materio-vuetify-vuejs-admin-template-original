@@ -3,7 +3,7 @@ import {
   useDisplay,
   useTheme,
 } from 'vuetify'
-import { hexToRgb } from '@layouts/utils'
+import { hexToRgb } from '@core/utils/colorConverter'
 
 const vuetifyTheme = useTheme()
 const { thresholds } = useDisplay()

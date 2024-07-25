@@ -21,7 +21,7 @@ To use the `before-pseudo` mixin, follow these steps:
 }
 ```
 
-<<< ../typescript-version/full-version/src/@core/scss/base/_mixins.scss#before-pseudo
+<<< ../../../typescript-version/full-version/src/@core/scss/base/_mixins.scss#before-pseudo
 
 ### Example
 
@@ -55,7 +55,7 @@ To utilize the `selected-states` mixin, follow these steps:
   } 
   ```
 
-  <<< ../typescript-version/full-version/src/@core/scss/base/_mixins.scss#selected-states{1}
+  <<< ../../../typescript-version/full-version/src/@core/scss/base/_mixins.scss#selected-states{1}
 
 ## Example
 

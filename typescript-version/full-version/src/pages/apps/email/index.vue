@@ -5,7 +5,7 @@ import EmailLeftSidebarContent from '@/views/apps/email/EmailLeftSidebarContent.
 import EmailView from '@/views/apps/email/EmailView.vue'
 import type { MoveEmailToAction } from '@/views/apps/email/useEmail'
 import { useEmail } from '@/views/apps/email/useEmail'
-import type { Email } from '@db/apps/email/types'
+import type { Email, EmailLabel } from '@db/apps/email/types'
 
 definePage({
   meta: {
@@ -49,6 +49,7 @@ const { data: emailData, execute: fetchEmails } = await useApi<any>(createUrl('/
 }))
 
 const emails = computed<Email[]>(() => emailData.value.emails)
+const emailsMeta = computed(() => emailData.value.emailsMeta)
 
 const toggleSelectedEmail = (emailId: Email['id']) => {
   const emailIndex = selectedEmails.value.indexOf(emailId)
@@ -139,15 +140,21 @@ const handleActionClick = async (
   else if (action === 'unstar')
     await updateEmails(emailIds, { isStarred: false })
 
-  await fetchEmails()
-
   if (openedEmail.value)
     refreshOpenedEmail()
+  else
+    await fetchEmails()
 }
 
 // Email actions
 const handleMoveMailsTo = async (action: MoveEmailToAction) => {
-  moveSelectedEmailTo(action, selectedEmails.value)
+  await moveSelectedEmailTo(action, selectedEmails.value)
+  await fetchEmails()
+}
+
+// Handle Email Labels
+const handleEmailLabels = async (labelTitle: EmailLabel) => {
+  await updateEmailLabels(selectedEmails.value, labelTitle)
   await fetchEmails()
 }
 
@@ -180,7 +187,7 @@ watch(
 
 <template>
   <VLayout
-    style="min-block-size: 100%;"
+    style=" z-index: 0;min-block-size: 100%;"
     class="email-app-layout"
   >
     <VNavigationDrawer
@@ -190,7 +197,10 @@ watch(
       location="start"
       :temporary="$vuetify.display.mdAndDown"
     >
-      <EmailLeftSidebarContent @toggle-compose-dialog-visibility="isComposeDialogVisible = !isComposeDialogVisible" />
+      <EmailLeftSidebarContent
+        :emails-meta="emailsMeta"
+        @toggle-compose-dialog-visibility="isComposeDialogVisible = !isComposeDialogVisible"
+      />
     </VNavigationDrawer>
     <EmailView
       :email="openedEmail"
@@ -198,7 +208,7 @@ watch(
       @refresh="refreshOpenedEmail"
       @navigated="changeOpenedEmail"
       @close="openedEmail = null"
-      @remove="handleActionClick('trash', openedEmail ? [openedEmail.id] : [])"
+      @trash="handleActionClick('trash', openedEmail ? [openedEmail.id] : [])"
       @unread="handleActionClick('unread', openedEmail ? [openedEmail.id] : [])"
       @star="handleActionClick('star', openedEmail ? [openedEmail.id] : [])"
       @unstar="handleActionClick('unstar', openedEmail ? [openedEmail.id] : [])"
@@ -238,7 +248,7 @@ watch(
           <VCheckbox
             :model-value="selectAllEmailCheckbox"
             :indeterminate="isSelectAllEmailCheckboxIndeterminate"
-            class="me-1"
+            class="d-flex"
             @update:model-value="selectAllCheckboxUpdate"
           />
           <div
@@ -331,7 +341,7 @@ watch(
                     v-for="label in labels"
                     :key="label.title"
                     href="#"
-                    @click="updateEmailLabels(selectedEmails, label.title)"
+                    @click="handleEmailLabels(label.title)"
                   >
                     <template #prepend>
                       <VBadge
@@ -468,8 +478,8 @@ watch(
 </template>
 
 <style lang="scss">
-@use "@styles/variables/vuetify.scss";
-@use "@core/scss/base/mixins.scss";
+@use "@styles/variables/vuetify";
+@use "@core/scss/base/mixins";
 
 // ℹ️ Remove border. Using variant plain cause UI issue, caret isn't align in center
 .email-search {

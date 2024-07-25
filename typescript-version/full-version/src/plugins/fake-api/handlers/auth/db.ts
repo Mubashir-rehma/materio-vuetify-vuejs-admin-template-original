@@ -1,4 +1,4 @@
-import type { User } from '@/plugins/fake-api/handlers/auth/types'
+import type { User } from '@db/auth/types'
 
 interface DB {
   userTokens: string[]

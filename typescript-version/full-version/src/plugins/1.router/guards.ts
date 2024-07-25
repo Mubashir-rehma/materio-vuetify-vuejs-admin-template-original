@@ -1,7 +1,7 @@
-import type { Router } from 'vue-router'
+import type { RouteNamedMap, _RouterTyped } from 'unplugin-vue-router'
 import { canNavigate } from '@layouts/plugins/casl'
 
-export const setupGuards = (router: Router) => {
+export const setupGuards = (router: _RouterTyped<RouteNamedMap & { [key: string]: any }>) => {
   // 👉 router.beforeEach
   // Docs: https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards
   router.beforeEach(to => {
@@ -30,7 +30,7 @@ export const setupGuards = (router: Router) => {
         return undefined
     }
 
-    if (!canNavigate(to)) {
+    if (!canNavigate(to) && to.matched.length) {
       /* eslint-disable indent */
       return isLoggedIn
         ? { name: 'not-authorized' }

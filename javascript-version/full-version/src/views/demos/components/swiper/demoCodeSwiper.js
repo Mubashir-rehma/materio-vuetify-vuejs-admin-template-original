@@ -328,7 +328,7 @@ register()
       },
       460: {
         slidesPerView: 2,
-        spaceBetween: 30,
+        spaceBetween: 20,
       },
     }"
   >
@@ -393,7 +393,7 @@ register()
       },
       460: {
         slidesPerView: 2,
-        spaceBetween: 30,
+        spaceBetween: 20,
       },
     }"
   >
@@ -1509,7 +1509,9 @@ const appendSlide = () => {
         v-for="(item, index) in slides"
         :key="index"
       >
-        {{ item }}
+        <div class="text-secondary">
+          {{ item }}
+        </div>
       </swiper-slide>
     </swiper-container>
 
@@ -1632,7 +1634,9 @@ const appendSlide = () => {
         v-for="(item, index) in slides"
         :key="index"
       >
-        {{ item }}
+        <div class="text-secondary">
+          {{ item }}
+        </div>
       </swiper-slide>
     </swiper-container>
 

@@ -12,7 +12,7 @@ export const requiredValidator = value => {
 export const emailValidator = value => {
   if (isEmpty(value))
     return true
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  const re = /^(?:[^<>()[\]\\.,;:\s@"]+(?:\.[^<>()[\]\\.,;:\s@"]+)*|".+")@(?:\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\]|(?:[a-z\-\d]+\.)+[a-z]{2,})$/i
   if (Array.isArray(value))
     return value.every(val => re.test(String(val))) || 'The Email field must be a valid email'
   
@@ -42,9 +42,9 @@ export const integerValidator = value => {
   if (isEmpty(value))
     return true
   if (Array.isArray(value))
-    return value.every(val => /^-?[0-9]+$/.test(String(val))) || 'This field must be an integer'
+    return value.every(val => /^-?\d+$/.test(String(val))) || 'This field must be an integer'
   
-  return /^-?[0-9]+$/.test(String(value)) || 'This field must be an integer'
+  return /^-?\d+$/.test(String(value)) || 'This field must be an integer'
 }
 
 // 👉 Regex Validator
@@ -72,7 +72,7 @@ export const alphaValidator = value => {
 export const urlValidator = value => {
   if (isEmpty(value))
     return true
-  const re = /^(https?):\/\/[^\s$.?#].[^\s]*$/
+  const re = /^https?:\/\/[^\s$.?#].\S*$/
   
   return re.test(String(value)) || 'URL is invalid'
 }
@@ -91,5 +91,5 @@ export const alphaDashValidator = value => {
     return true
   const valueAsString = String(value)
   
-  return /^[0-9A-Z_-]*$/i.test(valueAsString) || 'All Character are not valid'
+  return /^[\w-]*$/.test(valueAsString) || 'All Character are not valid'
 }

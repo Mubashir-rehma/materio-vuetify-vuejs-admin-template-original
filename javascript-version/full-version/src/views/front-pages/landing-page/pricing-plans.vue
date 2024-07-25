@@ -154,7 +154,7 @@ const pricingPlans = [
                       <template #prepend>
                         <Component
                           :is="ListArrowIcon"
-                          class="me-3"
+                          class="me-3 flip-in-rtl"
                         />
                       </template>
                       <h5 class="text-h5">
@@ -213,10 +213,10 @@ const pricingPlans = [
 </style>
 
 <style lang="scss" scoped>
-.plan-price-text{
+.plan-price-text {
   color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
   font-size: 48px;
   font-weight: 700;
-  line-height: 56px
+  line-height: 56px;
 }
 </style>

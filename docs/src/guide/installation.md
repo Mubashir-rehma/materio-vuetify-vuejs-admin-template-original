@@ -47,6 +47,7 @@ Enable show hidden files feature in your system to view the hidden files if you 
 ```bash [pnpm]
 AUTH_ORIGIN=http://localhost:3000
 AUTH_SECRET=7af82237c4ac5d172db8c53816139f2bf25236231130898bfebe65dace465d5e
+NUXT_PUBLIC_API_BASE_URL=localhost:3000/api
 
 ```
 
@@ -80,7 +81,7 @@ pnpm run dev
 
 **Related FAQ:**
 
-- [Template is slow](/faq/#template-is-slow)
+- [npm install or yarn install warnings or installation warnings](/faq/#npm-install-or-yarn-install-warnings-or-installation-warnings)
 - [Nuxt Terminal Warning](/faq/#nuxt-terminal-warnings)
 
 ## Generating build for production

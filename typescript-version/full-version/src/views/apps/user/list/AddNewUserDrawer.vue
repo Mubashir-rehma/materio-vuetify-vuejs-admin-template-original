@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+
 import type { VForm } from 'vuetify/components/VForm'
 
 import type { UserProperties } from '@db/apps/users/types'

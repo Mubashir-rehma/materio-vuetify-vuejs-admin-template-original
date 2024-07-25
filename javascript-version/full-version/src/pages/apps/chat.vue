@@ -123,7 +123,10 @@ const chatContentContainerBg = computed(() => {
 </script>
 
 <template>
-  <VLayout class="chat-app-layout bg-surface">
+  <VLayout
+    class="chat-app-layout bg-surface"
+    style="z-index: 0;"
+  >
     <!-- 👉 user profile sidebar -->
     <VNavigationDrawer
       v-model="isUserProfileSidebarOpen"
@@ -267,27 +270,41 @@ const chatContentContainerBg = computed(() => {
             variant="solo"
             density="default"
             class="chat-message-input"
-            placeholder="Type your message..."
+            placeholder="Type your message"
             autofocus
           >
             <template #append-inner>
-              <IconBtn>
-                <VIcon icon="ri-mic-line" />
-              </IconBtn>
-
-              <IconBtn
-                class="me-4"
-                @click="refInputEl?.click()"
-              >
-                <VIcon icon="ri-attachment-2" />
-              </IconBtn>
-
-              <VBtn
-                append-icon="ri-send-plane-line"
-                @click="sendMessage"
-              >
-                Send
-              </VBtn>
+              <div class="d-flex gap-1 align-center">
+                <IconBtn size="small">
+                  <VIcon
+                    icon="ri-mic-line"
+                    class="text-high-emphasis"
+                  />
+                </IconBtn>
+                <IconBtn
+                  size="small"
+                  @click="refInputEl?.click()"
+                >
+                  <VIcon
+                    icon="ri-attachment-2"
+                    class="text-high-emphasis"
+                  />
+                </IconBtn>
+                <div class="d-none d-md-block">
+                  <VBtn
+                    append-icon="ri-send-plane-line"
+                    @click="sendMessage"
+                  >
+                    Send
+                  </VBtn>
+                </div>
+                <IconBtn
+                  class="d-block d-md-none"
+                  @click="sendMessage"
+                >
+                  <VIcon icon="ri-send-plane-line" />
+                </IconBtn>
+              </div>
             </template>
           </VTextField>
 
@@ -317,12 +334,20 @@ const chatContentContainerBg = computed(() => {
             icon="ri-wechat-line"
           />
         </VAvatar>
-        <p
-          class="mb-0 px-4 py-2 font-weight-medium elevation-2 rounded-xl bg-primary"
-          :class="[{ 'cursor-pointer': $vuetify.display.smAndDown }]"
+        <VBtn
+          v-if="$vuetify.display.smAndDown"
+          rounded="pill"
           @click="startConversation"
         >
           Start Conversation
+        </VBtn>
+
+        <p
+          v-else
+          style="max-inline-size: 40ch; text-wrap: balance;"
+          class="text-center text-disabled"
+        >
+          Start connecting with the people by selecting one of the contact on left
         </p>
       </div>
     </VMain>
@@ -330,8 +355,8 @@ const chatContentContainerBg = computed(() => {
 </template>
 
 <style lang="scss">
-@use "@styles/variables/vuetify.scss";
-@use "@core/scss/base/mixins.scss";
+@use "@styles/variables/vuetify";
+@use "@core/scss/base/mixins";
 @use "@layouts/styles/mixins" as layoutsMixins;
 
 // Variables

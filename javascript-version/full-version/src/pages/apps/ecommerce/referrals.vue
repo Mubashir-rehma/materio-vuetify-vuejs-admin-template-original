@@ -1,5 +1,5 @@
 <script setup>
-import paperImg from '@images/svg/paper.svg?raw'
+import paperImg from '@images/svg/paper-send.svg?raw'
 import rocketImg from '@images/svg/rocket.svg?raw'
 import userInfoImg from '@images/svg/user-info.svg?raw'
 import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
@@ -95,7 +95,6 @@ const headers = [
 ]
 
 const updateOptions = options => {
-  page.value = options.page
   sortBy.value = options.sortBy[0]?.key
   orderBy.value = options.sortBy[0]?.order
 }

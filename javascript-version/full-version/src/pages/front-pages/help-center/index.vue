@@ -4,12 +4,27 @@ import Navbar from '@/views/front-pages/front-page-navbar.vue'
 import HelpCenterLandingArticlesOverview from '@/views/pages/help-center/HelpCenterLandingArticlesOverview.vue'
 import HelpCenterLandingFooter from '@/views/pages/help-center/HelpCenterLandingFooter.vue'
 import HelpCenterLandingKnowledgeBase from '@/views/pages/help-center/HelpCenterLandingKnowledgeBase.vue'
+import { useConfigStore } from '@core/stores/config'
 
 // fetching data from fake-api
-definePage({ meta: { layout: 'blank' } })
+const store = useConfigStore()
 
-const { data: faqData } = await useApi('/pages/help-center')
-const apiData = faqData.value
+store.skin = 'default'
+definePage({
+  meta: {
+    layout: 'blank',
+    public: true,
+  },
+})
+
+const apiData = ref()
+
+// // ℹ️ Check if MSW service worker is registered and ready to intercept requests
+setTimeout(async () => {
+  const faqData = await $api('/pages/help-center')
+
+  apiData.value = faqData
+}, 1000)
 </script>
 
 <template>

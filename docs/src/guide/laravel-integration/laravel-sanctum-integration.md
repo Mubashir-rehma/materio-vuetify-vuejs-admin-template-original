@@ -8,35 +8,18 @@ Laravel [Sanctum](https://laravel.com/docs/9.x/sanctum) provides a featherweight
 
 ## Installation
 
-::: warning
-The most recent versions of Laravel already include Laravel Sanctum. However, if your application's composer.json file does not include laravel/sanctum, you may follow the installation instructions below.
+::: info
+Laravel 11 does not include Laravel Sanctum by default. However, if your application's composer.json file does not include laravel/sanctum, you may follow the installation instructions below. 🙏
 :::
 
-- You may install Laravel Sanctum via the Composer package manager:
+- You may install Laravel Sanctum via the install:api Artisan command:
 
   ```bash
-  composer require laravel/sanctum
+  php artisan install:api
   ```
 
-- Next, you should publish the Sanctum configuration and migration files using the vendor:publish Artisan command. The sanctum configuration file will be placed in your application's config directory:
-
-  ```bash
-  php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
-  ```
-
-- Next, if you plan to utilize Sanctum to authenticate an SPA, you should add Sanctum's middleware to your `api` middleware group within your application's `app/Http/Kernel.php` file:
-
-  ```php
-  'api' => [
-      \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-      'throttle:api',
-      \Illuminate\Routing\Middleware\SubstituteBindings::class,
-  ],
-  ```
-
-- Sanctum allows you to issue API tokens / personal access tokens that may be used to authenticate API requests to your application. When making requests using API tokens, the token should be included in the Authorization header as a Bearer token.
-
-- To begin issuing tokens for users, your `User` model should use the `Laravel\Sanctum\HasApiTokens` trait:
+- Sanctum allows you to issue `API tokens / personal access tokens` that may be used to authenticate API requests to your application. When making requests using API tokens, the token should be included in the Authorization header as a Bearer token.
+**To begin issuing tokens for users, your User model should use the `Laravel\Sanctum\HasApiTokens` trait:**
 
   ```php
   use Laravel\Sanctum\HasApiTokens;
@@ -47,21 +30,16 @@ The most recent versions of Laravel already include Laravel Sanctum. However, if
   }
   ```
 
-- Next, in your application's `config/auth.php` configuration file, you should add the driver option for the api authentication guard.
+- `install:api` command will add `routes/api.php` file. That should be included in the `bootstrap/app.php` file inside withRouting as below
 
   ```php
-  'guards' => [
-      'web' => [
-          'driver' => 'session',
-          'provider' => 'users',
-      ],
-
-      'api' => [
-          'driver' => 'sanctum',
-          'provider' => 'users',
-          'hash' => false,
-      ],
-  ],
+  return Application::configure(basePath: dirname(__DIR__))
+    ->withRouting(
+      web: __DIR__ . '/../routes/web.php',
+      api: __DIR__ . '/../routes/api.php', // Add this if not added by install:api
+      commands: __DIR__ . '/../routes/console.php',
+      health: '/up',
+    )
   ```
 
 - Finally, you should run your database migrations. Sanctum will create one database table in which to store API tokens:
@@ -69,4 +47,3 @@ The most recent versions of Laravel already include Laravel Sanctum. However, if
   ```bash
   php artisan migrate
   ```
-  
